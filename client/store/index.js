@@ -20,8 +20,18 @@ export const actions = {
 
 export const plugins = [
   service('users'),
+  service('send'),
+  service('purchase'),
+  service('paysuccess'),
   auth({
-    state: { publicPages: ['index', 'authenticate'] },
+    state: {
+      publicPages: [
+        'index',
+        'signup',
+        'pricing',
+        'login',
+      ]
+    },
     userService: 'users'
   })
 ];

@@ -1,14 +1,13 @@
 {
   "host": "localhost",
-  "port": 3030,
+  "port": 3000,
   "public": "../public/",
   "paginate": {
     "default": 10,
     "max": 50
   },
-  "nedb": "../data",
   "authentication": {
-    "secret": "c4898e1f719f8ecac15429ec80f38e42c439008b0bab3acf16112c577cf2a2c37535e6027e3fbd91d102bc59230bfc816075ecdc1dcda367e742b8bec652ce56bac6fb3efd457b14427a4dfad9b0ad955754def9d21167bf5fac91a31a441153ee00ff2a104d5f4f0aeff8aedc2353806d41c55bb51740ff9e43457a00903024d3021e9d5017fe592d70381cf358aead862fc89c4402cf314cfc0bf4b7e1cbc541fcb0dd501187a6224b518f9cc9305c40ef824ec4dc65521514a65eb3483eb9dcc76e5444740e2001d11dee83546bd4f93f1db3164cbaf30119b7fdb6ba4201236b6d233e3a93c6aa7aa7f5fb8788e25f2b6679fbb5b212ab7791e56f12be62",
+    "secret": "68afd7f43ca2a3e91d8e0ba584ed87e8e32b1e08f5ceffb1fd5165dd4537a318d10c3e4fbdd0dd8da48536e5e05c41c3448c7297a94d1c52cacd4cd5def285850141878ea93bb55a26450d149da81e1bf3d4f8434059c9d0a71a4a007a9cf108b25839e18c7be5a850f771581de7fde77a5f674818c74d6dbdbe5c5128f54617c9c46f2522a99e38212f92d3cf22bfefbc08c73c5ad4119549ae888efb45bb606b9bd8283fc3fcba90651160c1f3d3cba1fe5776d6aa871859b6a8d046254703d997bed93be1f0dd3a189758b9711e16c6fed01697a9d3d1a8056c15fcf26ad5bba8c977fd4c9f04843c6f5ab2dfb079042c3076ec7d4818c53a68a664d2e2a2",
     "strategies": [
       "jwt",
       "local"
@@ -30,5 +29,6 @@
       "usernameField": "email",
       "passwordField": "password"
     }
-  }
+  },
+  "mongodb": "mongodb://localhost:27017/local"
 }

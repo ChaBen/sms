@@ -14,9 +14,11 @@ const socketio = require('@feathersjs/socketio');
 const middleware = require('./middleware');
 const services = require('./services');
 const appHooks = require('./app.hooks');
-const channels = require('./channels');
+// const channels = require('./channels');
 
 const authentication = require('./authentication');
+
+const mongoose = require('./mongoose');
 
 const app = express(feathers());
 
@@ -34,13 +36,20 @@ app.use(favicon(path.join(app.get('public'), 'favicon.ico')));
 app.configure(express.rest());
 app.configure(socketio());
 
+app.configure(mongoose);
+
 // Configure other middleware (see `middleware/index.js`)
 app.configure(middleware);
 app.configure(authentication);
 // Set up our services (see `services/index.js`)
 app.configure(services);
 // Set up event channels (see channels.js)
-app.configure(channels);
+// app.configure(channels);
+
+// paypal
+app.get('/paysuccess', function(req, res) {
+  res.send('success');
+});
 
 // Configure a middleware for 404s and the error handler
 app.use(express.notFound());

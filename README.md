@@ -16,7 +16,7 @@ Remember to set these environment variables when running in production:
 
 ```shell
 NODE_ENV=production
-PORT=3030 # or whatever port you want to use
+PORT=3000 # or whatever port you want to use
 API_URL=https://yourappdomain.com/ # this is where the API is running
 ```
 
