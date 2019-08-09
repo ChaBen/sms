@@ -10,13 +10,13 @@
             <h4>
               오늘날 전 세계 모바일 사용자는 그 어느 때보 다 중요합니다. 모바일 마케팅을 통해 타겟 고객을 끌어 들이지 않는다면, 고객과 연락하고, 정보를 얻고, 비즈니스를 수행 할 수있는 훌륭한 마케팅 도구를 놓치고있는 것입니다.
             </h4>
-            <br />
+            <br>
             <md-button
               href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
               class="md-success md-lg"
               target="_blank"
             >
-              <i class="fas fa-ticket-alt"></i>
+              <i class="fas fa-ticket-alt" />
               <span>Invest Now</span>
             </md-button>
           </div>
@@ -36,9 +36,9 @@
             </div>
           </div>
           <div class="md-layout">
-            <div class="md-layout-item md-size-33 md-small-size-100" v-for="(item, key) in section1" :key="key">
+            <div v-for="(item, key) in section1" :key="key" class="md-layout-item md-size-33 md-small-size-100">
               <info-areas :icon-color="item.color" :icon="item.icon" text-center>
-                <h4 class="info-title" slot="title">{{ item.title }}</h4>
+                <h4 slot="title" class="info-title">{{ item.title }}</h4>
                 <p slot="content">{{ item.description }}</p>
               </info-areas>
             </div>
@@ -53,15 +53,15 @@
           <div class="md-layout">
             <div class="md-layout-item md-size-50 md-small-size-100">
               <div class="phone-container">
-                <img :src="iphone" />
+                <img :src="iphone">
               </div>
             </div>
             <div class="md-layout-item md-size-50 md-small-size-100">
               <!-- Some <br /> tags to push the text to align with the image, you can remove it if you have more text on the right side :-) -->
               <h2 class="title">Your life will be much easier</h2>
-              <info-areas info-horizontal icon-color="primary" :icon="item.icon" v-for="(item, key) in section1" :key="key">
-                <h4 class="info-title" slot="title">{{ item.title }}</h4>
-                <div class="description" slot="content">
+              <info-areas v-for="(item, key) in section1" :key="key" info-horizontal icon-color="primary" :icon="item.icon">
+                <h4 slot="title" class="info-title">{{ item.title }}</h4>
+                <div slot="content" class="description">
                   <p>{{ item.description }}</p>
                 </div>
               </info-areas>
@@ -89,8 +89,8 @@
           <div class="md-layout">
             <div class="md-layout-item md-size-25 md-small-size-100 ml-auto">
               <info-areas info-horizontal icon-color="info" icon="code">
-                <h4 class="info-title" slot="title">For Developers</h4>
-                <div class="description" slot="content">
+                <h4 slot="title" class="info-title">For Developers</h4>
+                <div slot="content" class="description">
                   <p>
                     The moment you use Material Kit, you know you’ve never felt
                     anything like it. With a single use, this powerfull UI Kit
@@ -99,8 +99,8 @@
                 </div>
               </info-areas>
               <info-areas info-horizontal icon-color="danger" icon="format_paint">
-                <h4 class="info-title" slot="title">For Designers</h4>
-                <div class="description" slot="content">
+                <h4 slot="title" class="info-title">For Designers</h4>
+                <div slot="content" class="description">
                   <p>
                     Divide details about your product or agency work into parts.
                     Write a few lines about each one. A paragraph describing a
@@ -111,13 +111,13 @@
             </div>
             <div class="md-layout-item md-size-25 md-small-size-100">
               <div class="phone-container">
-                <img :src="iphone2" />
+                <img :src="iphone2">
               </div>
             </div>
             <div class="md-layout-item md-size-25 md-small-size-100 mr-auto">
               <info-areas info-horizontal icon-color="primary" icon="dashboard">
-                <h4 class="info-title" slot="title">Bootstrap Grid</h4>
-                <div class="description" slot="content">
+                <h4 slot="title" class="info-title">Bootstrap Grid</h4>
+                <div slot="content" class="description">
                   <p>
                     Divide details about your product or agency work into parts.
                     Write a few lines about each one. A paragraph describing a
@@ -130,8 +130,8 @@
                 icon-color="success"
                 icon="view_carousel"
               >
-                <h4 class="info-title" slot="title">Example Pages Included</h4>
-                <div class="description" slot="content">
+                <h4 slot="title" class="info-title">Example Pages Included</h4>
+                <div slot="content" class="description">
                   <p>
                     Divide details about your product or agency work into parts.
                     Write a few lines about each one. A paragraph describing a
@@ -161,8 +161,8 @@
           <div class="md-layout">
             <div class="md-layout-item md-size-33 md-small-size-100">
               <info-areas text-center icon="code">
-                <h4 class="info-title" slot="title">For Developers</h4>
-                <div class="description" slot="content">
+                <h4 slot="title" class="info-title">For Developers</h4>
+                <div slot="content" class="description">
                   <p>
                     The moment you use Material Kit, you know you’ve never felt
                     anything like it. With a single use, this powerfull UI Kit
@@ -173,8 +173,8 @@
             </div>
             <div class="md-layout-item md-size-33 md-small-size-100">
               <info-areas text-center icon="format_paint">
-                <h4 class="info-title" slot="title">For Designers</h4>
-                <div class="description" slot="content">
+                <h4 slot="title" class="info-title">For Designers</h4>
+                <div slot="content" class="description">
                   <p>
                     The moment you use Material Kit, you know you’ve never felt
                     anything like it. With a single use, this powerfull UI Kit
@@ -185,8 +185,8 @@
             </div>
             <div class="md-layout-item md-size-33 md-small-size-100">
               <info-areas text-center icon="dashboard">
-                <h4 class="info-title" slot="title">Bootstrap Grid</h4>
-                <div class="description" slot="content">
+                <h4 slot="title" class="info-title">Bootstrap Grid</h4>
+                <div slot="content" class="description">
                   <p>
                     The moment you use Material Kit, you know you’ve never felt
                     anything like it. With a single use, this powerfull UI Kit
@@ -199,8 +199,8 @@
           <div class="md-layout">
             <div class="md-layout-item md-size-33 md-small-size-100">
               <info-areas text-center icon="view_carousel">
-                <h4 class="info-title" slot="title">Example Pages Included</h4>
-                <div class="description" slot="content">
+                <h4 slot="title" class="info-title">Example Pages Included</h4>
+                <div slot="content" class="description">
                   <p>
                     The moment you use Material Kit, you know you’ve never felt
                     anything like it. With a single use, this powerfull UI Kit
@@ -211,8 +211,8 @@
             </div>
             <div class="md-layout-item md-size-33 md-small-size-100">
               <info-areas text-center icon="access_time">
-                <h4 class="info-title" slot="title">Save Time</h4>
-                <div class="description" slot="content">
+                <h4 slot="title" class="info-title">Save Time</h4>
+                <div slot="content" class="description">
                   <p>
                     The moment you use Material Kit, you know you’ve never felt
                     anything like it. With a single use, this powerfull UI Kit
@@ -223,8 +223,8 @@
             </div>
             <div class="md-layout-item md-size-33 md-small-size-100">
               <info-areas text-center icon="attach_money">
-                <h4 class="info-title" slot="title">Save Money</h4>
-                <div class="description" slot="content">
+                <h4 slot="title" class="info-title">Save Money</h4>
+                <div slot="content" class="description">
                   <p>
                     The moment you use Material Kit, you know you’ve never felt
                     anything like it. With a single use, this powerfull UI Kit
@@ -242,7 +242,7 @@
 </template>
 
 <script>
-import { InfoAreas } from "@/components";
+import { InfoAreas } from '@/components';
 import Mixins from '@/plugins/basicMixins';
 
 export default {
@@ -251,8 +251,8 @@ export default {
   },
   mixins: [Mixins.HeaderImage],
   data: () => ({
-    iphone: require("@/assets/img/sections/iphone.png"),
-    iphone2: require("@/assets/img/sections/iphone2.png"),
+    iphone: require('@/assets/img/sections/iphone.png'),
+    iphone2: require('@/assets/img/sections/iphone2.png'),
     image: require('@/assets/img/dg1.jpg'),
     section1: [
       {

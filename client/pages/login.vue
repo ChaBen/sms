@@ -35,17 +35,17 @@
                 <label>First Name...</label>
                 <md-input v-model="firstname"></md-input>
               </md-field> -->
-              <md-field class="md-form-group" slot="inputs">
+              <md-field slot="inputs" class="md-form-group">
                 <md-icon>email</md-icon>
                 <label>이메일...</label>
-                <md-input v-model="email" type="email"></md-input>
+                <md-input v-model="email" type="email" />
               </md-field>
-              <md-field class="md-form-group" slot="inputs">
+              <md-field slot="inputs" class="md-form-group">
                 <md-icon>lock_outline</md-icon>
                 <label>비밀번호...</label>
-                <md-input v-model="password" @keydown.enter="login" type="password"></md-input>
+                <md-input v-model="password" type="password" @keydown.enter="login" />
               </md-field>
-              <md-button @click="login" type="submit" slot="footer" class="md-button md-round md-success">
+              <md-button slot="footer" type="submit" class="md-button md-round md-success" @click="login">
                 로그인
               </md-button>
             </login-card>
@@ -58,17 +58,17 @@
 
 <script>
 import { mapActions } from 'vuex';
-import { LoginCard } from "@/components";
-import Mixins from "@/plugins/basicMixins";
+import { LoginCard } from '@/components';
+import Mixins from '@/plugins/basicMixins';
 
 export default {
-  mixins: [Mixins.HeaderImage],
   components: {
     LoginCard
   },
-  bodyClass: "login-page",
+  mixins: [Mixins.HeaderImage],
+  bodyClass: 'login-page',
   data: () => ({
-    image: require("@/assets/img/profile_city.jpg"),
+    image: require('@/assets/img/profile_city.jpg'),
     email: null,
     password: null
   }),

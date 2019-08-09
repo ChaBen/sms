@@ -19,14 +19,14 @@
 </template>
 
 <script>
-import Mixins from "@/plugins/basicMixins";
+import Mixins from '@/plugins/basicMixins';
 
 export default {
   mixins: [Mixins.HeaderImage],
-  bodyClass: "error-page",
+  bodyClass: 'error-page',
   data() {
     return {
-      image: require("@/assets/img/clint-mckoy.jpg")
+      image: require('@/assets/img/clint-mckoy.jpg')
     };
   }
 };

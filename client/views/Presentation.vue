@@ -8,10 +8,10 @@
       <div class="md-layout">
         <div class="md-layout-item">
           <div class="image-wrapper">
-            <img :src="leaf4" alt="leaf4" class="leaf4" v-show="leafShow" />
-            <img :src="leaf3" alt="leaf3" class="leaf3" v-show="leafShow" />
-            <img :src="leaf2" alt="leaf2" class="leaf2" v-show="leafShow" />
-            <img :src="leaf1" alt="leaf1" class="leaf1" v-show="leafShow" />
+            <img v-show="leafShow" :src="leaf4" alt="leaf4" class="leaf4">
+            <img v-show="leafShow" :src="leaf3" alt="leaf3" class="leaf3">
+            <img v-show="leafShow" :src="leaf2" alt="leaf2" class="leaf2">
+            <img v-show="leafShow" :src="leaf1" alt="leaf1" class="leaf1">
             <div class="brand">
               <h1>
                 Vue Material Kit
@@ -30,50 +30,48 @@
     </parallax>
     <div class="main main-raised">
       <!-- Introduction section -->
-      <introduction></introduction>
+      <introduction />
 
       <!-- Components section -->
-      <components></components>
+      <components />
 
       <!-- Cards section -->
-      <cards></cards>
+      <cards />
 
       <!-- Content Areas section -->
-      <content-areas></content-areas>
+      <content-areas />
 
       <!-- Sections section -->
-      <sections></sections>
+      <sections />
 
       <!-- Examples sections  -->
-      <example-pages></example-pages>
+      <example-pages />
 
       <!-- Github sections  -->
-      <github></github>
+      <github />
 
       <!-- Overview sections -->
-      <overview></overview>
+      <overview />
     </div>
 
     <!-- Pricing Section -->
-    <pricing></pricing>
+    <pricing />
   </div>
 </template>
 
 <script>
-import Introduction from "./presentation/Introduction.vue";
-import Components from "./presentation/Components.vue";
-import ContentAreas from "./presentation/Content.vue";
-import Sections from "./presentation/Sections.vue";
-import Cards from "./presentation/Cards.vue";
-import ExamplePages from "./presentation/Examples.vue";
-import Github from "./presentation/Github.vue";
-import Overview from "./presentation/Overview.vue";
-import Pricing from "./presentation/Pricing.vue";
-import Mixins from "@/plugins/basicMixins";
+import Introduction from './presentation/Introduction.vue';
+import Components from './presentation/Components.vue';
+import ContentAreas from './presentation/Content.vue';
+import Sections from './presentation/Sections.vue';
+import Cards from './presentation/Cards.vue';
+import ExamplePages from './presentation/Examples.vue';
+import Github from './presentation/Github.vue';
+import Overview from './presentation/Overview.vue';
+import Pricing from './presentation/Pricing.vue';
+import Mixins from '@/plugins/basicMixins';
 
 export default {
-  mixins: [Mixins.HeaderImage],
-  bodyClass: "presentation-page",
   components: {
     Introduction,
     Components,
@@ -85,29 +83,40 @@ export default {
     Overview,
     Pricing
   },
+  mixins: [Mixins.HeaderImage],
+  bodyClass: 'presentation-page',
   props: {
     leaf4: {
       type: String,
-      default: require("@/assets/img/leaf4.png")
+      default: require('@/assets/img/leaf4.png')
     },
     leaf3: {
       type: String,
-      default: require("@/assets/img/leaf3.png")
+      default: require('@/assets/img/leaf3.png')
     },
     leaf2: {
       type: String,
-      default: require("@/assets/img/leaf2.png")
+      default: require('@/assets/img/leaf2.png')
     },
     leaf1: {
       type: String,
-      default: require("@/assets/img/leaf1.png")
+      default: require('@/assets/img/leaf1.png')
     }
   },
   data() {
     return {
-      image: require("@/assets/img/vue-mk-header.jpg"),
+      image: require('@/assets/img/vue-mk-header.jpg'),
       leafShow: false
     };
+  },
+  mounted() {
+    this.leafActive();
+    window.addEventListener('resize', this.leafActive);
+    document.addEventListener('scroll', this.scrollListener);
+  },
+  beforeDestroy() {
+    window.removeEventListener('resize', this.leafActive);
+    document.removeEventListener('scroll', this.scrollListener);
   },
   methods: {
     leafActive() {
@@ -117,15 +126,6 @@ export default {
         this.leafShow = true;
       }
     }
-  },
-  mounted() {
-    this.leafActive();
-    window.addEventListener("resize", this.leafActive);
-    document.addEventListener("scroll", this.scrollListener);
-  },
-  beforeDestroy() {
-    window.removeEventListener("resize", this.leafActive);
-    document.removeEventListener("scroll", this.scrollListener);
   }
 };
 </script>

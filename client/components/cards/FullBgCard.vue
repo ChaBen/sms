@@ -5,14 +5,14 @@
     :style="bgFullCards(cardImage)"
   >
     <md-card-content v-if="$slots.cardContent">
-      <slot name="cardContent"></slot>
+      <slot name="cardContent" />
     </md-card-content>
   </md-card>
 </template>
 
 <script>
 export default {
-  name: "full-bg-card",
+  name: 'FullBgCard',
   props: {
     cardPricing: Boolean,
     cardImage: String

@@ -12,13 +12,13 @@
       <md-icon>{{ icon }}</md-icon>
     </div>
     <template v-if="!infoHorizontal">
-      <slot name="title"></slot>
-      <slot name="content"></slot>
+      <slot name="title" />
+      <slot name="content" />
     </template>
     <template v-else>
       <div class="description">
-        <slot name="title"></slot>
-        <slot name="content"></slot>
+        <slot name="title" />
+        <slot name="content" />
       </div>
     </template>
   </div>
@@ -26,7 +26,7 @@
 
 <script>
 export default {
-  name: "info-areas",
+  name: 'InfoAreas',
   props: {
     textCenter: Boolean,
     textRight: Boolean,
@@ -37,7 +37,7 @@ export default {
   },
   computed: {
     infoColor() {
-      return this.iconColor ? `icon-${this.iconColor}` : "";
+      return this.iconColor ? `icon-${this.iconColor}` : '';
     }
   }
 };

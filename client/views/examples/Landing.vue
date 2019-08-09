@@ -15,13 +15,12 @@
               information that can make you or your product create the first
               impression.
             </h4>
-            <br />
+            <br>
             <md-button
               href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
               class="md-success md-lg"
               target="_blank"
-              ><i class="fas fa-play"></i> Watch video</md-button
-            >
+            ><i class="fas fa-play" /> Watch video</md-button>
           </div>
         </div>
       </div>
@@ -114,18 +113,15 @@
                     <md-button
                       href="javascript:void(0)"
                       class="md-twitter md-just-icon md-simple"
-                      ><i class="fab fa-twitter"></i
-                    ></md-button>
+                    ><i class="fab fa-twitter" /></md-button>
                     <md-button
                       href="javascript:void(0)"
                       class="md-facebook md-just-icon md-simple"
-                      ><i class="fab fa-facebook"></i
-                    ></md-button>
+                    ><i class="fab fa-facebook" /></md-button>
                     <md-button
                       href="javascript:void(0)"
                       class="md-google md-just-icon md-simple"
-                      ><i class="fab fa-google"></i
-                    ></md-button>
+                    ><i class="fab fa-google" /></md-button>
                   </template>
                 </profile-card>
               </div>
@@ -150,23 +146,19 @@
                     <md-button
                       href="javascript:void(0)"
                       class="md-linkedin md-just-icon md-simple"
-                      ><i class="fab fa-linkedin"></i
-                    ></md-button>
+                    ><i class="fab fa-linkedin" /></md-button>
                     <md-button
                       href="javascript:void(0)"
                       class="md-facebook md-just-icon md-simple"
-                      ><i class="fab fa-facebook"></i
-                    ></md-button>
+                    ><i class="fab fa-facebook" /></md-button>
                     <md-button
                       href="javascript:void(0)"
                       class="md-dribbble md-just-icon md-simple"
-                      ><i class="fab fa-dribbble"></i
-                    ></md-button>
+                    ><i class="fab fa-dribbble" /></md-button>
                     <md-button
                       href="javascript:void(0)"
                       class="md-google md-just-icon md-simple"
-                      ><i class="fab fa-google"></i
-                    ></md-button>
+                    ><i class="fab fa-google" /></md-button>
                   </template>
                 </profile-card>
               </div>
@@ -191,18 +183,15 @@
                     <md-button
                       href="javascript:void(0)"
                       class="md-youtube md-just-icon md-simple"
-                      ><i class="fab fa-youtube"></i
-                    ></md-button>
+                    ><i class="fab fa-youtube" /></md-button>
                     <md-button
                       href="javascript:void(0)"
                       class="md-twitter md-just-icon md-simple"
-                      ><i class="fab fa-twitter"></i
-                    ></md-button>
+                    ><i class="fab fa-twitter" /></md-button>
                     <md-button
                       href="javascript:void(0)"
                       class="md-instagram md-just-icon md-simple"
-                      ><i class="fab fa-instagram"></i
-                    ></md-button>
+                    ><i class="fab fa-instagram" /></md-button>
                   </template>
                 </profile-card>
               </div>
@@ -227,18 +216,15 @@
                     <md-button
                       href="javascript:void(0)"
                       class="md-linkedin md-just-icon md-simple"
-                      ><i class="fab fa-linkedin"></i
-                    ></md-button>
+                    ><i class="fab fa-linkedin" /></md-button>
                     <md-button
                       href="javascript:void(0)"
                       class="md-facebook md-just-icon md-simple"
-                      ><i class="fab fa-facebook"></i
-                    ></md-button>
+                    ><i class="fab fa-facebook" /></md-button>
                     <md-button
                       href="javascript:void(0)"
                       class="md-google md-just-icon md-simple"
-                      ><i class="fab fa-google"></i
-                    ></md-button>
+                    ><i class="fab fa-google" /></md-button>
                   </template>
                 </profile-card>
               </div>
@@ -262,19 +248,19 @@
                   <div class="md-layout-item md-size-50 md-small-size-100">
                     <md-field>
                       <label>Your Name</label>
-                      <md-input v-model="name" type="text"></md-input>
+                      <md-input v-model="name" type="text" />
                     </md-field>
                   </div>
                   <div class="md-layout-item md-size-50 md-small-size-100">
                     <md-field>
                       <label>Your Email</label>
-                      <md-input v-model="email" type="email"></md-input>
+                      <md-input v-model="email" type="email" />
                     </md-field>
                   </div>
                 </div>
                 <md-field maxlength="5">
                   <label>Your Message</label>
-                  <md-textarea v-model="message"></md-textarea>
+                  <md-textarea v-model="message" />
                 </md-field>
                 <div class="md-layout">
                   <div
@@ -293,26 +279,26 @@
 </template>
 
 <script>
-import { ProfileCard } from "@/components";
-import Mixins from "@/plugins/basicMixins";
+import { ProfileCard } from '@/components';
+import Mixins from '@/plugins/basicMixins';
 
 export default {
-  mixins: [Mixins.HeaderImage],
   components: {
     ProfileCard
   },
-  bodyClass: "landing-page",
+  mixins: [Mixins.HeaderImage],
+  bodyClass: 'landing-page',
   data() {
     return {
-      image: require("@/assets/img/bg7.jpg"),
+      image: require('@/assets/img/bg7.jpg'),
       name: null,
       email: null,
       message: null,
       cardProfile3: {
-        cardProfile1: require("@/assets/img/faces/card-profile1-square.jpg"),
-        cardProfile2: require("@/assets/img/faces/card-profile6-square.jpg"),
-        cardProfile3: require("@/assets/img/faces/card-profile4-square.jpg"),
-        cardProfile4: require("@/assets/img/faces/card-profile2-square.jpg")
+        cardProfile1: require('@/assets/img/faces/card-profile1-square.jpg'),
+        cardProfile2: require('@/assets/img/faces/card-profile6-square.jpg'),
+        cardProfile3: require('@/assets/img/faces/card-profile4-square.jpg'),
+        cardProfile4: require('@/assets/img/faces/card-profile2-square.jpg')
       }
     };
   }

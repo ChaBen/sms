@@ -1,44 +1,44 @@
 <template>
   <div class="wrapper">
-    <div class="main" id="main-panel">
+    <div id="main-panel" class="main">
       <!-- Headers Section -->
-      <div class="cd-section" id="headers">
-        <headers></headers>
+      <div id="headers" class="cd-section">
+        <headers />
       </div>
 
       <!-- Features Section -->
-      <div class="cd-section" id="features">
-        <features></features>
+      <div id="features" class="cd-section">
+        <features />
       </div>
 
       <!-- Blogs Section -->
-      <div class="cd-section" id="blogs">
-        <blogs></blogs>
+      <div id="blogs" class="cd-section">
+        <blogs />
       </div>
 
       <!-- Teams Section -->
-      <div class="cd-section" id="teams">
-        <teams></teams>
+      <div id="teams" class="cd-section">
+        <teams />
       </div>
 
       <!-- Projects Section -->
-      <div class="cd-section" id="projects">
-        <projects></projects>
+      <div id="projects" class="cd-section">
+        <projects />
       </div>
 
       <!-- Pricing Section -->
-      <div class="cd-section" id="pricing">
-        <pricing></pricing>
+      <div id="pricing" class="cd-section">
+        <pricing />
       </div>
 
       <!-- Testimonials Section -->
-      <div class="cd-section" id="testimonials">
-        <testimonials></testimonials>
+      <div id="testimonials" class="cd-section">
+        <testimonials />
       </div>
 
       <!-- ContactUs Section -->
-      <div class="cd-section" id="contacts">
-        <contact-us></contact-us>
+      <div id="contacts" class="cd-section">
+        <contact-us />
       </div>
     </div>
     <nav id="cd-vertical-nav" class="vertical-nav-active">
@@ -46,80 +46,80 @@
         <li>
           <a
             href="javascript:void(0)"
-            @click="scrollToElement('headers')"
             data-number="1"
+            @click="scrollToElement('headers')"
           >
-            <span class="cd-dot"></span>
+            <span class="cd-dot" />
             <span class="cd-label">Headers</span>
           </a>
         </li>
         <li>
           <a
             href="javascript:void(0)"
-            @click="scrollToElement('features')"
             data-number="2"
+            @click="scrollToElement('features')"
           >
-            <span class="cd-dot"></span>
+            <span class="cd-dot" />
             <span class="cd-label">Features</span>
           </a>
         </li>
         <li>
           <a
             href="javascript:void(0)"
-            @click="scrollToElement('blogs')"
             data-number="3"
+            @click="scrollToElement('blogs')"
           >
-            <span class="cd-dot"></span>
+            <span class="cd-dot" />
             <span class="cd-label">Blogs</span>
           </a>
         </li>
         <li>
           <a
             href="javascript:void(0)"
-            @click="scrollToElement('teams')"
             data-number="4"
+            @click="scrollToElement('teams')"
           >
-            <span class="cd-dot"></span>
+            <span class="cd-dot" />
             <span class="cd-label">Teams</span>
           </a>
         </li>
         <li>
           <a
             href="javascript:void(0)"
-            @click="scrollToElement('projects')"
             data-number="5"
+            @click="scrollToElement('projects')"
           >
-            <span class="cd-dot"></span>
+            <span class="cd-dot" />
             <span class="cd-label">Projects</span>
           </a>
         </li>
         <li>
           <a
             href="javascript:void(0)"
-            @click="scrollToElement('pricing')"
             data-number="6"
+            @click="scrollToElement('pricing')"
           >
-            <span class="cd-dot"></span>
+            <span class="cd-dot" />
             <span class="cd-label">Pricing</span>
           </a>
         </li>
         <li>
           <a
             href="javascript:void(0)"
-            @click="scrollToElement('testimonials')"
             data-number="7"
+            @click="scrollToElement('testimonials')"
           >
-            <span class="cd-dot"></span>
+            <span class="cd-dot" />
             <span class="cd-label">Testimonials</span>
           </a>
         </li>
         <li>
           <a
             href="javascript:void(0)"
-            @click="scrollToElement('contactus')"
             data-number="8"
+            @click="scrollToElement('contactus')"
           >
-            <span class="cd-dot"></span>
+            <span class="cd-dot" />
             <span class="cd-label">Contact Us</span>
           </a>
         </li>
@@ -129,18 +129,17 @@
 </template>
 
 <script>
-import Headers from "./sections/Headers";
-import Features from "./sections/Features";
-import Blogs from "./sections/Blogs";
-import Teams from "./sections/Teams";
-import Projects from "./sections/Projects";
-import Pricing from "./sections/Pricing";
-import Testimonials from "./sections/Testimonials";
-import ContactUs from "./sections/ContactUs";
-import Mixins from "@/plugins/basicMixins";
+import Headers from './sections/Headers';
+import Features from './sections/Features';
+import Blogs from './sections/Blogs';
+import Teams from './sections/Teams';
+import Projects from './sections/Projects';
+import Pricing from './sections/Pricing';
+import Testimonials from './sections/Testimonials';
+import ContactUs from './sections/ContactUs';
+import Mixins from '@/plugins/basicMixins';
 
 export default {
-  mixins: [Mixins.VerticalNav],
   components: {
     Headers,
     Features,
@@ -150,7 +149,8 @@ export default {
     Pricing,
     Testimonials,
     ContactUs
-  }
+  },
+  mixins: [Mixins.VerticalNav]
 };
 </script>
 

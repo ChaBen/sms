@@ -17,30 +17,30 @@
       <div class="md-layout">
         <div class="md-layout-item md-size-33 md-small-size-100">
           <template v-for="item in ExamplePagesSection1">
-            <h4 class="title" :key="item.key">{{ item.name }}</h4>
-            <div class="card" :key="item.key">
+            <h4 :key="item.key" class="title">{{ item.name }}</h4>
+            <div :key="item.key" class="card">
               <a :key="item.key" :href="`#/${item.link}`" target="_blank">
-                <img :key="item.key" :src="item.img" alt="" />
+                <img :key="item.key" :src="item.img" alt="">
               </a>
             </div>
           </template>
         </div>
         <div class="md-layout-item md-size-33 md-small-size-100">
           <template v-for="item in ExamplePagesSection2">
-            <h4 class="title" :key="item.key">{{ item.name }}</h4>
-            <div class="card" :key="item.key">
+            <h4 :key="item.key" class="title">{{ item.name }}</h4>
+            <div :key="item.key" class="card">
               <a :key="item.key" :href="`#/${item.link}`" target="_blank">
-                <img :key="item.key" :src="item.img" alt="" />
+                <img :key="item.key" :src="item.img" alt="">
               </a>
             </div>
           </template>
         </div>
         <div class="md-layout-item md-size-33 md-small-size-100">
           <template v-for="item in ExamplePagesSection3">
-            <h4 class="title" :key="item.key">{{ item.name }}</h4>
-            <div class="card" :key="item.key">
+            <h4 :key="item.key" class="title">{{ item.name }}</h4>
+            <div :key="item.key" class="card">
               <a :key="item.key" :href="`#/${item.link}`" target="_blank">
-                <img :key="item.key" :src="item.img" alt="" />
+                <img :key="item.key" :src="item.img" alt="">
               </a>
             </div>
           </template>
@@ -56,73 +56,73 @@ export default {
     return {
       ExamplePagesSection1: [
         {
-          name: "About Us",
-          link: "about-us",
-          img: require("@/assets/img/example-pages/ex-about-us.jpg")
+          name: 'About Us',
+          link: 'about-us',
+          img: require('@/assets/img/example-pages/ex-about-us.jpg')
         },
         {
-          name: "Landing Page",
-          link: "landing-page",
-          img: require("@/assets/img/example-pages/ex-landing.jpg")
+          name: 'Landing Page',
+          link: 'landing-page',
+          img: require('@/assets/img/example-pages/ex-landing.jpg')
         },
         {
-          name: "Ecommerce Page",
-          link: "ecommerce-page",
-          img: require("@/assets/img/example-pages/ex-ecommerce.jpg")
+          name: 'Ecommerce Page',
+          link: 'ecommerce-page',
+          img: require('@/assets/img/example-pages/ex-ecommerce.jpg')
         }
       ],
       ExamplePagesSection2: [
         {
-          name: "Blog Post",
-          link: "blog-post",
-          img: require("@/assets/img/example-pages/ex-blog-post.jpg")
+          name: 'Blog Post',
+          link: 'blog-post',
+          img: require('@/assets/img/example-pages/ex-blog-post.jpg')
         },
         {
-          name: "Product Page",
-          link: "product-page",
-          img: require("@/assets/img/example-pages/ex-product.jpg")
+          name: 'Product Page',
+          link: 'product-page',
+          img: require('@/assets/img/example-pages/ex-product.jpg')
         },
         {
-          name: "Login Page",
-          link: "login-page",
-          img: require("@/assets/img/example-pages/ex-login.jpg")
+          name: 'Login Page',
+          link: 'login-page',
+          img: require('@/assets/img/example-pages/ex-login.jpg')
         },
         {
-          name: "Shopping Cart",
-          link: "shopping-cart",
-          img: require("@/assets/img/example-pages/ex-shopping.jpg")
+          name: 'Shopping Cart',
+          link: 'shopping-cart',
+          img: require('@/assets/img/example-pages/ex-shopping.jpg')
         }
       ],
       ExamplePagesSection3: [
         {
-          name: "Pricing Page",
-          link: "pricing-page",
-          img: require("@/assets/img/example-pages/ex-pricing.jpg")
+          name: 'Pricing Page',
+          link: 'pricing-page',
+          img: require('@/assets/img/example-pages/ex-pricing.jpg')
         },
         {
-          name: "Signup Page",
-          link: "signup-page",
-          img: require("@/assets/img/example-pages/ex-register.jpg")
+          name: 'Signup Page',
+          link: 'signup-page',
+          img: require('@/assets/img/example-pages/ex-register.jpg')
         },
         {
-          name: "Profile Page",
-          link: "profile-page",
-          img: require("@/assets/img/example-pages/ex-profile.jpg")
+          name: 'Profile Page',
+          link: 'profile-page',
+          img: require('@/assets/img/example-pages/ex-profile.jpg')
         },
         {
-          name: "Blog Posts",
-          link: "blog-posts",
-          img: require("@/assets/img/example-pages/ex-blog-posts.jpg")
+          name: 'Blog Posts',
+          link: 'blog-posts',
+          img: require('@/assets/img/example-pages/ex-blog-posts.jpg')
         },
         {
-          name: "Contact Us",
-          link: "contact-us",
-          img: require("@/assets/img/example-pages/ex-contact.jpg")
+          name: 'Contact Us',
+          link: 'contact-us',
+          img: require('@/assets/img/example-pages/ex-contact.jpg')
         },
         {
-          name: "Error Page",
-          link: "error-page",
-          img: require("@/assets/img/example-pages/ex-error.jpg")
+          name: 'Error Page',
+          link: 'error-page',
+          img: require('@/assets/img/example-pages/ex-error.jpg')
         }
       ]
     };

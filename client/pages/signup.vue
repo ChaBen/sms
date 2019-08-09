@@ -11,16 +11,16 @@
                   <div class="md-layout-item md-size-50 md-small-size-100 ml-auto">
                     <template v-for="item in contentLeft">
                       <info-areas
-                        text-left
                         :key="item.title"
+                        text-left
                         info-horizontal
                         :icon-color="item.colorIcon"
                         :icon="item.icon"
                       >
-                        <h4 class="info-title" slot="title">
+                        <h4 slot="title" class="info-title">
                           {{ item.title }}
                         </h4>
-                        <div class="description" slot="content">
+                        <div slot="content" class="description">
                           <p>{{ item.description }}</p>
                         </div>
                       </info-areas>
@@ -43,16 +43,16 @@
                       <md-field class="md-form-group">
                         <md-icon>email</md-icon>
                         <label>이메일...</label>
-                        <md-input v-model="email" type="email"></md-input>
+                        <md-input v-model="email" type="email" />
                       </md-field>
                       <md-field class="md-form-group">
                         <md-icon>lock_outline</md-icon>
                         <label>비밀번호...</label>
-                        <md-input v-model="password" type="password"></md-input>
+                        <md-input v-model="password" type="password" />
                       </md-field>
                       <md-checkbox v-model="boolean">I agree to the<a>terms and conditions</a>.</md-checkbox>
                       <div class="button-container justify-content-center">
-                        <md-button @click="signup" class="md-info md-round mt-3">가입하기</md-button>
+                        <md-button class="md-info md-round mt-3" @click="signup">가입하기</md-button>
                       </div>
                     </form>
                   </div>
@@ -69,8 +69,8 @@
 
 <script>
 import { mapActions } from 'vuex';
-import { InfoAreas } from "@/components";
-import Mixins from "@/plugins/basicMixins";
+import { InfoAreas } from '@/components';
+import Mixins from '@/plugins/basicMixins';
 
 import Footer from '@/components/layout/InnerFooter';
 
@@ -80,32 +80,32 @@ export default {
     Footer
   },
   mixins: [Mixins.HeaderImage],
-  bodyClass: "signup-page",
+  bodyClass: 'signup-page',
   data: () => ({
     boolean: null,
-    image: require("@/assets/img/bg7.jpg"),
+    image: require('@/assets/img/bg7.jpg'),
     email: '',
     password: '',
     contentLeft: [
       {
-        colorIcon: "success",
-        icon: "alarm",
-        title: "가입",
-        description: "인증없이 이메일 비밀번호로 3초만에 가입"
+        colorIcon: 'success',
+        icon: 'alarm',
+        title: '가입',
+        description: '인증없이 이메일 비밀번호로 3초만에 가입'
       },
 
       {
-        colorIcon: "warning",
-        icon: "verified_user",
-        title: "보안",
-        description: "최신 보안기술 5,000G 방어강화 서버"
+        colorIcon: 'warning',
+        icon: 'verified_user',
+        title: '보안',
+        description: '최신 보안기술 5,000G 방어강화 서버'
       },
 
       {
-        colorIcon: "danger",
-        icon: "error_outline",
-        title: "주의",
-        description: "불유효한 이메일로 가입시 아이디찾기 불가능"
+        colorIcon: 'danger',
+        icon: 'error_outline',
+        title: '주의',
+        description: '불유효한 이메일로 가입시 아이디찾기 불가능'
       }
     ]
   }),

@@ -19,21 +19,21 @@
         </div>
         <div class="md-layout-item md-size-60 md-small-size-100 mx-auto">
           <div class="image-container">
-            <img class="ipad-img" :src="sectionContent.img1" />
+            <img class="ipad-img" :src="sectionContent.img1">
             <img
               class="area-img"
               data-aos="fade-up"
               data-aos-easing="mk-easing"
               data-aos-duration="750"
               :src="sectionContent.img2"
-            />
+            >
             <img
               class="info-img"
               data-aos="fade-up"
               data-aos-easing="mk-easing"
               data-aos-duration="750"
               :src="sectionContent.img3"
-            />
+            >
           </div>
         </div>
       </div>
@@ -42,17 +42,17 @@
 </template>
 
 <script>
-import AOS from "aos";
-import "aos/dist/aos.css";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 export default {
-  name: "content-areas",
+  name: 'ContentAreas',
   data() {
     return {
       sectionContent: {
-        img1: require("@/assets/img/section-components/presentation-ipad.jpg"),
-        img2: require("@/assets/img/section-components/ipad-comments.jpg"),
-        img3: require("@/assets/img/section-components/ipad-table.jpg")
+        img1: require('@/assets/img/section-components/presentation-ipad.jpg'),
+        img2: require('@/assets/img/section-components/ipad-comments.jpg'),
+        img3: require('@/assets/img/section-components/ipad-table.jpg')
       }
     };
   },

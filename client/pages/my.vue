@@ -97,7 +97,7 @@ export default {
   },
   mixins: [Mixins.HeaderImage],
   data: () => ({
-    image: require('@/assets/img/bg11.jpg'),
+    image: require('@/assets/img/bg11.jpg')
   })
 }
 </script>

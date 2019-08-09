@@ -20,9 +20,9 @@
           :class="{ toggled: toggledClass }"
           @click="toggleNavbarMobile()"
         >
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
+          <span class="icon-bar" />
+          <span class="icon-bar" />
+          <span class="icon-bar" />
         </md-button>
 
         <div class="md-collapse">
@@ -43,7 +43,7 @@
               </li>
               <li class="md-list-item">
                 <nuxt-link to="/pricing" class="md-list-item-router md-list-item-container md-button-clean dropdown">
-                  <div class="md-list-item-content">구매</div>
+                  <div class="md-list-item-content">충전</div>
                 </nuxt-link>
               </li>
               <li v-if="isAuthenticated" class="md-list-item">
@@ -52,7 +52,7 @@
                 </nuxt-link>
               </li>
               <li v-if="isAuthenticated" class="md-list-item">
-                <a @click.prevent="exit" class="md-list-item-router md-list-item-container md-button-clean dropdown">
+                <a class="md-list-item-router md-list-item-container md-button-clean dropdown" @click.prevent="exit">
                   <div class="md-list-item-content">로그아웃</div>
                 </a>
               </li>
@@ -89,7 +89,7 @@ function resizeThrottler(actualResizeHandler) {
 }
 
 import { mapState, mapActions } from 'vuex';
-import MobileMenu from "./MobileMenu";
+import MobileMenu from './MobileMenu';
 export default {
   components: {
     MobileMenu
@@ -97,17 +97,17 @@ export default {
   props: {
     type: {
       type: String,
-      default: "white",
+      default: 'white',
       validator(value) {
         return [
-          "white",
-          "default",
-          "primary",
-          "danger",
-          "success",
-          "warning",
-          "info",
-          "dark"
+          'white',
+          'default',
+          'primary',
+          'danger',
+          'success',
+          'warning',
+          'info',
+          'dark'
         ].includes(value);
       }
     },
@@ -122,38 +122,38 @@ export default {
   },
   data: () => ({
     docs_link:
-      "https://demos.creative-tim.com/vue-material-kit-pro/documentation/",
-    extraNavClasses: "",
+      'https://demos.creative-tim.com/vue-material-kit-pro/documentation/',
+    extraNavClasses: '',
     toggledClass: false,
-    brand: "국외문자",
+    brand: '국외문자',
     linksSections: [
-      { name: "headers", icon: "dns" },
-      { name: "features", icon: "build" },
-      { name: "blogs", icon: "list" },
-      { name: "teams", icon: "people" },
-      { name: "projects", icon: "assignment" },
-      { name: "pricing", icon: "monetization_on" },
-      { name: "testimonials", icon: "chat" },
-      { name: "contacts", icon: "call" }
+      { name: 'headers', icon: 'dns' },
+      { name: 'features', icon: 'build' },
+      { name: 'blogs', icon: 'list' },
+      { name: 'teams', icon: 'people' },
+      { name: 'projects', icon: 'assignment' },
+      { name: 'pricing', icon: 'monetization_on' },
+      { name: 'testimonials', icon: 'chat' },
+      { name: 'contacts', icon: 'call' }
     ],
     linksExamples: [
-      { name: "About Us", href: "about-us", icon: "account_balance" },
-      { name: "Blog Post", href: "blog-post", icon: "art_track" },
-      { name: "Blog Posts", href: "blog-posts", icon: "view_quilt" },
-      { name: "Contact Us", href: "contact-us", icon: "location_on" },
-      { name: "Landing Page", href: "landing-page", icon: "view_day" },
-      { name: "Login Page", href: "login-page", icon: "fingerprint" },
-      { name: "Pricing Page", href: "pricing-page", icon: "attach_money" },
+      { name: 'About Us', href: 'about-us', icon: 'account_balance' },
+      { name: 'Blog Post', href: 'blog-post', icon: 'art_track' },
+      { name: 'Blog Posts', href: 'blog-posts', icon: 'view_quilt' },
+      { name: 'Contact Us', href: 'contact-us', icon: 'location_on' },
+      { name: 'Landing Page', href: 'landing-page', icon: 'view_day' },
+      { name: 'Login Page', href: 'login-page', icon: 'fingerprint' },
+      { name: 'Pricing Page', href: 'pricing-page', icon: 'attach_money' },
       {
-        name: "Shopping Cart",
-        href: "shopping-cart",
-        icon: "shopping_basket"
+        name: 'Shopping Cart',
+        href: 'shopping-cart',
+        icon: 'shopping_basket'
       },
-      { name: "Ecommerce Page", href: "ecommerce-page", icon: "store" },
-      { name: "Product Page", href: "product-page", icon: "shopping_cart" },
-      { name: "Profile Page", href: "profile-page", icon: "account_circle" },
-      { name: "Signup Page", href: "signup-page", icon: "person_add" },
-      { name: "Error Page", href: "error-page", icon: "error" }
+      { name: 'Ecommerce Page', href: 'ecommerce-page', icon: 'store' },
+      { name: 'Product Page', href: 'product-page', icon: 'shopping_cart' },
+      { name: 'Profile Page', href: 'profile-page', icon: 'account_circle' },
+      { name: 'Signup Page', href: 'signup-page', icon: 'person_add' },
+      { name: 'Error Page', href: 'error-page', icon: 'error' }
     ]
   }),
   computed: {
@@ -162,9 +162,15 @@ export default {
       return this.accessToken;
     },
     showDownload() {
-      const excludedRoutes = ["index"];
+      const excludedRoutes = ['index'];
       return excludedRoutes.every(r => r !== this.$route.name);
     }
+  },
+  mounted() {
+    document.addEventListener('scroll', this.scrollListener);
+  },
+  beforeDestroy() {
+    document.removeEventListener('scroll', this.scrollListener);
   },
   methods: {
     ...mapActions('auth', ['logout']),
@@ -173,16 +179,16 @@ export default {
       this.$router.push('/');
     },
     bodyClick() {
-      let bodyClick = document.getElementById("bodyClick");
+      const bodyClick = document.getElementById('bodyClick');
 
       if (bodyClick === null) {
-        let body = document.querySelector("body");
-        let elem = document.createElement("div");
-        elem.setAttribute("id", "bodyClick");
+        const body = document.querySelector('body');
+        const elem = document.createElement('div');
+        elem.setAttribute('id', 'bodyClick');
         body.appendChild(elem);
 
-        let bodyClick = document.getElementById("bodyClick");
-        bodyClick.addEventListener("click", this.toggleNavbarMobile);
+        const bodyClick = document.getElementById('bodyClick');
+        bodyClick.addEventListener('click', this.toggleNavbarMobile);
       } else {
         bodyClick.remove();
       }
@@ -193,29 +199,23 @@ export default {
       this.bodyClick();
     },
     handleScroll() {
-      let scrollValue =
+      const scrollValue =
         document.body.scrollTop || document.documentElement.scrollTop;
-      let navbarColor = document.getElementById("toolbar");
+      const navbarColor = document.getElementById('toolbar');
       this.currentScrollValue = scrollValue;
       if (this.colorOnScroll > 0 && scrollValue > this.colorOnScroll) {
         this.extraNavClasses = `md-${this.type}`;
-        navbarColor.classList.remove("md-transparent");
+        navbarColor.classList.remove('md-transparent');
       } else {
         if (this.extraNavClasses) {
-          this.extraNavClasses = "";
-          navbarColor.classList.add("md-transparent");
+          this.extraNavClasses = '';
+          navbarColor.classList.add('md-transparent');
         }
       }
     },
     scrollListener() {
       resizeThrottler(this.handleScroll);
     }
-  },
-  mounted() {
-    document.addEventListener("scroll", this.scrollListener);
-  },
-  beforeDestroy() {
-    document.removeEventListener("scroll", this.scrollListener);
   }
 };
 </script>

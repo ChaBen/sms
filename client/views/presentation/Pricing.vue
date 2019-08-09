@@ -15,16 +15,16 @@
             :on-change="changePrices"
           >
             <!-- here you can add your content for tab-content -->
-            <template slot="tab-pane-1"> </template>
-            <template slot="tab-pane-2"> </template>
+            <template slot="tab-pane-1" />
+            <template slot="tab-pane-2" />
           </tabs>
 
-          <p class="description" v-if="personal">
+          <p v-if="personal" class="description">
             Good for personal websites, school projects, startups or any other
             project where your users will not be charged for using it. Create
             one single website/app for one client.
           </p>
-          <p class="description" v-else>
+          <p v-else class="description">
             Good for business projects, multiple websites for clients or for
             creating themes where your users will be charged for using it.
             Create multiple websites/apps for multiple clients.
@@ -39,12 +39,12 @@
                   <h6 class="card-category text-gray">Html Package</h6>
                   <h1 class="card-title">
                     <small>$</small>
-                    <template v-if="personal"
-                      >79</template
-                    >
-                    <template v-else
-                      >319</template
-                    >
+                    <template
+                      v-if="personal"
+                    >79</template>
+                    <template
+                      v-else
+                    >319</template>
                   </h1>
                   <ul>
                     <li>
@@ -91,12 +91,12 @@
                   </h6>
                   <h1 class="card-title">
                     <small>$</small>
-                    <template v-if="personal"
-                      >139</template
-                    >
-                    <template v-else
-                      >599</template
-                    >
+                    <template
+                      v-if="personal"
+                    >139</template>
+                    <template
+                      v-else
+                    >599</template>
                     <small>/mo</small>
                   </h1>
                   <ul>
@@ -152,15 +152,18 @@
         <div class="md-layout">
           <div class="md-layout-item">
             <h4 class="title">Thank you for sharing!</h4>
-            <md-button href="javascript:void(0)" class="md-twitter md-round"
-              ><i class="fab fa-twitter"></i> Twitter</md-button
-            >
-            <md-button href="javascript:void(0)" class="md-facebook md-round"
-              ><i class="fab fa-facebook-f"></i> Facebook</md-button
-            >
-            <md-button href="javascript:void(0)" class="md-google md-round"
-              ><i class="fab fa-google-plus-g"></i> Google</md-button
-            >
+            <md-button
+              href="javascript:void(0)"
+              class="md-twitter md-round"
+            ><i class="fab fa-twitter" /> Twitter</md-button>
+            <md-button
+              href="javascript:void(0)"
+              class="md-facebook md-round"
+            ><i class="fab fa-facebook-f" /> Facebook</md-button>
+            <md-button
+              href="javascript:void(0)"
+              class="md-google md-round"
+            ><i class="fab fa-google-plus-g" /> Google</md-button>
           </div>
         </div>
       </div>
@@ -169,9 +172,9 @@
 </template>
 
 <script>
-import { Tabs, PricingCard } from "@/components";
+import { Tabs, PricingCard } from '@/components';
 export default {
-  name: "pricing",
+  name: 'Pricing',
   components: {
     Tabs,
     PricingCard

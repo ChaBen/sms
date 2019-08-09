@@ -5,16 +5,16 @@
       :class="{ disabled: value === 1, 'no-arrows': noArrows }"
     >
       <a class="page-link" aria-label="Previous" @click="prevPage">
-        <template v-if="withText"
-          >Prev</template
-        >
-        <i class="fas fa-angle-double-left" v-else></i>
+        <template
+          v-if="withText"
+        >Prev</template>
+        <i v-else class="fas fa-angle-double-left" />
       </a>
     </li>
     <li
-      class="page-item"
       v-for="item in range(minPage, maxPage)"
       :key="item"
+      class="page-item"
       :class="{ active: value === item }"
     >
       <a class="page-link" @click="changePage(item)">{{ item }}</a>
@@ -24,30 +24,30 @@
       :class="{ disabled: value === totalPages, 'no-arrows': noArrows }"
     >
       <a class="page-link" aria-label="Next" @click="nextPage">
-        <template v-if="withText"
-          >Next</template
-        >
-        <i class="fas fa-angle-double-right" v-else></i>
+        <template
+          v-if="withText"
+        >Next</template>
+        <i v-else class="fas fa-angle-double-right" />
       </a>
     </li>
   </ul>
 </template>
 <script>
 export default {
-  name: "pagination",
+  name: 'Pagination',
   props: {
     type: {
       type: String,
-      default: "primary",
+      default: 'primary',
       validator: value => {
         return [
-          "default",
-          "primary",
-          "danger",
-          "success",
-          "warning",
-          "info",
-          "rose"
+          'default',
+          'primary',
+          'danger',
+          'success',
+          'warning',
+          'info',
+          'rose'
         ].includes(value);
       }
     },
@@ -69,6 +69,11 @@ export default {
       type: Number,
       default: 1
     }
+  },
+  data() {
+    return {
+      defaultPagesToDisplay: 5
+    };
   },
   computed: {
     paginationClass() {
@@ -113,39 +118,34 @@ export default {
       }
     }
   },
-  data() {
-    return {
-      defaultPagesToDisplay: 5
-    };
+  watch: {
+    perPage() {
+      this.$emit('input', 1);
+    },
+    total() {
+      this.$emit('input', 1);
+    }
   },
   methods: {
     range(min, max) {
-      let arr = [];
+      const arr = [];
       for (let i = min; i <= max; i++) {
         arr.push(i);
       }
       return arr;
     },
     changePage(item) {
-      this.$emit("input", item);
+      this.$emit('input', item);
     },
     nextPage() {
       if (this.value < this.totalPages) {
-        this.$emit("input", this.value + 1);
+        this.$emit('input', this.value + 1);
       }
     },
     prevPage() {
       if (this.value > 1) {
-        this.$emit("input", this.value - 1);
+        this.$emit('input', this.value - 1);
       }
-    }
-  },
-  watch: {
-    perPage() {
-      this.$emit("input", 1);
-    },
-    total() {
-      this.$emit("input", 1);
     }
   }
 };

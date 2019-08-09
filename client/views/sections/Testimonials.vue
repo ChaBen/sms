@@ -36,7 +36,7 @@
                     <img
                       class="img"
                       :src="sectionTestimonials1.testimonials1"
-                    />
+                    >
                   </a>
                 </div>
               </template>
@@ -61,7 +61,7 @@
                     <img
                       class="img"
                       :src="sectionTestimonials1.testimonials2"
-                    />
+                    >
                   </a>
                 </div>
               </template>
@@ -85,7 +85,7 @@
                     <img
                       class="img"
                       :src="sectionTestimonials1.testimonials3"
-                    />
+                    >
                   </a>
                 </div>
               </template>
@@ -113,7 +113,7 @@
                       <img
                         class="img"
                         :src="sectionTestimonials2.testimonials1"
-                      />
+                      >
                     </a>
                   </div>
                   <template slot="cardContent">
@@ -121,7 +121,7 @@
                       "I speak yell scream directly at the old guard on behalf
                       of the future. I gotta say at that time I’d like to meet
                       Kanye I speak yell scream directly at the old guard on
-                      behalf of the future. My brother Chance!!! <br />Thank you
+                      behalf of the future. My brother Chance!!! <br>Thank you
                       for letting me work on this masterpiece. One of my
                       favorite people."
                     </h5>
@@ -145,7 +145,7 @@
                       <img
                         class="img"
                         :src="sectionTestimonials2.testimonials2"
-                      />
+                      >
                     </a>
                   </div>
                   <template slot="cardContent">
@@ -192,7 +192,7 @@
             <testimonial-card card-plain>
               <div slot="cardAvatarTop" class="md-card-avatar mt-0">
                 <a href="javascript:void(0)">
-                  <img class="img" :src="sectionTestimonials1.testimonials1" />
+                  <img class="img" :src="sectionTestimonials1.testimonials1">
                 </a>
               </div>
               <template slot="cardContent">
@@ -213,7 +213,7 @@
             <testimonial-card card-plain>
               <div slot="cardAvatarTop" class="md-card-avatar mt-0">
                 <a href="javascript:void(0)">
-                  <img class="img" :src="sectionTestimonials1.testimonials2" />
+                  <img class="img" :src="sectionTestimonials1.testimonials2">
                 </a>
               </div>
               <template slot="cardContent">
@@ -233,7 +233,7 @@
             <testimonial-card card-plain>
               <div slot="cardAvatarTop" class="md-card-avatar mt-0">
                 <a href="javascript:void(0)">
-                  <img class="img" :src="sectionTestimonials3.testimonials1" />
+                  <img class="img" :src="sectionTestimonials3.testimonials1">
                 </a>
               </div>
               <template slot="cardContent">
@@ -256,27 +256,27 @@
 </template>
 
 <script>
-import { TestimonialCard } from "@/components";
+import { TestimonialCard } from '@/components';
 
 export default {
-  name: "testimonials",
+  name: 'Testimonials',
   components: {
     TestimonialCard
   },
   data() {
     return {
-      testimonials1: require("@/assets/img/dg2.jpg"),
+      testimonials1: require('@/assets/img/dg2.jpg'),
       sectionTestimonials1: {
-        testimonials1: require("@/assets/img/faces/card-profile1-square.jpg"),
-        testimonials2: require("@/assets/img/faces/card-profile4-square.jpg"),
-        testimonials3: require("@/assets/img/faces/card-profile2-square.jpg")
+        testimonials1: require('@/assets/img/faces/card-profile1-square.jpg'),
+        testimonials2: require('@/assets/img/faces/card-profile4-square.jpg'),
+        testimonials3: require('@/assets/img/faces/card-profile2-square.jpg')
       },
       sectionTestimonials2: {
-        testimonials1: require("@/assets/img/faces/kendall.jpg"),
-        testimonials2: require("@/assets/img/faces/christian.jpg")
+        testimonials1: require('@/assets/img/faces/kendall.jpg'),
+        testimonials2: require('@/assets/img/faces/christian.jpg')
       },
       sectionTestimonials3: {
-        testimonials1: require("@/assets/img/faces/card-profile6-square.jpg")
+        testimonials1: require('@/assets/img/faces/card-profile6-square.jpg')
       }
     };
   },

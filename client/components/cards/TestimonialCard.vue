@@ -1,24 +1,24 @@
 <template>
   <md-card class="md-card-testimonial" :class="{ 'md-card-plain': cardPlain }">
     <md-card-header>
-      <div class="icon icon-black" v-if="$slots.icon">
-        <slot name="icon"></slot>
+      <div v-if="$slots.icon" class="icon icon-black">
+        <slot name="icon" />
       </div>
-      <slot name="cardAvatarTop"></slot>
+      <slot name="cardAvatarTop" />
     </md-card-header>
     <md-card-content v-if="$slots.cardContent">
-      <slot name="cardContent"></slot>
+      <slot name="cardContent" />
     </md-card-content>
 
-    <md-card-actions class="justify-content-center" v-if="$slots.cardAction">
-      <slot name="cardAction"></slot>
+    <md-card-actions v-if="$slots.cardAction" class="justify-content-center">
+      <slot name="cardAction" />
     </md-card-actions>
   </md-card>
 </template>
 
 <script>
 export default {
-  name: "testimonial-card",
+  name: 'TestimonialCard',
   props: {
     cardPlain: Boolean
   }

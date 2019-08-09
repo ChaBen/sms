@@ -1,11 +1,11 @@
 <template>
-  <div class="slider" :class="[`slider-${type}`]" :disabled="disabled"></div>
+  <div class="slider" :class="[`slider-${type}`]" :disabled="disabled" />
 </template>
 <script>
-import noUiSlider from "nouislider";
+import noUiSlider from 'nouislider';
 
 export default {
-  name: "slider",
+  name: 'Slider',
   props: {
     value: [String, Array, Number],
     disabled: Boolean,
@@ -28,7 +28,7 @@ export default {
     },
     type: {
       type: String,
-      default: ""
+      default: ''
     },
     options: {
       type: Object,
@@ -41,26 +41,6 @@ export default {
     return {
       slider: null
     };
-  },
-  methods: {
-    createSlider() {
-      noUiSlider.create(this.$el, {
-        start: this.value || this.start,
-        connect: this.connect,
-        range: this.range,
-        ...this.options
-      });
-      const slider = this.$el.noUiSlider;
-      slider.on("slide", () => {
-        let value = slider.get();
-        if (value !== this.value) {
-          this.$emit("input", value);
-        }
-      });
-    }
-  },
-  mounted() {
-    this.createSlider();
   },
   watch: {
     value(newValue, oldValue) {
@@ -78,6 +58,26 @@ export default {
           slider.set(newValue);
         }
       }
+    }
+  },
+  mounted() {
+    this.createSlider();
+  },
+  methods: {
+    createSlider() {
+      noUiSlider.create(this.$el, {
+        start: this.value || this.start,
+        connect: this.connect,
+        range: this.range,
+        ...this.options
+      });
+      const slider = this.$el.noUiSlider;
+      slider.on('slide', () => {
+        const value = slider.get();
+        if (value !== this.value) {
+          this.$emit('input', value);
+        }
+      });
     }
   }
 };

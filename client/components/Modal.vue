@@ -1,36 +1,36 @@
 <template>
   <slide-y-up-transition :duration="300">
     <div class="modal-wrapper">
-      <div class="modal-container" :class="type" v-click-outside="closeModal">
+      <div v-click-outside="closeModal" class="modal-container" :class="type">
         <template v-if="!modalWithCard">
           <div class="modal-header">
-            <slot name="header"></slot>
+            <slot name="header" />
           </div>
 
-          <div class="modal-body text-center" v-if="$slots.body">
-            <slot name="body"></slot>
+          <div v-if="$slots.body" class="modal-body text-center">
+            <slot name="body" />
           </div>
 
-          <div class="modal-footer" v-if="$slots.footer">
-            <slot name="footer"></slot>
+          <div v-if="$slots.footer" class="modal-footer">
+            <slot name="footer" />
           </div>
         </template>
 
         <template v-else>
           <md-card :class="cardClasses">
-            <div class="modal-header" v-if="$slots.header">
-              <slot name="header"></slot>
+            <div v-if="$slots.header" class="modal-header">
+              <slot name="header" />
             </div>
 
-            <div class="modal-body" v-if="$slots.body">
+            <div v-if="$slots.body" class="modal-body">
               <md-card-content>
-                <slot name="body"></slot>
+                <slot name="body" />
               </md-card-content>
             </div>
 
-            <div class="modal-footer" v-if="$slots.footer">
+            <div v-if="$slots.footer" class="modal-footer">
               <md-card-actions>
-                <slot name="footer"></slot>
+                <slot name="footer" />
               </md-card-actions>
             </div>
           </md-card>
@@ -41,10 +41,10 @@
 </template>
 
 <script>
-import { SlideYUpTransition } from "vue2-transitions";
+import { SlideYUpTransition } from 'vue2-transitions';
 
 export default {
-  name: "modal",
+  name: 'Modal',
   components: {
     SlideYUpTransition
   },
@@ -55,7 +55,7 @@ export default {
   },
   methods: {
     closeModal: function() {
-      this.$emit("close");
+      this.$emit('close');
     }
   }
 };

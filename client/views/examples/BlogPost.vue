@@ -15,10 +15,10 @@
               The last 48 hours of my life were total madness. This is what I
               did.
             </h4>
-            <br />
-            <md-button class="md-success md-lg md-round"
-              ><md-icon>format_align_left</md-icon>Read Article</md-button
-            >
+            <br>
+            <md-button
+              class="md-success md-lg md-round"
+            ><md-icon>format_align_left</md-icon>Read Article</md-button>
           </div>
         </div>
       </div>
@@ -35,8 +35,8 @@
                 information. Remember that by this time, the user is curious,
                 otherwise he wouldn't scroll to get here. Add a button if you
                 want the user to see more. We are here to make life better.
-                <br />
-                <br />
+                <br>
+                <br>
                 And now I look and look around and there’s so many Kanyes I've
                 been trying to figure out the bed design for the master bedroom
                 at our Hidden Hills compound... and thank you for turning my
@@ -61,21 +61,21 @@
                     class="img-raised rounded img-fluid"
                     alt="Raised Image"
                     :src="blogPost.blogPost1"
-                  />
+                  >
                 </div>
                 <div class="md-layout-item md-size-33 md-small-size-100">
                   <img
                     class="img-raised rounded img-fluid"
                     alt="Raised Image"
                     :src="blogPost.blogPost2"
-                  />
+                  >
                 </div>
                 <div class="md-layout-item md-size-33 md-small-size-100">
                   <img
                     class="img-raised rounded img-fluid"
                     alt="Raised Image"
                     :src="blogPost.blogPost3"
-                  />
+                  >
                 </div>
               </div>
             </div>
@@ -86,7 +86,7 @@
                 and there’s so many Kanyes I've been trying to figure out the
                 bed design for the master bedroom at our Hidden Hills
                 compound... and thank you for turning my personal jean jacket
-                into a couture piece. <br />
+                into a couture piece. <br>
                 I speak yell scream directly at the old guard on behalf of the
                 future. daytime All respect prayers and love to Phife’s family
                 Thank you for so much inspiration.
@@ -132,21 +132,18 @@
                   <md-button
                     href="javascript:void(0)"
                     class="md-google md-round"
-                    ><i class="fab fa-google"></i> 232</md-button
-                  >
+                  ><i class="fab fa-google" /> 232</md-button>
                   <md-button
                     href="javascript:void(0)"
                     class="md-twitter md-round"
-                    ><i class="fab fa-twitter"></i> 910</md-button
-                  >
+                  ><i class="fab fa-twitter" /> 910</md-button>
                   <md-button
                     href="javascript:void(0)"
                     class="md-facebook md-round"
-                    ><i class="fab fa-facebook"></i> 872</md-button
-                  >
+                  ><i class="fab fa-facebook" /> 872</md-button>
                 </div>
               </div>
-              <hr />
+              <hr>
               <profile-card
                 flex-direction-row
                 card-avatar
@@ -179,7 +176,7 @@
               <div class="comment">
                 <a class="float-left" href="javascript:void(0)">
                   <div class="avatar">
-                    <img class="comment-object" :src="comment3" alt="..." />
+                    <img class="comment-object" :src="comment3" alt="...">
                   </div>
                 </a>
                 <div class="comment-body">
@@ -211,9 +208,9 @@
                       class="md-success md-simple"
                     >
                       <md-icon>reply</md-icon> Reply
-                      <md-tooltip md-direction="top"
-                        >Reply to Comment</md-tooltip
-                      >
+                      <md-tooltip
+                        md-direction="top"
+                      >Reply to Comment</md-tooltip>
                     </md-button>
                   </div>
                 </div>
@@ -226,7 +223,7 @@
                       class="comment-object"
                       alt="Tim Picture"
                       :src="comment1"
-                    />
+                    >
                   </div>
                 </a>
                 <div class="comment-body">
@@ -248,9 +245,9 @@
                       class="md-success md-simple"
                     >
                       <md-icon>reply</md-icon> Reply
-                      <md-tooltip md-direction="top"
-                        >Reply to Comment</md-tooltip
-                      >
+                      <md-tooltip
+                        md-direction="top"
+                      >Reply to Comment</md-tooltip>
                     </md-button>
                   </div>
                   <div class="comment">
@@ -260,7 +257,7 @@
                           class="comment-object"
                           alt="64x64"
                           :src="comment3"
-                        />
+                        >
                       </div>
                     </a>
                     <div class="comment-body">
@@ -286,9 +283,9 @@
                           class="md-success md-simple"
                         >
                           <md-icon>reply</md-icon> Reply
-                          <md-tooltip md-direction="top"
-                            >Reply to Comment</md-tooltip
-                          >
+                          <md-tooltip
+                            md-direction="top"
+                          >Reply to Comment</md-tooltip>
                         </md-button>
                       </div>
                     </div>
@@ -299,13 +296,13 @@
               <div class="comment comment-post">
                 <a class="author float-left" href="javascript:void(0)">
                   <div class="avatar">
-                    <img class="comment-object" alt="64x64" :src="comment2" />
+                    <img class="comment-object" alt="64x64" :src="comment2">
                   </div>
                 </a>
                 <div class="comment-body">
                   <md-field maxlength="5">
                     <label>Write some nice stuff or nothing...</label>
-                    <md-textarea v-model="aboutme2"></md-textarea>
+                    <md-textarea v-model="aboutme2" />
                   </md-field>
                   <div class="comment-footer">
                     <md-button
@@ -327,7 +324,7 @@
         <div class="md-layout">
           <div class="md-layout-item md-size-12 md-small-size-100">
             <h2 class="title text-center">Similar Stories</h2>
-            <br />
+            <br>
             <div class="md-layout">
               <div class="md-layout-item md-size-33 md-small-size-100">
                 <blog-card
@@ -338,10 +335,10 @@
                   <template slot="cardContent">
                     <h6 class="card-category text-info">ENTERPRISE</h6>
                     <h4 class="card-title">
-                      <a href="javasript:void(0)"
-                        >Autodesk looks to future of 3D printing with Project
-                        Escher</a
-                      >
+                      <a
+                        href="javasript:void(0)"
+                      >Autodesk looks to future of 3D printing with Project
+                        Escher</a>
                     </h4>
                     <p class="card-description">
                       Like so many organizations these days, Autodesk is a
@@ -361,9 +358,9 @@
                   <template slot="cardContent">
                     <h6 class="card-category text-success">Startups</h6>
                     <h4 class="card-title">
-                      <a href="javasript:void(0)"
-                        >Lyft launching cross-platform service this week</a
-                      >
+                      <a
+                        href="javasript:void(0)"
+                      >Lyft launching cross-platform service this week</a>
                     </h4>
                     <p class="card-description">
                       Don't be scared of the truth because we need to restart
@@ -386,9 +383,9 @@
                       <md-icon class="text-danger">trending_up</md-icon> Fashion
                     </h6>
                     <h4 class="card-title">
-                      <a href="javasript:void(0)"
-                        >6 insights into the French Fashion landscape</a
-                      >
+                      <a
+                        href="javasript:void(0)"
+                      >6 insights into the French Fashion landscape</a>
                     </h4>
                     <p class="card-description">
                       Don't be scared of the truth because we need to restart
@@ -409,8 +406,8 @@
 </template>
 
 <script>
-import { Badge, ProfileCard, BlogCard } from "@/components";
-import Mixins from "@/plugins/basicMixins";
+import { Badge, ProfileCard, BlogCard } from '@/components';
+import Mixins from '@/plugins/basicMixins';
 
 export default {
   components: {
@@ -419,26 +416,26 @@ export default {
     BlogCard
   },
   mixins: [Mixins.HeaderImage],
-  bodyClass: "blog-post",
+  bodyClass: 'blog-post',
   data() {
     return {
       aboutme2: null,
-      image: require("@/assets/img/bg5.jpg"),
-      comment1: require("@/assets/img/faces/card-profile1-square.jpg"),
-      comment2: require("@/assets/img/faces/card-profile6-square.jpg"),
-      comment3: require("@/assets/img/faces/card-profile4-square.jpg"),
+      image: require('@/assets/img/bg5.jpg'),
+      comment1: require('@/assets/img/faces/card-profile1-square.jpg'),
+      comment2: require('@/assets/img/faces/card-profile6-square.jpg'),
+      comment3: require('@/assets/img/faces/card-profile4-square.jpg'),
       blogPost: {
-        blogPost1: require("@/assets/img/examples/blog4.jpg"),
-        blogPost2: require("@/assets/img/examples/blog3.jpg"),
-        blogPost3: require("@/assets/img/examples/blog1.jpg")
+        blogPost1: require('@/assets/img/examples/blog4.jpg'),
+        blogPost2: require('@/assets/img/examples/blog3.jpg'),
+        blogPost3: require('@/assets/img/examples/blog1.jpg')
       },
       cardProfile: {
-        cardProfile1: require("@/assets/img/faces/card-profile1-square.jpg")
+        cardProfile1: require('@/assets/img/faces/card-profile1-square.jpg')
       },
       cardBlog: {
-        cardBlog1: require("@/assets/img/examples/blog6.jpg"),
-        cardBlog2: require("@/assets/img/examples/blog8.jpg"),
-        cardBlog3: require("@/assets/img/examples/blog7.jpg")
+        cardBlog1: require('@/assets/img/examples/blog6.jpg'),
+        cardBlog2: require('@/assets/img/examples/blog8.jpg'),
+        cardBlog3: require('@/assets/img/examples/blog7.jpg')
       }
     };
   }

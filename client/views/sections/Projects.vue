@@ -22,11 +22,11 @@
               color-button="rose"
             >
               <!-- here you can add your content for tab-content -->
-              <template slot="tab-pane-1"> </template>
-              <template slot="tab-pane-2"> </template>
-              <template slot="tab-pane-3"> </template>
-              <template slot="tab-pane-4"> </template>
-              <template slot="tab-pane-5"> </template>
+              <template slot="tab-pane-1" />
+              <template slot="tab-pane-2" />
+              <template slot="tab-pane-3" />
+              <template slot="tab-pane-4" />
+              <template slot="tab-pane-5" />
             </tabs>
           </div>
         </div>
@@ -313,7 +313,7 @@
           </div>
           <div class="md-layout-item md-size-40 md-small-size-100 mr-auto">
             <info-areas info-horizontal icon-color="info" icon="format_paint">
-              <h4 class="info-title" slot="title">Graphic Design</h4>
+              <h4 slot="title" class="info-title">Graphic Design</h4>
               <p slot="content">
                 We've created the design of the website using modern
                 Technologies like Sketch. It was a very interesting
@@ -321,14 +321,14 @@
               </p>
             </info-areas>
             <info-areas info-horizontal icon-color="primary" icon="code">
-              <h4 class="info-title" slot="title">Fully Coded in HTML5</h4>
+              <h4 slot="title" class="info-title">Fully Coded in HTML5</h4>
               <p slot="content">
                 We've developed the website with HTML5 and CSS3. The client has
                 access to the code using GitHub.
               </p>
             </info-areas>
             <info-areas info-horizontal icon-color="danger" icon="dashboard">
-              <h4 class="info-title" slot="title">CMS Admin Dashboard</h4>
+              <h4 slot="title" class="info-title">CMS Admin Dashboard</h4>
               <p slot="content">
                 There is also a Fully Customizable CMS Admin Dashboard for this
                 product.
@@ -336,25 +336,25 @@
             </info-areas>
           </div>
         </div>
-        <hr />
+        <hr>
         <div class="md-layout">
           <div class="md-layout-item md-size-40 md-small-size-100 ml-auto">
             <info-areas info-horizontal icon-color="rose" icon="timeline">
-              <h4 class="info-title" slot="title">Marketing</h4>
+              <h4 slot="title" class="info-title">Marketing</h4>
               <p slot="content">
                 We've created the marketing campaign of the website. It was a
                 very interesting collaboration.
               </p>
             </info-areas>
             <info-areas info-horizontal icon-color="success" icon="code">
-              <h4 class="info-title" slot="title">Fully Coded in HTML5</h4>
+              <h4 slot="title" class="info-title">Fully Coded in HTML5</h4>
               <p slot="content">
                 We've developed the website with HTML5 and CSS3. The client has
                 access to the code using GitHub.
               </p>
             </info-areas>
             <info-areas info-horizontal icon-color="info" icon="group">
-              <h4 class="info-title" slot="title">Build Audience</h4>
+              <h4 slot="title" class="info-title">Build Audience</h4>
               <p slot="content">
                 There is also a Fully Customizable CMS Admin Dashboard for this
                 product.
@@ -384,10 +384,10 @@
 </template>
 
 <script>
-import { Tabs, FullBgCard, InfoAreas, Badge, ProfileCard } from "@/components";
+import { Tabs, FullBgCard, InfoAreas, Badge, ProfileCard } from '@/components';
 
 export default {
-  name: "projects",
+  name: 'Projects',
   components: {
     Tabs,
     FullBgCard,
@@ -398,26 +398,26 @@ export default {
   data() {
     return {
       cardProject: {
-        cardProject1: require("@/assets/img/examples/office2.jpg"),
-        cardProject2: require("@/assets/img/examples/card-blog3.jpg"),
-        cardProject3: require("@/assets/img/examples/card-project6.jpg")
+        cardProject1: require('@/assets/img/examples/office2.jpg'),
+        cardProject2: require('@/assets/img/examples/card-blog3.jpg'),
+        cardProject3: require('@/assets/img/examples/card-project6.jpg')
       },
       cardProject2: {
         cardProject1:
-          "https://s3.amazonaws.com/creativetim_bucket/products/38/original/opt_mk_thumbnail.jpg",
+          'https://s3.amazonaws.com/creativetim_bucket/products/38/original/opt_mk_thumbnail.jpg',
         cardProject2:
-          "https://s3.amazonaws.com/creativetim_bucket/products/34/original/opt_lbd_pro_thumbnail.jpg",
+          'https://s3.amazonaws.com/creativetim_bucket/products/34/original/opt_lbd_pro_thumbnail.jpg',
         cardProject3:
-          "http://s3.amazonaws.com/creativetim_bucket/products/26/original/opt_gsdk_new_thumbnail.jpg"
+          'http://s3.amazonaws.com/creativetim_bucket/products/26/original/opt_gsdk_new_thumbnail.jpg'
       },
       cardProject3: {
-        cardProject1: require("@/assets/img/examples/card-project1.jpg"),
-        cardProject2: require("@/assets/img/examples/card-project2.jpg"),
-        cardProject3: require("@/assets/img/examples/card-project3.jpg"),
-        cardProject4: require("@/assets/img/examples/card-project4.jpg")
+        cardProject1: require('@/assets/img/examples/card-project1.jpg'),
+        cardProject2: require('@/assets/img/examples/card-project2.jpg'),
+        cardProject3: require('@/assets/img/examples/card-project3.jpg'),
+        cardProject4: require('@/assets/img/examples/card-project4.jpg')
       },
       cardProject4: {
-        cardProject1: require("@/assets/img/examples/card-project5.jpg")
+        cardProject1: require('@/assets/img/examples/card-project5.jpg')
       }
     };
   }

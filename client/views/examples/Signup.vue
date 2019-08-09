@@ -19,16 +19,16 @@
                   >
                     <template v-for="item in contentLeft">
                       <info-areas
-                        text-left
                         :key="item.title"
+                        text-left
                         info-horizontal
                         :icon-color="item.colorIcon"
                         :icon="item.icon"
                       >
-                        <h4 class="info-title" slot="title">
+                        <h4 slot="title" class="info-title">
                           {{ item.title }}
                         </h4>
-                        <div class="description" slot="content">
+                        <div slot="content" class="description">
                           <p>{{ item.description }}</p>
                         </div>
                       </info-areas>
@@ -39,21 +39,21 @@
                   >
                     <div class="social-line text-center">
                       <md-button class="md-just-icon md-round md-twitter">
-                        <i class="fab fa-twitter"></i>
+                        <i class="fab fa-twitter" />
                       </md-button>
                       <md-button class="md-just-icon md-round md-dribbble">
-                        <i class="fab fa-dribbble"></i>
+                        <i class="fab fa-dribbble" />
                       </md-button>
                       <md-button class="md-just-icon md-round md-facebook">
-                        <i class="fab fa-facebook-f"></i>
+                        <i class="fab fa-facebook-f" />
                       </md-button>
                       <h4 class="mt-3">or be classical</h4>
                     </div>
                     <form>
                       <md-field
-                        class="md-form-group"
                         v-for="item in inputs"
                         :key="item.name"
+                        class="md-form-group"
                       >
                         <md-icon>{{ item.icon }}</md-icon>
                         <label>{{ item.name }}</label>
@@ -62,18 +62,17 @@
                           :v-model="item.nameAttr"
                           :type="item.type"
                           autocomplete="current-password"
-                        ></md-input>
+                        />
                       </md-field>
-                      <md-checkbox v-model="boolean"
-                        >I agree to the
-                        <a>terms and conditions</a>.</md-checkbox
-                      >
+                      <md-checkbox
+                        v-model="boolean"
+                      >I agree to the
+                        <a>terms and conditions</a>.</md-checkbox>
                       <div class="button-container justify-content-center">
                         <md-button
                           href="javascript:void(0)"
                           class="md-success md-round mt-3"
-                          >Get Started</md-button
-                        >
+                        >Get Started</md-button>
                       </div>
                     </form>
                   </div>
@@ -111,9 +110,10 @@
           </nav>
           <div class="copyright">
             &copy; {{ year }}, made with <md-icon>favorite</md-icon> by
-            <a href="https://www.creative-tim.com/" target="_blank"
-              >Creative Tim</a
-            >
+            <a
+              href="https://www.creative-tim.com/"
+              target="_blank"
+            >Creative Tim</a>
             for a better web.
           </div>
         </div>
@@ -123,65 +123,65 @@
 </template>
 
 <script>
-import { InfoAreas } from "@/components";
-import Mixins from "@/plugins/basicMixins";
+import { InfoAreas } from '@/components';
+import Mixins from '@/plugins/basicMixins';
 
 export default {
   components: {
     InfoAreas
   },
   mixins: [Mixins.HeaderImage],
-  bodyClass: "signup-page",
+  bodyClass: 'signup-page',
   data() {
     return {
       boolean: null,
-      image: require("@/assets/img/bg7.jpg"),
+      image: require('@/assets/img/bg7.jpg'),
       year: new Date().getFullYear(),
       contentLeft: [
         {
-          colorIcon: "success",
-          icon: "timeline",
-          title: "Marketing",
+          colorIcon: 'success',
+          icon: 'timeline',
+          title: 'Marketing',
           description:
             "We've created the marketing campaign of the website. It was a very interesting collaboration."
         },
 
         {
-          colorIcon: "danger",
-          icon: "code",
-          title: "Fully Coded in HTML5",
+          colorIcon: 'danger',
+          icon: 'code',
+          title: 'Fully Coded in HTML5',
           description:
             "We've developed the website with HTML5 and CSS3. The client has access to the code using GitHub."
         },
 
         {
-          colorIcon: "info",
-          icon: "group",
-          title: "Built Audience",
+          colorIcon: 'info',
+          icon: 'group',
+          title: 'Built Audience',
           description:
-            "There is also a Fully Customizable CMS Admin Dashboard for this product."
+            'There is also a Fully Customizable CMS Admin Dashboard for this product.'
         }
       ],
       inputs: [
         {
-          icon: "face",
-          name: "First Name...",
-          nameAttr: "firstname",
-          type: "text"
+          icon: 'face',
+          name: 'First Name...',
+          nameAttr: 'firstname',
+          type: 'text'
         },
 
         {
-          icon: "email",
-          name: "Email...",
-          nameAttr: "email",
-          type: "email"
+          icon: 'email',
+          name: 'Email...',
+          nameAttr: 'email',
+          type: 'email'
         },
 
         {
-          icon: "lock_outline",
-          name: "Password..",
-          nameAttr: "password",
-          type: "password"
+          icon: 'lock_outline',
+          name: 'Password..',
+          nameAttr: 'password',
+          type: 'password'
         }
       ]
     };

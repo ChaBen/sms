@@ -4,7 +4,7 @@
       <div class="md-layout">
         <div class="md-layout-item md-size-50 md-small-size-100 mx-auto">
           <div class="icon-github">
-            <i class="fab fa-github"></i>
+            <i class="fab fa-github" />
           </div>
           <div class="section-description">
             <h2 class="title">Free Demo</h2>
@@ -21,21 +21,20 @@
                 class="md-rose md-round"
                 href="https://github.com/creativetimofficial/ct-vue-material-kit-pro"
                 target="_blank"
-                >View Demo on Github</md-button
-              >
+              >View Demo on Github</md-button>
             </div>
             <div class="git-button">
               <!-- Star on GitHub -->
               <gh-btns-star
                 slug="creativetimofficial/ct-vue-material-kit-pro"
                 show-count
-              ></gh-btns-star>
+              />
 
               <!-- Fork on GitHub -->
               <gh-btns-fork
                 slug="creativetimofficial/ct-vue-material-kit-pro"
                 show-count
-              ></gh-btns-fork>
+              />
             </div>
           </div>
         </div>
@@ -102,7 +101,7 @@
 
 <script>
 export default {
-  name: "github"
+  name: 'Github'
 };
 </script>
 

@@ -20,21 +20,21 @@
               class="components-macbook"
               :src="sectionComponents.img1"
               alt=""
-            />
-            <img class="table-img" :src="sectionComponents.img2" alt="" />
-            <img class="share-btn-img" :src="sectionComponents.img3" alt="" />
+            >
+            <img class="table-img" :src="sectionComponents.img2" alt="">
+            <img class="share-btn-img" :src="sectionComponents.img3" alt="">
             <img
               class="coloured-card-btn-img"
               :src="sectionComponents.img4"
               alt=""
-            />
+            >
             <img
               class="coloured-card-img"
               :src="sectionComponents.img5"
               alt=""
-            />
-            <img class="social-img" :src="sectionComponents.img6" alt="" />
-            <img class="pin-btn-img" :src="sectionComponents.img7" alt="" />
+            >
+            <img class="social-img" :src="sectionComponents.img6" alt="">
+            <img class="pin-btn-img" :src="sectionComponents.img7" alt="">
           </div>
         </div>
       </div>
@@ -44,17 +44,17 @@
 
 <script>
 export default {
-  name: "components",
+  name: 'Components',
   data() {
     return {
       sectionComponents: {
-        img1: require("@/assets/img/section-components/laptop-basics.png"),
-        img2: require("@/assets/img/section-components/table.jpg"),
-        img3: require("@/assets/img/section-components/share-btn.jpg"),
-        img4: require("@/assets/img/section-components/coloured-card-with-btn.jpg"),
-        img5: require("@/assets/img/section-components/coloured-card.jpg"),
-        img6: require("@/assets/img/section-components/social-row.jpg"),
-        img7: require("@/assets/img/section-components/pin-btn.jpg")
+        img1: require('@/assets/img/section-components/laptop-basics.png'),
+        img2: require('@/assets/img/section-components/table.jpg'),
+        img3: require('@/assets/img/section-components/share-btn.jpg'),
+        img4: require('@/assets/img/section-components/coloured-card-with-btn.jpg'),
+        img5: require('@/assets/img/section-components/coloured-card.jpg'),
+        img6: require('@/assets/img/section-components/social-row.jpg'),
+        img7: require('@/assets/img/section-components/pin-btn.jpg')
       }
     };
   }

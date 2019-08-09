@@ -13,7 +13,7 @@
             <div class="comment">
               <a class="float-left" href="javascript:void(0)">
                 <div class="avatar">
-                  <img class="comment-object" :src="avatar" alt="..." />
+                  <img class="comment-object" :src="avatar" alt="...">
                 </div>
               </a>
               <div class="comment-body">
@@ -52,13 +52,13 @@
                 <div class="comment comment-post">
                   <a class="author float-left" href="javascript:void(0)">
                     <div class="avatar">
-                      <img class="media-object" alt="64x64" :src="image1" />
+                      <img class="media-object" alt="64x64" :src="image1">
                     </div>
                   </a>
                   <div class="comment-body">
                     <md-field maxlength="5">
                       <label>Write a nice reply or go home...</label>
-                      <md-textarea v-model="aboutme"></md-textarea>
+                      <md-textarea v-model="aboutme" />
                     </md-field>
                     <div class="comment-footer">
                       <md-button href="javascript:void(0)" class="md-success">
@@ -73,7 +73,7 @@
             <div class="comment">
               <a class="float-left" href="javascript:void(0)">
                 <div class="avatar">
-                  <img class="comment-object" alt="Tim Picture" :src="image" />
+                  <img class="comment-object" alt="Tim Picture" :src="image">
                 </div>
               </a>
               <div class="comment-body">
@@ -98,7 +98,7 @@
                 <div class="comment">
                   <a class="float-left" href="javascript:void(0)">
                     <div class="avatar">
-                      <img class="comment-object" alt="64x64" :src="avatar" />
+                      <img class="comment-object" alt="64x64" :src="avatar">
                     </div>
                   </a>
                   <div class="comment-body">
@@ -124,9 +124,9 @@
                         class="md-success md-simple"
                       >
                         <md-icon>reply</md-icon> Reply
-                        <md-tooltip md-direction="top"
-                          >Reply to Comment</md-tooltip
-                        >
+                        <md-tooltip
+                          md-direction="top"
+                        >Reply to Comment</md-tooltip>
                       </md-button>
                     </div>
                   </div>
@@ -137,7 +137,7 @@
             <div class="comment">
               <a class="float-left" href="javascript:void(0)">
                 <div class="avatar">
-                  <img class="comment-object" alt="64x64" :src="image1" />
+                  <img class="comment-object" alt="64x64" :src="image1">
                 </div>
               </a>
               <div class="comment-body">
@@ -171,27 +171,26 @@
             </div>
 
             <pagination
+              v-model="defaultPagination"
               class="justify-content-center"
               type="success"
-              v-model="defaultPagination"
               :page-count="5"
-            >
-            </pagination>
+            />
           </div>
 
           <h3 class="text-center">
-            Post your comment <br /><small>- Logged In User -</small>
+            Post your comment <br><small>- Logged In User -</small>
           </h3>
           <div class="comment comment-post">
             <a class="author float-left" href="javascript:void(0)">
               <div class="avatar">
-                <img class="comment-object" alt="64x64" :src="avatar" />
+                <img class="comment-object" alt="64x64" :src="avatar">
               </div>
             </a>
             <div class="comment-body">
               <md-field maxlength="5">
                 <label>Write some nice stuff or nothing...</label>
-                <md-textarea v-model="aboutme2"></md-textarea>
+                <md-textarea v-model="aboutme2" />
               </md-field>
               <div class="comment-footer">
                 <md-button href="javascript:void(0)" class="md-success">
@@ -203,12 +202,12 @@
           <!-- end comment-post -->
 
           <h3 class="text-center">
-            Post your comment <br /><small>- Not Logged In User -</small>
+            Post your comment <br><small>- Not Logged In User -</small>
           </h3>
           <div class="comment comment-post">
             <a class="author float-left" href="javascript:void(0)">
               <div class="avatar">
-                <img class="comment-object" alt="64x64" :src="placeholder" />
+                <img class="comment-object" alt="64x64" :src="placeholder">
               </div>
             </a>
             <div class="comment-body">
@@ -221,7 +220,7 @@
                       <md-input
                         v-model="name"
                         placeholder="Your Name"
-                      ></md-input>
+                      />
                     </md-field>
                   </div>
                   <div
@@ -231,38 +230,33 @@
                       <md-input
                         v-model="email"
                         placeholder="Your Email"
-                      ></md-input>
+                      />
                     </md-field>
                   </div>
                 </div>
                 <md-field maxlength="5">
                   <label>Write some nice stuff or nothing...</label>
-                  <md-textarea v-model="aboutme3"></md-textarea>
+                  <md-textarea v-model="aboutme3" />
                 </md-field>
                 <div class="comment-footer flex-direction-column">
                   <h6>Sign in with</h6>
                   <span class="flex">
-                    <span
-                      ><md-button
-                        href="javascript:void(0)"
-                        class="md-twitter md-just-icon md-round"
-                        ><i class="fab fa-twitter"></i
-                      ></md-button>
+                    <span><md-button
+                            href="javascript:void(0)"
+                            class="md-twitter md-just-icon md-round"
+                          ><i class="fab fa-twitter" /></md-button>
                       <md-button
                         href="javascript:void(0)"
                         class="md-facebook md-just-icon md-round"
-                        ><i class="fab fa-facebook"></i
-                      ></md-button>
+                      ><i class="fab fa-facebook" /></md-button>
                       <md-button
                         href="javascript:void(0)"
                         class="md-google md-just-icon md-round"
-                        ><i class="fab fa-google"></i></md-button
-                    ></span>
+                      ><i class="fab fa-google" /></md-button></span>
                     <md-button
                       href="javascript:void(0)"
                       class="md-success ml-auto"
-                      >Post Comment</md-button
-                    >
+                    >Post Comment</md-button>
                   </span>
                 </div>
               </form>
@@ -277,7 +271,7 @@
 </template>
 
 <script>
-import { Pagination } from "@/components";
+import { Pagination } from '@/components';
 
 export default {
   components: {
@@ -291,10 +285,10 @@ export default {
       name: null,
       email: null,
       defaultPagination: 3,
-      avatar: require("@/assets/img/faces/avatar.jpg"),
-      placeholder: require("@/assets/img/placeholder.jpg"),
-      image: require("@/assets/img/faces/marc.jpg"),
-      image1: require("@/assets/img/faces/kendall.jpg")
+      avatar: require('@/assets/img/faces/avatar.jpg'),
+      placeholder: require('@/assets/img/placeholder.jpg'),
+      image: require('@/assets/img/faces/marc.jpg'),
+      image1: require('@/assets/img/faces/kendall.jpg')
     };
   }
 };

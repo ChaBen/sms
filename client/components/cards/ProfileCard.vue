@@ -17,23 +17,23 @@
         }"
       >
         <a :href="cardLink()">
-          <img class="img" :src="cardImage" />
-          <div class="card-title" v-if="$slots.cardTitleHeader">
-            <slot name="cardTitleHeader"></slot>
+          <img class="img" :src="cardImage">
+          <div v-if="$slots.cardTitleHeader" class="card-title">
+            <slot name="cardTitleHeader" />
           </div>
         </a>
         <div
-          class="colored-shadow"
           v-if="!noColoredShadow && !shadowNormal"
+          class="colored-shadow"
           :style="shadowImageProfile(cardImage)"
-        ></div>
+        />
       </md-card-header>
       <md-card-content v-if="$slots.cardContent">
-        <slot name="cardContent"></slot>
+        <slot name="cardContent" />
       </md-card-content>
 
-      <md-card-actions class="justify-content-center" v-if="$slots.cardAction">
-        <slot name="cardAction"></slot>
+      <md-card-actions v-if="$slots.cardAction" class="justify-content-center">
+        <slot name="cardAction" />
       </md-card-actions>
     </template>
 
@@ -52,13 +52,13 @@
             class="md-card-header-image"
           >
             <a :href="cardLink()">
-              <img class="img" :src="cardImage" />
+              <img class="img" :src="cardImage">
             </a>
             <div
-              class="colored-shadow"
               v-if="!noColoredShadow && !shadowNormal"
+              class="colored-shadow"
               :style="shadowImageProfile(cardImage)"
-            ></div>
+            />
           </md-card-header>
         </div>
         <div
@@ -69,15 +69,15 @@
           }"
         >
           <md-card-content v-if="$slots.cardContent">
-            <slot name="cardContent"></slot>
+            <slot name="cardContent" />
           </md-card-content>
 
           <md-card-actions
+            v-if="$slots.cardAction"
             md-alignment="left"
             :class="{ 'justify-content-center': textCenter }"
-            v-if="$slots.cardAction"
           >
-            <slot name="cardAction"></slot>
+            <slot name="cardAction" />
           </md-card-actions>
         </div>
       </div>
@@ -87,7 +87,7 @@
 
 <script>
 export default {
-  name: "profile-card",
+  name: 'ProfileCard',
   props: {
     imageLink: String,
     textCenter: Boolean,
@@ -112,7 +112,7 @@ export default {
   methods: {
     cardLink() {
       if (this.imageLink === undefined) {
-        return "javascript:void(0)";
+        return 'javascript:void(0)';
       } else {
         return this.imageLink;
       }

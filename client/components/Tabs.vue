@@ -7,7 +7,7 @@
       { 'md-card-plain': plain }
     ]"
   >
-    <md-card-header slot="header-title"> </md-card-header>
+    <md-card-header slot="header-title" />
 
     <md-card-content>
       <md-list
@@ -19,12 +19,12 @@
       >
         <md-list-item
           v-for="(item, index) in tabName"
-          @click="switchPanel(tabName[index])"
           :key="item"
           :class="[
             { active: isActivePanel(tabName[index]) },
             { [getColorButton(colorButton)]: isActivePanel(tabName[index]) }
           ]"
+          @click="switchPanel(tabName[index])"
         >
           {{ tabName[index] }}
           <md-icon v-if="navPillsIcons">{{ tabIcon[index] }}</md-icon>
@@ -35,8 +35,8 @@
         <div class="tab-content">
           <template v-for="(item, index) in tabName">
             <template v-if="isActivePanel(tabName[index])">
-              <div :class="getTabContent(index + 1)" :key="item">
-                <slot :name="getTabContent(index + 1)"></slot>
+              <div :key="item" :class="getTabContent(index + 1)">
+                <slot :name="getTabContent(index + 1)" />
               </div>
             </template>
           </template>
@@ -48,7 +48,7 @@
 
 <script>
 export default {
-  name: "tabs",
+  name: 'Tabs',
   props: {
     pillsAlign: String,
     flexColumn: Boolean,
@@ -58,7 +58,7 @@ export default {
     tabIcon: Array,
     colorButton: {
       type: String,
-      default: ""
+      default: ''
     },
     tabActive: Number,
     onChange: Function
@@ -76,13 +76,13 @@ export default {
       this.activePanel = panel;
     },
     isActivePanel(panel) {
-      return this.activePanel == panel;
+      return this.activePanel === panel;
     },
     getColorButton: function(colorButton) {
-      return "md-" + colorButton + "";
+      return 'md-' + colorButton + '';
     },
     getTabContent: function(index) {
-      return "tab-pane-" + index + "";
+      return 'tab-pane-' + index + '';
     }
   }
 };

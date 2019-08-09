@@ -15,8 +15,8 @@
         <div class="md-layout">
           <div class="md-layout-item md-size-33 md-small-size-100">
             <info-areas text-center icon-color="rose" icon="apps">
-              <h4 class="info-title" slot="title">Huge Number of Components</h4>
-              <div class="description" slot="content">
+              <h4 slot="title" class="info-title">Huge Number of Components</h4>
+              <div slot="content" class="description">
                 <p>
                   Every element that you need in a product comes built in as a
                   component. All components fit perfectly with each other and
@@ -27,8 +27,8 @@
           </div>
           <div class="md-layout-item md-size-33 md-small-size-100">
             <info-areas text-center icon-color="info" icon="view_day">
-              <h4 class="info-title" slot="title">Multi-Purpose Sections</h4>
-              <div class="description" slot="content">
+              <h4 slot="title" class="info-title">Multi-Purpose Sections</h4>
+              <div slot="content" class="description">
                 <p>
                   Putting together a page has never been easier than matching
                   together sections. From team presentation to pricing options,
@@ -39,8 +39,8 @@
           </div>
           <div class="md-layout-item md-size-33 md-small-size-100">
             <info-areas text-center icon-color="success" icon="view_carousel">
-              <h4 class="info-title" slot="title">Example Pages</h4>
-              <div class="description" slot="content">
+              <h4 slot="title" class="info-title">Example Pages</h4>
+              <div slot="content" class="description">
                 <p>
                   If you want to get inspiration or just show something directly
                   to your clients, you can jump start your development with our
@@ -56,10 +56,10 @@
 </template>
 
 <script>
-import { InfoAreas } from "@/components";
+import { InfoAreas } from '@/components';
 
 export default {
-  name: "introduction",
+  name: 'Introduction',
   components: {
     InfoAreas
   }

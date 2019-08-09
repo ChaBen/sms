@@ -24,18 +24,15 @@
                 <md-button
                   class="md-just-icon md-sm"
                   :class="getClass(item.icon1, item.id)"
-                  ><md-icon>{{ item.icon1 }}</md-icon></md-button
-                >
+                ><md-icon>{{ item.icon1 }}</md-icon></md-button>
                 <md-button
                   class="md-just-icon md-sm"
                   :class="getClass(item.icon2, item.id)"
-                  ><md-icon>{{ item.icon2 }}</md-icon></md-button
-                >
+                ><md-icon>{{ item.icon2 }}</md-icon></md-button>
                 <md-button
                   class="md-just-icon md-sm"
                   :class="getClass(item.icon3, item.id)"
-                  ><md-icon>{{ item.icon3 }}</md-icon></md-button
-                >
+                ><md-icon>{{ item.icon3 }}</md-icon></md-button>
               </md-table-cell>
             </md-table-row>
           </md-table>
@@ -76,12 +73,12 @@
             <md-table-row slot="md-table-row" slot-scope="{ item }">
               <md-table-cell md-label="">
                 <div class="img-container">
-                  <img :src="item.image" alt="products" />
+                  <img :src="item.image" alt="products">
                 </div>
               </md-table-cell>
               <md-table-cell md-label="Product" class="td-name">
                 <a href="javascript:void(0)">{{ item.product }}</a>
-                <br />
+                <br>
                 <small>{{ item.category }}</small>
               </md-table-cell>
               <md-table-cell md-label="Color">{{ item.color }}</md-table-cell>
@@ -96,13 +93,11 @@
                   <md-button
                     class="md-round md-info md-sm"
                     @click.native="increaseQuantity(item)"
-                    ><md-icon>add</md-icon></md-button
-                  >
+                  ><md-icon>add</md-icon></md-button>
                   <md-button
                     class="md-round md-info md-sm"
                     @click.native="decreaseQuantity(item)"
-                    ><md-icon>remove</md-icon></md-button
-                  >
+                  ><md-icon>remove</md-icon></md-button>
                 </div>
               </md-table-cell>
               <md-table-cell md-label="Amount" class="td-number">
@@ -110,9 +105,9 @@
                 {{ item.amount }}
               </md-table-cell>
               <md-table-cell>
-                <md-button class="md-just-icon md-round md-simple"
-                  ><md-icon>close</md-icon></md-button
-                >
+                <md-button
+                  class="md-just-icon md-round md-simple"
+                ><md-icon>close</md-icon></md-button>
               </md-table-cell>
             </md-table-row>
           </md-table>
@@ -140,7 +135,7 @@
 </template>
 
 <script>
-import Mixins from "@/plugins/basicMixins";
+import Mixins from '@/plugins/basicMixins';
 
 export default {
   mixins: [Mixins.ShoppingCart],
@@ -149,124 +144,124 @@ export default {
       tableData: [
         {
           id: 1,
-          name: "Dakota Rice",
-          salary: "$36.738",
-          country: "Niger",
-          city: "Oud-Turnhout",
-          icon1: "person",
-          icon2: "edit",
-          icon3: "close"
+          name: 'Dakota Rice',
+          salary: '$36.738',
+          country: 'Niger',
+          city: 'Oud-Turnhout',
+          icon1: 'person',
+          icon2: 'edit',
+          icon3: 'close'
         },
         {
           id: 2,
-          name: "Minerva Hooper",
-          salary: "$23,789",
-          country: "Curaçao",
-          city: "Sinaai-Waas",
-          icon1: "person",
-          icon2: "edit",
-          icon3: "close"
+          name: 'Minerva Hooper',
+          salary: '$23,789',
+          country: 'Curaçao',
+          city: 'Sinaai-Waas',
+          icon1: 'person',
+          icon2: 'edit',
+          icon3: 'close'
         },
         {
           id: 3,
-          name: "Sage Rodriguez",
-          salary: "$56,142",
-          country: "Netherlands",
-          city: "Baileux",
-          icon1: "person",
-          icon2: "edit",
-          icon3: "close"
+          name: 'Sage Rodriguez',
+          salary: '$56,142',
+          country: 'Netherlands',
+          city: 'Baileux',
+          icon1: 'person',
+          icon2: 'edit',
+          icon3: 'close'
         },
         {
           id: 4,
-          name: "Philip Chaney",
-          salary: "$38,735",
-          country: "Korea, South",
-          city: "Overland Park",
-          icon1: "person",
-          icon2: "edit",
-          icon3: "close"
+          name: 'Philip Chaney',
+          salary: '$38,735',
+          country: 'Korea, South',
+          city: 'Overland Park',
+          icon1: 'person',
+          icon2: 'edit',
+          icon3: 'close'
         },
         {
           id: 5,
-          name: "Doris Greene",
-          salary: "$63,542",
-          country: "Malawi",
-          city: "Feldkirchen in Kärnten",
-          icon1: "person",
-          icon2: "edit",
-          icon3: "close"
+          name: 'Doris Greene',
+          salary: '$63,542',
+          country: 'Malawi',
+          city: 'Feldkirchen in Kärnten',
+          icon1: 'person',
+          icon2: 'edit',
+          icon3: 'close'
         }
       ],
       tableDataStriped: [
         {
           id: 1,
-          name: "Moleskine Agenda",
-          type: "Office",
-          qty: "25",
-          price: "€ 49",
-          amount: "€ 1,225"
+          name: 'Moleskine Agenda',
+          type: 'Office',
+          qty: '25',
+          price: '€ 49',
+          amount: '€ 1,225'
         },
         {
           id: 2,
-          name: "Stabilo Pen",
-          type: "Office",
-          qty: "30",
-          price: "€ 10",
-          amount: "€ 300"
+          name: 'Stabilo Pen',
+          type: 'Office',
+          qty: '30',
+          price: '€ 10',
+          amount: '€ 300'
         },
         {
           id: 3,
-          name: "A4 Paper Pack",
-          type: "Office",
-          qty: "50",
-          price: "€ 10.99",
-          amount: "€ 109"
+          name: 'A4 Paper Pack',
+          type: 'Office',
+          qty: '50',
+          price: '€ 10.99',
+          amount: '€ 109'
         },
         {
           id: 4,
-          name: "Apple Ipad",
-          type: "Meeting",
-          qty: "10",
-          price: "€ 499.00",
-          amount: "€ 4,990"
+          name: 'Apple Ipad',
+          type: 'Meeting',
+          qty: '10',
+          price: '€ 499.00',
+          amount: '€ 4,990'
         },
         {
           id: 5,
-          name: "Apple Iphone",
-          type: "Communication",
-          qty: "10",
-          price: "€ 599.00",
-          amount: "€ 5,990"
+          name: 'Apple Iphone',
+          type: 'Communication',
+          qty: '10',
+          price: '€ 599.00',
+          amount: '€ 5,990'
         }
       ],
       shoppingCartTable: [
         {
-          image: require("@/assets/img/product1.jpg"),
-          product: "Spring Jacket",
-          category: "by Dolce&Gabbana",
-          color: "Red",
-          size: "M",
+          image: require('@/assets/img/product1.jpg'),
+          product: 'Spring Jacket',
+          category: 'by Dolce&Gabbana',
+          color: 'Red',
+          size: 'M',
           price: 549,
           qty: 1,
           amount: 549
         },
         {
-          image: require("@/assets/img/product2.jpg"),
-          product: "Short Pants",
-          category: "by Gucci",
-          color: "Purple",
-          size: "M",
+          image: require('@/assets/img/product2.jpg'),
+          product: 'Short Pants',
+          category: 'by Gucci',
+          color: 'Purple',
+          size: 'M',
           price: 499,
           qty: 2,
           amount: 998
         },
         {
-          image: require("@/assets/img/product3.jpg"),
-          product: "Pencil Skirt",
-          category: "by Valentino",
-          color: "Red",
-          size: "M",
+          image: require('@/assets/img/product3.jpg'),
+          product: 'Pencil Skirt',
+          category: 'by Valentino',
+          color: 'Red',
+          size: 'M',
           price: 799,
           qty: 1,
           amount: 799
@@ -276,18 +271,18 @@ export default {
   },
   methods: {
     getClass: function(item, id) {
-      let classes = "";
+      let classes = '';
       switch (item) {
-        case "person": {
-          classes = "md-info";
+        case 'person': {
+          classes = 'md-info';
           break;
         }
-        case "edit": {
-          classes = "md-success";
+        case 'edit': {
+          classes = 'md-success';
           break;
         }
-        case "close": {
-          classes = "md-danger";
+        case 'close': {
+          classes = 'md-danger';
           break;
         }
       }

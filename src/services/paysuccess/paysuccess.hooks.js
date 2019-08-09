@@ -3,22 +3,21 @@ const paypal = require('paypal-rest-sdk');
 function beforeCreate(context) {
   const { paymentId, PayerID } = context.data;
   var execute_payment_json = {
-    "payer_id": PayerID,
-    "transactions": [{
-      "amount": {
-        "currency": "USD",
-        "total": "50.00"
+    'payer_id': PayerID,
+    'transactions': [{
+      'amount': {
+        'currency': 'USD',
+        'total': '50.00'
       }
     }]
   };
 
- 
-  paypal.payment.execute(paymentId, execute_payment_json, function (error, payment) {
+  paypal.payment.execute(paymentId, execute_payment_json, (error, payment) => {
     if (error) {
       console.log(error.response);
       throw error;
     } else {
-      console.log("Get Payment Response");
+      console.log('Get Payment Response');
       console.log(JSON.stringify(payment));
     }
   });
@@ -29,7 +28,7 @@ module.exports = {
     all: [],
     find: [],
     get: [],
-    create: [ beforeCreate ],
+    create: [beforeCreate],
     update: [],
     patch: [],
     remove: []

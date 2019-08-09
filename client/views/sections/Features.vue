@@ -20,7 +20,7 @@
         <div class="md-layout">
           <div class="md-layout-item md-size-33 md-small-size-100">
             <info-areas icon-color="info" icon="chat" text-center>
-              <h4 class="info-title" slot="title">Free Chat</h4>
+              <h4 slot="title" class="info-title">Free Chat</h4>
               <p slot="content">
                 Divide details about your product or agency work into parts.
                 Write a few lines about each one. A paragraph describing a
@@ -30,7 +30,7 @@
           </div>
           <div class="md-layout-item md-size-33 md-small-size-100">
             <info-areas icon-color="success" icon="verified_user" text-center>
-              <h4 class="info-title" slot="title">Verified Users</h4>
+              <h4 slot="title" class="info-title">Verified Users</h4>
               <p slot="content">
                 Divide details about your product or agency work into parts.
                 Write a few lines about each one. A paragraph describing a
@@ -40,7 +40,7 @@
           </div>
           <div class="md-layout-item md-size-33 md-small-size-100">
             <info-areas icon-color="danger" icon="fingerprint" text-center>
-              <h4 class="info-title" slot="title">Fingerprint</h4>
+              <h4 slot="title" class="info-title">Fingerprint</h4>
               <p slot="content">
                 Divide details about your product or agency work into parts.
                 Write a few lines about each one. A paragraph describing a
@@ -71,8 +71,8 @@
         <div class="md-layout">
           <div class="md-layout-item md-size-33 md-small-size-100">
             <info-areas info-horizontal icon-color="info" icon="group_work">
-              <h4 class="info-title" slot="title">Collaborate</h4>
-              <div class="description" slot="content">
+              <h4 slot="title" class="info-title">Collaborate</h4>
+              <div slot="content" class="description">
                 <p>
                   The moment you use Material Kit, you know you’ve never felt
                   anything like it. With a single use, this powerfull UI Kit
@@ -84,8 +84,8 @@
           </div>
           <div class="md-layout-item md-size-33 md-small-size-100">
             <info-areas info-horizontal icon-color="danger" icon="airplay">
-              <h4 class="info-title" slot="title">Airplay</h4>
-              <div class="description" slot="content">
+              <h4 slot="title" class="info-title">Airplay</h4>
+              <div slot="content" class="description">
                 <p>
                   Divide details about your product or agency work into parts.
                   Write a few lines about each one. A paragraph describing a
@@ -97,8 +97,8 @@
           </div>
           <div class="md-layout-item md-size-33 md-small-size-100">
             <info-areas info-horizontal icon-color="success" icon="location_on">
-              <h4 class="info-title" slot="title">Location Integrated</h4>
-              <div class="description" slot="content">
+              <h4 slot="title" class="info-title">Location Integrated</h4>
+              <div slot="content" class="description">
                 <p>
                   Divide details about your product or agency work into parts.
                   Write a few lines about each one. A paragraph describing a
@@ -119,15 +119,15 @@
         <div class="md-layout">
           <div class="md-layout-item md-size-50 md-small-size-100">
             <div class="phone-container">
-              <img :src="iphone" />
+              <img :src="iphone">
             </div>
           </div>
           <div class="md-layout-item md-size-50 md-small-size-100">
             <!-- Some <br /> tags to push the text to align with the image, you can remove it if you have more text on the right side :-) -->
             <h2 class="title">Your life will be much easier</h2>
             <info-areas info-horizontal icon-color="primary" icon="extension">
-              <h4 class="info-title" slot="title">Hundreds of Components</h4>
-              <div class="description" slot="content">
+              <h4 slot="title" class="info-title">Hundreds of Components</h4>
+              <div slot="content" class="description">
                 <p>
                   The moment you use Material Kit, you know you’ve never felt
                   anything like it. With a single use, this powerfull UI Kit
@@ -140,8 +140,8 @@
               icon-color="primary"
               icon="child_friendly"
             >
-              <h4 class="info-title" slot="title">Ease to Use</h4>
-              <div class="description" slot="content">
+              <h4 slot="title" class="info-title">Ease to Use</h4>
+              <div slot="content" class="description">
                 <p>
                   Divide details about your product or agency work into parts.
                   Write a few lines about each one. A paragraph describing a
@@ -150,8 +150,8 @@
               </div>
             </info-areas>
             <info-areas info-horizontal icon-color="primary" icon="watch_later">
-              <h4 class="info-title" slot="title">Fast Prototyping</h4>
-              <div class="description" slot="content">
+              <h4 slot="title" class="info-title">Fast Prototyping</h4>
+              <div slot="content" class="description">
                 <p>
                   Divide details about your product or agency work into parts.
                   Write a few lines about each one. A paragraph describing a
@@ -183,8 +183,8 @@
         <div class="md-layout">
           <div class="md-layout-item md-size-25 md-small-size-100 ml-auto">
             <info-areas info-horizontal icon-color="info" icon="code">
-              <h4 class="info-title" slot="title">For Developers</h4>
-              <div class="description" slot="content">
+              <h4 slot="title" class="info-title">For Developers</h4>
+              <div slot="content" class="description">
                 <p>
                   The moment you use Material Kit, you know you’ve never felt
                   anything like it. With a single use, this powerfull UI Kit
@@ -193,8 +193,8 @@
               </div>
             </info-areas>
             <info-areas info-horizontal icon-color="danger" icon="format_paint">
-              <h4 class="info-title" slot="title">For Designers</h4>
-              <div class="description" slot="content">
+              <h4 slot="title" class="info-title">For Designers</h4>
+              <div slot="content" class="description">
                 <p>
                   Divide details about your product or agency work into parts.
                   Write a few lines about each one. A paragraph describing a
@@ -205,13 +205,13 @@
           </div>
           <div class="md-layout-item md-size-25 md-small-size-100">
             <div class="phone-container">
-              <img :src="iphone2" />
+              <img :src="iphone2">
             </div>
           </div>
           <div class="md-layout-item md-size-25 md-small-size-100 mr-auto">
             <info-areas info-horizontal icon-color="primary" icon="dashboard">
-              <h4 class="info-title" slot="title">Bootstrap Grid</h4>
-              <div class="description" slot="content">
+              <h4 slot="title" class="info-title">Bootstrap Grid</h4>
+              <div slot="content" class="description">
                 <p>
                   Divide details about your product or agency work into parts.
                   Write a few lines about each one. A paragraph describing a
@@ -224,8 +224,8 @@
               icon-color="success"
               icon="view_carousel"
             >
-              <h4 class="info-title" slot="title">Example Pages Included</h4>
-              <div class="description" slot="content">
+              <h4 slot="title" class="info-title">Example Pages Included</h4>
+              <div slot="content" class="description">
                 <p>
                   Divide details about your product or agency work into parts.
                   Write a few lines about each one. A paragraph describing a
@@ -255,8 +255,8 @@
         <div class="md-layout">
           <div class="md-layout-item md-size-33 md-small-size-100">
             <info-areas text-center icon="code">
-              <h4 class="info-title" slot="title">For Developers</h4>
-              <div class="description" slot="content">
+              <h4 slot="title" class="info-title">For Developers</h4>
+              <div slot="content" class="description">
                 <p>
                   The moment you use Material Kit, you know you’ve never felt
                   anything like it. With a single use, this powerfull UI Kit
@@ -267,8 +267,8 @@
           </div>
           <div class="md-layout-item md-size-33 md-small-size-100">
             <info-areas text-center icon="format_paint">
-              <h4 class="info-title" slot="title">For Designers</h4>
-              <div class="description" slot="content">
+              <h4 slot="title" class="info-title">For Designers</h4>
+              <div slot="content" class="description">
                 <p>
                   The moment you use Material Kit, you know you’ve never felt
                   anything like it. With a single use, this powerfull UI Kit
@@ -279,8 +279,8 @@
           </div>
           <div class="md-layout-item md-size-33 md-small-size-100">
             <info-areas text-center icon="dashboard">
-              <h4 class="info-title" slot="title">Bootstrap Grid</h4>
-              <div class="description" slot="content">
+              <h4 slot="title" class="info-title">Bootstrap Grid</h4>
+              <div slot="content" class="description">
                 <p>
                   The moment you use Material Kit, you know you’ve never felt
                   anything like it. With a single use, this powerfull UI Kit
@@ -293,8 +293,8 @@
         <div class="md-layout">
           <div class="md-layout-item md-size-33 md-small-size-100">
             <info-areas text-center icon="view_carousel">
-              <h4 class="info-title" slot="title">Example Pages Included</h4>
-              <div class="description" slot="content">
+              <h4 slot="title" class="info-title">Example Pages Included</h4>
+              <div slot="content" class="description">
                 <p>
                   The moment you use Material Kit, you know you’ve never felt
                   anything like it. With a single use, this powerfull UI Kit
@@ -305,8 +305,8 @@
           </div>
           <div class="md-layout-item md-size-33 md-small-size-100">
             <info-areas text-center icon="access_time">
-              <h4 class="info-title" slot="title">Save Time</h4>
-              <div class="description" slot="content">
+              <h4 slot="title" class="info-title">Save Time</h4>
+              <div slot="content" class="description">
                 <p>
                   The moment you use Material Kit, you know you’ve never felt
                   anything like it. With a single use, this powerfull UI Kit
@@ -317,8 +317,8 @@
           </div>
           <div class="md-layout-item md-size-33 md-small-size-100">
             <info-areas text-center icon="attach_money">
-              <h4 class="info-title" slot="title">Save Money</h4>
-              <div class="description" slot="content">
+              <h4 slot="title" class="info-title">Save Money</h4>
+              <div slot="content" class="description">
                 <p>
                   The moment you use Material Kit, you know you’ve never felt
                   anything like it. With a single use, this powerfull UI Kit
@@ -335,18 +335,18 @@
 </template>
 
 <script>
-import { InfoAreas } from "@/components";
+import { InfoAreas } from '@/components';
 
 export default {
-  name: "features",
+  name: 'Features',
   components: {
     InfoAreas
   },
   data() {
     return {
-      iphone: require("@/assets/img/sections/iphone.png"),
-      iphone2: require("@/assets/img/sections/iphone2.png"),
-      image: require("@/assets/img/bg9.jpg")
+      iphone: require('@/assets/img/sections/iphone.png'),
+      iphone2: require('@/assets/img/sections/iphone2.png'),
+      image: require('@/assets/img/bg9.jpg')
     };
   },
   computed: {

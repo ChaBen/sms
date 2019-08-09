@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <div id="contactUs2Map" class="map"></div>
+    <div id="contactUs2Map" class="map" />
     <div class="main main-raised">
       <div class="section section-contact">
         <div class="container">
@@ -10,25 +10,25 @@
               <p class="description">
                 You can contact us with anything related to our Products. We'll
                 get in touch with you as soon as possible.
-                <br />
-                <br />
+                <br>
+                <br>
               </p>
               <form>
                 <md-field>
                   <label>Your Name</label>
-                  <md-input v-model="name" type="text"></md-input>
+                  <md-input v-model="name" type="text" />
                 </md-field>
                 <md-field>
                   <label>Email Adress</label>
-                  <md-input v-model="email" type="email"></md-input>
+                  <md-input v-model="email" type="email" />
                 </md-field>
                 <md-field>
                   <label>Phone</label>
-                  <md-input v-model="phone" type="number"></md-input>
+                  <md-input v-model="phone" type="number" />
                 </md-field>
                 <md-field>
                   <label>Your message</label>
-                  <md-textarea v-model="textarea"></md-textarea>
+                  <md-textarea v-model="textarea" />
                 </md-field>
                 <div class="submit text-center mt-3">
                   <md-button class="md-primary md-round">Contact Us</md-button>
@@ -42,11 +42,11 @@
                 icon-color="primary"
                 icon="pin_drop"
               >
-                <h4 class="info-title" slot="title">Find us at the office</h4>
-                <div class="description" slot="content">
+                <h4 slot="title" class="info-title">Find us at the office</h4>
+                <div slot="content" class="description">
                   <p>
-                    Bld Mihail Kogalniceanu, nr. 8, <br />
-                    7652 Bucharest, <br />
+                    Bld Mihail Kogalniceanu, nr. 8, <br>
+                    7652 Bucharest, <br>
                     Romania
                   </p>
                 </div>
@@ -57,11 +57,11 @@
                 icon-color="primary"
                 icon="phone"
               >
-                <h4 class="info-title" slot="title">Give us a ring</h4>
-                <div class="description" slot="content">
+                <h4 slot="title" class="info-title">Give us a ring</h4>
+                <div slot="content" class="description">
                   <p>
-                    Michael Jordan <br />
-                    +40 762 321 762 <br />
+                    Michael Jordan <br>
+                    +40 762 321 762 <br>
                     Mon - Fri, 8:00-22:00
                   </p>
                 </div>
@@ -72,12 +72,12 @@
                 icon-color="primary"
                 icon="business_center"
               >
-                <h4 class="info-title" slot="title">Legal Information</h4>
-                <div class="description" slot="content">
+                <h4 slot="title" class="info-title">Legal Information</h4>
+                <div slot="content" class="description">
                   <p>
-                    Creative Tim Ltd. <br />
-                    VAT · EN2341241 <br />
-                    IBAN · EN8732ENGB2300099123 <br />
+                    Creative Tim Ltd. <br>
+                    VAT · EN2341241 <br>
+                    IBAN · EN8732ENGB2300099123 <br>
                     Bank · Great Britain Bank
                   </p>
                 </div>
@@ -91,13 +91,13 @@
 </template>
 
 <script>
-import Mixins from "@/plugins/basicMixins";
-import { InfoAreas } from "@/components";
+import Mixins from '@/plugins/basicMixins';
+import { InfoAreas } from '@/components';
 export default {
   components: {
     InfoAreas
   },
-  bodyClass: "contact-us",
+  bodyClass: 'contact-us',
   mixins: [Mixins.InitMap],
   data() {
     return {

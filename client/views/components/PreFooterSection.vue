@@ -12,25 +12,21 @@
                   <md-button
                     href="javascript:void(0)"
                     class="md-twitter md-round"
-                    ><i class="fab fa-twitter"></i> Twitter · 2.5k</md-button
-                  >
+                  ><i class="fab fa-twitter" /> Twitter · 2.5k</md-button>
                   <md-button
                     href="javascript:void(0)"
                     class="md-facebook md-round"
-                    ><i class="fab fa-facebook-f"></i> Facebook ·
-                    3.2k</md-button
-                  >
+                  ><i class="fab fa-facebook-f" /> Facebook ·
+                    3.2k</md-button>
                   <md-button
                     href="javascript:void(0)"
                     class="md-google md-round"
-                    ><i class="fab fa-google-plus-g"></i> Google ·
-                    1.2k</md-button
-                  >
+                  ><i class="fab fa-google-plus-g" /> Google ·
+                    1.2k</md-button>
                   <md-button
                     href="javascript:void(0)"
                     class="md-dribbble md-round"
-                    ><i class="fab fa-dribbble"></i> Dribbble · 1.8k</md-button
-                  >
+                  ><i class="fab fa-dribbble" /> Dribbble · 1.8k</md-button>
                 </div>
               </div>
             </div>
@@ -39,8 +35,8 @@
       </div>
       <!-- end Simple Social Line -->
 
-      <br />
-      <br />
+      <br>
+      <br>
 
       <!-- Simple Social Line -->
       <div class="md-layout">
@@ -52,43 +48,37 @@
                   <md-button
                     href="javascript:void(0)"
                     class="md-twitter md-simple md-icon"
-                    ><i class="fab fa-twitter"></i
-                  ></md-button>
+                  ><i class="fab fa-twitter" /></md-button>
                 </div>
                 <div class="md-layout-item md-xsmall-size-50">
                   <md-button
                     href="javascript:void(0)"
                     class="md-facebook md-simple md-icon"
-                    ><i class="fab fa-facebook"></i
-                  ></md-button>
+                  ><i class="fab fa-facebook" /></md-button>
                 </div>
                 <div class="md-layout-item md-xsmall-size-50">
                   <md-button
                     href="javascript:void(0)"
                     class="md-google md-simple md-icon"
-                    ><i class="fab fa-google-plus-g"></i
-                  ></md-button>
+                  ><i class="fab fa-google-plus-g" /></md-button>
                 </div>
                 <div class="md-layout-item md-xsmall-size-50">
                   <md-button
                     href="javascript:void(0)"
                     class="md-dribbble md-simple md-icon"
-                    ><i class="fab fa-dribbble"></i
-                  ></md-button>
+                  ><i class="fab fa-dribbble" /></md-button>
                 </div>
                 <div class="md-layout-item md-xsmall-size-50">
                   <md-button
                     href="javascript:void(0)"
                     class="md-youtube md-simple md-icon"
-                    ><i class="fab fa-youtube"></i
-                  ></md-button>
+                  ><i class="fab fa-youtube" /></md-button>
                 </div>
                 <div class="md-layout-item md-xsmall-size-50">
                   <md-button
                     href="javascript:void(0)"
                     class="md-instagram md-simple md-icon"
-                    ><i class="fab fa-instagram"></i
-                  ></md-button>
+                  ><i class="fab fa-instagram" /></md-button>
                 </div>
               </div>
             </div>
@@ -97,8 +87,8 @@
       </div>
       <!-- end Simple Social Line -->
 
-      <br />
-      <br />
+      <br>
+      <br>
 
       <!-- Simple Black Social Line -->
       <div class="md-layout">
@@ -110,43 +100,37 @@
                   <md-button
                     href="javascript:void(0)"
                     class="md-twitter md-white md-simple md-icon"
-                    ><i class="fab fa-twitter"></i
-                  ></md-button>
+                  ><i class="fab fa-twitter" /></md-button>
                 </div>
                 <div class="md-layout-item md-xsmall-size-50">
                   <md-button
                     href="javascript:void(0)"
                     class="md-facebook md-white md-simple md-icon"
-                    ><i class="fab fa-facebook"></i
-                  ></md-button>
+                  ><i class="fab fa-facebook" /></md-button>
                 </div>
                 <div class="md-layout-item md-xsmall-size-50">
                   <md-button
                     href="javascript:void(0)"
                     class="md-google md-white md-simple md-icon"
-                    ><i class="fab fa-google-plus-g"></i
-                  ></md-button>
+                  ><i class="fab fa-google-plus-g" /></md-button>
                 </div>
                 <div class="md-layout-item md-xsmall-size-50">
                   <md-button
                     href="javascript:void(0)"
                     class="md-dribbble md-white md-simple md-icon"
-                    ><i class="fab fa-dribbble"></i
-                  ></md-button>
+                  ><i class="fab fa-dribbble" /></md-button>
                 </div>
                 <div class="md-layout-item md-xsmall-size-50">
                   <md-button
                     href="javascript:void(0)"
                     class="md-youtube md-white md-simple md-icon"
-                    ><i class="fab fa-youtube"></i
-                  ></md-button>
+                  ><i class="fab fa-youtube" /></md-button>
                 </div>
                 <div class="md-layout-item md-xsmall-size-50">
                   <md-button
                     href="javascript:void(0)"
                     class="md-instagram md-white md-simple md-icon"
-                    ><i class="fab fa-instagram"></i
-                  ></md-button>
+                  ><i class="fab fa-instagram" /></md-button>
                 </div>
               </div>
             </div>
@@ -155,8 +139,8 @@
       </div>
       <!-- end Simple Black Social Line -->
 
-      <br />
-      <br />
+      <br>
+      <br>
 
       <!-- Image Subscribe Line -->
       <div class="md-layout">
@@ -189,15 +173,15 @@
                               <md-input
                                 v-model="subscribe"
                                 placeholder="Subscribe"
-                              ></md-input>
+                              />
                             </md-field>
                           </div>
                           <div
                             class="md-layout-item md-large-size-33 medium-size-50"
                           >
-                            <md-button class="md-primary md-block"
-                              >Subscribe</md-button
-                            >
+                            <md-button
+                              class="md-primary md-block"
+                            >Subscribe</md-button>
                           </div>
                         </div>
                       </form>
@@ -211,8 +195,8 @@
       </div>
       <!-- end Image Subscribe Line -->
 
-      <br />
-      <br />
+      <br>
+      <br>
 
       <!-- Simple Subscribe Line -->
       <div class="md-layout">
@@ -242,15 +226,15 @@
                               <md-input
                                 v-model="subscribe"
                                 placeholder="Subscribe"
-                              ></md-input>
+                              />
                             </md-field>
                           </div>
                           <div
                             class="md-layout-item md-large-size-33 medium-size-50"
                           >
-                            <md-button class="md-rose md-round md-block"
-                              >Subscribe</md-button
-                            >
+                            <md-button
+                              class="md-rose md-round md-block"
+                            >Subscribe</md-button>
                           </div>
                         </div>
                       </form>
@@ -272,7 +256,7 @@ export default {
   data() {
     return {
       subscribe: null,
-      image: require("@/assets/img/bg7.jpg")
+      image: require('@/assets/img/bg7.jpg')
     };
   },
   computed: {

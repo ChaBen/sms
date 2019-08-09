@@ -1,19 +1,19 @@
 <template>
   <md-list
-    class="nav-mobile-menu nav-mobile-section"
     v-if="navMobileSection === 'true'"
+    class="nav-mobile-menu nav-mobile-section"
   >
-    <slot></slot>
+    <slot />
   </md-list>
 </template>
 
 <script>
 export default {
-  name: "mobile-menu",
+  name: 'MobileMenu',
   props: {
     navMobileSection: {
       type: String,
-      default: "false"
+      default: 'false'
     }
   }
 };

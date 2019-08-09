@@ -12,31 +12,31 @@
       :no-colored-shadow="noColoredShadow"
     >
       <a href="javascript:void(0)">
-        <img class="img" :src="cardImage" />
+        <img class="img" :src="cardImage">
       </a>
       <div
-        class="colored-shadow"
         v-if="!noColoredShadow && !shadowNormal && !shadowOff"
+        class="colored-shadow"
         :style="shadowImageBlog(cardImage)"
-      ></div>
+      />
     </md-card-header>
 
     <md-card-content
-      :class="{ 'text-center': textCenter }"
       v-if="$slots.cardContent"
+      :class="{ 'text-center': textCenter }"
     >
-      <slot name="cardContent"></slot>
+      <slot name="cardContent" />
     </md-card-content>
 
     <md-card-actions v-if="$slots.cardAction">
-      <slot name="cardAction"></slot>
+      <slot name="cardAction" />
     </md-card-actions>
   </md-card>
 </template>
 
 <script>
 export default {
-  name: "product-card",
+  name: 'ProductCard',
   props: {
     type: String,
     textCenter: Boolean,

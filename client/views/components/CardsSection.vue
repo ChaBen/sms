@@ -14,9 +14,9 @@
               :no-colored-shadow="false"
               :card-image="cardBlog.cardBlog1"
             >
-              <template slot="cardTitleHeader"
-                >This Summer Will be Awesome</template
-              >
+              <template
+                slot="cardTitleHeader"
+              >This Summer Will be Awesome</template>
               <template slot="cardContent">
                 <h6 class="card-category text-info">Fashion</h6>
                 <p class="card-description">
@@ -29,19 +29,19 @@
             <md-card class="bg-info">
               <md-card-content>
                 <h5 class="card-category card-category-social">
-                  <i class="fab fa-twitter"></i> Twitter
+                  <i class="fab fa-twitter" /> Twitter
                 </h5>
                 <h4 class="card-title">
-                  <a href="javascript:void(0)"
-                    >"You Don't Have to Sacrifice Joy to Build a Fabulous
-                    Business and Life"</a
-                  >
+                  <a
+                    href="javascript:void(0)"
+                  >"You Don't Have to Sacrifice Joy to Build a Fabulous
+                    Business and Life"</a>
                 </h4>
               </md-card-content>
               <md-card-actions>
                 <div class="author">
                   <a href="javascript:void(0)">
-                    <img :src="avatarImg" alt="..." class="avatar img-raised" />
+                    <img :src="avatarImg" alt="..." class="avatar img-raised">
                     <span>Tania Andrew</span>
                   </a>
                 </div>
@@ -60,9 +60,9 @@
                   <md-icon class="text-danger">trending_up</md-icon> Trending
                 </h6>
                 <h4 class="card-title">
-                  <a href="javascript:void(0)"
-                    >To Grow Your Business Start Focusing on Your Employees</a
-                  >
+                  <a
+                    href="javascript:void(0)"
+                  >To Grow Your Business Start Focusing on Your Employees</a>
                 </h4>
               </md-card-content>
               <md-card-actions>
@@ -72,7 +72,7 @@
                       :src="christianImg"
                       alt="..."
                       class="avatar img-raised"
-                    />
+                    >
                     <span>Lord Alex</span>
                   </a>
                 </div>
@@ -90,9 +90,9 @@
               <template slot="cardContent">
                 <h6 class="card-category text-success">Legal</h6>
                 <h4 class="card-title">
-                  <a href="javascript:void(0)"
-                    >5 Common Legal Mistakes That Can Trip-Up Your Startup</a
-                  >
+                  <a
+                    href="javascript:void(0)"
+                  >5 Common Legal Mistakes That Can Trip-Up Your Startup</a>
                 </h4>
                 <p class="card-description">
                   Don't be scared of the truth because we need to restart the
@@ -103,7 +103,7 @@
               <template slot="cardAction">
                 <div class="author">
                   <a href="javascript:void(0)">
-                    <img :src="marcImg" alt="..." class="avatar img-raised" />
+                    <img :src="marcImg" alt="..." class="avatar img-raised">
                     <span>Mike John</span>
                   </a>
                 </div>
@@ -124,15 +124,15 @@
                   <md-icon class="text-danger">trending_up</md-icon> Trending
                 </h6>
                 <h4 class="card-title">
-                  <a href="javascript:void(0)"
-                    >To Grow Your Business Start Focusing on Your Employees</a
-                  >
+                  <a
+                    href="javascript:void(0)"
+                  >To Grow Your Business Start Focusing on Your Employees</a>
                 </h4>
               </template>
               <template slot="cardAction">
                 <div class="author">
                   <a href="javascript:void(0)">
-                    <img :src="marcImg" alt="..." class="avatar img-raised" />
+                    <img :src="marcImg" alt="..." class="avatar img-raised">
                     <span>Mike John</span>
                   </a>
                 </div>
@@ -145,7 +145,7 @@
             <md-card class="bg-success">
               <md-card-content>
                 <h5 class="card-category card-category-social">
-                  <i class="far fa-newspaper"></i> TechCrunch
+                  <i class="far fa-newspaper" /> TechCrunch
                 </h5>
                 <h4 class="card-title">
                   <a href="javascript:void(0)">"Focus on Your Employees"</a>
@@ -157,9 +157,10 @@
                 </p>
 
                 <div class="card-stats text-center">
-                  <md-button href="javascript:void(0)" class="md-white md-round"
-                    >Read Article</md-button
-                  >
+                  <md-button
+                    href="javascript:void(0)"
+                    class="md-white md-round"
+                  >Read Article</md-button>
                 </div>
               </md-card-content>
             </md-card>
@@ -178,9 +179,9 @@
               :no-colored-shadow="false"
               :card-image="cardProfile.cardProfile1"
             >
-              <template slot="cardTitleHeader"
-                >Tania Andrew</template
-              >
+              <template
+                slot="cardTitleHeader"
+              >Tania Andrew</template>
               <template slot="cardContent">
                 <h6 class="card-category text-info">Web Designer</h6>
                 <p class="card-description">
@@ -193,18 +194,15 @@
                 <md-button
                   href="javascript:void(0)"
                   class="md-twitter md-just-icon md-simple"
-                  ><i class="fab fa-twitter"></i
-                ></md-button>
+                ><i class="fab fa-twitter" /></md-button>
                 <md-button
                   href="javascript:void(0)"
                   class="md-dribbble md-just-icon md-simple"
-                  ><i class="fab fa-dribbble"></i
-                ></md-button>
+                ><i class="fab fa-dribbble" /></md-button>
                 <md-button
                   href="javascript:void(0)"
                   class="md-instagram md-just-icon md-simple"
-                  ><i class="fab fa-instagram"></i
-                ></md-button>
+                ><i class="fab fa-instagram" /></md-button>
               </template>
             </profile-card>
           </div>
@@ -222,18 +220,15 @@
                 <md-button
                   href="javasript:void(0)"
                   class="md-twitter md-just-icon md-round"
-                  ><i class="fab fa-twitter"></i
-                ></md-button>
+                ><i class="fab fa-twitter" /></md-button>
                 <md-button
                   href="javasript:void(0)"
                   class="md-facebook md-just-icon md-round"
-                  ><i class="fab fa-facebook"></i
-                ></md-button>
+                ><i class="fab fa-facebook" /></md-button>
                 <md-button
                   href="javasript:void(0)"
                   class="md-google md-just-icon md-round"
-                  ><i class="fab fa-google"></i
-                ></md-button>
+                ><i class="fab fa-google" /></md-button>
               </template>
             </profile-card>
           </div>
@@ -473,13 +468,13 @@
             <rotating-card>
               <template slot="frontRotateCardContent">
                 <h5 class="card-category card-category-social text-success">
-                  <i class="far fa-newspaper"></i> TechCrunch
+                  <i class="far fa-newspaper" /> TechCrunch
                 </h5>
 
                 <h4 class="card-title">
-                  <a href="javascript:void(0)"
-                    >This Card is Doing a Full Rotation on Hover...</a
-                  >
+                  <a
+                    href="javascript:void(0)"
+                  >This Card is Doing a Full Rotation on Hover...</a>
                 </h4>
                 <p class="card-description">
                   Don't be scared of the truth because we need to restart the
@@ -503,19 +498,19 @@
                   href="javascript:void(0)"
                   class="md-twitter md-just-icon md-round"
                 >
-                  <i class="fab fa-twitter"></i>
+                  <i class="fab fa-twitter" />
                 </md-button>
                 <md-button
                   href="javascript:void(0)"
                   class="md-dribbble md-just-icon md-round"
                 >
-                  <i class="fab fa-dribbble"></i>
+                  <i class="fab fa-dribbble" />
                 </md-button>
                 <md-button
                   href="javascript:void(0)"
                   class="md-facebook md-just-icon md-round"
                 >
-                  <i class="fab fa-facebook"></i>
+                  <i class="fab fa-facebook" />
                 </md-button>
               </template>
             </rotating-card>
@@ -526,13 +521,13 @@
             <rotating-card card-bg="rose">
               <template slot="frontRotateCardContent">
                 <h5 class="card-category card-category-social">
-                  <i class="fab fa-dribbble"></i> Dribbble
+                  <i class="fab fa-dribbble" /> Dribbble
                 </h5>
                 <h4 class="card-title">
-                  <a href="javascript:void(0)"
-                    >"Dribbble just acquired Crew, a very interesting
-                    startup..."</a
-                  >
+                  <a
+                    href="javascript:void(0)"
+                  >"Dribbble just acquired Crew, a very interesting
+                    startup..."</a>
                 </h4>
                 <p class="card-description">
                   Don't be scared of the truth because we need to restart the
@@ -543,7 +538,7 @@
               <template slot="frontCardAction">
                 <div class="author">
                   <a href="javascript:void(0)">
-                    <img :src="avatarImg" alt="..." class="avatar img-raised" />
+                    <img :src="avatarImg" alt="..." class="avatar img-raised">
                     <span>Tania Andrew</span>
                   </a>
                 </div>
@@ -553,13 +548,13 @@
               </template>
               <template slot="backRotateCardContent">
                 <h5 class="card-category card-category-social">
-                  <i class="fab fa-dribbble"></i> Dribbble
+                  <i class="fab fa-dribbble" /> Dribbble
                 </h5>
                 <h4 class="card-title">
-                  <a href="javascript:void(0)"
-                    >"Dribbble just acquired Crew, a very interesting
-                    startup..."</a
-                  >
+                  <a
+                    href="javascript:void(0)"
+                  >"Dribbble just acquired Crew, a very interesting
+                    startup..."</a>
                 </h4>
                 <div class="stats">
                   <md-button
@@ -593,13 +588,13 @@
             >
               <template slot="frontRotateCardContent">
                 <h5 class="card-category card-category-social text-success">
-                  <i class="far fa-newspaper"></i> Manual Rotating Card
+                  <i class="far fa-newspaper" /> Manual Rotating Card
                 </h5>
                 <h4 class="card-title">
-                  <a href="javascript:void(0)"
-                    >"This card is doing a full rotation, click on the rotate
-                    button"</a
-                  >
+                  <a
+                    href="javascript:void(0)"
+                  >"This card is doing a full rotation, click on the rotate
+                    button"</a>
                 </h4>
                 <p class="card-description">
                   Don't be scared of the truth because we need to restart the
@@ -632,22 +627,22 @@
                     href="javascript:void(0)"
                     class="md-twitter md-just-icon md-round"
                   >
-                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-twitter" />
                   </md-button>
                   <md-button
                     href="javascript:void(0)"
                     class="md-dribbble md-just-icon md-round"
                   >
-                    <i class="fab fa-dribbble"></i>
+                    <i class="fab fa-dribbble" />
                   </md-button>
                   <md-button
                     href="javascript:void(0)"
                     class="md-facebook md-just-icon md-round"
                   >
-                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-facebook" />
                   </md-button>
                 </div>
-                <br />
+                <br>
                 <md-button
                   href="javascript:void(0)"
                   class="md-simple md-round"
@@ -720,8 +715,8 @@
                     <md-icon>delete</md-icon>
                   </md-button>
 
-                  <br />
-                  <br />
+                  <br>
+                  <br>
 
                   <md-button
                     href="javascript:void(0)"
@@ -747,10 +742,10 @@
                   <md-icon>receipt</md-icon> Manual Rotating Card
                 </h5>
                 <h4 class="card-title">
-                  <a href="javascript:void(0)"
-                    >"This card is doing a full rotation, click on the rotate
-                    button"</a
-                  >
+                  <a
+                    href="javascript:void(0)"
+                  >"This card is doing a full rotation, click on the rotate
+                    button"</a>
                 </h4>
                 <p class="card-description">
                   Don't be scared of the truth because we need to restart the
@@ -786,23 +781,23 @@
                     href="javascript:void(0)"
                     class="md-twitter md-just-icon md-round md-white"
                   >
-                    <i class="fab fa-twitter md-icon-button"></i>
+                    <i class="fab fa-twitter md-icon-button" />
                   </md-button>
                   <md-button
                     href="javascript:void(0)"
                     class="md-dribbble md-just-icon md-round md-white"
                   >
-                    <i class="fab fa-dribbble md-icon-button"></i>
+                    <i class="fab fa-dribbble md-icon-button" />
                   </md-button>
                   <md-button
                     href="javascript:void(0)"
                     class="md-facebook md-just-icon md-round md-white"
                   >
-                    <i class="fab fa-facebook md-icon-button"></i>
+                    <i class="fab fa-facebook md-icon-button" />
                   </md-button>
 
-                  <br />
-                  <br />
+                  <br>
+                  <br>
 
                   <md-button
                     href="javascript:void(0)"
@@ -846,9 +841,9 @@
               <template slot="cardContent">
                 <h6 class="card-category text-warning">Dynamic Shadows</h6>
                 <h4 class="card-title">
-                  <a href="javacript:void(0)"
-                    >The image from this card is getting a yellow shadow</a
-                  >
+                  <a
+                    href="javacript:void(0)"
+                  >The image from this card is getting a yellow shadow</a>
                 </h4>
               </template>
             </blog-card>
@@ -864,9 +859,9 @@
               <template slot="cardContent">
                 <h6 class="card-category text-rose">Dynamic Shadows</h6>
                 <h4 class="card-title">
-                  <a href="javacript:void(0)"
-                    >The image from this card is getting a pink shadow</a
-                  >
+                  <a
+                    href="javacript:void(0)"
+                  >The image from this card is getting a pink shadow</a>
                 </h4>
               </template>
             </blog-card>
@@ -882,9 +877,9 @@
               <template slot="cardContent">
                 <h6 class="card-category text-info">Dynamic Shadows</h6>
                 <h4 class="card-title">
-                  <a href="javacript:void(0)"
-                    >The image from this card is getting a blue shadow</a
-                  >
+                  <a
+                    href="javacript:void(0)"
+                  >The image from this card is getting a blue shadow</a>
                 </h4>
               </template>
             </blog-card>
@@ -908,9 +903,9 @@
               :no-colored-shadow="false"
               :card-image="cardBlog.cardBlog4"
             >
-              <template slot="cardTitleHeader"
-                >This Summer Will be Awesome</template
-              >
+              <template
+                slot="cardTitleHeader"
+              >This Summer Will be Awesome</template>
               <template slot="cardContent">
                 <h6 class="card-category text-info">Fashion</h6>
                 <p class="card-description">
@@ -923,19 +918,19 @@
             <md-card class="bg-info">
               <md-card-content>
                 <h5 class="card-category card-category-social">
-                  <i class="fab fa-twitter"></i> Twitter
+                  <i class="fab fa-twitter" /> Twitter
                 </h5>
                 <h4 class="card-title">
-                  <a href="javascript:void(0)"
-                    >"You Don't Have to Sacrifice Joy to Build a Fabulous
-                    Business and Life"</a
-                  >
+                  <a
+                    href="javascript:void(0)"
+                  >"You Don't Have to Sacrifice Joy to Build a Fabulous
+                    Business and Life"</a>
                 </h4>
               </md-card-content>
               <md-card-actions>
                 <div class="author">
                   <a href="javascript:void(0)">
-                    <img :src="avatarImg" alt="..." class="avatar img-raised" />
+                    <img :src="avatarImg" alt="..." class="avatar img-raised">
                     <span>Tania Andrew</span>
                   </a>
                 </div>
@@ -957,9 +952,9 @@
               <template slot="cardContent">
                 <h6 class="card-category text-success">Legal</h6>
                 <h4 class="card-title">
-                  <a href="javascript:void(0)"
-                    >5 Common Legal Mistakes That Can Trip-Up Your Startup</a
-                  >
+                  <a
+                    href="javascript:void(0)"
+                  >5 Common Legal Mistakes That Can Trip-Up Your Startup</a>
                 </h4>
                 <p class="card-description">
                   Don't be scared of the truth because we need to restart the
@@ -970,7 +965,7 @@
               <template slot="cardAction">
                 <div class="author">
                   <a href="javascript:void(0)">
-                    <img :src="marcImg" alt="..." class="avatar img-raised" />
+                    <img :src="marcImg" alt="..." class="avatar img-raised">
                     <span>Mike John</span>
                   </a>
                 </div>
@@ -994,15 +989,15 @@
                   <md-icon class="text-danger">trending_up</md-icon> Trending
                 </h6>
                 <h4 class="card-title">
-                  <a href="javascript:void(0)"
-                    >To Grow Your Business Start Focusing on Your Employees</a
-                  >
+                  <a
+                    href="javascript:void(0)"
+                  >To Grow Your Business Start Focusing on Your Employees</a>
                 </h4>
               </template>
               <template slot="cardAction">
                 <div class="author">
                   <a href="javascript:void(0)">
-                    <img :src="marcImg" alt="..." class="avatar img-raised" />
+                    <img :src="marcImg" alt="..." class="avatar img-raised">
                     <span>Mike John</span>
                   </a>
                 </div>
@@ -1014,7 +1009,7 @@
             <md-card class="bg-danger">
               <md-card-content>
                 <h5 class="card-category card-category-social">
-                  <i class="far fa-newspaper"></i> The Next Web
+                  <i class="far fa-newspaper" /> The Next Web
                 </h5>
                 <h4 class="card-title">
                   <a href="javascript:void(0)">"Focus on Your Employees"</a>
@@ -1026,9 +1021,10 @@
                 </p>
 
                 <div class="card-stats text-center">
-                  <md-button href="javascript:void(0)" class="md-white md-round"
-                    >Read Article</md-button
-                  >
+                  <md-button
+                    href="javascript:void(0)"
+                    class="md-white md-round"
+                  >Read Article</md-button>
                 </div>
               </md-card-content>
             </md-card>
@@ -1047,9 +1043,9 @@
               :no-colored-shadow="false"
               :card-image="cardProfile.cardProfile1"
             >
-              <template slot="cardTitleHeader"
-                >Tania Andrew</template
-              >
+              <template
+                slot="cardTitleHeader"
+              >Tania Andrew</template>
               <template slot="cardContent">
                 <h6 class="card-category text-info">Web Designer</h6>
                 <p class="card-description">
@@ -1062,18 +1058,15 @@
                 <md-button
                   href="javascript:void(0)"
                   class="md-twitter md-just-icon md-simple"
-                  ><i class="fab fa-twitter"></i
-                ></md-button>
+                ><i class="fab fa-twitter" /></md-button>
                 <md-button
                   href="javascript:void(0)"
                   class="md-dribbble md-just-icon md-simple"
-                  ><i class="fab fa-dribbble"></i
-                ></md-button>
+                ><i class="fab fa-dribbble" /></md-button>
                 <md-button
                   href="javascript:void(0)"
                   class="md-instagram md-just-icon md-simple"
-                  ><i class="fab fa-instagram"></i
-                ></md-button>
+                ><i class="fab fa-instagram" /></md-button>
               </template>
             </profile-card>
           </div>
@@ -1094,18 +1087,15 @@
                 <md-button
                   href="javasript:void(0)"
                   class="md-twitter md-just-icon md-round"
-                  ><i class="fab fa-twitter"></i
-                ></md-button>
+                ><i class="fab fa-twitter" /></md-button>
                 <md-button
                   href="javasript:void(0)"
                   class="md-facebook md-just-icon md-round"
-                  ><i class="fab fa-facebook"></i
-                ></md-button>
+                ><i class="fab fa-facebook" /></md-button>
                 <md-button
                   href="javasript:void(0)"
                   class="md-google md-just-icon md-round"
-                  ><i class="fab fa-google"></i
-                ></md-button>
+                ><i class="fab fa-google" /></md-button>
               </template>
             </profile-card>
           </div>
@@ -1145,13 +1135,9 @@ import {
   PricingCard,
   RotatingCard,
   FullBgCard
-} from "@/components";
+} from '@/components';
 
 export default {
-  props: {
-    sectionCardPlain: Boolean,
-    sectionMorphingCards: Boolean
-  },
   components: {
     BlogCard,
     ProfileCard,
@@ -1159,39 +1145,43 @@ export default {
     PricingCard,
     RotatingCard
   },
+  props: {
+    sectionCardPlain: Boolean,
+    sectionMorphingCards: Boolean
+  },
   data() {
     return {
       manualRotateState: false,
       manualRotateState2: false,
       manualRotateState3: false,
       cardBlog: {
-        cardBlog1: require("@/assets/img/examples/card-blog1.jpg"),
-        cardBlog2: require("@/assets/img/examples/card-blog2.jpg"),
-        cardBlog3: require("@/assets/img/examples/blog8.jpg"),
-        cardBlog4: require("@/assets/img/examples/blog5.jpg"),
-        cardBlog5: require("@/assets/img/examples/blog1.jpg"),
-        cardBlog6: require("@/assets/img/examples/blog6.jpg")
+        cardBlog1: require('@/assets/img/examples/card-blog1.jpg'),
+        cardBlog2: require('@/assets/img/examples/card-blog2.jpg'),
+        cardBlog3: require('@/assets/img/examples/blog8.jpg'),
+        cardBlog4: require('@/assets/img/examples/blog5.jpg'),
+        cardBlog5: require('@/assets/img/examples/blog1.jpg'),
+        cardBlog6: require('@/assets/img/examples/blog6.jpg')
       },
       cardProfile: {
-        cardProfile1: require("@/assets/img/examples/card-profile4.jpg"),
-        cardProfile2: require("@/assets/img/examples/card-profile1.jpg")
+        cardProfile1: require('@/assets/img/examples/card-profile4.jpg'),
+        cardProfile2: require('@/assets/img/examples/card-profile1.jpg')
       },
       cardFullBg: {
-        fullBg1: require("@/assets/img/examples/office1.jpg"),
-        fullBg2: require("@/assets/img/examples/card-blog3.jpg")
+        fullBg1: require('@/assets/img/examples/office1.jpg'),
+        fullBg2: require('@/assets/img/examples/card-blog3.jpg')
       },
       cardRotating: {
-        cardRotatingBg1: require("@/assets/img/examples/card-blog5.jpg"),
-        cardRotatingBg2: require("@/assets/img/examples/card-blog6.jpg")
+        cardRotatingBg1: require('@/assets/img/examples/card-blog5.jpg'),
+        cardRotatingBg2: require('@/assets/img/examples/card-blog6.jpg')
       },
       dynamicShadows: {
-        dynamicShadowsBg1: require("@/assets/img/examples/color1.jpg"),
-        dynamicShadowsBg2: require("@/assets/img/examples/color2.jpg"),
-        dynamicShadowsBg3: require("@/assets/img/examples/color3.jpg")
+        dynamicShadowsBg1: require('@/assets/img/examples/color1.jpg'),
+        dynamicShadowsBg2: require('@/assets/img/examples/color2.jpg'),
+        dynamicShadowsBg3: require('@/assets/img/examples/color3.jpg')
       },
-      avatarImg: require("@/assets/img/faces/avatar.jpg"),
-      christianImg: require("@/assets/img/faces/christian.jpg"),
-      marcImg: require("@/assets/img/faces/marc.jpg")
+      avatarImg: require('@/assets/img/faces/avatar.jpg'),
+      christianImg: require('@/assets/img/faces/christian.jpg'),
+      marcImg: require('@/assets/img/faces/marc.jpg')
     };
   }
 };

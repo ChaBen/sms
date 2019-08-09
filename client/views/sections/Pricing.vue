@@ -116,8 +116,8 @@
               color-button="rose"
             >
               <!-- here you can add your content for tab-content -->
-              <template slot="tab-pane-1"> </template>
-              <template slot="tab-pane-2"> </template>
+              <template slot="tab-pane-1" />
+              <template slot="tab-pane-2" />
             </tabs>
           </div>
         </div>
@@ -409,8 +409,8 @@
               :on-change="changePrices"
             >
               <!-- here you can add your content for tab-content -->
-              <template slot="tab-pane-1"> </template>
-              <template slot="tab-pane-2"> </template>
+              <template slot="tab-pane-1" />
+              <template slot="tab-pane-2" />
             </tabs>
             <p class="text-gray">
               You have Free Unlimited Updates and Premium Support on each
@@ -426,46 +426,46 @@
                     <h6 class="card-category text-gray">Html Package</h6>
                     <h1 class="card-title">
                       <small>$</small>
-                      <template v-if="personal"
-                        >0</template
-                      >
-                      <template v-else
-                        >159</template
-                      >
+                      <template
+                        v-if="personal"
+                      >0</template>
+                      <template
+                        v-else
+                      >159</template>
                       <small>/mo</small>
                     </h1>
                     <ul>
                       <li>
                         <b>
-                          <template v-if="personal"
-                            >1</template
-                          >
-                          <template v-else
-                            >5+</template
-                          >
+                          <template
+                            v-if="personal"
+                          >1</template>
+                          <template
+                            v-else
+                          >5+</template>
                         </b>
                         Developer
                       </li>
                       <li>
                         <b>
-                          <template v-if="personal"
-                            >99+</template
-                          >
-                          <template v-else
-                            >199+</template
-                          >
+                          <template
+                            v-if="personal"
+                          >99+</template>
+                          <template
+                            v-else
+                          >199+</template>
                         </b>
                         Componets
                       </li>
                       <li><b>HTML</b> Elements</li>
                       <li>
                         <b>
-                          <template v-if="personal"
-                            >14</template
-                          >
-                          <template v-else
-                            >24</template
-                          >
+                          <template
+                            v-if="personal"
+                          >14</template>
+                          <template
+                            v-else
+                          >24</template>
                         </b>
                         Page Examples
                       </li>
@@ -475,12 +475,12 @@
                       href="javascript:void(0)"
                       class="md-primary md-round"
                     >
-                      <template v-if="personal"
-                        >Free Download</template
-                      >
-                      <template v-else
-                        >Buy Now!</template
-                      >
+                      <template
+                        v-if="personal"
+                      >Free Download</template>
+                      <template
+                        v-else
+                      >Buy Now!</template>
                     </md-button>
                   </template>
                 </pricing-card>
@@ -493,46 +493,46 @@
                     </h6>
                     <h1 class="card-title">
                       <small>$</small>
-                      <template v-if="personal"
-                        >79</template
-                      >
-                      <template v-else
-                        >299</template
-                      >
+                      <template
+                        v-if="personal"
+                      >79</template>
+                      <template
+                        v-else
+                      >299</template>
                       <small>/mo</small>
                     </h1>
                     <ul>
                       <li>
                         <b>
-                          <template v-if="personal"
-                            >1</template
-                          >
-                          <template v-else
-                            >10+</template
-                          >
+                          <template
+                            v-if="personal"
+                          >1</template>
+                          <template
+                            v-else
+                          >10+</template>
                         </b>
                         Developer
                       </li>
                       <li>
                         <b>
-                          <template v-if="personal"
-                            >199+</template
-                          >
-                          <template v-else
-                            >299+</template
-                          >
+                          <template
+                            v-if="personal"
+                          >199+</template>
+                          <template
+                            v-else
+                          >299+</template>
                         </b>
                         Componets
                       </li>
                       <li><b>HTML & Sketch</b> Elements</li>
                       <li>
                         <b>
-                          <template v-if="personal"
-                            >22</template
-                          >
-                          <template v-else
-                            >45</template
-                          >
+                          <template
+                            v-if="personal"
+                          >22</template>
+                          <template
+                            v-else
+                          >45</template>
                         </b>
                         Page Examples
                       </li>
@@ -557,10 +557,10 @@
 </template>
 
 <script>
-import { Tabs, FullBgCard, PricingCard } from "@/components";
+import { Tabs, FullBgCard, PricingCard } from '@/components';
 
 export default {
-  name: "pricing",
+  name: 'Pricing',
   components: {
     PricingCard,
     FullBgCard,
@@ -569,10 +569,10 @@ export default {
   data() {
     return {
       personal: true,
-      pricing1: require("@/assets/img/bg11.jpg"),
-      pricing3: require("@/assets/img/examples/city.jpg"),
+      pricing1: require('@/assets/img/bg11.jpg'),
+      pricing3: require('@/assets/img/examples/city.jpg'),
       cardPricing2: {
-        cardPricing1: require("@/assets/img/examples/card-blog3.jpg")
+        cardPricing1: require('@/assets/img/examples/card-blog3.jpg')
       }
     };
   },

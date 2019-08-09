@@ -1,7 +1,6 @@
 const request = require('request-promise');
 const { authenticate } = require('@feathersjs/authentication').hooks;
 
-
 async function beforeAddUserId(context) {
   // TODO: api 보내는 로직
   const uri = 'https://www.easysendsms.com/sms/bulksms-api/bulksms-api';
@@ -26,7 +25,7 @@ module.exports = {
     all: [authenticate('jwt')],
     find: [],
     get: [],
-    create: [ beforeAddUserId ],
+    create: [beforeAddUserId],
     update: [],
     patch: [],
     remove: []

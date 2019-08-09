@@ -13,24 +13,24 @@
         :no-colored-shadow="noColoredShadow"
       >
         <a href="javascript:void(0)">
-          <img class="img" :src="cardImage" />
-          <div class="card-title" v-if="$slots.cardTitleHeader">
-            <slot name="cardTitleHeader"></slot>
+          <img class="img" :src="cardImage">
+          <div v-if="$slots.cardTitleHeader" class="card-title">
+            <slot name="cardTitleHeader" />
           </div>
         </a>
         <div
-          class="colored-shadow"
           v-if="!noColoredShadow && !shadowNormal"
+          class="colored-shadow"
           :style="shadowImageBlog(cardImage)"
-        ></div>
+        />
       </md-card-header>
 
       <md-card-content v-if="$slots.cardContent">
-        <slot name="cardContent"></slot>
+        <slot name="cardContent" />
       </md-card-content>
 
       <md-card-actions v-if="$slots.cardAction">
-        <slot name="cardAction"></slot>
+        <slot name="cardAction" />
       </md-card-actions>
     </template>
 
@@ -43,21 +43,21 @@
             :no-colored-shadow="noColoredShadow"
           >
             <a href="javascript:void(0)">
-              <img class="img" :src="cardImage" />
-              <div class="card-title" v-if="$slots.cardTitleHeader">
-                <slot name="cardTitleHeader"></slot>
+              <img class="img" :src="cardImage">
+              <div v-if="$slots.cardTitleHeader" class="card-title">
+                <slot name="cardTitleHeader" />
               </div>
             </a>
             <div
-              class="colored-shadow"
               v-if="!noColoredShadow && !shadowNormal"
+              class="colored-shadow"
               :style="shadowImageBlog(cardImage)"
-            ></div>
+            />
           </md-card-header>
         </div>
         <div class="md-layout-item md-size-55 md-xsmall-size-100">
           <md-card-content v-if="$slots.cardContent">
-            <slot name="cardContent"></slot>
+            <slot name="cardContent" />
           </md-card-content>
         </div>
       </div>
@@ -67,7 +67,7 @@
 
 <script>
 export default {
-  name: "blog-card",
+  name: 'BlogCard',
   props: {
     type: String,
     reverseRow: Boolean,

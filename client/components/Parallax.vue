@@ -1,14 +1,14 @@
 <template>
   <div :style="styles">
-    <slot></slot>
+    <slot />
   </div>
 </template>
 <script>
 function debounce(func, wait, immediate) {
   let timeout;
   return function() {
-    const context = this,
-      args = arguments;
+    const context = this;
+    const args = arguments;
     clearTimeout(timeout);
     timeout = setTimeout(() => {
       timeout = null;
@@ -18,7 +18,7 @@ function debounce(func, wait, immediate) {
   };
 }
 export default {
-  name: "parallax",
+  name: 'Parallax',
   props: {
     parallaxActive: String
   },
@@ -28,29 +28,29 @@ export default {
       debounceTimeout: 6
     };
   },
+  mounted() {
+    const self = this;
+    window.addEventListener('scroll', function() {
+      if (window.innerWidth > 991 && self.parallaxActive === 'true') {
+        const scrollVal = this.scrollY;
+        self.checkForParallax(scrollVal);
+      }
+    });
+  },
   methods: {
     handleScroll(scrollVal) {
-      let oVal = scrollVal / 3;
+      const oVal = scrollVal / 3;
       this.styles = {
         transform: `translate3d(0, ${oVal}px,0)`
       };
     },
     checkForParallax(scrollVal) {
-      let fn = debounce(
+      const fn = debounce(
         () => this.handleScroll(scrollVal),
         this.debounceTimeout
       );
       fn();
     }
-  },
-  mounted() {
-    let self = this;
-    window.addEventListener("scroll", function() {
-      if (window.innerWidth > 991 && self.parallaxActive === "true") {
-        let scrollVal = this.scrollY;
-        self.checkForParallax(scrollVal);
-      }
-    });
   }
 };
 </script>

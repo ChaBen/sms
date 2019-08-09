@@ -97,7 +97,7 @@
 </template>
 
 <script>
-import { NavTabsCard } from "@/components";
+import { NavTabsCard } from '@/components';
 
 export default {
   components: {

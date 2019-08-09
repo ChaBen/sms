@@ -32,11 +32,11 @@
                 color-button="success"
               >
                 <!-- here you can add your content for tab-content -->
-                <template slot="tab-pane-1"> </template>
-                <template slot="tab-pane-2"> </template>
-                <template slot="tab-pane-3"> </template>
-                <template slot="tab-pane-4"> </template>
-                <template slot="tab-pane-5"> </template>
+                <template slot="tab-pane-1" />
+                <template slot="tab-pane-2" />
+                <template slot="tab-pane-3" />
+                <template slot="tab-pane-4" />
+                <template slot="tab-pane-5" />
               </tabs>
             </div>
           </div>
@@ -111,7 +111,7 @@
                     href="javascript:void(0)"
                     class="md-simple md-just-icon md-white"
                   >
-                    <i class="fab fa-get-pocket"></i>
+                    <i class="fab fa-get-pocket" />
                     <md-tooltip md-direction="top">Save to Pocket</md-tooltip>
                   </md-button>
                 </template>
@@ -123,7 +123,7 @@
       <div class="section">
         <div class="container">
           <h3 class="title text-center">You may also be interested in</h3>
-          <br />
+          <br>
           <div class="md-layout">
             <div class="md-layout-item md-size-33 md-small-size-100">
               <blog-card
@@ -135,10 +135,10 @@
                 <template slot="cardContent">
                   <h6 class="card-category text-info">ENTERPRISE</h6>
                   <h4 class="card-title">
-                    <a href="javasript:void(0)"
-                      >Autodesk looks to future of 3D printing with Project
-                      Escher</a
-                    >
+                    <a
+                      href="javasript:void(0)"
+                    >Autodesk looks to future of 3D printing with Project
+                      Escher</a>
                   </h4>
                   <p class="card-description">
                     Like so many organizations these days, Autodesk is a company
@@ -159,9 +159,9 @@
                 <template slot="cardContent">
                   <h6 class="card-category text-success">Startups</h6>
                   <h4 class="card-title">
-                    <a href="javasript:void(0)"
-                      >Lyft launching cross-platform service this week</a
-                    >
+                    <a
+                      href="javasript:void(0)"
+                    >Lyft launching cross-platform service this week</a>
                   </h4>
                   <p class="card-description">
                     Don't be scared of the truth because we need to restart the
@@ -184,9 +184,9 @@
                     <md-icon class="text-danger">trending_up</md-icon> Fashion
                   </h6>
                   <h4 class="card-title">
-                    <a href="javasript:void(0)"
-                      >6 insights into the French Fashion landscape</a
-                    >
+                    <a
+                      href="javasript:void(0)"
+                    >6 insights into the French Fashion landscape</a>
                   </h4>
                   <p class="card-description">
                     Don't be scared of the truth because we need to restart the
@@ -223,18 +223,15 @@
                   <md-button
                     href="javascript:void(0)"
                     class="md-twitter md-just-icon md-simple md-white"
-                    ><i class="fab fa-twitter"></i
-                  ></md-button>
+                  ><i class="fab fa-twitter" /></md-button>
                   <md-button
                     href="javascript:void(0)"
                     class="md-facebook md-just-icon md-simple md-white"
-                    ><i class="fab fa-facebook"></i
-                  ></md-button>
+                  ><i class="fab fa-facebook" /></md-button>
                   <md-button
                     href="javascript:void(0)"
                     class="md-google md-just-icon md-simple md-white"
-                    ><i class="fab fa-google"></i
-                  ></md-button>
+                  ><i class="fab fa-google" /></md-button>
                 </template>
               </profile-card>
             </div>
@@ -258,23 +255,19 @@
                   <md-button
                     href="javascript:void(0)"
                     class="md-linkedin md-just-icon md-simple md-white"
-                    ><i class="fab fa-linkedin"></i
-                  ></md-button>
+                  ><i class="fab fa-linkedin" /></md-button>
                   <md-button
                     href="javascript:void(0)"
                     class="md-facebook md-just-icon md-simple md-white"
-                    ><i class="fab fa-facebook"></i
-                  ></md-button>
+                  ><i class="fab fa-facebook" /></md-button>
                   <md-button
                     href="javascript:void(0)"
                     class="md-dribbble md-just-icon md-simple md-white"
-                    ><i class="fab fa-dribbble"></i
-                  ></md-button>
+                  ><i class="fab fa-dribbble" /></md-button>
                   <md-button
                     href="javascript:void(0)"
                     class="md-google md-just-icon md-simple md-white"
-                    ><i class="fab fa-google"></i
-                  ></md-button>
+                  ><i class="fab fa-google" /></md-button>
                 </template>
               </profile-card>
             </div>
@@ -307,15 +300,15 @@
                             <md-input
                               v-model="subscribe"
                               placeholder="Subscribe"
-                            ></md-input>
+                            />
                           </md-field>
                         </div>
                         <div
                           class="md-layout-item md-size-33 md-medium-size-50 md-xsmall-size-100"
                         >
-                          <md-button class="md-primary md-round md-block"
-                            >Subscribe</md-button
-                          >
+                          <md-button
+                            class="md-primary md-round md-block"
+                          >Subscribe</md-button>
                         </div>
                       </div>
                     </form>
@@ -331,8 +324,8 @@
 </template>
 
 <script>
-import { Tabs, FullBgCard, BlogCard, ProfileCard } from "@/components";
-import Mixins from "@/plugins/basicMixins";
+import { Tabs, FullBgCard, BlogCard, ProfileCard } from '@/components';
+import Mixins from '@/plugins/basicMixins';
 
 export default {
   components: {
@@ -345,20 +338,20 @@ export default {
   data() {
     return {
       subscribe: null,
-      image: require("@/assets/img/examples/bg-blog-posts.jpg"),
+      image: require('@/assets/img/examples/bg-blog-posts.jpg'),
       cardProject: {
-        cardProject1: require("@/assets/img/examples/office2.jpg"),
-        cardProject2: require("@/assets/img/examples/blog8.jpg"),
-        cardProject3: require("@/assets/img/examples/card-project6.jpg")
+        cardProject1: require('@/assets/img/examples/office2.jpg'),
+        cardProject2: require('@/assets/img/examples/blog8.jpg'),
+        cardProject3: require('@/assets/img/examples/card-project6.jpg')
       },
       cardProfile3: {
-        cardProfile1: require("@/assets/img/faces/card-profile1-square.jpg"),
-        cardProfile2: require("@/assets/img/faces/card-profile4-square.jpg")
+        cardProfile1: require('@/assets/img/faces/card-profile1-square.jpg'),
+        cardProfile2: require('@/assets/img/faces/card-profile4-square.jpg')
       },
       cardBlog: {
-        cardBlog1: require("@/assets/img/bg5.jpg"),
-        cardBlog2: require("@/assets/img/examples/blog5.jpg"),
-        cardBlog3: require("@/assets/img/examples/blog6.jpg")
+        cardBlog1: require('@/assets/img/bg5.jpg'),
+        cardBlog2: require('@/assets/img/examples/blog5.jpg'),
+        cardBlog3: require('@/assets/img/examples/blog6.jpg')
       }
     };
   }

@@ -1,7 +1,6 @@
 <template>
   <div class="wrapper">
-    <parallax class="page-header header-filter header-small" parallax-active="true" filter-color="rose" :style="headerStyle">
-    </parallax>
+    <parallax class="page-header header-filter header-small" parallax-active="true" filter-color="rose" :style="headerStyle" />
     <div class="section">
       <div class="container">
         <div class="main main-raised">
@@ -18,7 +17,7 @@
                     <md-table-row slot="md-table-row" slot-scope="{ item }">
                       <md-table-cell md-label="Product" class="td-name">
                         <a href="javascript:void(0)">{{ item.product }}</a>
-                        <br />
+                        <br>
                         <small>{{ item.category }}</small>
                       </md-table-cell>
                       <md-table-cell md-label="Color">
@@ -68,11 +67,27 @@
 </template>
 
 <script>
-import Mixins from "@/plugins/basicMixins";
+import Mixins from '@/plugins/basicMixins';
 
 export default {
   mixins: [Mixins.HeaderImage],
   bodyClass: 'success-page',
+  data: () => ({
+    selectColor: 'rose',
+    selectSize: 'small',
+    image: require('@/assets/img/examples/bg-product.jpg'),
+    shoppingCartTable: [
+      {
+        product: 'Spring Jacket',
+        category: 'by Dolce&Gabbana',
+        color: 'Red',
+        size: 'M',
+        price: 549,
+        qty: 1,
+        amount: 549
+      }
+    ]
+  }),
   computed: {
     shoppingTotal() {
       return this.shoppingCartTable.reduce((accumulator, current) => {
@@ -80,26 +95,10 @@ export default {
       }, 0);
     }
   },
-  data: () => ({
-    selectColor: 'rose',
-    selectSize: 'small',
-    image: require('@/assets/img/examples/bg-product.jpg'),
-    shoppingCartTable: [
-      {
-        product: "Spring Jacket",
-        category: "by Dolce&Gabbana",
-        color: "Red",
-        size: "M",
-        price: 549,
-        qty: 1,
-        amount: 549
-      }
-    ]
-  }),
   async fetch({ store, query }) {
     const { paymentId, PayerID } = query;
     await store.dispatch('paysuccess/create', { paymentId, PayerID });
-  },
+  }
 };
 </script>
 

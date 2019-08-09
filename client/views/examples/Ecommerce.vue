@@ -49,9 +49,9 @@
                   <div class="stats ml-auto">
                     <md-button class="md-just-icon md-rose md-round md-simple">
                       <md-icon>favorite</md-icon>
-                      <md-tooltip md-direction="top"
-                        >Save to Wishlist</md-tooltip
-                      >
+                      <md-tooltip
+                        md-direction="top"
+                      >Save to Wishlist</md-tooltip>
                     </md-button>
                   </div>
                 </template>
@@ -82,9 +82,9 @@
                   <div class="stats ml-auto">
                     <md-button class="md-just-icon md-rose md-round md-simple">
                       <md-icon>favorite</md-icon>
-                      <md-tooltip md-direction="top"
-                        >Save to Wishlist</md-tooltip
-                      >
+                      <md-tooltip
+                        md-direction="top"
+                      >Save to Wishlist</md-tooltip>
                     </md-button>
                   </div>
                 </template>
@@ -115,9 +115,9 @@
                   <div class="stats ml-auto">
                     <md-button class="md-just-icon md-rose md-round md-simple">
                       <md-icon>favorite</md-icon>
-                      <md-tooltip md-direction="top"
-                        >Save to Wishlist</md-tooltip
-                      >
+                      <md-tooltip
+                        md-direction="top"
+                      >Save to Wishlist</md-tooltip>
                     </md-button>
                   </div>
                 </template>
@@ -153,130 +153,163 @@
                   >
                     <template slot="md-collapse-pane-1">
                       <span class="price-content">
-                        <span class="price-left"
-                          >€{{ Math.floor(this.sliders.rangeSlider[0]) }}</span
-                        >
-                        <span class="price-right"
-                          >€{{ Math.floor(this.sliders.rangeSlider[1]) }}</span
-                        >
+                        <span
+                          class="price-left"
+                        >€{{ Math.floor(sliders.rangeSlider[0]) }}</span>
+                        <span
+                          class="price-right"
+                        >€{{ Math.floor(sliders.rangeSlider[1]) }}</span>
                       </span>
 
                       <slider
                         v-model="sliders.rangeSlider"
-                        @input="newValue"
                         :range="{ min: 101, max: 700 }"
                         type="rose"
                         :connect="true"
-                      >
-                      </slider>
+                        @input="newValue"
+                      />
                     </template>
                     <template slot="md-collapse-pane-2">
-                      <md-checkbox v-model="clothing.blazers" class="mb-0"
-                        >Blazers</md-checkbox
-                      >
-                      <md-checkbox v-model="clothing.casualShirts" class="mb-0"
-                        >Casual Shirts</md-checkbox
-                      >
-                      <md-checkbox v-model="clothing.formalShirts" class="mb-0"
-                        >Formal Shirts</md-checkbox
-                      >
-                      <md-checkbox v-model="clothing.jeans" class="mb-0"
-                        >Jeans</md-checkbox
-                      >
-                      <md-checkbox v-model="clothing.polos" class="mb-0"
-                        >Polos</md-checkbox
-                      >
-                      <md-checkbox v-model="clothing.pyjamas" class="mb-0"
-                        >Pyjamas</md-checkbox
-                      >
-                      <md-checkbox v-model="clothing.shorts" class="mb-0"
-                        >Shorts</md-checkbox
-                      >
-                      <md-checkbox v-model="clothing.trousers" class="mb-0"
-                        >Trousers</md-checkbox
-                      >
+                      <md-checkbox
+                        v-model="clothing.blazers"
+                        class="mb-0"
+                      >Blazers</md-checkbox>
+                      <md-checkbox
+                        v-model="clothing.casualShirts"
+                        class="mb-0"
+                      >Casual Shirts</md-checkbox>
+                      <md-checkbox
+                        v-model="clothing.formalShirts"
+                        class="mb-0"
+                      >Formal Shirts</md-checkbox>
+                      <md-checkbox
+                        v-model="clothing.jeans"
+                        class="mb-0"
+                      >Jeans</md-checkbox>
+                      <md-checkbox
+                        v-model="clothing.polos"
+                        class="mb-0"
+                      >Polos</md-checkbox>
+                      <md-checkbox
+                        v-model="clothing.pyjamas"
+                        class="mb-0"
+                      >Pyjamas</md-checkbox>
+                      <md-checkbox
+                        v-model="clothing.shorts"
+                        class="mb-0"
+                      >Shorts</md-checkbox>
+                      <md-checkbox
+                        v-model="clothing.trousers"
+                        class="mb-0"
+                      >Trousers</md-checkbox>
                     </template>
                     <template slot="md-collapse-pane-3">
-                      <md-checkbox v-model="designer.all" class="mb-0"
-                        >All</md-checkbox
-                      >
-                      <md-checkbox v-model="designer.polo" class="mb-0"
-                        >Polo Ralph Lauren</md-checkbox
-                      >
-                      <md-checkbox v-model="designer.wooyoungmi" class="mb-0"
-                        >Wooyoungmi</md-checkbox
-                      >
-                      <md-checkbox v-model="designer.alexander" class="mb-0"
-                        >Alexander McQueen</md-checkbox
-                      >
-                      <md-checkbox v-model="designer.tomFord" class="mb-0"
-                        >Tom Ford</md-checkbox
-                      >
-                      <md-checkbox v-model="designer.ami" class="mb-0"
-                        >AMI</md-checkbox
-                      >
-                      <md-checkbox v-model="designer.berena" class="mb-0"
-                        >Berena</md-checkbox
-                      >
-                      <md-checkbox v-model="designer.sweeney" class="mb-0"
-                        >Thom Sweeney</md-checkbox
-                      >
-                      <md-checkbox v-model="designer.burberry" class="mb-0"
-                        >Burberry Prorsum</md-checkbox
-                      >
-                      <md-checkbox v-model="designer.calvin" class="mb-0"
-                        >Calvin Klein</md-checkbox
-                      >
-                      <md-checkbox v-model="designer.kingsman" class="mb-0"
-                        >Kingsman</md-checkbox
-                      >
-                      <md-checkbox v-model="designer.monaco" class="mb-0"
-                        >Club Monaco</md-checkbox
-                      >
-                      <md-checkbox v-model="designer.dolce" class="mb-0"
-                        >Dolce & Gabanna</md-checkbox
-                      >
-                      <md-checkbox v-model="designer.gucci" class="mb-0"
-                        >Gucci</md-checkbox
-                      >
-                      <md-checkbox v-model="designer.biglioli" class="mb-0"
-                        >Biglioli</md-checkbox
-                      >
-                      <md-checkbox v-model="designer.lanvin" class="mb-0"
-                        >Lanvin</md-checkbox
-                      >
-                      <md-checkbox v-model="designer.piana" class="mb-0"
-                        >Loro Piana</md-checkbox
-                      >
-                      <md-checkbox v-model="designer.massimo" class="mb-0"
-                        >Massimo Alba</md-checkbox
-                      >
+                      <md-checkbox
+                        v-model="designer.all"
+                        class="mb-0"
+                      >All</md-checkbox>
+                      <md-checkbox
+                        v-model="designer.polo"
+                        class="mb-0"
+                      >Polo Ralph Lauren</md-checkbox>
+                      <md-checkbox
+                        v-model="designer.wooyoungmi"
+                        class="mb-0"
+                      >Wooyoungmi</md-checkbox>
+                      <md-checkbox
+                        v-model="designer.alexander"
+                        class="mb-0"
+                      >Alexander McQueen</md-checkbox>
+                      <md-checkbox
+                        v-model="designer.tomFord"
+                        class="mb-0"
+                      >Tom Ford</md-checkbox>
+                      <md-checkbox
+                        v-model="designer.ami"
+                        class="mb-0"
+                      >AMI</md-checkbox>
+                      <md-checkbox
+                        v-model="designer.berena"
+                        class="mb-0"
+                      >Berena</md-checkbox>
+                      <md-checkbox
+                        v-model="designer.sweeney"
+                        class="mb-0"
+                      >Thom Sweeney</md-checkbox>
+                      <md-checkbox
+                        v-model="designer.burberry"
+                        class="mb-0"
+                      >Burberry Prorsum</md-checkbox>
+                      <md-checkbox
+                        v-model="designer.calvin"
+                        class="mb-0"
+                      >Calvin Klein</md-checkbox>
+                      <md-checkbox
+                        v-model="designer.kingsman"
+                        class="mb-0"
+                      >Kingsman</md-checkbox>
+                      <md-checkbox
+                        v-model="designer.monaco"
+                        class="mb-0"
+                      >Club Monaco</md-checkbox>
+                      <md-checkbox
+                        v-model="designer.dolce"
+                        class="mb-0"
+                      >Dolce & Gabanna</md-checkbox>
+                      <md-checkbox
+                        v-model="designer.gucci"
+                        class="mb-0"
+                      >Gucci</md-checkbox>
+                      <md-checkbox
+                        v-model="designer.biglioli"
+                        class="mb-0"
+                      >Biglioli</md-checkbox>
+                      <md-checkbox
+                        v-model="designer.lanvin"
+                        class="mb-0"
+                      >Lanvin</md-checkbox>
+                      <md-checkbox
+                        v-model="designer.piana"
+                        class="mb-0"
+                      >Loro Piana</md-checkbox>
+                      <md-checkbox
+                        v-model="designer.massimo"
+                        class="mb-0"
+                      >Massimo Alba</md-checkbox>
                     </template>
                     <template slot="md-collapse-pane-4">
-                      <md-checkbox v-model="colour.all" class="mb-0"
-                        >All</md-checkbox
-                      >
-                      <md-checkbox v-model="colour.black" class="mb-0"
-                        >Black</md-checkbox
-                      >
-                      <md-checkbox v-model="colour.blue" class="mb-0"
-                        >Blue</md-checkbox
-                      >
-                      <md-checkbox v-model="colour.brown" class="mb-0"
-                        >Brown</md-checkbox
-                      >
-                      <md-checkbox v-model="colour.gray" class="mb-0"
-                        >Gray</md-checkbox
-                      >
-                      <md-checkbox v-model="colour.green" class="mb-0"
-                        >Green</md-checkbox
-                      >
-                      <md-checkbox v-model="colour.neutrals" class="mb-0"
-                        >Neutrals</md-checkbox
-                      >
-                      <md-checkbox v-model="colour.purple" class="mb-0"
-                        >Purple</md-checkbox
-                      >
+                      <md-checkbox
+                        v-model="colour.all"
+                        class="mb-0"
+                      >All</md-checkbox>
+                      <md-checkbox
+                        v-model="colour.black"
+                        class="mb-0"
+                      >Black</md-checkbox>
+                      <md-checkbox
+                        v-model="colour.blue"
+                        class="mb-0"
+                      >Blue</md-checkbox>
+                      <md-checkbox
+                        v-model="colour.brown"
+                        class="mb-0"
+                      >Brown</md-checkbox>
+                      <md-checkbox
+                        v-model="colour.gray"
+                        class="mb-0"
+                      >Gray</md-checkbox>
+                      <md-checkbox
+                        v-model="colour.green"
+                        class="mb-0"
+                      >Green</md-checkbox>
+                      <md-checkbox
+                        v-model="colour.neutrals"
+                        class="mb-0"
+                      >Neutrals</md-checkbox>
+                      <md-checkbox
+                        v-model="colour.purple"
+                        class="mb-0"
+                      >Purple</md-checkbox>
                     </template>
                   </collapse>
                 </md-card-content>
@@ -307,9 +340,9 @@
                           class="md-just-icon md-rose md-round md-simple"
                         >
                           <md-icon>favorite</md-icon>
-                          <md-tooltip md-direction="left"
-                            >Remove from Wishlist</md-tooltip
-                          >
+                          <md-tooltip
+                            md-direction="left"
+                          >Remove from Wishlist</md-tooltip>
                         </md-button>
                       </div>
                     </template>
@@ -338,9 +371,9 @@
                           class="md-just-icon md-rose md-round md-simple"
                         >
                           <md-icon>favorite_border</md-icon>
-                          <md-tooltip md-direction="left"
-                            >Save to Wishlist</md-tooltip
-                          >
+                          <md-tooltip
+                            md-direction="left"
+                          >Save to Wishlist</md-tooltip>
                         </md-button>
                       </div>
                     </template>
@@ -369,9 +402,9 @@
                           class="md-just-icon md-rose md-round md-simple"
                         >
                           <md-icon>favorite_border</md-icon>
-                          <md-tooltip md-direction="left"
-                            >Save to Wishlist</md-tooltip
-                          >
+                          <md-tooltip
+                            md-direction="left"
+                          >Save to Wishlist</md-tooltip>
                         </md-button>
                       </div>
                     </template>
@@ -400,9 +433,9 @@
                           class="md-just-icon md-rose md-round md-simple"
                         >
                           <md-icon>favorite_border</md-icon>
-                          <md-tooltip md-direction="left"
-                            >Save to Wishlist</md-tooltip
-                          >
+                          <md-tooltip
+                            md-direction="left"
+                          >Save to Wishlist</md-tooltip>
                         </md-button>
                       </div>
                     </template>
@@ -431,9 +464,9 @@
                           class="md-just-icon md-rose md-round md-simple"
                         >
                           <md-icon>favorite</md-icon>
-                          <md-tooltip md-direction="left"
-                            >Remove from Wishlist</md-tooltip
-                          >
+                          <md-tooltip
+                            md-direction="left"
+                          >Remove from Wishlist</md-tooltip>
                         </md-button>
                       </div>
                     </template>
@@ -462,9 +495,9 @@
                           class="md-just-icon md-rose md-round md-simple"
                         >
                           <md-icon>favorite_border</md-icon>
-                          <md-tooltip md-direction="left"
-                            >Save to Wishlist</md-tooltip
-                          >
+                          <md-tooltip
+                            md-direction="left"
+                          >Save to Wishlist</md-tooltip>
                         </md-button>
                       </div>
                     </template>
@@ -480,7 +513,7 @@
           </div>
         </div>
       </div>
-      <br />
+      <br>
       <div class="section pt-0">
         <div class="container">
           <h2 class="section-title">News in fashion</h2>
@@ -611,9 +644,9 @@
               <template slot="cardContent">
                 <h6 class="card-category text-rose">Trends</h6>
                 <h4 class="card-title">
-                  <a href="javascript:void(0)"
-                    >Learn how to wear your scarf with a floral print shirt</a
-                  >
+                  <a
+                    href="javascript:void(0)"
+                  >Learn how to wear your scarf with a floral print shirt</a>
                 </h4>
                 <p class="card-description">
                   Don't be scared of the truth because we need to restart the
@@ -632,9 +665,9 @@
               <template slot="cardContent">
                 <h6 class="card-category text-rose">Fashion Week</h6>
                 <h4 class="card-title">
-                  <a href="javascript:void(0)"
-                    >Katy Perry was wearing a Dolce & Gabanna arc dress</a
-                  >
+                  <a
+                    href="javascript:void(0)"
+                  >Katy Perry was wearing a Dolce & Gabanna arc dress</a>
                 </h4>
                 <p class="card-description">
                   Don't be scared of the truth because we need to restart the
@@ -653,9 +686,9 @@
               <template slot="cardContent">
                 <h6 class="card-category text-rose">Fashion Week</h6>
                 <h4 class="card-title">
-                  <a href="javascript:void(0)"
-                    >Check the latest fashion events and which are the trends</a
-                  >
+                  <a
+                    href="javascript:void(0)"
+                  >Check the latest fashion events and which are the trends</a>
                 </h4>
                 <p class="card-description">
                   Don't be scared of the truth because we need to restart the
@@ -691,15 +724,15 @@
                         <md-input
                           v-model="subscribe"
                           placeholder="Subscribe"
-                        ></md-input>
+                        />
                       </md-field>
                     </div>
                     <div
                       class="md-layout-item md-size-33 md-medium-size-50 md-xsmall-size-100"
                     >
-                      <md-button class="md-primary md-block"
-                        >Subscribe</md-button
-                      >
+                      <md-button
+                        class="md-primary md-block"
+                      >Subscribe</md-button>
                     </div>
                   </div>
                 </form>
@@ -719,8 +752,8 @@ import {
   FullBgCard,
   BlogCard,
   Slider
-} from "@/components";
-import Mixins from "@/plugins/basicMixins";
+} from '@/components';
+import Mixins from '@/plugins/basicMixins';
 
 export default {
   components: {
@@ -777,30 +810,30 @@ export default {
         neutrals: false,
         purple: false
       },
-      image: require("@/assets/img/examples/clark-street-merc.jpg"),
-      image2: require("@/assets/img/examples/ecommerce-header.jpg"),
+      image: require('@/assets/img/examples/clark-street-merc.jpg'),
+      image2: require('@/assets/img/examples/ecommerce-header.jpg'),
       productCard: {
-        productCard1: require("@/assets/img/examples/gucci.jpg"),
-        productCard2: require("@/assets/img/examples/dolce.jpg"),
-        productCard3: require("@/assets/img/examples/tom-ford.jpg"),
-        productCard4: require("@/assets/img/examples/suit-1.jpg"),
-        productCard5: require("@/assets/img/examples/suit-2.jpg"),
-        productCard6: require("@/assets/img/examples/suit-3.jpg"),
-        productCard7: require("@/assets/img/examples/suit-4.jpg"),
-        productCard8: require("@/assets/img/examples/suit-5.jpg"),
-        productCard9: require("@/assets/img/examples/suit-6.jpg")
+        productCard1: require('@/assets/img/examples/gucci.jpg'),
+        productCard2: require('@/assets/img/examples/dolce.jpg'),
+        productCard3: require('@/assets/img/examples/tom-ford.jpg'),
+        productCard4: require('@/assets/img/examples/suit-1.jpg'),
+        productCard5: require('@/assets/img/examples/suit-2.jpg'),
+        productCard6: require('@/assets/img/examples/suit-3.jpg'),
+        productCard7: require('@/assets/img/examples/suit-4.jpg'),
+        productCard8: require('@/assets/img/examples/suit-5.jpg'),
+        productCard9: require('@/assets/img/examples/suit-6.jpg')
       },
       cardBg: {
-        cardBg1: require("@/assets/img/examples/color1.jpg"),
-        cardBg2: require("@/assets/img/examples/color3.jpg"),
-        cardBg3: require("@/assets/img/examples/color2.jpg"),
-        cardBg4: require("@/assets/img/dg3.jpg"),
-        cardBg5: require("@/assets/img/dg1.jpg")
+        cardBg1: require('@/assets/img/examples/color1.jpg'),
+        cardBg2: require('@/assets/img/examples/color3.jpg'),
+        cardBg3: require('@/assets/img/examples/color2.jpg'),
+        cardBg4: require('@/assets/img/dg3.jpg'),
+        cardBg5: require('@/assets/img/dg1.jpg')
       },
       cardBlog: {
-        cardBlog1: require("@/assets/img/dg6.jpg"),
-        cardBlog2: require("@/assets/img/dg10.jpg"),
-        cardBlog3: require("@/assets/img/dg9.jpg")
+        cardBlog1: require('@/assets/img/dg6.jpg'),
+        cardBlog2: require('@/assets/img/dg10.jpg'),
+        cardBlog3: require('@/assets/img/dg9.jpg')
       }
     };
   },

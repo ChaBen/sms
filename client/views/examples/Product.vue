@@ -11,9 +11,9 @@
           <div
             class="md-layout-item md-size-33 md-small-size-100 ml-auto text-right"
           >
-            <md-button class="md-white"
-              ><md-icon>shopping_cart</md-icon> 0 Items</md-button
-            >
+            <md-button
+              class="md-white"
+            ><md-icon>shopping_cart</md-icon> 0 Items</md-button>
           </div>
         </div>
       </div>
@@ -78,9 +78,9 @@
                   <label>Select Color</label>
                   <md-field>
                     <md-select
+                      id="selectColor"
                       v-model="selectColor"
                       name="selectColor"
-                      id="selectColor"
                     >
                       <md-option value="rose">Rose</md-option>
                       <md-option value="gray">Gray</md-option>
@@ -92,9 +92,9 @@
                   <label>Select Size</label>
                   <md-field>
                     <md-select
+                      id="selectSize"
                       v-model="selectSize"
                       name="selectSize"
-                      id="selectSize"
                     >
                       <md-option value="small">Small</md-option>
                       <md-option value="medium">Medium</md-option>
@@ -104,9 +104,9 @@
                 </div>
               </div>
               <div class="text-right">
-                <md-button class="md-rose md-round"
-                  >Add To Cart <md-icon>shopping_cart</md-icon></md-button
-                >
+                <md-button
+                  class="md-rose md-round"
+                >Add To Cart <md-icon>shopping_cart</md-icon></md-button>
               </div>
             </div>
           </div>
@@ -115,7 +115,7 @@
           <div class="md-layout">
             <div class="md-layout-item md-size-33 md-small-size-100">
               <info-areas icon-color="info" icon="local_shipping" text-center>
-                <h4 class="info-title" slot="title">2 Days Delivery</h4>
+                <h4 slot="title" class="info-title">2 Days Delivery</h4>
                 <p slot="content">
                   Divide details about your product or agency work into parts.
                   Write a few lines about each one. A paragraph describing a
@@ -125,7 +125,7 @@
             </div>
             <div class="md-layout-item md-size-33 md-small-size-100">
               <info-areas icon-color="success" icon="verified_user" text-center>
-                <h4 class="info-title" slot="title">Refundable Policy</h4>
+                <h4 slot="title" class="info-title">Refundable Policy</h4>
                 <p slot="content">
                   Divide details about your product or agency work into parts.
                   Write a few lines about each one. A paragraph describing a
@@ -135,7 +135,7 @@
             </div>
             <div class="md-layout-item md-size-33 md-small-size-100">
               <info-areas icon-color="rose" icon="favorite" text-center>
-                <h4 class="info-title" slot="title">Popular Item</h4>
+                <h4 slot="title" class="info-title">Popular Item</h4>
                 <p slot="content">
                   Divide details about your product or agency work into parts.
                   Write a few lines about each one. A paragraph describing a
@@ -173,9 +173,9 @@
                   <div class="stats ml-auto">
                     <md-button class="md-just-icon md-rose md-round md-simple">
                       <md-icon>favorite</md-icon>
-                      <md-tooltip md-direction="top"
-                        >Save to Wishlist</md-tooltip
-                      >
+                      <md-tooltip
+                        md-direction="top"
+                      >Save to Wishlist</md-tooltip>
                     </md-button>
                   </div>
                 </template>
@@ -207,9 +207,9 @@
                   <div class="stats ml-auto">
                     <md-button class="md-just-icon md-round md-simple">
                       <md-icon>favorite</md-icon>
-                      <md-tooltip md-direction="top"
-                        >Save to Wishlist</md-tooltip
-                      >
+                      <md-tooltip
+                        md-direction="top"
+                      >Save to Wishlist</md-tooltip>
                     </md-button>
                   </div>
                 </template>
@@ -240,9 +240,9 @@
                   <div class="stats ml-auto">
                     <md-button class="md-just-icon md-rose md-round md-simple">
                       <md-icon>favorite</md-icon>
-                      <md-tooltip md-direction="top"
-                        >Save to Wishlist</md-tooltip
-                      >
+                      <md-tooltip
+                        md-direction="top"
+                      >Save to Wishlist</md-tooltip>
                     </md-button>
                   </div>
                 </template>
@@ -273,9 +273,9 @@
                   <div class="stats ml-auto">
                     <md-button class="md-just-icon md-round md-simple">
                       <md-icon>favorite</md-icon>
-                      <md-tooltip md-direction="top"
-                        >Save to Wishlist</md-tooltip
-                      >
+                      <md-tooltip
+                        md-direction="top"
+                      >Save to Wishlist</md-tooltip>
                     </md-button>
                   </div>
                 </template>
@@ -289,8 +289,8 @@
 </template>
 
 <script>
-import { Collapse, InfoAreas, ProductCard } from "@/components";
-import Mixins from "@/plugins/basicMixins";
+import { Collapse, InfoAreas, ProductCard } from '@/components';
+import Mixins from '@/plugins/basicMixins';
 
 export default {
   components: {
@@ -299,60 +299,60 @@ export default {
     ProductCard
   },
   mixins: [Mixins.HeaderImage],
-  bodyClass: "product-page",
+  bodyClass: 'product-page',
   data() {
     return {
-      selectColor: "rose",
-      selectSize: "small",
-      image: require("@/assets/img/examples/bg-product.jpg"),
+      selectColor: 'rose',
+      selectSize: 'small',
+      image: require('@/assets/img/examples/bg-product.jpg'),
       productCard: {
-        productCard1: require("@/assets/img/examples/card-product1.jpg"),
-        productCard2: require("@/assets/img/examples/card-product3.jpg"),
-        productCard3: require("@/assets/img/examples/card-product4.jpg"),
-        productCard4: require("@/assets/img/examples/card-product2.jpg")
+        productCard1: require('@/assets/img/examples/card-product1.jpg'),
+        productCard2: require('@/assets/img/examples/card-product3.jpg'),
+        productCard3: require('@/assets/img/examples/card-product4.jpg'),
+        productCard4: require('@/assets/img/examples/card-product2.jpg')
       },
       images: {
         normal_size: [
           {
             id: 1,
-            url: require("@/assets/img/examples/product1.jpg")
+            url: require('@/assets/img/examples/product1.jpg')
           },
           {
             id: 2,
-            url: require("@/assets/img/examples/product2.jpg")
+            url: require('@/assets/img/examples/product2.jpg')
           },
           {
             id: 3,
-            url: require("@/assets/img/examples/product3.jpg")
+            url: require('@/assets/img/examples/product3.jpg')
           },
           {
             id: 4,
-            url: require("@/assets/img/examples/product4.jpg")
+            url: require('@/assets/img/examples/product4.jpg')
           }
         ],
         large_size: [
           {
             id: 1,
-            url: require("@/assets/img/examples/product1.jpg")
+            url: require('@/assets/img/examples/product1.jpg')
           },
           {
             id: 2,
-            url: require("@/assets/img/examples/product2.jpg")
+            url: require('@/assets/img/examples/product2.jpg')
           },
           {
             id: 3,
-            url: require("@/assets/img/examples/product3.jpg")
+            url: require('@/assets/img/examples/product3.jpg')
           },
           {
             id: 4,
-            url: require("@/assets/img/examples/product4.jpg")
+            url: require('@/assets/img/examples/product4.jpg')
           }
         ]
       },
       zoomerOptions: {
-        pane: "container-round",
+        pane: 'container-round',
         hoverDelay: 300,
-        namespace: "inline-container",
+        namespace: 'inline-container',
         move_by_click: true,
         scroll_items: 4
       }

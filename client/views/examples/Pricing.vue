@@ -35,8 +35,8 @@
                 color-button="success"
               >
                 <!-- here you can add your content for tab-content -->
-                <template slot="tab-pane-1"> </template>
-                <template slot="tab-pane-2"> </template>
+                <template slot="tab-pane-1" />
+                <template slot="tab-pane-2" />
               </tabs>
             </div>
           </div>
@@ -120,7 +120,7 @@
       </div>
       <div class="section pt-0 pb-0">
         <div class="container">
-          <hr />
+          <hr>
         </div>
       </div>
       <div class="section section-features-2">
@@ -135,10 +135,10 @@
                 icon-color="info"
                 icon="card_membership"
               >
-                <h4 class="info-title" slot="title">
+                <h4 slot="title" class="info-title">
                   Can I cancel my subscription?
                 </h4>
-                <div class="description" slot="content">
+                <div slot="content" class="description">
                   <p>
                     Yes, you can cancel and perform other actions on your
                     subscriptions via the My Account page.
@@ -152,10 +152,10 @@
                 icon-color="success"
                 icon="card_giftcard"
               >
-                <h4 class="info-title" slot="title">
+                <h4 slot="title" class="info-title">
                   s there any discount for an annual subscription?
                 </h4>
-                <div class="description" slot="content">
+                <div slot="content" class="description">
                   <p>
                     Yes, we offer a 40% discount if you choose annual
                     subscription for any plan.
@@ -171,10 +171,10 @@
                 icon-color="success"
                 icon="attach_money"
               >
-                <h4 class="info-title" slot="title">
+                <h4 slot="title" class="info-title">
                   Which payment methods do you take?
                 </h4>
-                <div class="description" slot="content">
+                <div slot="content" class="description">
                   <p>
                     WooCommerce comes bundled with PayPal (for accepting credit
                     card and PayPal account payments), BACS, and cash on
@@ -189,10 +189,10 @@
                 icon-color="rose"
                 icon="question_answer"
               >
-                <h4 class="info-title" slot="title">
+                <h4 slot="title" class="info-title">
                   Any other questions we can answer?
                 </h4>
-                <div class="description" slot="content">
+                <div slot="content" class="description">
                   <p>We are happy to help you. Contact us.</p>
                 </div>
               </info-areas>
@@ -205,19 +205,19 @@
 </template>
 
 <script>
-import { Tabs, PricingCard, InfoAreas } from "@/components";
-import Mixins from "@/plugins/basicMixins";
+import { Tabs, PricingCard, InfoAreas } from '@/components';
+import Mixins from '@/plugins/basicMixins';
 
 export default {
-  mixins: [Mixins.HeaderImage],
   components: {
     Tabs,
     PricingCard,
     InfoAreas
   },
+  mixins: [Mixins.HeaderImage],
   data() {
     return {
-      image: require("@/assets/img/examples/bg-pricing.jpg")
+      image: require('@/assets/img/examples/bg-pricing.jpg')
     };
   }
 };

@@ -24,7 +24,8 @@
   "scripts": {
     "build": "nuxt build",
     "test": "npm run eslint && npm run mocha",
-    "eslint": "eslint src/. test/. --config .eslintrc.json",
+    "eslint": "eslint src/. --config .eslintrc.js",
+    "eslint-fix": "eslint --fix --ext .vue client/",
     "dev": "cross-env DEBUG=nuxt:* nodemon --watch src/",
     "start": "npm run build && node src/",
     "mocha": "cross-env NODE_ENV=test mocha test/ --recursive --exit"
@@ -47,6 +48,7 @@
     "cookie-storage": "^5.0.1",
     "cors": "^2.8.5",
     "element-ui": "^2.10.1",
+    "eslint-plugin-vue": "^5.2.3",
     "feathers-mongodb": "^4.0.4",
     "feathers-mongoose": "^7.3.2",
     "feathers-vuex": "^1.6.2",

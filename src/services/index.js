@@ -4,7 +4,7 @@ const purchase = require('./purchase/purchase.service.js');
 
 const paysuccess = require('./paysuccess/paysuccess.service.js');
 
-module.exports = function (app) {
+module.exports = function(app) {
   app.configure(users);
   app.configure(send);
   app.configure(purchase);

@@ -8,18 +8,18 @@
     :style="bgFullCards(cardImage)"
   >
     <md-card-content v-if="$slots.cardContent">
-      <slot name="cardCategory"></slot>
-      <slot name="cardContent"></slot>
+      <slot name="cardCategory" />
+      <slot name="cardContent" />
     </md-card-content>
     <md-card-actions v-if="$slots.cardAction">
-      <slot name="cardAction"></slot>
+      <slot name="cardAction" />
     </md-card-actions>
   </md-card>
 </template>
 
 <script>
 export default {
-  name: "pricing-card",
+  name: 'PricingCard',
   props: {
     cardPlain: Boolean,
     cardBg: String,
@@ -27,7 +27,7 @@ export default {
   },
   computed: {
     cardColor() {
-      return this.cardBg ? `bg-${this.cardBg}` : "";
+      return this.cardBg ? `bg-${this.cardBg}` : '';
     }
   },
   methods: {

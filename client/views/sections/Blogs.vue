@@ -6,7 +6,7 @@
         <div class="md-layout">
           <div class="md-layout-item md-size-80 md-small-size-100 mx-auto">
             <h2 class="title">Latest Blogposts</h2>
-            <br />
+            <br>
             <blog-card
               card-plain
               type="horizontal"
@@ -17,10 +17,10 @@
               <template slot="cardContent">
                 <h6 class="card-category text-info">Enterprise</h6>
                 <h3 class="card-title">
-                  <a href="javascript:void(0)"
-                    >Autodesk looks to future of 3D printing with Project
-                    Escher</a
-                  >
+                  <a
+                    href="javascript:void(0)"
+                  >Autodesk looks to future of 3D printing with Project
+                    Escher</a>
                 </h3>
                 <p class="card-description">
                   Like so many organizations these days, Autodesk is a company
@@ -50,9 +50,9 @@
                   <md-icon class="text-danger">trending_up</md-icon> Trending
                 </h6>
                 <h3 class="card-title">
-                  <a href="javascript:void(0)"
-                    >6 insights into the French Fashion landscape</a
-                  >
+                  <a
+                    href="javascript:void(0)"
+                  >6 insights into the French Fashion landscape</a>
                 </h3>
                 <p class="card-description">
                   Like so many organizations these days, Autodesk is a company
@@ -80,7 +80,7 @@
         <div class="md-layout">
           <div class="md-layout-item md-size-80 md-small-size-100 mx-auto">
             <h2 class="title">Latest Blogposts 2</h2>
-            <br />
+            <br>
             <div class="md-layout">
               <div class="md-layout-item md-size-33 md-small-size-100">
                 <blog-card
@@ -92,10 +92,10 @@
                   <template slot="cardContent">
                     <h6 class="card-category text-info">Enterprise</h6>
                     <h4 class="card-title">
-                      <a href="javascript:void(0)"
-                        >Autodesk looks to future of 3D printing with Project
-                        Escher</a
-                      >
+                      <a
+                        href="javascript:void(0)"
+                      >Autodesk looks to future of 3D printing with Project
+                        Escher</a>
                     </h4>
                     <p class="card-description">
                       Like so many organizations these days, Autodesk is a
@@ -118,9 +118,9 @@
                       Startups
                     </h6>
                     <h4 class="card-title">
-                      <a href="javascript:void(0)"
-                        >Lyft launching cross-platform service this week</a
-                      >
+                      <a
+                        href="javascript:void(0)"
+                      >Lyft launching cross-platform service this week</a>
                     </h4>
                     <p class="card-description">
                       Like so many organizations these days, Autodesk is a
@@ -144,9 +144,9 @@
                       Enterprise
                     </h6>
                     <h4 class="card-title">
-                      <a href="javascript:void(0)"
-                        >6 insights into the French Fashion landscape</a
-                      >
+                      <a
+                        href="javascript:void(0)"
+                      >6 insights into the French Fashion landscape</a>
                     </h4>
                     <p class="card-description">
                       Like so many organizations these days, Autodesk is a
@@ -169,7 +169,7 @@
         <div class="md-layout">
           <div class="md-layout-item md-size-80 md-small-size-100 mx-auto">
             <h2 class="title">Latest Blogposts 3</h2>
-            <br />
+            <br>
             <blog-card
               card-plain
               type="horizontal"
@@ -180,10 +180,10 @@
               <template slot="cardContent">
                 <h6 class="card-category text-info">Enterprise</h6>
                 <h3 class="card-title">
-                  <a href="javascript:void(0)"
-                    >Autodesk looks to future of 3D printing with Project
-                    Escher</a
-                  >
+                  <a
+                    href="javascript:void(0)"
+                  >Autodesk looks to future of 3D printing with Project
+                    Escher</a>
                 </h3>
                 <p class="card-description">
                   Like so many organizations these days, Autodesk is a company
@@ -212,9 +212,9 @@
                   <md-icon class="text-danger">trending_up</md-icon> Trending
                 </h6>
                 <h3 class="card-title">
-                  <a href="javascript:void(0)"
-                    >6 insights into the French Fashion landscape</a
-                  >
+                  <a
+                    href="javascript:void(0)"
+                  >6 insights into the French Fashion landscape</a>
                 </h3>
                 <p class="card-description">
                   Like so many organizations these days, Autodesk is a company
@@ -243,9 +243,9 @@
                   Startups
                 </h6>
                 <h3 class="card-title">
-                  <a href="javascript:void(0)"
-                    >Lyft launching cross-platform service this week</a
-                  >
+                  <a
+                    href="javascript:void(0)"
+                  >Lyft launching cross-platform service this week</a>
                 </h3>
                 <p class="card-description">
                   Like so many organizations these days, Autodesk is a company
@@ -273,7 +273,7 @@
         <div class="md-layout">
           <div class="md-layout-item md-size-66 md-small-size-100 mx-auto">
             <h2 class="title">Latest Blogposts 4</h2>
-            <br />
+            <br>
             <blog-card
               card-plain
               :shadow-normal="false"
@@ -283,9 +283,9 @@
               <template slot="cardContent">
                 <h6 class="card-category text-info">Fashion</h6>
                 <h3 class="card-title">
-                  <a href="javascript:void(0)"
-                    >Autodesk looks to future of 3D</a
-                  >
+                  <a
+                    href="javascript:void(0)"
+                  >Autodesk looks to future of 3D</a>
                 </h3>
                 <h5 class="card-description">
                   Don't be scared of the truth because we need to restart the
@@ -295,9 +295,10 @@
                   out that it’s the first album to go number 1 off of
                   streaming...
                 </h5>
-                <md-button href="javascript:void(0)" class="md-primary md-round"
-                  >Read more</md-button
-                >
+                <md-button
+                  href="javascript:void(0)"
+                  class="md-primary md-round"
+                >Read more</md-button>
               </template>
             </blog-card>
             <blog-card
@@ -311,9 +312,9 @@
                   Lifestyle
                 </h6>
                 <h3 class="card-title">
-                  <a href="javascript:void(0)"
-                    >We will breathe clean air and exercise</a
-                  >
+                  <a
+                    href="javascript:void(0)"
+                  >We will breathe clean air and exercise</a>
                 </h3>
                 <h5 class="card-description">
                   Don't be scared of the truth because we need to restart the
@@ -323,9 +324,10 @@
                   out that it’s the first album to go number 1 off of
                   streaming...
                 </h5>
-                <md-button href="javascript:void(0)" class="md-primary md-round"
-                  >Read more</md-button
-                >
+                <md-button
+                  href="javascript:void(0)"
+                  class="md-primary md-round"
+                >Read more</md-button>
               </template>
             </blog-card>
           </div>
@@ -337,28 +339,28 @@
 </template>
 
 <script>
-import { BlogCard } from "@/components";
+import { BlogCard } from '@/components';
 export default {
-  name: "blogs",
+  name: 'Blogs',
   components: {
     BlogCard
   },
   data() {
     return {
       cardBlogPost: {
-        cardBlogPost1: require("@/assets/img/examples/card-blog4.jpg"),
-        cardBlogPost2: require("@/assets/img/office2.jpg")
+        cardBlogPost1: require('@/assets/img/examples/card-blog4.jpg'),
+        cardBlogPost2: require('@/assets/img/office2.jpg')
       },
       cardBlogPost2: {
-        cardBlogPost1: require("@/assets/img/examples/blog5.jpg"),
-        cardBlogPost2: require("@/assets/img/examples/blog7.jpg")
+        cardBlogPost1: require('@/assets/img/examples/blog5.jpg'),
+        cardBlogPost2: require('@/assets/img/examples/blog7.jpg')
       },
       cardBlogPost3: {
-        cardBlogPost1: require("@/assets/img/examples/blog8.jpg")
+        cardBlogPost1: require('@/assets/img/examples/blog8.jpg')
       },
       cardBlogPost4: {
-        cardBlogPost1: require("@/assets/img/bg5.jpg"),
-        cardBlogPost2: require("@/assets/img/examples/blog6.jpg")
+        cardBlogPost1: require('@/assets/img/bg5.jpg'),
+        cardBlogPost2: require('@/assets/img/examples/blog6.jpg')
       }
     };
   }

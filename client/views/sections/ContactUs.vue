@@ -14,21 +14,21 @@
               about our product. They are very happy with their purchase.
             </h5>
             <info-areas info-horizontal icon-color="primary" icon="pin_drop">
-              <h4 class="info-title" slot="title">Find us at the office</h4>
-              <div class="description" slot="content">
+              <h4 slot="title" class="info-title">Find us at the office</h4>
+              <div slot="content" class="description">
                 <p>
-                  Bld Mihail Kogalniceanu, nr. 8, <br />
-                  7652 Bucharest, <br />
+                  Bld Mihail Kogalniceanu, nr. 8, <br>
+                  7652 Bucharest, <br>
                   Romania
                 </p>
               </div>
             </info-areas>
             <info-areas info-horizontal icon-color="primary" icon="phone">
-              <h4 class="info-title" slot="title">Give us a ring</h4>
-              <div class="description" slot="content">
+              <h4 slot="title" class="info-title">Give us a ring</h4>
+              <div slot="content" class="description">
                 <p>
-                  Michael Jordan <br />
-                  +40 762 321 762 <br />
+                  Michael Jordan <br>
+                  +40 762 321 762 <br>
                   Mon - Fri, 8:00-22:00
                 </p>
               </div>
@@ -44,24 +44,24 @@
                   <div class="md-layout-item md-size-50 md-small-size-100">
                     <md-field>
                       <label>First Name</label>
-                      <md-input v-model="firstName"></md-input>
+                      <md-input v-model="firstName" />
                     </md-field>
                   </div>
                   <div class="md-layout-item md-size-50 md-small-size-100">
                     <md-field>
                       <label>Last Name</label>
-                      <md-input v-model="lastName"></md-input>
+                      <md-input v-model="lastName" />
                     </md-field>
                   </div>
                 </div>
                 <md-field>
                   <label>Email Adress</label>
-                  <md-input v-model="email" type="email"></md-input>
+                  <md-input v-model="email" type="email" />
                 </md-field>
 
                 <md-field>
                   <label>Your Message</label>
-                  <md-textarea v-model="textarea"></md-textarea>
+                  <md-textarea v-model="textarea" />
                 </md-field>
               </md-card-content>
               <md-card-actions class="d-flex justify-content-between">
@@ -77,7 +77,7 @@
 
     <!-- Contact Us 2 -->
     <div class="section-contactus-2">
-      <div id="contactUs2Map" class="map"></div>
+      <div id="contactUs2Map" class="map" />
       <div class="row">
         <div class="md-layout-item md-size-50 md-small-size-100">
           <md-card class="md-card-contact">
@@ -88,11 +88,11 @@
               <div class="md-layout">
                 <div class="md-layout-item md-size-50 md-small-size-100">
                   <info-areas info-horizontal icon-color="rose" icon="phone">
-                    <h4 class="info-title" slot="title">Give us a ring</h4>
-                    <div class="description" slot="content">
+                    <h4 slot="title" class="info-title">Give us a ring</h4>
+                    <div slot="content" class="description">
                       <p>
-                        Michael Jordan <br />
-                        +40 762 321 762 <br />
+                        Michael Jordan <br>
+                        +40 762 321 762 <br>
                         Mon - Fri, 8:00-22:00
                       </p>
                     </div>
@@ -100,13 +100,13 @@
                 </div>
                 <div class="md-layout-item md-size-50 md-small-size-100">
                   <info-areas info-horizontal icon-color="rose" icon="pin_drop">
-                    <h4 class="info-title" slot="title">
+                    <h4 slot="title" class="info-title">
                       Find us at the office
                     </h4>
-                    <div class="description" slot="content">
+                    <div slot="content" class="description">
                       <p>
-                        Bld Mihail Kogalniceanu, nr. 8, <br />
-                        7652 Bucharest, <br />
+                        Bld Mihail Kogalniceanu, nr. 8, <br>
+                        7652 Bucharest, <br>
                         Romania
                       </p>
                     </div>
@@ -117,20 +117,20 @@
                 <div class="md-layout-item md-size-50 md-small-size-100">
                   <md-field>
                     <label>Full Name</label>
-                    <md-input v-model="fullName"></md-input>
+                    <md-input v-model="fullName" />
                   </md-field>
                 </div>
                 <div class="md-layout-item md-size-50 md-small-size-100">
                   <md-field>
                     <label>Email Adress</label>
-                    <md-input v-model="email1" type="email"></md-input>
+                    <md-input v-model="email1" type="email" />
                   </md-field>
                 </div>
               </div>
 
               <md-field>
                 <label>Your Message</label>
-                <md-textarea v-model="textarea1"></md-textarea>
+                <md-textarea v-model="textarea1" />
               </md-field>
             </md-card-content>
             <md-card-actions class="d-flex justify-content-between">
@@ -146,8 +146,8 @@
 </template>
 
 <script>
-import { InfoAreas } from "@/components";
-import Mixins from "@/plugins/basicMixins";
+import { InfoAreas } from '@/components';
+import Mixins from '@/plugins/basicMixins';
 
 export default {
   components: {
@@ -164,7 +164,7 @@ export default {
       email: null,
       email1: null,
       boolean: false,
-      contactus1: require("@/assets/img/examples/city.jpg")
+      contactus1: require('@/assets/img/examples/city.jpg')
     };
   },
   methods: {

@@ -35,9 +35,9 @@
               :class="{ toggled: toggledClass }"
               @click="toggleNavbarMobile()"
             >
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
+              <span class="icon-bar" />
+              <span class="icon-bar" />
+              <span class="icon-bar" />
             </md-button>
 
             <div class="md-collapse">
@@ -51,19 +51,19 @@
                     href="https://twitter.com/CreativeTim"
                     target="_blank"
                   >
-                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-twitter" />
                   </md-list-item>
                   <md-list-item
                     href="https://www.facebook.com/CreativeTim"
                     target="_blank"
                   >
-                    <i class="fab fa-facebook-square"></i>
+                    <i class="fab fa-facebook-square" />
                   </md-list-item>
                   <md-list-item
                     href="https://www.instagram.com/CreativeTimOfficial"
                     target="_blank"
                   >
-                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-instagram" />
                   </md-list-item>
                 </md-list>
               </div>
@@ -83,13 +83,13 @@
                 confusion and the time it takes to weigh all the risks and
                 benefits.
               </h4>
-              <br />
+              <br>
               <md-button
                 href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
                 class="md-success md-lg"
                 target="_blank"
               >
-                <i class="fas fa-ticket-alt"></i>
+                <i class="fas fa-ticket-alt" />
                 <span>Invest Now</span>
               </md-button>
             </div>
@@ -134,9 +134,9 @@
               :class="{ toggled: toggledClass }"
               @click="toggleNavbarMobile()"
             >
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
+              <span class="icon-bar" />
+              <span class="icon-bar" />
+              <span class="icon-bar" />
             </md-button>
 
             <div class="md-collapse">
@@ -150,19 +150,19 @@
                     href="https://twitter.com/CreativeTim"
                     target="_blank"
                   >
-                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-twitter" />
                   </md-list-item>
                   <md-list-item
                     href="https://www.facebook.com/CreativeTim"
                     target="_blank"
                   >
-                    <i class="fab fa-facebook-square"></i>
+                    <i class="fab fa-facebook-square" />
                   </md-list-item>
                   <md-list-item
                     href="https://www.instagram.com/CreativeTimOfficial"
                     target="_blank"
                   >
-                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-instagram" />
                   </md-list-item>
                 </md-list>
               </div>
@@ -193,7 +193,7 @@
                           <md-input
                             v-model="companyName"
                             placeholder="Company Name"
-                          ></md-input>
+                          />
                         </md-field>
                       </div>
                       <div class="md-layout-item md-size-25 md-small-size-100">
@@ -201,7 +201,7 @@
                           <md-input
                             v-model="companyEmail"
                             placeholder="Company Email"
-                          ></md-input>
+                          />
                         </md-field>
                       </div>
                       <div class="md-layout-item md-size-25 md-small-size-100">
@@ -209,13 +209,13 @@
                           <md-input
                             v-model="companyPassword"
                             placeholder="Company Password"
-                          ></md-input>
+                          />
                         </md-field>
                       </div>
                       <div class="md-layout-item md-size-25 md-small-size-100">
-                        <md-button class="md-success md-block"
-                          >Subscribe</md-button
-                        >
+                        <md-button
+                          class="md-success md-block"
+                        >Subscribe</md-button>
                       </div>
                     </div>
                   </form>
@@ -246,9 +246,9 @@
               :class="{ toggled: toggledClass }"
               @click="toggleNavbarMobile()"
             >
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
+              <span class="icon-bar" />
+              <span class="icon-bar" />
+              <span class="icon-bar" />
             </md-button>
 
             <div class="md-collapse">
@@ -296,26 +296,24 @@
                     tree, a year after the resounding social media debacle that
                     felled last year’s fir.
                   </h4>
-                  <br />
+                  <br>
                   <div class="buttons">
-                    <md-button href="javascript:void(0)" class="md-danger md-lg"
-                      >Read More</md-button
-                    >
+                    <md-button
+                      href="javascript:void(0)"
+                      class="md-danger md-lg"
+                    >Read More</md-button>
                     <md-button
                       href="javascript:void(0)"
                       class="md-twitter md-simple md-white md-just-icon"
-                      ><i class="fab fa-twitter"></i
-                    ></md-button>
+                    ><i class="fab fa-twitter" /></md-button>
                     <md-button
                       href="javascript:void(0)"
                       class="md-facebook md-simple md-white md-just-icon"
-                      ><i class="fab fa-facebook-square"></i
-                    ></md-button>
+                    ><i class="fab fa-facebook-square" /></md-button>
                     <md-button
                       href="javascript:void(0)"
                       class="md-simple md-white md-just-icon"
-                      ><i class="fab fa-get-pocket"></i
-                    ></md-button>
+                    ><i class="fab fa-get-pocket" /></md-button>
                   </div>
                 </div>
               </div>
@@ -336,29 +334,25 @@
                     over 1,500 buildings and killing three people, park rangers
                     in the Santa Monica Mountains.
                   </h4>
-                  <br />
+                  <br>
                   <h6>Connect with us on:</h6>
                   <div class="buttons">
                     <md-button
                       href="javascript:void(0)"
                       class="md-twitter md-simple md-white md-lg md-just-icon ml-auto"
-                      ><i class="fab fa-twitter"></i
-                    ></md-button>
+                    ><i class="fab fa-twitter" /></md-button>
                     <md-button
                       href="javascript:void(0)"
                       class="md-facebook md-simple md-white md-lg md-just-icon"
-                      ><i class="fab fa-facebook-square"></i
-                    ></md-button>
+                    ><i class="fab fa-facebook-square" /></md-button>
                     <md-button
                       href="javascript:void(0)"
                       class="md-google md-simple md-white md-lg md-just-icon"
-                      ><i class="fab fa-google-plus-g"></i
-                    ></md-button>
+                    ><i class="fab fa-google-plus-g" /></md-button>
                     <md-button
                       href="javascript:void(0)"
                       class="md-instagram md-simple md-white md-lg md-just-icon mr-auto"
-                      ><i class="fab fa-instagram"></i
-                    ></md-button>
+                    ><i class="fab fa-instagram" /></md-button>
                   </div>
                 </div>
               </div>
@@ -381,16 +375,16 @@
                     Earth in my local Rite Aid while shopping for New Year’s Eve
                     refreshments.
                   </h4>
-                  <br />
+                  <br>
                   <div class="buttons">
                     <md-button
                       href="javascript:void(0)"
                       class="md-white md-simple md-lg ml-auto"
-                      ><md-icon>share</md-icon> Share Offer</md-button
-                    >
-                    <md-button href="javascript:void(0)" class="md-danger md-lg"
-                      ><md-icon>shopping_cart</md-icon> Shop Now</md-button
-                    >
+                    ><md-icon>share</md-icon> Share Offer</md-button>
+                    <md-button
+                      href="javascript:void(0)"
+                      class="md-danger md-lg"
+                    ><md-icon>shopping_cart</md-icon> Shop Now</md-button>
                   </div>
                 </div>
               </div>
@@ -405,7 +399,7 @@
 
 <script>
 export default {
-  name: "headers",
+  name: 'Headers',
   data() {
     return {
       companyName: null,
@@ -413,11 +407,11 @@ export default {
       companyPassword: null,
       toggledClass: false,
       headerImages: {
-        Image1: require("@/assets/img/bg12.jpg"),
-        Image2: require("@/assets/img/examples/office2.jpg"),
-        Image3: require("@/assets/img/dg1.jpg"),
-        Image4: require("@/assets/img/dg2.jpg"),
-        Image5: require("@/assets/img/dg3.jpg")
+        Image1: require('@/assets/img/bg12.jpg'),
+        Image2: require('@/assets/img/examples/office2.jpg'),
+        Image3: require('@/assets/img/dg1.jpg'),
+        Image4: require('@/assets/img/dg2.jpg'),
+        Image5: require('@/assets/img/dg3.jpg')
       }
     };
   },
@@ -428,16 +422,16 @@ export default {
       };
     },
     bodyClick() {
-      let bodyClick = document.getElementById("bodyClick");
+      const bodyClick = document.getElementById('bodyClick');
 
       if (bodyClick === null) {
-        let body = document.querySelector("body");
-        let elem = document.createElement("div");
-        elem.setAttribute("id", "bodyClick");
+        const body = document.querySelector('body');
+        const elem = document.createElement('div');
+        elem.setAttribute('id', 'bodyClick');
         body.appendChild(elem);
 
-        let bodyClick = document.getElementById("bodyClick");
-        bodyClick.addEventListener("click", this.toggleNavbarMobile);
+        const bodyClick = document.getElementById('bodyClick');
+        bodyClick.addEventListener('click', this.toggleNavbarMobile);
       } else {
         bodyClick.remove();
       }

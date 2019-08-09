@@ -35,18 +35,15 @@
                 <md-button
                   href="javascript:void(0)"
                   class="md-twitter md-just-icon md-simple"
-                  ><i class="fab fa-twitter"></i
-                ></md-button>
+                ><i class="fab fa-twitter" /></md-button>
                 <md-button
                   href="javascript:void(0)"
                   class="md-facebook md-just-icon md-simple"
-                  ><i class="fab fa-facebook"></i
-                ></md-button>
+                ><i class="fab fa-facebook" /></md-button>
                 <md-button
                   href="javascript:void(0)"
                   class="md-google md-just-icon md-simple"
-                  ><i class="fab fa-google"></i
-                ></md-button>
+                ><i class="fab fa-google" /></md-button>
               </template>
             </profile-card>
           </div>
@@ -70,18 +67,15 @@
                 <md-button
                   href="javascript:void(0)"
                   class="md-twitter md-just-icon md-simple"
-                  ><i class="fab fa-twitter"></i
-                ></md-button>
+                ><i class="fab fa-twitter" /></md-button>
                 <md-button
                   href="javascript:void(0)"
                   class="md-dribbble md-just-icon md-simple"
-                  ><i class="fab fa-dribbble"></i
-                ></md-button>
+                ><i class="fab fa-dribbble" /></md-button>
                 <md-button
                   href="javascript:void(0)"
                   class="md-linkedin md-just-icon md-simple"
-                  ><i class="fab fa-linkedin"></i
-                ></md-button>
+                ><i class="fab fa-linkedin" /></md-button>
               </template>
             </profile-card>
           </div>
@@ -105,13 +99,11 @@
                 <md-button
                   href="javascript:void(0)"
                   class="md-facebook md-just-icon md-simple"
-                  ><i class="fab fa-facebook"></i
-                ></md-button>
+                ><i class="fab fa-facebook" /></md-button>
                 <md-button
                   href="javascript:void(0)"
                   class="md-dribbble md-just-icon md-simple"
-                  ><i class="fab fa-dribbble"></i
-                ></md-button>
+                ><i class="fab fa-dribbble" /></md-button>
               </template>
             </profile-card>
           </div>
@@ -135,18 +127,15 @@
                 <md-button
                   href="javascript:void(0)"
                   class="md-google md-just-icon md-simple"
-                  ><i class="fab fa-google"></i
-                ></md-button>
+                ><i class="fab fa-google" /></md-button>
                 <md-button
                   href="javascript:void(0)"
                   class="md-twitter md-just-icon md-simple"
-                  ><i class="fab fa-twitter"></i
-                ></md-button>
+                ><i class="fab fa-twitter" /></md-button>
                 <md-button
                   href="javascript:void(0)"
                   class="md-dribbble md-just-icon md-simple"
-                  ><i class="fab fa-dribbble"></i
-                ></md-button>
+                ><i class="fab fa-dribbble" /></md-button>
               </template>
             </profile-card>
           </div>
@@ -185,18 +174,15 @@
                 <md-button
                   href="javascript:void(0)"
                   class="md-twitter md-just-icon md-round"
-                  ><i class="fab fa-twitter"></i
-                ></md-button>
+                ><i class="fab fa-twitter" /></md-button>
                 <md-button
                   href="javascript:void(0)"
                   class="md-facebook md-just-icon md-round"
-                  ><i class="fab fa-facebook"></i
-                ></md-button>
+                ><i class="fab fa-facebook" /></md-button>
                 <md-button
                   href="javascript:void(0)"
                   class="md-dribbble md-just-icon md-round"
-                  ><i class="fab fa-dribbble"></i
-                ></md-button>
+                ><i class="fab fa-dribbble" /></md-button>
               </template>
             </profile-card>
           </div>
@@ -215,18 +201,15 @@
                 <md-button
                   href="javascript:void(0)"
                   class="md-linkedin md-just-icon md-round"
-                  ><i class="fab fa-linkedin"></i
-                ></md-button>
+                ><i class="fab fa-linkedin" /></md-button>
                 <md-button
                   href="javascript:void(0)"
                   class="md-facebook md-just-icon md-round"
-                  ><i class="fab fa-facebook"></i
-                ></md-button>
+                ><i class="fab fa-facebook" /></md-button>
                 <md-button
                   href="javascript:void(0)"
                   class="md-dribbble md-just-icon md-round"
-                  ><i class="fab fa-dribbble"></i
-                ></md-button>
+                ><i class="fab fa-dribbble" /></md-button>
               </template>
             </profile-card>
           </div>
@@ -245,13 +228,11 @@
                 <md-button
                   href="javascript:void(0)"
                   class="md-dribbble md-just-icon md-round"
-                  ><i class="fab fa-dribbble"></i
-                ></md-button>
+                ><i class="fab fa-dribbble" /></md-button>
                 <md-button
                   href="javascript:void(0)"
                   class="md-twitter md-just-icon md-round"
-                  ><i class="fab fa-twitter"></i
-                ></md-button>
+                ><i class="fab fa-twitter" /></md-button>
               </template>
             </profile-card>
           </div>
@@ -295,18 +276,15 @@
                 <md-button
                   href="javascript:void(0)"
                   class="md-twitter md-just-icon md-simple"
-                  ><i class="fab fa-twitter"></i
-                ></md-button>
+                ><i class="fab fa-twitter" /></md-button>
                 <md-button
                   href="javascript:void(0)"
                   class="md-facebook md-just-icon md-simple"
-                  ><i class="fab fa-facebook"></i
-                ></md-button>
+                ><i class="fab fa-facebook" /></md-button>
                 <md-button
                   href="javascript:void(0)"
                   class="md-google md-just-icon md-simple"
-                  ><i class="fab fa-google"></i
-                ></md-button>
+                ><i class="fab fa-google" /></md-button>
               </template>
             </profile-card>
           </div>
@@ -330,23 +308,19 @@
                 <md-button
                   href="javascript:void(0)"
                   class="md-linkedin md-just-icon md-simple"
-                  ><i class="fab fa-linkedin"></i
-                ></md-button>
+                ><i class="fab fa-linkedin" /></md-button>
                 <md-button
                   href="javascript:void(0)"
                   class="md-facebook md-just-icon md-simple"
-                  ><i class="fab fa-facebook"></i
-                ></md-button>
+                ><i class="fab fa-facebook" /></md-button>
                 <md-button
                   href="javascript:void(0)"
                   class="md-dribbble md-just-icon md-simple"
-                  ><i class="fab fa-dribbble"></i
-                ></md-button>
+                ><i class="fab fa-dribbble" /></md-button>
                 <md-button
                   href="javascript:void(0)"
                   class="md-google md-just-icon md-simple"
-                  ><i class="fab fa-google"></i
-                ></md-button>
+                ><i class="fab fa-google" /></md-button>
               </template>
             </profile-card>
           </div>
@@ -370,18 +344,15 @@
                 <md-button
                   href="javascript:void(0)"
                   class="md-youtube md-just-icon md-simple"
-                  ><i class="fab fa-youtube"></i
-                ></md-button>
+                ><i class="fab fa-youtube" /></md-button>
                 <md-button
                   href="javascript:void(0)"
                   class="md-twitter md-just-icon md-simple"
-                  ><i class="fab fa-twitter"></i
-                ></md-button>
+                ><i class="fab fa-twitter" /></md-button>
                 <md-button
                   href="javascript:void(0)"
                   class="md-instagram md-just-icon md-simple"
-                  ><i class="fab fa-instagram"></i
-                ></md-button>
+                ><i class="fab fa-instagram" /></md-button>
               </template>
             </profile-card>
           </div>
@@ -405,18 +376,15 @@
                 <md-button
                   href="javascript:void(0)"
                   class="md-linkedin md-just-icon md-simple"
-                  ><i class="fab fa-linkedin"></i
-                ></md-button>
+                ><i class="fab fa-linkedin" /></md-button>
                 <md-button
                   href="javascript:void(0)"
                   class="md-facebook md-just-icon md-simple"
-                  ><i class="fab fa-facebook"></i
-                ></md-button>
+                ><i class="fab fa-facebook" /></md-button>
                 <md-button
                   href="javascript:void(0)"
                   class="md-google md-just-icon md-simple"
-                  ><i class="fab fa-google"></i
-                ></md-button>
+                ><i class="fab fa-google" /></md-button>
               </template>
             </profile-card>
           </div>
@@ -463,18 +431,15 @@
                 <md-button
                   href="javascript:void(0)"
                   class="md-linkedin md-just-icon md-round"
-                  ><i class="fab fa-linkedin"></i
-                ></md-button>
+                ><i class="fab fa-linkedin" /></md-button>
                 <md-button
                   href="javascript:void(0)"
                   class="md-twitter md-just-icon md-round"
-                  ><i class="fab fa-twitter"></i
-                ></md-button>
+                ><i class="fab fa-twitter" /></md-button>
                 <md-button
                   href="javascript:void(0)"
                   class="md-dribbble md-just-icon md-round"
-                  ><i class="fab fa-dribbble"></i
-                ></md-button>
+                ><i class="fab fa-dribbble" /></md-button>
               </template>
             </profile-card>
           </div>
@@ -498,13 +463,11 @@
                 <md-button
                   href="javascript:void(0)"
                   class="md-dribbble md-just-icon md-round"
-                  ><i class="fab fa-dribbble"></i
-                ></md-button>
+                ><i class="fab fa-dribbble" /></md-button>
                 <md-button
                   href="javascript:void(0)"
                   class="md-twitter md-just-icon md-round"
-                  ><i class="fab fa-twitter"></i
-                ></md-button>
+                ><i class="fab fa-twitter" /></md-button>
               </template>
             </profile-card>
           </div>
@@ -528,18 +491,15 @@
                 <md-button
                   href="javascript:void(0)"
                   class="md-dribbble md-just-icon md-round"
-                  ><i class="fab fa-dribbble"></i
-                ></md-button>
+                ><i class="fab fa-dribbble" /></md-button>
                 <md-button
                   href="javascript:void(0)"
                   class="md-twitter md-just-icon md-round"
-                  ><i class="fab fa-twitter"></i
-                ></md-button>
+                ><i class="fab fa-twitter" /></md-button>
                 <md-button
                   href="javascript:void(0)"
                   class="md-pinterest md-just-icon md-round"
-                  ><i class="fab fa-pinterest"></i
-                ></md-button>
+                ><i class="fab fa-pinterest" /></md-button>
               </template>
             </profile-card>
           </div>
@@ -586,18 +546,15 @@
                 <md-button
                   href="javascript:void(0)"
                   class="md-twitter md-just-icon md-simple md-white"
-                  ><i class="fab fa-twitter"></i
-                ></md-button>
+                ><i class="fab fa-twitter" /></md-button>
                 <md-button
                   href="javascript:void(0)"
                   class="md-facebook md-just-icon md-simple md-white"
-                  ><i class="fab fa-facebook"></i
-                ></md-button>
+                ><i class="fab fa-facebook" /></md-button>
                 <md-button
                   href="javascript:void(0)"
                   class="md-google md-just-icon md-simple md-white"
-                  ><i class="fab fa-google"></i
-                ></md-button>
+                ><i class="fab fa-google" /></md-button>
               </template>
             </profile-card>
           </div>
@@ -621,23 +578,19 @@
                 <md-button
                   href="javascript:void(0)"
                   class="md-linkedin md-just-icon md-simple md-white"
-                  ><i class="fab fa-linkedin"></i
-                ></md-button>
+                ><i class="fab fa-linkedin" /></md-button>
                 <md-button
                   href="javascript:void(0)"
                   class="md-facebook md-just-icon md-simple md-white"
-                  ><i class="fab fa-facebook"></i
-                ></md-button>
+                ><i class="fab fa-facebook" /></md-button>
                 <md-button
                   href="javascript:void(0)"
                   class="md-dribbble md-just-icon md-simple md-white"
-                  ><i class="fab fa-dribbble"></i
-                ></md-button>
+                ><i class="fab fa-dribbble" /></md-button>
                 <md-button
                   href="javascript:void(0)"
                   class="md-google md-just-icon md-simple md-white"
-                  ><i class="fab fa-google"></i
-                ></md-button>
+                ><i class="fab fa-google" /></md-button>
               </template>
             </profile-card>
           </div>
@@ -661,18 +614,15 @@
                 <md-button
                   href="javascript:void(0)"
                   class="md-youtube md-just-icon md-simple md-white"
-                  ><i class="fab fa-youtube"></i
-                ></md-button>
+                ><i class="fab fa-youtube" /></md-button>
                 <md-button
                   href="javascript:void(0)"
                   class="md-twitter md-just-icon md-simple md-white"
-                  ><i class="fab fa-twitter"></i
-                ></md-button>
+                ><i class="fab fa-twitter" /></md-button>
                 <md-button
                   href="javascript:void(0)"
                   class="md-instagram md-just-icon md-simple md-white"
-                  ><i class="fab fa-instagram"></i
-                ></md-button>
+                ><i class="fab fa-instagram" /></md-button>
               </template>
             </profile-card>
           </div>
@@ -696,18 +646,15 @@
                 <md-button
                   href="javascript:void(0)"
                   class="md-linkedin md-just-icon md-simple md-white"
-                  ><i class="fab fa-linkedin"></i
-                ></md-button>
+                ><i class="fab fa-linkedin" /></md-button>
                 <md-button
                   href="javascript:void(0)"
                   class="md-facebook md-just-icon md-simple md-white"
-                  ><i class="fab fa-facebook"></i
-                ></md-button>
+                ><i class="fab fa-facebook" /></md-button>
                 <md-button
                   href="javascript:void(0)"
                   class="md-google md-just-icon md-simple md-white"
-                  ><i class="fab fa-google"></i
-                ></md-button>
+                ><i class="fab fa-google" /></md-button>
               </template>
             </profile-card>
           </div>
@@ -719,33 +666,33 @@
 </template>
 
 <script>
-import { ProfileCard } from "@/components";
+import { ProfileCard } from '@/components';
 export default {
-  name: "teams",
+  name: 'Teams',
   components: {
     ProfileCard
   },
   data() {
     return {
       cardProfile: {
-        cardProfile1: require("@/assets/img/faces/marc.jpg"),
-        cardProfile2: require("@/assets/img/faces/kendall.jpg"),
-        cardProfile3: require("@/assets/img/faces/christian.jpg"),
-        cardProfile4: require("@/assets/img/faces/avatar.jpg")
+        cardProfile1: require('@/assets/img/faces/marc.jpg'),
+        cardProfile2: require('@/assets/img/faces/kendall.jpg'),
+        cardProfile3: require('@/assets/img/faces/christian.jpg'),
+        cardProfile4: require('@/assets/img/faces/avatar.jpg')
       },
       cardProfile2: {
-        cardProfile1: require("@/assets/img/examples/card-profile1.jpg"),
-        cardProfile2: require("@/assets/img/examples/card-profile2.jpg"),
-        cardProfile3: require("@/assets/img/examples/card-profile4.jpg")
+        cardProfile1: require('@/assets/img/examples/card-profile1.jpg'),
+        cardProfile2: require('@/assets/img/examples/card-profile2.jpg'),
+        cardProfile3: require('@/assets/img/examples/card-profile4.jpg')
       },
       cardProfile3: {
-        cardProfile1: require("@/assets/img/faces/card-profile1-square.jpg"),
-        cardProfile2: require("@/assets/img/faces/card-profile6-square.jpg"),
-        cardProfile3: require("@/assets/img/faces/card-profile4-square.jpg"),
-        cardProfile4: require("@/assets/img/faces/card-profile2-square.jpg")
+        cardProfile1: require('@/assets/img/faces/card-profile1-square.jpg'),
+        cardProfile2: require('@/assets/img/faces/card-profile6-square.jpg'),
+        cardProfile3: require('@/assets/img/faces/card-profile4-square.jpg'),
+        cardProfile4: require('@/assets/img/faces/card-profile2-square.jpg')
       },
-      team4: require("@/assets/img/bg7.jpg"),
-      team5: require("@/assets/img/examples/city.jpg")
+      team4: require('@/assets/img/bg7.jpg'),
+      team5: require('@/assets/img/examples/city.jpg')
     };
   },
   methods: {

@@ -3,7 +3,7 @@
     <div id="buttons">
       <div class="title">
         <h3>
-          Buttons <br />
+          Buttons <br>
           <small>Pick your style</small>
         </h3>
       </div>
@@ -11,12 +11,12 @@
         <div class="md-layout-item md-size-66 mx-auto">
           <md-button class="md-success">Default</md-button>
           <md-button class="md-success md-round">Round</md-button>
-          <md-button class="md-success"
-            ><md-icon>favorite</md-icon> With Icon</md-button
-          >
-          <md-button class="md-success md-just-icon md-round"
-            ><md-icon>favorite</md-icon></md-button
-          >
+          <md-button
+            class="md-success"
+          ><md-icon>favorite</md-icon> With Icon</md-button>
+          <md-button
+            class="md-success md-just-icon md-round"
+          ><md-icon>favorite</md-icon></md-button>
           <md-button class="md-success md-simple">Simple</md-button>
         </div>
       </div>
@@ -48,22 +48,22 @@
       </div>
     </div>
     <!-- end buttons -->
-    <div class="space-50"></div>
+    <div class="space-50" />
 
     <!-- Social Buttons -->
     <div id="social-buttons" class="social-buttons-demo">
       <div class="title">
         <h3>Social Buttons</h3>
       </div>
-      <div class="md-layout" v-for="color in colors" :key="color.name">
+      <div v-for="color in colors" :key="color.name" class="md-layout">
         <div
           class="md-layout-item md-size-25 md-small-size-50 md-xsmall-size-100"
         >
           <h3 v-if="color.name === 'twitter'"><small>Default</small></h3>
-          <md-button :class="'md-' + color.name"
-            ><i :class="'fab fa-' + color.icon"></i>
-            {{ color.btnText }}</md-button
-          >
+          <md-button
+            :class="'md-' + color.name"
+          ><i :class="'fab fa-' + color.icon" />
+            {{ color.btnText }}</md-button>
         </div>
         <div
           class="md-layout-item md-size-10 md-small-size-10 md-xsmall-size-100"
@@ -71,9 +71,9 @@
           <h3 v-if="color.name === 'twitter' && socialBtn">
             <small>&nbsp;</small>
           </h3>
-          <md-button :class="'md-just-icon md-' + color.name"
-            ><i :class="'fab fa-' + color.icon"></i
-          ></md-button>
+          <md-button
+            :class="'md-just-icon md-' + color.name"
+          ><i :class="'fab fa-' + color.icon" /></md-button>
         </div>
         <div
           class="md-layout-item md-size-10 md-small-size-40 md-xsmall-size-100"
@@ -81,17 +81,17 @@
           <h3 v-if="color.name === 'twitter' && socialBtn">
             <small>&nbsp;</small>
           </h3>
-          <md-button :class="'md-just-icon md-round md-' + color.name"
-            ><i :class="'fab fa-' + color.icon"></i
-          ></md-button>
+          <md-button
+            :class="'md-just-icon md-round md-' + color.name"
+          ><i :class="'fab fa-' + color.icon" /></md-button>
         </div>
         <div
           class="md-layout-item md-size-10 md-small-size-10 md-xsmall-size-100"
         >
           <h3 v-if="color.name === 'twitter'"><small>Simple</small></h3>
-          <md-button :class="'md-just-icon md-simple md-' + color.name"
-            ><i :class="'fab fa-' + color.iconSquare"></i
-          ></md-button>
+          <md-button
+            :class="'md-just-icon md-simple md-' + color.name"
+          ><i :class="'fab fa-' + color.iconSquare" /></md-button>
         </div>
         <div
           class="md-layout-item md-size-25 md-small-size-25 md-xsmall-size-100"
@@ -99,10 +99,10 @@
           <h3 v-if="color.name === 'twitter' && socialBtn">
             <small>&nbsp;</small>
           </h3>
-          <md-button :class="'md-simple md-' + color.name"
-            ><i :class="'fab fa-' + color.iconSquare"></i>
-            {{ color.btnText }}</md-button
-          >
+          <md-button
+            :class="'md-simple md-' + color.name"
+          ><i :class="'fab fa-' + color.iconSquare" />
+            {{ color.btnText }}</md-button>
         </div>
       </div>
     </div>
@@ -118,7 +118,7 @@
           class="md-layout-item md-size-25 md-xsmall-size-100 md-small-size-50 md-medium-size-25"
         >
           <md-field>
-            <md-input v-model="initial" placeholder="Regular"></md-input>
+            <md-input v-model="initial" placeholder="Regular" />
           </md-field>
         </div>
         <div
@@ -126,7 +126,7 @@
         >
           <md-field>
             <label>With Floating Label</label>
-            <md-input v-model="floatingLabel" type="text"></md-input>
+            <md-input v-model="floatingLabel" type="text" />
           </md-field>
         </div>
         <div
@@ -134,7 +134,7 @@
         >
           <md-field class="md-valid">
             <label>Success Input</label>
-            <md-input v-model="success" type="text"></md-input>
+            <md-input v-model="success" type="text" />
             <md-icon>done</md-icon>
           </md-field>
         </div>
@@ -143,7 +143,7 @@
         >
           <md-field class="md-error">
             <label>Error Input</label>
-            <md-input v-model="error" type="text"></md-input>
+            <md-input v-model="error" type="text" />
             <md-icon>clear</md-icon>
           </md-field>
         </div>
@@ -155,25 +155,25 @@
             <md-input
               v-model="withMIcon"
               placeholder="With Material Icons"
-            ></md-input>
+            />
           </md-field>
         </div>
         <div
           class="md-layout-item md-size-25 md-xsmall-size-100 md-small-size-50 md-medium-size-25"
         >
           <md-field class="md-form-group">
-            <i class="fas fa-users"></i>
+            <i class="fas fa-users" />
             <md-input
               v-model="withFaIcon"
               placeholder="With Font Awesome Icons"
-            ></md-input>
+            />
           </md-field>
         </div>
       </div>
     </div>
     <!-- end inputs -->
 
-    <div class="space-50"></div>
+    <div class="space-50" />
 
     <!-- Checkboxes/Radios/Toggle -->
     <div id="checkRadios">
@@ -187,12 +187,14 @@
           <div class="flex-column">
             <md-checkbox v-model="checkbox1">Checked</md-checkbox>
             <md-checkbox v-model="checkbox2">Unchecked</md-checkbox>
-            <md-checkbox v-model="checkbox3" disabled
-              >Disabled Checked</md-checkbox
-            >
-            <md-checkbox v-model="checkbox4" disabled
-              >Disabled Unchecked</md-checkbox
-            >
+            <md-checkbox
+              v-model="checkbox3"
+              disabled
+            >Disabled Checked</md-checkbox>
+            <md-checkbox
+              v-model="checkbox4"
+              disabled
+            >Disabled Unchecked</md-checkbox>
           </div>
         </div>
         <div
@@ -204,12 +206,16 @@
           <div class="flex-column">
             <md-radio v-model="radio1" :value="true">Radio is on</md-radio>
             <md-radio v-model="radio1" :value="false">Radio is off</md-radio>
-            <md-radio v-model="radio2" :value="true" disabled
-              >Disabled Radio is on</md-radio
-            >
-            <md-radio v-model="radio2" :value="false" disabled
-              >Disabled Radio is off</md-radio
-            >
+            <md-radio
+              v-model="radio2"
+              :value="true"
+              disabled
+            >Disabled Radio is on</md-radio>
+            <md-radio
+              v-model="radio2"
+              :value="false"
+              disabled
+            >Disabled Radio is off</md-radio>
           </div>
         </div>
         <div
@@ -227,7 +233,7 @@
     </div>
     <!-- end Checkboxes/Radios/Toggle -->
 
-    <div class="space-50"></div>
+    <div class="space-50" />
 
     <!-- Customizable Select & Dropdowns -->
     <div id="customizableSelect">
@@ -240,7 +246,7 @@
             <div class="md-layout-item">
               <md-field>
                 <label for="movie">Movie</label>
-                <md-select v-model="movie" name="movie" id="movie">
+                <md-select id="movie" v-model="movie" name="movie">
                   <md-option value="fight-club">Fight Club</md-option>
                   <md-option value="godfather">Godfather</md-option>
                   <md-option value="godfather-ii">Godfather II</md-option>
@@ -255,9 +261,9 @@
               <md-field>
                 <label for="movies">Movies</label>
                 <md-select
+                  id="movies"
                   v-model="selectedMovies"
                   name="movies"
-                  id="movies"
                   multiple
                 >
                   <md-option value="fight-club">Fight Club</md-option>
@@ -278,7 +284,7 @@
           </div>
           <div class="md-layout">
             <div class="md-layout-item md-size-50 md-xsmall-size-100">
-              <drop-down direction="down" multiLevel>
+              <drop-down direction="down" multi-level>
                 <md-button
                   slot="title"
                   class="md-button md-success md-round md-block dropdown-toggle"
@@ -297,8 +303,7 @@
                       class="dropdown-toggle"
                       :class="{ open: multiLevel }"
                       @click="toggleMultiLevel"
-                      >Submenu</a
-                    >
+                    >Submenu</a>
                     <ul class="dropdown-menu">
                       <li><a href="#">Submenu action</a></li>
                       <li><a href="#">Submenu action</a></li>
@@ -307,8 +312,7 @@
                           class="dropdown-toggle"
                           :class="{ open: multiLevel2 }"
                           @click="toggleMultiLevel2()"
-                          >Subsubmenu</a
-                        >
+                        >Subsubmenu</a>
                         <ul
                           class="dropdown-menu"
                           :class="{ 'dropdown-menu-right': responsive }"
@@ -322,8 +326,7 @@
                           class="dropdown-toggle"
                           :class="{ open: multiLevel3 }"
                           @click="toggleMultiLevel3"
-                          >Second Subsubmenu</a
-                        >
+                        >Second Subsubmenu</a>
                         <ul
                           class="dropdown-menu"
                           :class="{ 'dropdown-menu-right': responsive }"
@@ -351,9 +354,9 @@
                   <li><a href="#">Action</a></li>
                   <li><a href="#">Another Action</a></li>
                   <li><a href="#">Something else here</a></li>
-                  <li><div class="dropdown-divider"></div></li>
+                  <li><div class="dropdown-divider" /></li>
                   <li><a href="#">Separated Link</a></li>
-                  <li><div class="dropdown-divider"></div></li>
+                  <li><div class="dropdown-divider" /></li>
                   <li><a href="#">One more separated link</a></li>
                 </ul>
               </drop-down>
@@ -372,9 +375,9 @@
                   <li><a href="#">Action</a></li>
                   <li><a href="#">Another Action</a></li>
                   <li><a href="#">Something else here</a></li>
-                  <li><div class="dropdown-divider"></div></li>
+                  <li><div class="dropdown-divider" /></li>
                   <li><a href="#">Separated Link</a></li>
-                  <li><div class="dropdown-divider"></div></li>
+                  <li><div class="dropdown-divider" /></li>
                   <li><a href="#">One more separated link</a></li>
                 </ul>
               </drop-down>
@@ -385,7 +388,7 @@
     </div>
     <!-- end Customizable Select & Dropdowns -->
 
-    <div class="space-70"></div>
+    <div class="space-70" />
 
     <div id="textarea">
       <div class="md-layout">
@@ -395,7 +398,7 @@
           </div>
           <md-field maxlength="5">
             <label>You can write your text here..</label>
-            <md-textarea v-model="aboutme"></md-textarea>
+            <md-textarea v-model="aboutme" />
           </md-field>
         </div>
         <div class="md-layout-item md-size-50">
@@ -406,7 +409,7 @@
             v-model="fruits"
             class="md-primary"
             md-placeholder="Add city..."
-          ></md-chips>
+          />
         </div>
       </div>
     </div>
@@ -421,37 +424,35 @@
           <md-progress-bar
             class="md-primary"
             :md-value="amount"
-          ></md-progress-bar>
+          />
           <md-progress-bar
             class="md-info"
             :md-value="amount2"
-          ></md-progress-bar>
+          />
           <md-progress-bar
             class="md-warning"
             md-mode="buffer"
             :md-value="buffer"
             :md-buffer="buffer"
-          ></md-progress-bar>
+          />
         </div>
         <div class="md-layout-item md-size-50 md-xsmall-size-100">
           <div class="title">
             <h3>Pagination</h3>
           </div>
-          <pagination no-arrows v-model="defaultPagination" :page-count="5">
-          </pagination>
+          <pagination v-model="defaultPagination" no-arrows :page-count="5" />
           <pagination
-            class="pagination-info"
             v-model="infoPagination"
+            class="pagination-info"
             with-text
             :page-count="5"
-          >
-          </pagination>
+          />
         </div>
       </div>
     </div>
     <!-- end progress/pagination -->
 
-    <div class="space-50"></div>
+    <div class="space-50" />
 
     <!-- Sliders -->
     <div id="sliders">
@@ -460,10 +461,9 @@
           <div class="title">
             <h3>Sliders</h3>
           </div>
-          <slider v-model="sliders.simple"> </slider>
+          <slider v-model="sliders.simple" />
 
-          <slider v-model="sliders.rangeSlider" type="info" :connect="true">
-          </slider>
+          <slider v-model="sliders.rangeSlider" type="info" :connect="true" />
         </div>
         <div class="md-layout-item md-size-50 md-xsmall-size-100">
           <div class="title">
@@ -484,9 +484,9 @@
 </template>
 
 <script>
-import { Pagination } from "@/components";
-import { Slider } from "@/components";
-import { Badge } from "@/components";
+import { Pagination } from '@/components';
+import { Slider } from '@/components';
+import { Badge } from '@/components';
 
 export default {
   components: {
@@ -521,79 +521,79 @@ export default {
       amount: 30,
       amount2: 60,
       buffer: 40,
-      movie: "godfather",
+      movie: 'godfather',
       selectedMovies: [],
       sliders: {
         simple: 40,
         rangeSlider: [20, 60]
       },
-      fruits: ["Amsterdam", "Washington", "Sydney", "Beijing"],
+      fruits: ['Amsterdam', 'Washington', 'Sydney', 'Beijing'],
       colors: [
         {
-          name: "twitter",
-          icon: "twitter",
-          iconSquare: "twitter",
-          btnText: "connect with twitter"
+          name: 'twitter',
+          icon: 'twitter',
+          iconSquare: 'twitter',
+          btnText: 'connect with twitter'
         },
         {
-          name: "facebook",
-          icon: "facebook-f",
-          iconSquare: "facebook-square",
-          btnText: "share · 2.2k"
+          name: 'facebook',
+          icon: 'facebook-f',
+          iconSquare: 'facebook-square',
+          btnText: 'share · 2.2k'
         },
         {
-          name: "google",
-          icon: "google-plus-g",
-          iconSquare: "google-plus-square",
-          btnText: "share on google+"
+          name: 'google',
+          icon: 'google-plus-g',
+          iconSquare: 'google-plus-square',
+          btnText: 'share on google+'
         },
         {
-          name: "linkedin",
-          icon: "linkedin",
-          iconSquare: "linkedin",
-          btnText: "connect with linkedin"
+          name: 'linkedin',
+          icon: 'linkedin',
+          iconSquare: 'linkedin',
+          btnText: 'connect with linkedin'
         },
         {
-          name: "pinterest",
-          icon: "pinterest-p",
-          iconSquare: "pinterest",
-          btnText: "pin it · 212"
+          name: 'pinterest',
+          icon: 'pinterest-p',
+          iconSquare: 'pinterest',
+          btnText: 'pin it · 212'
         },
         {
-          name: "youtube",
-          icon: "youtube",
-          iconSquare: "youtube",
-          btnText: "view on youtube"
+          name: 'youtube',
+          icon: 'youtube',
+          iconSquare: 'youtube',
+          btnText: 'view on youtube'
         },
         {
-          name: "repost",
-          icon: "tumblr",
-          iconSquare: "tumblr-square",
-          btnText: "repost"
+          name: 'repost',
+          icon: 'tumblr',
+          iconSquare: 'tumblr-square',
+          btnText: 'repost'
         },
         {
-          name: "github",
-          icon: "github",
-          iconSquare: "github",
-          btnText: "connect with github"
+          name: 'github',
+          icon: 'github',
+          iconSquare: 'github',
+          btnText: 'connect with github'
         },
         {
-          name: "behance",
-          icon: "behance-square",
-          iconSquare: "behance-square",
-          btnText: "follow us"
+          name: 'behance',
+          icon: 'behance-square',
+          iconSquare: 'behance-square',
+          btnText: 'follow us'
         },
         {
-          name: "dribbble",
-          icon: "dribbble",
-          iconSquare: "dribbble",
-          btnText: "find us on dribbble"
+          name: 'dribbble',
+          icon: 'dribbble',
+          iconSquare: 'dribbble',
+          btnText: 'find us on dribbble'
         },
         {
-          name: "reddit",
-          icon: "reddit",
-          iconSquare: "reddit",
-          btnText: "repost · 232"
+          name: 'reddit',
+          icon: 'reddit',
+          iconSquare: 'reddit',
+          btnText: 'repost · 232'
         }
       ]
     };
@@ -601,12 +601,12 @@ export default {
   mounted() {
     this.onResponsiveInverted();
     this.onResponsiveSocialButtons();
-    window.addEventListener("resize", this.onResponsiveInverted);
-    window.addEventListener("resize", this.onResponsiveSocialButtons);
+    window.addEventListener('resize', this.onResponsiveInverted);
+    window.addEventListener('resize', this.onResponsiveSocialButtons);
   },
   beforeDestroy() {
-    window.addEventListener("resize", this.onResponsiveInverted);
-    window.addEventListener("resize", this.onResponsiveSocialButtons);
+    window.addEventListener('resize', this.onResponsiveInverted);
+    window.addEventListener('resize', this.onResponsiveSocialButtons);
   },
 
   methods: {

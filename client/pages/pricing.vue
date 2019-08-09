@@ -3,9 +3,7 @@
     <parallax class="page-header header-filter" parallax-active="false" :style="headerStyle">
       <div class="container">
         <div class="md-layout">
-          <div
-            class="md-layout-item md-size-50 md-small-size-100 justify-content-center mx-auto text-center"
-          >
+          <div class="md-layout-item md-size-50 md-small-size-100 justify-content-center mx-auto text-center">
             <h2 class="title">Pick the best plan for you</h2>
             <h5 class="description">
               You have Free Unlimited Updates and Premium Support on each
@@ -29,10 +27,7 @@
                   <li><b>5.000</b> Messages</li>
                 </ul>
 
-                <md-button
-                  href="javascript:void(0)"
-                  class="md-primary md-round"
-                >
+                <md-button href="javascript:void(0)" class="md-primary md-round">
                   Get Started
                 </md-button>
               </template>
@@ -53,7 +48,7 @@
                   <li><b>5,000</b> 부가세</li>
                 </ul>
 
-                <md-button @click="purchase" class="md-white md-round">
+                <md-button class="md-white md-round" @click="purchase">
                   Get Started
                 </md-button>
               </template>
@@ -67,36 +62,41 @@
 
 <script>
 import { mapState, mapActions } from 'vuex';
-import { PricingCard } from "@/components";
-import Mixins from "@/plugins/basicMixins";
+import { PricingCard } from '@/components';
+import Mixins from '@/plugins/basicMixins';
 
 export default {
   components: {
     PricingCard
   },
   mixins: [Mixins.HeaderImage],
-  computed: {
-    ...mapState('auth', {
-      userId: state => state.payload.userId
-    })
-  },
   data: () => ({
-    image: require("@/assets/img/examples/city.jpg"),
+    image: require('@/assets/img/examples/city.jpg'),
     pricings: [
       {
         title: 'Free',
         price: 0,
         each: 0,
         plus: 0,
-        count: 3,
+        count: 3
       }
     ]
   }),
+  computed: {
+    ...mapState('auth', {
+      isLogin: state => state.payload,
+      userId: state => state.payload.userId
+    })
+  },
   methods: {
     ...mapActions('purchase', {
       purchaseCreate: 'create'
     }),
     async purchase() {
+      if (!this.isLogin) {
+        this.$router.push('/login');
+        return;
+      }
       const data = await this.purchaseCreate({ userId: this.userId });
       window.location.href = data.redirectUrl;
       console.log('data', data);

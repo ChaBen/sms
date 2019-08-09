@@ -70,18 +70,15 @@
                   <md-button
                     href="javascript:void(0)"
                     class="md-twitter md-just-icon md-simple"
-                    ><i class="fab fa-twitter"></i
-                  ></md-button>
+                  ><i class="fab fa-twitter" /></md-button>
                   <md-button
                     href="javascript:void(0)"
                     class="md-facebook md-just-icon md-simple"
-                    ><i class="fab fa-facebook"></i
-                  ></md-button>
+                  ><i class="fab fa-facebook" /></md-button>
                   <md-button
                     href="javascript:void(0)"
                     class="md-google md-just-icon md-simple"
-                    ><i class="fab fa-google"></i
-                  ></md-button>
+                  ><i class="fab fa-google" /></md-button>
                 </template>
               </profile-card>
             </div>
@@ -105,18 +102,15 @@
                   <md-button
                     href="javascript:void(0)"
                     class="md-twitter md-just-icon md-simple"
-                    ><i class="fab fa-twitter"></i
-                  ></md-button>
+                  ><i class="fab fa-twitter" /></md-button>
                   <md-button
                     href="javascript:void(0)"
                     class="md-dribbble md-just-icon md-simple"
-                    ><i class="fab fa-dribbble"></i
-                  ></md-button>
+                  ><i class="fab fa-dribbble" /></md-button>
                   <md-button
                     href="javascript:void(0)"
                     class="md-linkedin md-just-icon md-simple"
-                    ><i class="fab fa-linkedin"></i
-                  ></md-button>
+                  ><i class="fab fa-linkedin" /></md-button>
                 </template>
               </profile-card>
             </div>
@@ -140,13 +134,11 @@
                   <md-button
                     href="javascript:void(0)"
                     class="md-facebook md-just-icon md-simple"
-                    ><i class="fab fa-facebook"></i
-                  ></md-button>
+                  ><i class="fab fa-facebook" /></md-button>
                   <md-button
                     href="javascript:void(0)"
                     class="md-dribbble md-just-icon md-simple"
-                    ><i class="fab fa-dribbble"></i
-                  ></md-button>
+                  ><i class="fab fa-dribbble" /></md-button>
                 </template>
               </profile-card>
             </div>
@@ -170,18 +162,15 @@
                   <md-button
                     href="javascript:void(0)"
                     class="md-google md-just-icon md-simple"
-                    ><i class="fab fa-google"></i
-                  ></md-button>
+                  ><i class="fab fa-google" /></md-button>
                   <md-button
                     href="javascript:void(0)"
                     class="md-twitter md-just-icon md-simple"
-                    ><i class="fab fa-twitter"></i
-                  ></md-button>
+                  ><i class="fab fa-twitter" /></md-button>
                   <md-button
                     href="javascript:void(0)"
                     class="md-dribbble md-just-icon md-simple"
-                    ><i class="fab fa-dribbble"></i
-                  ></md-button>
+                  ><i class="fab fa-dribbble" /></md-button>
                 </template>
               </profile-card>
             </div>
@@ -205,8 +194,8 @@
           <div class="md-layout">
             <div class="md-layout-item md-size-33 md-small-size-100">
               <info-areas info-horizontal icon-color="rose" icon="gesture">
-                <h4 class="info-title" slot="title">1. Design</h4>
-                <div class="description" slot="content">
+                <h4 slot="title" class="info-title">1. Design</h4>
+                <div slot="content" class="description">
                   <p>
                     The moment you use Material Kit, you know you’ve never felt
                     anything like it. With a single use, this powerfull UI Kit
@@ -218,8 +207,8 @@
             </div>
             <div class="md-layout-item md-size-33 md-small-size-100">
               <info-areas info-horizontal icon-color="rose" icon="build">
-                <h4 class="info-title" slot="title">2. Develop</h4>
-                <div class="description" slot="content">
+                <h4 slot="title" class="info-title">2. Develop</h4>
+                <div slot="content" class="description">
                   <p>
                     Divide details about your product or agency work into parts.
                     Write a few lines about each one. A paragraph describing a
@@ -231,8 +220,8 @@
             </div>
             <div class="md-layout-item md-size-33 md-small-size-100">
               <info-areas info-horizontal icon-color="rose" icon="mode_edit">
-                <h4 class="info-title" slot="title">3. Make Edits</h4>
-                <div class="description" slot="content">
+                <h4 slot="title" class="info-title">3. Make Edits</h4>
+                <div slot="content" class="description">
                   <p>
                     Divide details about your product or agency work into parts.
                     Write a few lines about each one. A paragraph describing a
@@ -263,35 +252,35 @@
                 class="img-raised rounded"
                 alt="Raised Image"
                 :src="aboutOffice.aboutOffice1"
-              />
+              >
             </div>
             <div class="md-layout-item md-size-33 md-small-size-100">
               <img
                 class="img-raised rounded"
                 alt="Raised Image"
                 :src="aboutOffice.aboutOffice2"
-              />
+              >
             </div>
             <div class="md-layout-item md-size-33 md-small-size-100">
               <img
                 class="img-raised rounded"
                 alt="Raised Image"
                 :src="aboutOffice.aboutOffice3"
-              />
+              >
             </div>
             <div class="md-layout-item md-size-50 md-small-size-100">
               <img
                 class="img-raised rounded"
                 alt="Raised Image"
                 :src="aboutOffice.aboutOffice4"
-              />
+              >
             </div>
             <div class="md-layout-item md-size-50 md-small-size-100">
               <img
                 class="img-raised rounded"
                 alt="Raised Image"
                 :src="aboutOffice.aboutOffice5"
-              />
+              >
             </div>
           </div>
         </div>
@@ -313,22 +302,22 @@
                 <div class="md-layout-item md-size-33 md-small-size-100">
                   <md-field>
                     <label>Your name</label>
-                    <md-input v-model="name"></md-input>
+                    <md-input v-model="name" />
                   </md-field>
                 </div>
                 <div class="md-layout-item md-size-33 md-small-size-100">
                   <md-field>
                     <label>Your email</label>
-                    <md-input v-model="email"></md-input>
+                    <md-input v-model="email" />
                   </md-field>
                 </div>
                 <div class="md-layout-item md-size-33 md-small-size-100">
                   <md-field>
                     <label for="movie">Speciality</label>
                     <md-select
+                      id="speciality"
                       v-model="speciality"
                       name="speciality"
-                      id="speciality"
                     >
                       <md-option value="fight-club">I'm Designer</md-option>
                       <md-option value="godfather">I'm Developer</md-option>
@@ -340,8 +329,7 @@
                   <md-button
                     href="javascript:void(0)"
                     class="md-primary md-round mt-2"
-                    >Let's Talk</md-button
-                  >
+                  >Let's Talk</md-button>
                 </div>
               </div>
             </div>
@@ -353,8 +341,8 @@
 </template>
 
 <script>
-import { ProfileCard, InfoAreas } from "@/components";
-import Mixins from "@/plugins/basicMixins";
+import { ProfileCard, InfoAreas } from '@/components';
+import Mixins from '@/plugins/basicMixins';
 
 export default {
   components: {
@@ -362,25 +350,25 @@ export default {
     InfoAreas
   },
   mixins: [Mixins.HeaderImage],
-  bodyClass: "about-us",
+  bodyClass: 'about-us',
   data() {
     return {
-      speciality: "",
+      speciality: '',
       name: null,
       email: null,
-      image: require("@/assets/img/bg9.jpg"),
+      image: require('@/assets/img/bg9.jpg'),
       aboutTeam: {
-        aboutTeam1: require("@/assets/img/faces/marc.jpg"),
-        aboutTeam2: require("@/assets/img/faces/kendall.jpg"),
-        aboutTeam3: require("@/assets/img/faces/christian.jpg"),
-        aboutTeam4: require("@/assets/img/faces/avatar.jpg")
+        aboutTeam1: require('@/assets/img/faces/marc.jpg'),
+        aboutTeam2: require('@/assets/img/faces/kendall.jpg'),
+        aboutTeam3: require('@/assets/img/faces/christian.jpg'),
+        aboutTeam4: require('@/assets/img/faces/avatar.jpg')
       },
       aboutOffice: {
-        aboutOffice1: require("@/assets/img/examples/office2.jpg"),
-        aboutOffice2: require("@/assets/img/examples/office4.jpg"),
-        aboutOffice3: require("@/assets/img/examples/office3.jpg"),
-        aboutOffice4: require("@/assets/img/examples/office5.jpg"),
-        aboutOffice5: require("@/assets/img/examples/office1.jpg")
+        aboutOffice1: require('@/assets/img/examples/office2.jpg'),
+        aboutOffice2: require('@/assets/img/examples/office4.jpg'),
+        aboutOffice3: require('@/assets/img/examples/office3.jpg'),
+        aboutOffice4: require('@/assets/img/examples/office5.jpg'),
+        aboutOffice5: require('@/assets/img/examples/office1.jpg')
       }
     };
   }

@@ -11,21 +11,21 @@
               about our product. They are very happy with their purchase.
             </h5>
             <info-areas info-horizontal icon-color="primary" icon="pin_drop">
-              <h4 class="info-title" slot="title">Find us at the office</h4>
-              <div class="description" slot="content">
+              <h4 slot="title" class="info-title">Find us at the office</h4>
+              <div slot="content" class="description">
                 <p>
-                  Bld Mihail Kogalniceanu, nr. 8, <br />
-                  7652 Bucharest, <br />
+                  Bld Mihail Kogalniceanu, nr. 8, <br>
+                  7652 Bucharest, <br>
                   Romania
                 </p>
               </div>
             </info-areas>
             <info-areas info-horizontal icon-color="primary" icon="phone">
-              <h4 class="info-title" slot="title">Give us a ring</h4>
-              <div class="description" slot="content">
+              <h4 slot="title" class="info-title">Give us a ring</h4>
+              <div slot="content" class="description">
                 <p>
-                  Michael Jordan <br />
-                  +40 762 321 762 <br />
+                  Michael Jordan <br>
+                  +40 762 321 762 <br>
                   Mon - Fri, 8:00-22:00
                 </p>
               </div>
@@ -39,24 +39,24 @@
               <md-card-content>
                 <md-field>
                   <label>Send Phones</label>
-                  <md-textarea v-model="phones" md-autogrow></md-textarea>
+                  <md-textarea v-model="phones" md-autogrow />
                   <span class="md-count">{{ phoneLen | Comma }}</span>
                 </md-field>
 
                 <md-field>
                   <label>Your Message</label>
-                  <md-textarea v-model="message" md-autogrow maxlength="100"></md-textarea>
+                  <md-textarea v-model="message" md-autogrow maxlength="100" />
                 </md-field>
               </md-card-content>
               <md-card-actions class="md-layout justify-content-between">
                 <div class="md-layout-item">
-                  <md-progress-spinner v-if="loading" :md-diameter="30" :md-stroke="3" md-mode="indeterminate"></md-progress-spinner>
+                  <md-progress-spinner v-if="loading" :md-diameter="30" :md-stroke="3" md-mode="indeterminate" />
                 </div>
                 <div class="md-layout-item">
-                  <md-button v-if="!isPlaySend" @click="playSendSms" class="md-primary"><i class="fas fa-play"></i>Send</md-button>
-                  <md-button v-else @click="stopSendSms" class="md-primary"><i class="fas fa-stop"></i>Stop</md-button>
+                  <md-button v-if="!isPlaySend" class="md-primary" @click="playSendSms"><i class="fas fa-play" />Send</md-button>
+                  <md-button v-else class="md-primary" @click="stopSendSms"><i class="fas fa-stop" />Stop</md-button>
                 </div>
-                <div class="md-layout-item"></div>
+                <div class="md-layout-item" />
               </md-card-actions>
             </md-card>
           </div>
@@ -69,8 +69,8 @@
 
 <script>
 import { mapState, mapActions } from 'vuex';
-import { InfoAreas } from "@/components";
-import Mixins from "@/plugins/basicMixins";
+import { InfoAreas } from '@/components';
+import Mixins from '@/plugins/basicMixins';
 import * as _ from 'lodash'
 
 export default {
@@ -78,6 +78,13 @@ export default {
     InfoAreas
   },
   mixins: [Mixins.HeaderImage],
+  data: () => ({
+    loading: false,
+    isPlaySend: false,
+    phones: '',
+    message: '',
+    image: require('@/assets/img/examples/city.jpg')
+  }),
   computed: {
     ...mapState('auth', {
       userId: state => state.payload.userId
@@ -86,13 +93,6 @@ export default {
       return this.phones ? this.phones.split(/\r*\n/).length : 0;
     }
   },
-  data: () => ({
-    loading: false,
-    isPlaySend: false,
-    phones: '',
-    message: '',
-    image: require("@/assets/img/examples/city.jpg"),
-  }),
   methods: {
     ...mapActions('send', {
       sendCreate: 'create'

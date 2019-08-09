@@ -4,7 +4,7 @@
       <div class="md-layout">
         <div class="md-layout-item md-size-60 md-small-size-100">
           <div class="image-container">
-            <img class="img" :src="sectionCards.img1" />
+            <img class="img" :src="sectionCards.img1">
           </div>
         </div>
         <div class="md-layout-item md-size-33 md-small-size-100 ml-auto">
@@ -28,11 +28,11 @@
 
 <script>
 export default {
-  name: "cards",
+  name: 'Cards',
   data() {
     return {
       sectionCards: {
-        img1: require("@/assets/img/cards-test.png")
+        img1: require('@/assets/img/cards-test.png')
       }
     };
   }

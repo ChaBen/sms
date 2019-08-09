@@ -4,7 +4,7 @@
       class="section page-header header-filter"
       parallax-active="true"
       :style="headerStyle"
-    ></parallax>
+    />
     <div class="main main-raised">
       <div class="section profile-content">
         <div class="container">
@@ -16,7 +16,7 @@
                     :src="img"
                     alt="Circle Image"
                     class="img-raised rounded-circle img-fluid"
-                  />
+                  >
                 </div>
                 <div class="name">
                   <h3 class="title">Carla Hortensia</h3>
@@ -24,18 +24,15 @@
                   <md-button
                     href="javascript:void(0)"
                     class="md-just-icon md-simple md-dribbble"
-                    ><i class="fab fa-dribbble"></i
-                  ></md-button>
+                  ><i class="fab fa-dribbble" /></md-button>
                   <md-button
                     href="javascript:void(0)"
                     class="md-just-icon md-simple md-twitter"
-                    ><i class="fab fa-twitter"></i
-                  ></md-button>
+                  ><i class="fab fa-twitter" /></md-button>
                   <md-button
                     href="javascript:void(0)"
                     class="md-just-icon md-simple md-pinterest"
-                    ><i class="fab fa-pinterest"></i
-                  ></md-button>
+                  ><i class="fab fa-pinterest" /></md-button>
                 </div>
                 <div class="follow">
                   <md-button class="md-success md-just-icon md-round">
@@ -123,14 +120,14 @@
                       <li><b>331</b> Influencers</li>
                       <li><b>1.2K</b> Likes</li>
                     </ul>
-                    <hr />
+                    <hr>
                     <h4 class="title title-margin">About his Work</h4>
                     <p class="description">
                       French luxury footwear and fashion. The footwear has
                       incorporated shiny, red-lacquered soles that have become
                       his signature.
                     </p>
-                    <hr />
+                    <hr>
                     <h4 class="title title-margin">Focus</h4>
                     <badge type="primary">Footwear</badge>
                     <badge type="rose">Luxury</badge>
@@ -228,15 +225,15 @@
                   <div
                     class="md-layout-item md-size-25 md-small-size-100 ml-auto"
                   >
-                    <img :src="tabPane3[0].image" class="rounded" />
-                    <img :src="tabPane3[1].image" class="rounded" />
+                    <img :src="tabPane3[0].image" class="rounded">
+                    <img :src="tabPane3[1].image" class="rounded">
                   </div>
                   <div
                     class="md-layout-item md-size-25 md-small-size-100 mr-auto"
                   >
-                    <img :src="tabPane3[2].image" class="rounded" />
-                    <img :src="tabPane3[3].image" class="rounded" />
-                    <img :src="tabPane3[4].image" class="rounded" />
+                    <img :src="tabPane3[2].image" class="rounded">
+                    <img :src="tabPane3[3].image" class="rounded">
+                    <img :src="tabPane3[4].image" class="rounded">
                   </div>
                 </div>
               </template>
@@ -249,8 +246,8 @@
 </template>
 
 <script>
-import { Tabs, FullBgCard, ProfileCard, Badge } from "@/components";
-import Mixins from "@/plugins/basicMixins";
+import { Tabs, FullBgCard, ProfileCard, Badge } from '@/components';
+import Mixins from '@/plugins/basicMixins';
 
 export default {
   components: {
@@ -260,42 +257,42 @@ export default {
     Badge
   },
   mixins: [Mixins.HeaderImage],
-  bodyClass: "profile-page",
+  bodyClass: 'profile-page',
   data() {
     return {
-      image: require("@/assets/img/city-profile.jpg"),
-      img: require("@/assets/img/faces/christian.jpg"),
+      image: require('@/assets/img/city-profile.jpg'),
+      img: require('@/assets/img/faces/christian.jpg'),
       cardFullBg: {
-        fullBg1: require("@/assets/img/examples/mariya-georgieva.jpg"),
-        fullBg2: require("@/assets/img/examples/clem-onojeghuo.jpg"),
-        fullBg3: require("@/assets/img/examples/olu-eletu.jpg"),
-        fullBg4: require("@/assets/img/examples/floralia.jpg")
+        fullBg1: require('@/assets/img/examples/mariya-georgieva.jpg'),
+        fullBg2: require('@/assets/img/examples/clem-onojeghuo.jpg'),
+        fullBg3: require('@/assets/img/examples/olu-eletu.jpg'),
+        fullBg4: require('@/assets/img/examples/floralia.jpg')
       },
       cardProfile3: {
-        cardProfile1: require("@/assets/img/faces/avatar.jpg"),
-        cardProfile2: require("@/assets/img/faces/marc.jpg"),
-        cardProfile3: require("@/assets/img/faces/kendall.jpg"),
-        cardProfile4: require("@/assets/img/faces/card-profile2-square.jpg")
+        cardProfile1: require('@/assets/img/faces/avatar.jpg'),
+        cardProfile2: require('@/assets/img/faces/marc.jpg'),
+        cardProfile3: require('@/assets/img/faces/kendall.jpg'),
+        cardProfile4: require('@/assets/img/faces/card-profile2-square.jpg')
       },
       tabPane1: [
-        { image: require("@/assets/img/examples/studio-1.jpg") },
-        { image: require("@/assets/img/examples/studio-2.jpg") },
-        { image: require("@/assets/img/examples/studio-4.jpg") },
-        { image: require("@/assets/img/examples/studio-5.jpg") }
+        { image: require('@/assets/img/examples/studio-1.jpg') },
+        { image: require('@/assets/img/examples/studio-2.jpg') },
+        { image: require('@/assets/img/examples/studio-4.jpg') },
+        { image: require('@/assets/img/examples/studio-5.jpg') }
       ],
       tabPane2: [
-        { image: require("@/assets/img/examples/olu-eletu.jpg") },
-        { image: require("@/assets/img/examples/clem-onojeghuo.jpg") },
-        { image: require("@/assets/img/examples/cynthia-del-rio.jpg") },
-        { image: require("@/assets/img/examples/mariya-georgieva.jpg") },
-        { image: require("@/assets/img/examples/clem-onojegaw.jpg") }
+        { image: require('@/assets/img/examples/olu-eletu.jpg') },
+        { image: require('@/assets/img/examples/clem-onojeghuo.jpg') },
+        { image: require('@/assets/img/examples/cynthia-del-rio.jpg') },
+        { image: require('@/assets/img/examples/mariya-georgieva.jpg') },
+        { image: require('@/assets/img/examples/clem-onojegaw.jpg') }
       ],
       tabPane3: [
-        { image: require("@/assets/img/examples/mariya-georgieva.jpg") },
-        { image: require("@/assets/img/examples/studio-3.jpg") },
-        { image: require("@/assets/img/examples/clem-onojeghuo.jpg") },
-        { image: require("@/assets/img/examples/olu-eletu.jpg") },
-        { image: require("@/assets/img/examples/studio-1.jpg") }
+        { image: require('@/assets/img/examples/mariya-georgieva.jpg') },
+        { image: require('@/assets/img/examples/studio-3.jpg') },
+        { image: require('@/assets/img/examples/clem-onojeghuo.jpg') },
+        { image: require('@/assets/img/examples/olu-eletu.jpg') },
+        { image: require('@/assets/img/examples/studio-1.jpg') }
       ]
     };
   }

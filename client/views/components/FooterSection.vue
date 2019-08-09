@@ -4,9 +4,10 @@
       <!-- Simple Footer With Social & Brand -->
       <footer class="footer footer-white">
         <div class="container flex-direction-row">
-          <a class="footer-brand" href="http://www.creative-tim.com"
-            >Material Kit PRO</a
-          >
+          <a
+            class="footer-brand"
+            href="http://www.creative-tim.com"
+          >Material Kit PRO</a>
           <ul>
             <li>
               <a href="javascript:void(0)">
@@ -37,7 +38,7 @@
                 target="_blank"
                 class="md-twitter md-just-icon md-simple"
               >
-                <i class="fab fa-twitter"></i>
+                <i class="fab fa-twitter" />
               </md-button>
             </li>
             <li>
@@ -46,7 +47,7 @@
                 target="_blank"
                 class="md-dribbble md-just-icon md-simple"
               >
-                <i class="fab fa-dribbble"></i>
+                <i class="fab fa-dribbble" />
               </md-button>
             </li>
             <li>
@@ -55,7 +56,7 @@
                 target="_blank"
                 class="md-google md-just-icon md-simple"
               >
-                <i class="fab fa-google-plus-g"></i>
+                <i class="fab fa-google-plus-g" />
               </md-button>
             </li>
           </ul>
@@ -63,8 +64,8 @@
       </footer>
       <!-- end Simple Footer With Social & Brand -->
 
-      <br />
-      <br />
+      <br>
+      <br>
 
       <!-- Simple Footer -->
       <footer class="footer">
@@ -101,8 +102,8 @@
       </footer>
       <!-- end Simple Footer -->
 
-      <br />
-      <br />
+      <br>
+      <br>
 
       <!-- Black Simple Footer With Social & Brand -->
       <footer class="footer footer-black">
@@ -143,7 +144,7 @@
                 target="_blank"
                 class="md-twitter md-just-icon md-simple md-white"
               >
-                <i class="fab fa-twitter"></i>
+                <i class="fab fa-twitter" />
               </md-button>
             </li>
             <li>
@@ -152,7 +153,7 @@
                 target="_blank"
                 class="md-facebook md-just-icon md-simple md-white"
               >
-                <i class="fab fa-facebook"></i>
+                <i class="fab fa-facebook" />
               </md-button>
             </li>
             <li>
@@ -161,7 +162,7 @@
                 target="_blank"
                 class="md-instagram md-just-icon md-simple md-white"
               >
-                <i class="fab fa-instagram"></i>
+                <i class="fab fa-instagram" />
               </md-button>
             </li>
           </ul>
@@ -169,8 +170,8 @@
       </footer>
       <!-- end Black Simple Footer With Social & Brand -->
 
-      <br />
-      <br />
+      <br>
+      <br>
 
       <!-- Big Footer -->
       <footer class="footer footer-black footer-big">
@@ -194,19 +195,19 @@
                 <h5>Social Feed</h5>
                 <div class="social-feed">
                   <div class="feed-line">
-                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-twitter" />
                     <p>
                       How to handle ethical disagreements with your clients.
                     </p>
                   </div>
                   <div class="feed-line">
-                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-instagram" />
                     <p>
                       The tangible benefits of designing at 1x pixel density.
                     </p>
                   </div>
                   <div class="feed-line">
-                    <i class="fab fa-facebook-square"></i>
+                    <i class="fab fa-facebook-square" />
                     <p>
                       A collection of 25 stunning sites that you can use for
                       inspiration.
@@ -218,21 +219,21 @@
               <div class="md-layout-item md-medium-size-33 md-small-size-100">
                 <h5>Instagram Feed</h5>
                 <div class="gallery-feed">
-                  <img :src="img1" class="img img-raised rounded" alt="" />
-                  <img :src="img2" class="img img-raised rounded" alt="" />
-                  <img :src="img3" class="img img-raised rounded" alt="" />
-                  <img :src="img4" class="img img-raised rounded" alt="" />
+                  <img :src="img1" class="img img-raised rounded" alt="">
+                  <img :src="img2" class="img img-raised rounded" alt="">
+                  <img :src="img3" class="img img-raised rounded" alt="">
+                  <img :src="img4" class="img img-raised rounded" alt="">
 
-                  <img :src="img5" class="img img-raised rounded" alt="" />
-                  <img :src="img6" class="img img-raised rounded" alt="" />
-                  <img :src="img7" class="img img-raised rounded" alt="" />
-                  <img :src="img8" class="img img-raised rounded" alt="" />
+                  <img :src="img5" class="img img-raised rounded" alt="">
+                  <img :src="img6" class="img img-raised rounded" alt="">
+                  <img :src="img7" class="img img-raised rounded" alt="">
+                  <img :src="img8" class="img img-raised rounded" alt="">
                 </div>
               </div>
             </div>
           </div>
 
-          <hr />
+          <hr>
 
           <div class="flex flex-direction-row space-between">
             <nav>
@@ -272,8 +273,8 @@
       </footer>
       <!-- end Big Footer -->
 
-      <br />
-      <br />
+      <br>
+      <br>
 
       <!-- Big White Footer -->
       <footer class="footer footer-white footer-big">
@@ -349,19 +350,19 @@
                 <h5>Social Feed</h5>
                 <div class="social-feed">
                   <div class="feed-line">
-                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-twitter" />
                     <p>
                       How to handle ethical disagreements with your clients.
                     </p>
                   </div>
                   <div class="feed-line">
-                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-instagram" />
                     <p>
                       The tangible benefits of designing at 1x pixel density.
                     </p>
                   </div>
                   <div class="feed-line">
-                    <i class="fab fa-facebook-square"></i>
+                    <i class="fab fa-facebook-square" />
                     <p>
                       A collection of 25 stunning sites that you can use for
                       inspiration.
@@ -379,7 +380,7 @@
                       target="_blank"
                       class="md-twitter md-just-icon md-simple"
                     >
-                      <i class="fab fa-twitter"></i>
+                      <i class="fab fa-twitter" />
                     </md-button>
                   </li>
                   <li>
@@ -388,7 +389,7 @@
                       target="_blank"
                       class="md-facebook md-just-icon md-simple"
                     >
-                      <i class="fab fa-facebook-square"></i>
+                      <i class="fab fa-facebook-square" />
                     </md-button>
                   </li>
                   <li>
@@ -397,7 +398,7 @@
                       target="_blank"
                       class="md-dribbble md-just-icon md-simple"
                     >
-                      <i class="fab fa-dribbble"></i>
+                      <i class="fab fa-dribbble" />
                     </md-button>
                   </li>
                   <li>
@@ -406,7 +407,7 @@
                       target="_blank"
                       class="md-google md-just-icon md-simple"
                     >
-                      <i class="fab fa-google"></i>
+                      <i class="fab fa-google" />
                     </md-button>
                   </li>
                   <li>
@@ -415,7 +416,7 @@
                       target="_blank"
                       class="md-instagram md-just-icon md-simple"
                     >
-                      <i class="fab fa-instagram"></i>
+                      <i class="fab fa-instagram" />
                     </md-button>
                   </li>
                 </ul>
@@ -427,7 +428,7 @@
             </div>
           </div>
 
-          <hr />
+          <hr>
 
           <div class="copyright">
             Copyright © {{ year }} Creative Tim All Rights Reserved.
@@ -436,8 +437,8 @@
       </footer>
       <!-- end Big White Footer -->
 
-      <br />
-      <br />
+      <br>
+      <br>
 
       <!-- Big White Footer V2 -->
       <footer class="footer footer-white footer-big">
@@ -550,13 +551,13 @@
                         <md-input
                           v-model="email"
                           placeholder="Your Email.."
-                        ></md-input>
+                        />
                       </md-field>
                     </div>
                     <div class="md-layout-item md-large-size-33 medium-size-50">
-                      <md-button class="md-primary md-just-icon md-block"
-                        ><md-icon>mail</md-icon></md-button
-                      >
+                      <md-button
+                        class="md-primary md-just-icon md-block"
+                      ><md-icon>mail</md-icon></md-button>
                     </div>
                   </div>
                 </form>
@@ -564,7 +565,7 @@
             </div>
           </div>
 
-          <hr />
+          <hr>
 
           <ul class="social-buttons">
             <li>
@@ -573,7 +574,7 @@
                 target="_blank"
                 class="md-twitter md-just-icon md-simple"
               >
-                <i class="fab fa-twitter"></i>
+                <i class="fab fa-twitter" />
               </md-button>
             </li>
             <li>
@@ -582,7 +583,7 @@
                 target="_blank"
                 class="md-facebook md-just-icon md-simple"
               >
-                <i class="fab fa-facebook"></i>
+                <i class="fab fa-facebook" />
               </md-button>
             </li>
             <li>
@@ -591,7 +592,7 @@
                 target="_blank"
                 class="md-dribbble md-just-icon md-simple"
               >
-                <i class="fab fa-dribbble"></i>
+                <i class="fab fa-dribbble" />
               </md-button>
             </li>
             <li>
@@ -600,7 +601,7 @@
                 target="_blank"
                 class="md-google md-just-icon md-simple"
               >
-                <i class="fab fa-google"></i>
+                <i class="fab fa-google" />
               </md-button>
             </li>
             <li>
@@ -609,7 +610,7 @@
                 target="_blank"
                 class="md-youtube md-just-icon md-simple"
               >
-                <i class="fab fa-youtube"></i>
+                <i class="fab fa-youtube" />
               </md-button>
             </li>
           </ul>
@@ -628,14 +629,14 @@
 export default {
   data() {
     return {
-      img1: require("@/assets/img/faces/card-profile6-square.jpg"),
-      img2: require("@/assets/img/faces/christian.jpg"),
-      img3: require("@/assets/img/faces/card-profile4-square.jpg"),
-      img4: require("@/assets/img/faces/card-profile1-square.jpg"),
-      img5: require("@/assets/img/faces/marc.jpg"),
-      img6: require("@/assets/img/faces/kendall.jpg"),
-      img7: require("@/assets/img/faces/card-profile5-square.jpg"),
-      img8: require("@/assets/img/faces/card-profile2-square.jpg"),
+      img1: require('@/assets/img/faces/card-profile6-square.jpg'),
+      img2: require('@/assets/img/faces/christian.jpg'),
+      img3: require('@/assets/img/faces/card-profile4-square.jpg'),
+      img4: require('@/assets/img/faces/card-profile1-square.jpg'),
+      img5: require('@/assets/img/faces/marc.jpg'),
+      img6: require('@/assets/img/faces/kendall.jpg'),
+      img7: require('@/assets/img/faces/card-profile5-square.jpg'),
+      img8: require('@/assets/img/faces/card-profile2-square.jpg'),
       email: null
     };
   },

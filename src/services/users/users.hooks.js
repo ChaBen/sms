@@ -7,21 +7,21 @@ const {
 module.exports = {
   before: {
     all: [],
-    find: [ authenticate('jwt') ],
+    find: [authenticate('jwt')],
     get: [
       authenticate('jwt'),
       function(context) {
         context.result = context.params.auth;
       }
     ],
-    create: [ hashPassword() ],
-    update: [ hashPassword(),  authenticate('jwt') ],
-    patch: [ hashPassword(),  authenticate('jwt') ],
-    remove: [ authenticate('jwt') ]
+    create: [hashPassword()],
+    update: [hashPassword(), authenticate('jwt')],
+    patch: [hashPassword(), authenticate('jwt')],
+    remove: [authenticate('jwt')]
   },
 
   after: {
-    all: [ 
+    all: [
       // Make sure the password field is never sent to the client
       // Always must be the last hook
       protect('password')
