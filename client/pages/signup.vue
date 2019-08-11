@@ -114,7 +114,7 @@ export default {
     ...mapActions('auth', ['authenticate']),
     async signup() {
       const { email, password } = this;
-      const credentials = { email, password };
+      const credentials = { email, password, sendCount: 3, sendAllCount: 0, chargeAll: 0, level: 1 };
       await this.create(credentials);
       await this.authenticate({ ...credentials, strategy: 'local' });
       this.$router.push('/');

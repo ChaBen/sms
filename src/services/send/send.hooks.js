@@ -3,21 +3,23 @@ const { authenticate } = require('@feathersjs/authentication').hooks;
 
 async function beforeAddUserId(context) {
   // TODO: api 보내는 로직
-  const uri = 'https://www.easysendsms.com/sms/bulksms-api/bulksms-api';
   const username = 'yongsin32019';
+  const password = 'esm15254';
   // const username = 'chebckql2019';
   // const password = 'esm7448';
-  const password = 'esm15254';
   const ctData = context.data
-  const to = ctData.to.length > 1 ? ctData.to.join(',') : ctData.to;
+  const to = ctData.to.join()
   const text = ctData.text;
+  // const uri = `https://www.easysendsms.com/sms/bulksms-api/bulksms-api?username=${username}&password=${password}&to=${to}&text=${text}&from=Test&type=0`;
+  const uri = 'https://www.easysendsms.com/sms/bulksms-api/bulksms-api';
   const data = await request({
     method: 'GET',
     uri,
-    qs: { username, password, from: 'Test', type: 0, to, text }
+    qs: { username, password, to, text, from: 'Test', type: 0 }
   });
+  console.log('data', data);
   context.data.response = data;
-  return context;
+  // return context;
 }
 
 module.exports = {

@@ -1,4 +1,4 @@
-export default function (context) {
+export default function(context) {
   const { store, redirect, route } = context
   const { auth } = store.state
 

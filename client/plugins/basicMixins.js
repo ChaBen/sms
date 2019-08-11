@@ -11,43 +11,43 @@ const HeaderImage = {
 const VerticalNav = {
   methods: {
     scrollToElement(elem) {
-      let element_id = document.getElementById(elem);
+      const element_id = document.getElementById(elem);
       if (element_id) {
-        element_id.scrollIntoView({ block: "start", behavior: "smooth" });
+        element_id.scrollIntoView({ block: 'start', behavior: 'smooth' });
       }
     },
     scrollListener() {
-      var contentSections = document.getElementsByClassName("cd-section");
+      var contentSections = document.getElementsByClassName('cd-section');
       var navigationItems = document
-        .getElementById("cd-vertical-nav")
-        .getElementsByTagName("a");
+        .getElementById('cd-vertical-nav')
+        .getElementsByTagName('a');
 
       for (let i = 0; i < contentSections.length; i++) {
         var activeSection =
-          parseInt(navigationItems[i].getAttribute("data-number"), 10) - 1;
+          parseInt(navigationItems[i].getAttribute('data-number'), 10) - 1;
         if (
           contentSections[i].offsetTop -
             window.innerHeight / 2 +
-            document.getElementById("main-panel").offsetTop <
+            document.getElementById('main-panel').offsetTop <
             window.pageYOffset &&
           contentSections[i].offsetTop +
             contentSections[i].scrollHeight -
             window.innerHeight / 2 +
-            document.getElementById("main-panel").offsetTop >
+            document.getElementById('main-panel').offsetTop >
             window.pageYOffset
         ) {
-          navigationItems[activeSection].classList.add("is-selected");
+          navigationItems[activeSection].classList.add('is-selected');
         } else {
-          navigationItems[activeSection].classList.remove("is-selected");
+          navigationItems[activeSection].classList.remove('is-selected');
         }
       }
     }
   },
   mounted() {
-    document.addEventListener("scroll", this.scrollListener);
+    document.addEventListener('scroll', this.scrollListener);
   },
   beforeDestroy() {
-    document.removeEventListener("scroll", this.scrollListener);
+    document.removeEventListener('scroll', this.scrollListener);
   }
 };
 

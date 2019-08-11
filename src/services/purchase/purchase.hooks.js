@@ -1,55 +1,59 @@
 const paypal = require('paypal-rest-sdk');
 
+function UserException(error) {
+  this.message = error.error_description;
+  this.status = error.httpStatusCode;
+}
+
 async function beforePurchase(context) {
   paypal.configure({
-    'mode': 'sandbox', // sandbox or live
+    mode: 'sandbox', // sandbox or live
     'client_id': 'AeZgg-XoLfSbdrVeRnEz1aSGatzYfnYwGWGuWydxIp-ik2Wl4Y433qnUeE77hf92vR_x6bJyRbG02dPY',
     'client_secret': 'EENYmBfM1pBpO3hBu3yTJH6mob4areRgbzV-InTa7y-B5k557z0uIC2Bq5snxXnwBbsDVd5U-9fnQ_uB'
   });
   const paypalGoods = new Promise((resolve, reject) => {
     const create_payment_json = {
-      'intent': 'sale',
-      'payer': {
+      intent: 'sale',
+      payer: {
         'payment_method': 'paypal'
       },
       'redirect_urls': {
         'return_url': 'http://localhost:3000/success',
         'cancel_url': 'http://localhost:3000/cancel'
       },
-      'transactions': [{
+      transactions: [{
         'item_list': {
-          'items': [{
-            'name': 'item',
-            'sku': 'item',
-            'price': '50.00',
-            'currency': 'USD',
-            'quantity': 1
+          items: [{
+            name: 'item',
+            sku: 'item',
+            price: '50.00',
+            currency: 'USD',
+            quantity: 1
           }]
         },
-        'amount': {
-          'currency': 'USD',
-          'total': '50.00'
+        amount: {
+          currency: 'USD',
+          total: '50.00'
         },
-        'description': 'This is the payment description.'
+        description: 'This is the payment description.'
       }]
     };
-    paypal.payment.create(create_payment_json, function(error, payment) {
+    paypal.payment.create(create_payment_json, (error, payment) => {
       if (error) {
-        throw error;
+        reject(error);
       } else {
         resolve(payment);
       }
     });
   });
   try {
-    const goodsResponse = await paypalGoods();
-    context.data.payId = goodsResponse.id;
+    const goodsResponse = await paypalGoods;
     context.data.description = goodsResponse.transactions[0].description;
     context.data.amount = goodsResponse.transactions[0].amount;
     context.data.items = goodsResponse.transactions[0].item_list.items;
     context.data.redirectUrl = goodsResponse.links[1].href;
   } catch (error) {
-    throw new Error(error);
+    throw new UserException(error.response);
   }
 }
 

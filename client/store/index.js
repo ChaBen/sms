@@ -7,7 +7,7 @@ export const state = () => ({});
 export const mutations = {};
 
 export const actions = {
-  nuxtServerInit({ commit, dispatch }, { req }) {
+  nuxtServerInit({ commit, dispatch }, { req, store }) {
     return initAuth({
       commit,
       dispatch,
@@ -15,6 +15,9 @@ export const actions = {
       moduleName: 'auth',
       cookieName: 'feathers-jwt'
     })
+      .then(async response => {
+        return dispatch('auth/authenticate', { accessToken: store.state.auth.accessToken, strategy: 'jwt' }).catch(_ => {})
+      });
   }
 };
 
@@ -29,7 +32,7 @@ export const plugins = [
         'index',
         'signup',
         'pricing',
-        'login',
+        'login'
       ]
     },
     userService: 'users'

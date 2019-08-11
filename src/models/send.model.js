@@ -13,7 +13,7 @@ module.exports = function(app) {
     form: { type: String },
     to: { type: Array },
     text: { type: String },
-    response: { type: Object },
+    response: { type: Array },
     type: { type: Number }
   }, {
     timestamps: true

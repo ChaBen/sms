@@ -13,45 +13,33 @@
               <md-card class="md-card-plain">
                 <md-card-content>
                   <h3 class="card-title">구매내역</h3>
-                  <md-table v-model="shoppingCartTable" class="table-shopping">
+                  {{ payment }}
+                  <md-table v-model="payment" class="table-shopping">
                     <md-table-row slot="md-table-row" slot-scope="{ item }">
-                      <md-table-cell md-label="Product" class="td-name">
-                        <a href="javascript:void(0)">{{ item.product }}</a>
+                      <md-table-cell md-label="Name" class="td-name">
+                        <a href="javascript:void(0)">{{ item.transactions[0].item_list.items[0].name }}</a>
                         <br>
-                        <small>{{ item.category }}</small>
+                        <small>{{ item.transactions[0].item_list.items[0].sku }}</small>
                       </md-table-cell>
-                      <md-table-cell md-label="Color">
-                        {{ item.color }}
+                      <md-table-cell md-label="SMS COUNT">
+                        {{ item.transactions[0].item_list.items[0].price / 0.02 | Comma }}
                       </md-table-cell>
-                      <md-table-cell md-label="Size">
-                        {{ item.size }}
+                      <md-table-cell md-label="BuyEmail">
+                        {{ item.transactions[0].payee.email }}
+                      </md-table-cell>
+                      <md-table-cell md-label="Qty" class="td-number">
+                        {{ item.transactions[0].item_list.items[0].quantity }}
                       </md-table-cell>
                       <md-table-cell md-label="Price" class="td-number">
                         <small>$</small>
-                        {{ item.price }}
-                      </md-table-cell>
-                      <md-table-cell md-label="Qty" class="td-number">
-                        {{ item.qty }}
-                      </md-table-cell>
-                      <md-table-cell md-label="Amount" class="td-number">
-                        <small>$</small>
-                        {{ item.amount }}
+                        {{ item.transactions[0].item_list.items[0].price }}
                       </md-table-cell>
                     </md-table-row>
                   </md-table>
                   <div class="table table-stats">
-                    <div class="td-price">
-                      <div class="td-total">
-                        Total
-                      </div>
-                      <span>
-                        <small>$</small>
-                        {{ shoppingTotal }}
-                      </span>
-                    </div>
                     <div class="text-right">
-                      <md-button class="md-info md-round">
-                        Complete Purchase
+                      <md-button class="md-success md-round" @click="$router.push('/my')">
+                        Go My
                         <md-icon>keyboard_arrow_right</md-icon>
                       </md-button>
                     </div>
@@ -75,29 +63,20 @@ export default {
   data: () => ({
     selectColor: 'rose',
     selectSize: 'small',
-    image: require('@/assets/img/examples/bg-product.jpg'),
-    shoppingCartTable: [
-      {
-        product: 'Spring Jacket',
-        category: 'by Dolce&Gabbana',
-        color: 'Red',
-        size: 'M',
-        price: 549,
-        qty: 1,
-        amount: 549
-      }
-    ]
+    image: require('@/assets/img/examples/bg-product.jpg')
   }),
-  computed: {
-    shoppingTotal() {
-      return this.shoppingCartTable.reduce((accumulator, current) => {
-        return accumulator + current.amount;
-      }, 0);
-    }
-  },
-  async fetch({ store, query }) {
+  async asyncData({ store, query }) {
     const { paymentId, PayerID } = query;
-    await store.dispatch('paysuccess/create', { paymentId, PayerID });
+    const { userId } = store.state.auth.payload;
+    const { data } = await store.dispatch('paysuccess/find', { query: { payId: paymentId }});
+    let payment;
+    if (!data.length) {
+      const res = await store.dispatch('paysuccess/create', { paymentId, PayerID, userId });
+      payment = [...res];
+    } else {
+      payment = data;
+    }
+    return { payment };
   }
 };
 </script>

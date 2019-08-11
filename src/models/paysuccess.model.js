@@ -6,11 +6,13 @@ module.exports = function(app) {
   const mongooseClient = app.get('mongooseClient');
   const { Schema } = mongooseClient;
   const paysuccess = new Schema({
-    intent: { type: String },
-    state: { type: String },
-    payer: { type: Object },
-    transactions: { type: Array },
-    links: { type: Array }
+    userId: { type: Schema.Types.ObjectId, required: true, ref: 'users' },
+    payId: { type: String, required: true },
+    intent: { type: String, required: true },
+    state: { type: String, required: true },
+    payer: { type: Object, required: true },
+    transactions: { type: Array, required: true },
+    links: { type: Array, required: true }
   }, {
     timestamps: true
   });

@@ -60,6 +60,7 @@
 import { mapActions } from 'vuex';
 import { LoginCard } from '@/components';
 import Mixins from '@/plugins/basicMixins';
+import Swal from 'sweetalert2';
 
 export default {
   components: {
@@ -69,8 +70,8 @@ export default {
   bodyClass: 'login-page',
   data: () => ({
     image: require('@/assets/img/profile_city.jpg'),
-    email: null,
-    password: null
+    email: 'ckqlss@gmail.com',
+    password: 'admin520'
   }),
   methods: {
     ...mapActions('auth', ['authenticate']),
@@ -80,7 +81,13 @@ export default {
         await this.authenticate({ ...credentials, strategy: 'local' });
         this.$router.push('/');
       } catch (error) {
-        console.info('error', error);
+        Swal.fire({
+          title: `Error: ${error.code}`,
+          text: error.message,
+          type: 'error',
+          confirmButtonClass: 'md-button',
+          buttonsStyling: false
+        });
       }
     }
   }
