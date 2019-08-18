@@ -386,10 +386,7 @@
   }
 
   .md-list-item-content:not(.md-ripple) {
-    padding: 12px 15px;
-    &.padding0 {
-      padding: 0;
-    }
+    padding: 0;
   }
 
   & .md-list-item-container .md-just-icon .md-ripple .md-icon {

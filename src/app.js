@@ -45,11 +45,6 @@ app.configure(services);
 // Set up event channels (see channels.js)
 // app.configure(channels);
 
-// paypal
-app.get('/paysuccess', function(req, res) {
-  res.send('success');
-});
-
 // Configure a middleware for 404s and the error handler
 app.use(express.notFound());
 app.use(express.errorHandler({ logger }));

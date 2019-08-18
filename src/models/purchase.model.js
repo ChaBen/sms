@@ -7,6 +7,7 @@ module.exports = function(app) {
   const { Schema } = mongooseClient;
   const purchase = new Schema({
     userId: { type: Schema.Types.ObjectId, required: true, ref: 'users' },
+    payId: { type: String, required: true },
     redirectUrl: { type: String },
     description: { type: String },
     amount: { type: Object },

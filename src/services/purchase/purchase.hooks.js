@@ -17,23 +17,17 @@ async function beforePurchase(context) {
       payer: {
         'payment_method': 'paypal'
       },
-      'redirect_urls': {
-        'return_url': 'http://localhost:3000/success',
-        'cancel_url': 'http://localhost:3000/cancel'
+      redirect_urls: {
+        return_url: 'http://localhost:3000/success',
+        cancel_url: 'http://localhost:3000/cancel'
       },
       transactions: [{
-        'item_list': {
-          items: [{
-            name: 'item',
-            sku: 'item',
-            price: '50.00',
-            currency: 'USD',
-            quantity: 1
-          }]
+        item_list: {
+          items: context.data.items
         },
         amount: {
           currency: 'USD',
-          total: '50.00'
+          total: context.data.total
         },
         description: 'This is the payment description.'
       }]
@@ -48,6 +42,7 @@ async function beforePurchase(context) {
   });
   try {
     const goodsResponse = await paypalGoods;
+    context.data.payId = goodsResponse.id;
     context.data.description = goodsResponse.transactions[0].description;
     context.data.amount = goodsResponse.transactions[0].amount;
     context.data.items = goodsResponse.transactions[0].item_list.items;

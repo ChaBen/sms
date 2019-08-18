@@ -2,10 +2,7 @@
   "host": "localhost",
   "port": 3000,
   "public": "../public/",
-  "paginate": {
-    "default": 10,
-    "max": 50
-  },
+  "paginate": false,
   "authentication": {
     "secret": "68afd7f43ca2a3e91d8e0ba584ed87e8e32b1e08f5ceffb1fd5165dd4537a318d10c3e4fbdd0dd8da48536e5e05c41c3448c7297a94d1c52cacd4cd5def285850141878ea93bb55a26450d149da81e1bf3d4f8434059c9d0a71a4a007a9cf108b25839e18c7be5a850f771581de7fde77a5f674818c74d6dbdbe5c5128f54617c9c46f2522a99e38212f92d3cf22bfefbc08c73c5ad4119549ae888efb45bb606b9bd8283fc3fcba90651160c1f3d3cba1fe5776d6aa871859b6a8d046254703d997bed93be1f0dd3a189758b9711e16c6fed01697a9d3d1a8056c15fcf26ad5bba8c977fd4c9f04843c6f5ab2dfb079042c3076ec7d4818c53a68a664d2e2a2",
     "strategies": [

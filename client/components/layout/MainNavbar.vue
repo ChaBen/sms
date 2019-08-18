@@ -12,7 +12,7 @@
   >
     <div class="md-toolbar-row md-collapse-lateral">
       <div class="md-toolbar-section-start">
-        <h3 class="md-title">{{ brand }}</h3>
+        <nuxt-link class="logo" :to="$i18n.path('')">Canada SMS</nuxt-link>
       </div>
       <div class="md-toolbar-section-end">
         <md-button
@@ -31,40 +31,72 @@
               <!-- Here you can add your items from the section-start of your toolbar -->
             </mobile-menu>
             <md-list>
-              <li v-if="!isAuthenticated" class="md-list-item">
-                <nuxt-link to="/login" class="md-list-item-router md-list-item-container md-button-clean dropdown">
-                  <div class="md-list-item-content">로그인</div>
-                </nuxt-link>
-              </li>
-              <li v-if="!isAuthenticated" class="md-list-item">
-                <nuxt-link to="/signup" class="md-list-item-router md-list-item-container md-button-clean dropdown">
-                  <div class="md-list-item-content">가입</div>
-                </nuxt-link>
-              </li>
-              <li class="md-list-item">
-                <nuxt-link to="/pricing" class="md-list-item-router md-list-item-container md-button-clean dropdown">
-                  <div class="md-list-item-content">충전</div>
-                </nuxt-link>
-              </li>
-              <li v-if="isAuthenticated" class="md-list-item">
-                <nuxt-link to="/my" class="md-list-item-router md-list-item-container md-button-clean dropdown">
-                  <div class="md-list-item-content">마이</div>
-                </nuxt-link>
-              </li>
-              <li v-if="isAuthenticated" class="md-list-item">
-                <a class="md-list-item-router md-list-item-container md-button-clean dropdown" @click.prevent="exit">
-                  <div class="md-list-item-content">로그아웃</div>
-                </a>
-              </li>
+              <template v-for="(item, key) in $t('head.menu')">
+                <li v-if="item.auth === 1 && !isAuthenticated" :key="key" class="md-list-item">
+                  <nuxt-link :to="$i18n.path(item.href)" class="md-list-item-router md-list-item-container md-button-clean dropdown">
+                    <div class="md-list-item-content">
+                      <div class="md-ripple">{{ item.li }}</div>
+                    </div>
+                  </nuxt-link>
+                </li>
+                <li v-else-if="item.auth === 2" :key="key" class="md-list-item">
+                  <nuxt-link v-if="item.href === 'sms'" :to="$i18n.path(item.href)" tag="a" class="md-list-item-router md-list-item-container md-button-clean">
+                    <div class="md-list-item-content">
+                      <md-button class="md-rose md-round">
+                        <md-icon>sms</md-icon>{{ item.li }}
+                      </md-button>
+                    </div>
+                  </nuxt-link>
+                  <nuxt-link v-else :to="$i18n.path(item.href)" class="md-list-item-router md-list-item-container md-button-clean dropdown">
+                    <div class="md-list-item-content">
+                      <div class="md-ripple">{{ item.li }}</div>
+                    </div>
+                  </nuxt-link>
+                </li>
+                <li v-else-if="!item.href && isAuthenticated" :key="key" class="md-list-item">
+                  <a class="md-list-item-router md-list-item-container md-button-clean dropdown" @click.prevent="exit">
+                    <div class="md-list-item-content">
+                      <div class="md-ripple">{{ item.li }}</div>
+                    </div>
+                  </a>
+                </li>
+              </template>
 
               <li class="md-list-item">
-                <nuxt-link to="/sms" tag="a" class="md-list-item-router md-list-item-container md-button-clean">
-                  <div class="md-list-item-content padding0">
-                    <md-button class="md-rose md-round">
-                      <md-icon>sms</md-icon>문자보내기
-                    </md-button>
+                <a href="javascript:void(0)" class="md-list-item-router md-list-item-container md-button-clean dropdown">
+                  <div class="md-list-item-content">
+                    <drop-down direction="down">
+                      <md-button
+                        slot="title"
+                        class="md-button md-button-link md-white md-simple dropdown-toggle"
+                        data-toggle="dropdown"
+                      >
+                        <small class="flag-icon"><country-flag :country="$i18n.locale.toLowerCase()" size="small" /></small>
+                        <p>{{ $t('head.lang') }}</p>
+                      </md-button>
+                      <ul class="dropdown-menu dropdown-with-icons">
+                        <li v-if="$i18n.locale === 'kr' || $i18n.locale === 'cn'">
+                          <nuxt-link :to="linkPath('/us')">
+                            <small class="flag-icon"><country-flag country="us" size="small" /></small>
+                            English
+                          </nuxt-link>
+                        </li>
+                        <li v-if="$i18n.locale === 'us' || $i18n.locale === 'cn'">
+                          <nuxt-link :to="linkPath('/kr')">
+                            <small class="flag-icon"><country-flag country="kr" size="small" /></small>
+                            Korean{{ $i18n.locale }}
+                          </nuxt-link>
+                        </li>
+                        <li v-if="$i18n.locale === 'us' || $i18n.locale === 'kr'">
+                          <nuxt-link :to="linkPath('/cn')">
+                            <small class="flag-icon"><country-flag country="cn" size="small" /></small>
+                            Chinese
+                          </nuxt-link>
+                        </li>
+                      </ul>
+                    </drop-down>
                   </div>
-                </nuxt-link>
+                </a>
               </li>
             </md-list>
           </div>
@@ -88,11 +120,13 @@ function resizeThrottler(actualResizeHandler) {
   }
 }
 
-import { mapState, mapActions } from 'vuex';
+import CountryFlag from 'vue-country-flag'
+import { mapState, mapMutations, mapActions } from 'vuex';
 import MobileMenu from './MobileMenu';
 export default {
   components: {
-    MobileMenu
+    MobileMenu,
+    CountryFlag
   },
   props: {
     type: {
@@ -121,45 +155,17 @@ export default {
     }
   },
   data: () => ({
-    docs_link:
-      'https://demos.creative-tim.com/vue-material-kit-pro/documentation/',
     extraNavClasses: '',
-    toggledClass: false,
-    brand: '국외문자',
-    linksSections: [
-      { name: 'headers', icon: 'dns' },
-      { name: 'features', icon: 'build' },
-      { name: 'blogs', icon: 'list' },
-      { name: 'teams', icon: 'people' },
-      { name: 'projects', icon: 'assignment' },
-      { name: 'pricing', icon: 'monetization_on' },
-      { name: 'testimonials', icon: 'chat' },
-      { name: 'contacts', icon: 'call' }
-    ],
-    linksExamples: [
-      { name: 'About Us', href: 'about-us', icon: 'account_balance' },
-      { name: 'Blog Post', href: 'blog-post', icon: 'art_track' },
-      { name: 'Blog Posts', href: 'blog-posts', icon: 'view_quilt' },
-      { name: 'Contact Us', href: 'contact-us', icon: 'location_on' },
-      { name: 'Landing Page', href: 'landing-page', icon: 'view_day' },
-      { name: 'Login Page', href: 'login-page', icon: 'fingerprint' },
-      { name: 'Pricing Page', href: 'pricing-page', icon: 'attach_money' },
-      {
-        name: 'Shopping Cart',
-        href: 'shopping-cart',
-        icon: 'shopping_basket'
-      },
-      { name: 'Ecommerce Page', href: 'ecommerce-page', icon: 'store' },
-      { name: 'Product Page', href: 'product-page', icon: 'shopping_cart' },
-      { name: 'Profile Page', href: 'profile-page', icon: 'account_circle' },
-      { name: 'Signup Page', href: 'signup-page', icon: 'person_add' },
-      { name: 'Error Page', href: 'error-page', icon: 'error' }
-    ]
+    toggledClass: false
   }),
   computed: {
-    ...mapState('auth', ['accessToken']),
+    ...mapState({
+      accessToken: 'auth/accessToken',
+      locales: 'locales',
+      lang: 'locale'
+    }),
     isAuthenticated() {
-      return this.accessToken;
+      return !!this.accessToken;
     },
     showDownload() {
       const excludedRoutes = ['index'];
@@ -173,7 +179,19 @@ export default {
     document.removeEventListener('scroll', this.scrollListener);
   },
   methods: {
-    ...mapActions('auth', ['logout']),
+    ...mapMutations({
+      setLang: 'SET_LANG'
+    }),
+    ...mapActions({
+      logout: 'auth/logout'
+    }),
+    linkPath(lang) {
+      const { locales, $route } = this;
+      const isLang = $route.fullPath.includes(locales[0]) || $route.fullPath.includes(locales[1]) || $route.fullPath.includes(locales[2]);
+      const pushLang = lang === 'us' ? '' : lang;
+      const fullPath = $route.fullPath.replace(/^\/[^\/]+/, pushLang);
+      return isLang ? fullPath : `${lang}${$route.fullPath}`;
+    },
     async exit() {
       await this.logout();
       this.$router.push('/');
@@ -219,3 +237,23 @@ export default {
   }
 };
 </script>
+
+<style lang="scss" scoped>
+.flag-icon {
+  height: 17px;
+  .flag {
+    margin-top: -24px;
+    margin-right: -15px;
+  }
+}
+.md-toolbar.md-transparent {
+  .logo {
+    color: #fff !important;
+  }
+}
+.md-toolbar.md-white {
+  .logo {
+    color: #222 !important;
+  }
+}
+</style>

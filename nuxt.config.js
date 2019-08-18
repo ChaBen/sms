@@ -1,13 +1,12 @@
 const { resolve } = require('path');
-const packageFile = require('./package.json');
 
 module.exports = {
   dev: process.env.NODE_ENV !== 'production',
   srcDir: resolve(__dirname, './client'),
-  router: { middleware: ['auth'] },
+  router: { middleware: ['auth', 'i18n'] },
   env: { apiURL: process.env.API_URL || 'http://localhost:3000' },
   head: {
-    title: `${packageFile.name} — ${packageFile.description}`,
+    title: 'Free SMS - System-Online Receive SMS',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' }
@@ -21,7 +20,15 @@ module.exports = {
       { src: 'https://www.paypal.com/sdk/js?client-id=AeZgg-XoLfSbdrVeRnEz1aSGatzYfnYwGWGuWydxIp-ik2Wl4Y433qnUeE77hf92vR_x6bJyRbG02dPY' }
     ]
   },
-  plugins: ['~plugins/material-kit'],
+  loading: '~/components/Loading.vue',
+  plugins: [
+    '~plugins/material-kit',
+    '~plugins/i18n',
+    { src: '~plugins/localStorage.js', ssr: false }
+  ],
+  modules: [
+    'nuxt-client-init-module'
+  ],
   build: {
     cache: true
   }

@@ -3,11 +3,22 @@ import feathersVuex, { initAuth } from 'feathers-vuex';
 
 const { service, auth } = feathersVuex(feathersClient, { idField: '_id' });
 
-export const state = () => ({});
-export const mutations = {};
+export const state = () => ({
+  locales: ['us', 'kr', 'cn'],
+  locale: 'kr'
+});
+export const mutations = {
+  SET_LANG(state, lang) {
+    state.locale = lang
+    // const sLang = localStorage.getItem('lang');
+    // if (sLang === null || !sLang.includes(lang)) {
+    //   localStorage.setItem('lang', lang);
+    // }
+  }
+};
 
 export const actions = {
-  nuxtServerInit({ commit, dispatch }, { req, store }) {
+  nuxtServerInit({ commit, dispatch, state }, { req }) {
     return initAuth({
       commit,
       dispatch,
@@ -16,8 +27,13 @@ export const actions = {
       cookieName: 'feathers-jwt'
     })
       .then(async response => {
-        return dispatch('auth/authenticate', { accessToken: store.state.auth.accessToken, strategy: 'jwt' }).catch(_ => {})
+        if (!state.auth.accessToken) return response;
+        return await dispatch('auth/authenticate', { accessToken: state.auth.accessToken, strategy: 'jwt' }).catch(_ => {});
       });
+  },
+  async nuxtClientInit({ commit, dispatch, state }) {
+    if (!state.auth.accessToken) return;
+    await dispatch('auth/authenticate', { accessToken: state.auth.accessToken, strategy: 'jwt' })
   }
 };
 

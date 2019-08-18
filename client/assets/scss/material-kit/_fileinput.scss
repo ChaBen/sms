@@ -76,3 +76,9 @@
     z-index: -1;
   }
 }
+
+.md-field.md-has-textarea:not(.md-autogrow) {
+  .md-count {
+    bottom: -20px;
+  }
+}
