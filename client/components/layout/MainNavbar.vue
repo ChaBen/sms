@@ -159,8 +159,8 @@ export default {
     toggledClass: false
   }),
   computed: {
+    ...mapState('auth', ['accessToken']),
     ...mapState({
-      accessToken: 'auth/accessToken',
       locales: 'locales',
       lang: 'locale'
     }),

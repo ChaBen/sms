@@ -134,8 +134,10 @@ export default {
   },
   async fetch({ store }) {
     const userId = store.state.auth.payload.userId;
-    await store.dispatch('users/find', { query: { _id: userId }});
-    await store.dispatch('send/find', { query: { userId }});
+    if (userId) {
+      await store.dispatch('users/find', { query: { _id: userId }});
+      await store.dispatch('send/find', { query: { userId }});
+    }
   },
   methods: {
     ...mapActions({

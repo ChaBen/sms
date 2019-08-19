@@ -35,6 +35,7 @@
                         <md-input
                           v-model="customPrice"
                           v-validate="modelValidations.customPrice"
+                          type="tel"
                           md-counter="false"
                           maxlength="4"
                           data-vv-name="customPrice"

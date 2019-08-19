@@ -29,24 +29,62 @@
                       <h4 class="mt-3">빠른 가입 이용해보세요.</h4>
                     </div>
                     <form>
-                      <md-field class="md-form-group">
+                      <md-field
+                        class="md-form-group"
+                        :class="[
+                          { 'md-valid': !errors.has('email') && touched.email },
+                          { 'md-error': errors.has('email') }
+                        ]"
+                      >
                         <md-icon>email</md-icon>
                         <label>{{ $t('signup.email') }}</label>
-                        <md-input v-model="email" type="email" />
+                        <md-input v-model="email" v-validate="modelValidations.email" type="email" data-vv-name="email" required />
+                        <slide-y-down-transition>
+                          <md-icon v-show="errors.has('email')" class="error">close</md-icon>
+                        </slide-y-down-transition>
+                        <slide-y-down-transition>
+                          <md-icon v-show="!errors.has('email') && touched.email" class="success">done</md-icon>
+                        </slide-y-down-transition>
                       </md-field>
-                      <md-field class="md-form-group">
+                      <md-field
+                        :md-toggle-password="false"
+                        class="md-form-group"
+                        :class="[
+                          { 'md-valid': !errors.has('password') && touched.password },
+                          { 'md-error': errors.has('password') }
+                        ]"
+                      >
                         <md-icon>lock_outline</md-icon>
                         <label>{{ $t('signup.password') }}</label>
-                        <md-input v-model="password" type="password" />
+                        <md-input ref="password" v-model="password" v-validate="modelValidations.password" type="password" data-vv-name="password" required />
+                        <slide-y-down-transition>
+                          <md-icon v-show="errors.has('password')" class="error">close</md-icon>
+                        </slide-y-down-transition>
+                        <slide-y-down-transition>
+                          <md-icon v-show="!errors.has('password') && touched.password" class="success">done</md-icon>
+                        </slide-y-down-transition>
                       </md-field>
-                      <md-field class="md-form-group">
+                      <md-field
+                        :md-toggle-password="false"
+                        class="md-form-group"
+                        :class="[
+                          { 'md-valid': !errors.has('confirmPassword') && touched.confirmPass },
+                          { 'md-error': errors.has('confirmPassword') }
+                        ]"
+                      >
                         <md-icon>lock_outline</md-icon>
                         <label>{{ $t('signup.passwordConf') }}</label>
-                        <md-input v-model="confirmPassword" type="password" />
+                        <md-input v-model="confirmPassword" v-validate="modelValidations.confirmPassword" type="password" data-vv-as="password" data-vv-name="confirmPassword" required />
+                        <slide-y-down-transition>
+                          <md-icon v-show="errors.has('confirmPassword')" class="error">close</md-icon>
+                        </slide-y-down-transition>
+                        <slide-y-down-transition>
+                          <md-icon v-show="!errors.has('confirmPassword') && touched.confirmPass" class="success">done</md-icon>
+                        </slide-y-down-transition>
                       </md-field>
                       <!-- <md-checkbox v-model="boolean">I agree to the<a>terms and conditions</a>.</md-checkbox> -->
                       <div class="button-container justify-content-center">
-                        <md-button class="md-info md-round mt-3" @click="signup">{{ $t('signup.title') }}</md-button>
+                        <md-button class="md-success md-round mt-3" @click="signup">{{ $t('signup.title') }}</md-button>
                       </div>
                     </form>
                   </div>
@@ -64,32 +102,94 @@
 import { mapActions } from 'vuex';
 import { InfoAreas } from '@/components';
 import Mixins from '@/plugins/basicMixins';
+import { SlideYDownTransition } from 'vue2-transitions';
+import Swal from 'sweetalert2';
 
 export default {
+  middleware: 'noAuth',
   components: {
-    InfoAreas
+    InfoAreas,
+    SlideYDownTransition
   },
   mixins: [Mixins.HeaderImage],
   bodyClass: 'signup-page',
   data: () => ({
-    boolean: null,
     image: require('@/assets/img/bg7.jpg'),
-    email: '',
-    password: '',
-    confirmPassword: ''
+    email: null,
+    password: null,
+    confirmPassword: null,
+    touched: {
+      email: false,
+      password: false,
+      confirmPass: false
+    },
+    modelValidations: {
+      email: {
+        required: true,
+        email: true
+      },
+      password: {
+        required: true,
+        min: 5
+      },
+      confirmPassword: {
+        required: true,
+        min: 5,
+        confirmed: 'password'
+      }
+    }
   }),
+  watch: {
+    email() {
+      this.touched.email = true;
+    },
+    password() {
+      this.touched.password = true;
+    },
+    confirmPassword() {
+      this.touched.confirmPass = true;
+    }
+  },
   methods: {
     ...mapActions('users', ['create']),
     ...mapActions('auth', ['authenticate']),
     async signup() {
+      const valid = await this.$validator.validateAll();
+      if (!valid) {
+        this.$nuxt.$loading.finish();
+        Swal.fire({
+          title: `Error`,
+          text: this.errors.items[0].msg,
+          type: 'error',
+          confirmButtonClass: 'md-button',
+          buttonsStyling: false
+        });
+        return;
+      }
+
       const { email, password } = this;
-      const credentials = { email, password, sendCount: 3, sendAllCount: 0, chargeAll: 0, level: 1 };
-      await this.create(credentials);
-      await this.authenticate({ ...credentials, strategy: 'local' });
-      this.$router.push('/');
+      const credentials = { email, password, sendCount: 10, sendAllCount: 0, chargeAll: 0, level: 1 };
+      try {
+        const create = await this.create(credentials);
+        await this.authenticate({ ...credentials, strategy: 'local' });
+        this.$router.push('/');
+      } catch (error) {
+        Swal.fire({
+          title: `Error: ${error.status}`,
+          text: error.message,
+          type: 'error',
+          confirmButtonClass: 'md-button',
+          buttonsStyling: false
+        });
+      }
     }
   }
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss" scoped>
+.md-field .success.md-icon,
+.md-field .error.md-icon {
+  top: 16px;
+}
+</style>

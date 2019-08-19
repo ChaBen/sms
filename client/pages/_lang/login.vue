@@ -39,6 +39,7 @@ import Mixins from '@/plugins/basicMixins';
 import Swal from 'sweetalert2';
 
 export default {
+  middleware: 'noAuth',
   components: {
     LoginCard
   },
