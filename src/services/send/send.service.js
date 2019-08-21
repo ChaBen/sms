@@ -22,13 +22,20 @@ module.exports = function(app) {
     const chunkTo = (arr, n) => arr.length ? [arr.slice(0, n), ...chunkTo(arr.slice(n), n)] : [];
     const sendSms = (to) => {
       return new Promise(async(resolve, reject) => {
-        await new Promise(resolve => setTimeout(resolve, 3000));
+        await new Promise(resolve => setTimeout(resolve, 500));
         const fakeArr = [];
+        const is = ['OK', 'Fail'];
         for (let index = 0; index < to.length; index++) {
-          fakeArr.push('OK');
+          const random = Math.floor(Math.random() * 2);
+          fakeArr.push({
+            phone: to[index],
+            status: is[random]
+          });
         }
-        await app.service('send').patch(sendAddRes._id, {
-          response: fakeArr
+        await app.service('sendTasks').create({
+          userId: sendAddRes.userId,
+          sendId: sendAddRes._id,
+          sendRes: fakeArr
         });
         resolve(fakeArr);
         // const username = 'yongsin32019';
@@ -50,27 +57,37 @@ module.exports = function(app) {
       // 50개 혹은 이하일경우
       try {
         await sendSms(to);
+        await app.service('');
+        console.log('√ Send SMS -----OK-----', to.length, sendAddRes._id, new Date());
+        console.log('√ Send SMS -----SUCCESS-----', to.length, sendAddRes._id, new Date());
       } catch (error) {
-        console.log(error);
+        console.log('X Send SMS ---Error--- < 50', error, new Date());
       }
-    } else if (to.length < 10000) {
+    } else {
+      //  if (to.length < 10000)
       const chunk = chunkTo(to, 50);
       for (let index = 0; index < chunk.length; index++) {
         const item = chunk[index];
-        await sendSms(item);
-        await app.service('users').patch(userId, {
-          $inc: {
-            sendCount: -item.length,
-            sendAllCount: +item.length
+        try {
+          await sendSms(item);
+          await app.service('users').patch(userId, {
+            $inc: {
+              sendCount: -item.length,
+              sendAllCount: +item.length
+            }
+          });
+          console.log('√ Send SMS -----OK-----', item.length, sendAddRes._id, new Date());
+          if (chunk.length === index + 1) {
+            await app.service('send').patch(sendAddRes._id, {
+              status: 2
+            });
+            console.log('√ Send SMS -----SUCCESS-----', to.length, sendAddRes._id, new Date());
           }
-        });
-        console.log('Send SMS ---OK---', item.length, userId);
+        } catch (error) {
+          console.log('X Send SMS ---Error---', error, new Date());
+        }
       }
     }
-    // const userFind = await app.service('users').find({
-    //   paginate: false
-    // })
-    // console.log(app.service('users').FeathersVuexModel);
   });
 
   service.hooks(hooks);

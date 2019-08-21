@@ -2,8 +2,12 @@ job:
   08-19:
     ✔ 언어마무리 @done(19-08-19 01:21)
   08-20:
-    ☐ 회원가입 페이지@이메일중복
-    ☐ 메세지 보내기sms @low
+    ✔ 회원가입 페이지@이메일중복 @done(19-08-20 17:08)
+    ☐ 메세지 보내기sms @low @50%
+    ✔ status, message, length, success, Fail, Percent, Refresh @done(19-08-20 23:57)
+  08-21:
+    ☐ Tasks Refresh Action @backend change
+    ☐ Tasks, Dashboard, History @tab
 
 error: @error 
   ☐ api call max 50

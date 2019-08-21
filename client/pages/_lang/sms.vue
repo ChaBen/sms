@@ -9,15 +9,15 @@
               <template slot="cardContent">
                 <ul>
                   <li>
-                    <h6 class="card-category text-success">SMS남은건수</h6>
+                    <h6 class="card-category text-success">{{ $t('sms.total') }}</h6>
                     <h1 class="card-title">{{ getUser[0].sendCount | Comma }}</h1>
                   </li>
                   <li>
-                    <h6 class="card-category text-success">sms보낸건수</h6>
+                    <h6 class="card-category text-success">{{ $t('sms.send') }}</h6>
                     <h1 class="card-title">{{ getUser[0].sendAllCount | Comma }}</h1>
                   </li>
                   <li>
-                    <h6 class="card-category text-success">총 충전금액</h6>
+                    <h6 class="card-category text-success">{{ $t('sms.account') }}</h6>
                     <h1 class="card-title"><small>$</small>{{ getUser[0].chargeAll | Comma }}</h1>
                   </li>
                 </ul>
@@ -27,17 +27,17 @@
           <div class="md-layout-item md-size-40 md-small-size-100 ml-auto">
             <md-card class="md-card-contact">
               <md-card-header class="md-card-header-primary text-center">
-                <h4 class="card-title">Messages Content</h4>
+                <h4 class="card-title">{{ $t('sms.title') }}</h4>
               </md-card-header>
               <md-card-content>
                 <md-field>
-                  <label>Send Phones</label>
+                  <label>{{ $t('sms.phone') }}</label>
                   <md-textarea v-model="phones" />
                   <span class="md-count">{{ phoneLen | Comma }}</span>
                 </md-field>
 
                 <md-field>
-                  <label>Your Message</label>
+                  <label>{{ $t('sms.textarea') }}</label>
                   <md-textarea v-model="message" maxlength="100" />
                 </md-field>
               </md-card-content>
@@ -71,7 +71,7 @@
           >
             <!-- here you can add your content for tab-content -->
             <template slot="tab-pane-1">
-              <Tasks />
+              <Tasks :tasks="sendTasks" @refresh="getSendResponse" />
             </template>
             <template slot="tab-pane-2">
               Efficiently unleash cross-media information without cross-media
@@ -110,8 +110,13 @@ export default {
   data: () => ({
     loading: false,
     isPlaySend: false,
+    sendTasks: [],
     phones: '01084891209\n01074646521',
-    message: 'test message',
+    message: `사장님 안녕하세요~
+
+온라인에서 한번 즐겨보세요~
+
+czn777 쩜컴`,
     image: require('@/assets/img/examples/city.jpg')
   }),
   computed: {
@@ -134,15 +139,20 @@ export default {
   },
   async fetch({ store }) {
     const userId = store.state.auth.payload.userId;
+    console.log(userId);
     if (userId) {
-      await store.dispatch('users/find', { query: { _id: userId }});
-      await store.dispatch('send/find', { query: { userId }});
+      // await store.dispatch('users/find', { query: { _id: userId }});
+      // await store.dispatch('send/find', { query: { userId }});
     }
+  },
+  async created() {
+    await this.getSendResponse();
   },
   methods: {
     ...mapActions({
       authenticate: 'auth/authenticate',
       userFindAction: 'users/find',
+      actSendFind: 'send/find',
       sendCreate: 'send/create',
       sendAfterOrUpdate: 'send/addOrUpdate'
     }),
@@ -153,13 +163,15 @@ export default {
         return item === '' ? false : (item.substr(0, 3) === '010' ? `82${item.substr(1)}`.trim() : `82${item}`.trim());
       }));
       try {
-        const sendRes = await this.sendCreate({
+        await this.sendCreate({
           to,
           text: this.message,
+          status: 1,
           userId: this.userId
         });
         await this.userFindAction({ query: { _id: this.userId }});
-        console.log('done', sendRes);
+        await this.getSendResponse();
+        this.phones = null;
       } catch (error) {
         Swal.fire({
           title: `Error: ${error.status}`,
@@ -170,8 +182,10 @@ export default {
         })
       }
     },
-    stopSendSms() {
-
+    async getSendResponse() {
+      const { userId } = this;
+      const sends = await this.actSendFind({ query: { userId }});
+      this.sendTasks = sends.reverse();
     }
   }
 };
@@ -190,6 +204,9 @@ export default {
 }
 .fas {
   margin-right: 5px;
+}
+.section-contactus-1 .md-card-contact .md-card-header .card-title {
+  margin-top: .625rem;
 }
 .card-title {
   margin-top: 0;

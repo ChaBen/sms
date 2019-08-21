@@ -18,6 +18,11 @@ export const mutations = {
 };
 
 export const actions = {
+  async nuxtClientInit({ commit, dispatch, state }) {
+    console.log('client ============');
+    if (!state.auth.accessToken) return;
+    await dispatch('auth/authenticate', { accessToken: state.auth.accessToken, strategy: 'jwt' })
+  },
   nuxtServerInit({ commit, dispatch, state }, { req }) {
     return initAuth({
       commit,
@@ -30,10 +35,6 @@ export const actions = {
         if (!state.auth.accessToken) return response;
         return await dispatch('auth/authenticate', { accessToken: state.auth.accessToken, strategy: 'jwt' }).catch(_ => {});
       });
-  },
-  async nuxtClientInit({ commit, dispatch, state }) {
-    if (!state.auth.accessToken) return;
-    await dispatch('auth/authenticate', { accessToken: state.auth.accessToken, strategy: 'jwt' })
   }
 };
 

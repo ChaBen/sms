@@ -8,12 +8,9 @@ module.exports = function(app) {
   const send = new Schema({
     userId: { type: Schema.Types.ObjectId, required: true, ref: 'users' },
     // users: { type: Schema.Types.ObjectId, ref: 'users' },
-    userName: { type: String },
-    password: { type: String },
-    form: { type: String },
-    to: { type: Array },
-    text: { type: String },
-    response: { type: Array },
+    status: { type: Number, required: true },
+    to: { type: Array, required: true },
+    text: { type: String, required: true },
     type: { type: Number }
   }, {
     timestamps: true

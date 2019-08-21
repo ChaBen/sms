@@ -9,14 +9,14 @@
             <login-card header-color="green">
               <h4 slot="title" class="card-title">{{ $t('login.title') }}</h4>
               <p slot="description" class="description">
-                <nuxt-link to="/signup">{{ $t('login.signup') }}</nuxt-link>
+                <nuxt-link :to="$i18n.path('signup')">{{ $t('login.signup') }}</nuxt-link>
               </p>
               <md-field slot="inputs" class="md-form-group">
                 <md-icon>email</md-icon>
                 <label>{{ $t('login.email') }}</label>
                 <md-input v-model="email" type="email" />
               </md-field>
-              <md-field slot="inputs" class="md-form-group">
+              <md-field slot="inputs" class="md-form-group" :md-toggle-password="false">
                 <md-icon>lock_outline</md-icon>
                 <label>{{ $t('login.password') }}</label>
                 <md-input v-model="password" type="password" @keydown.enter="login" />

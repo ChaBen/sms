@@ -6,7 +6,7 @@ module.exports = {
   router: { middleware: ['auth', 'i18n'] },
   env: { apiURL: process.env.API_URL || 'http://localhost:3000' },
   head: {
-    title: 'Free SMS - System-Online Receive SMS',
+    title: 'Canada Free SMS - System-Online Receive SMS',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' }

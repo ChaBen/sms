@@ -1,12 +1,34 @@
 <template>
-  <md-table v-model="tableData">
+  <md-table v-model="tasks">
     <md-table-row slot="md-table-row" slot-scope="{ item }">
-      <md-table-cell md-label="#">{{ item.id }}</md-table-cell>
-      <md-table-cell md-label="Name">{{ item.name }}</md-table-cell>
-      <md-table-cell md-label="Country">{{
-        item.country
-      }}</md-table-cell>
-      <md-table-cell md-label="City">{{ item.city }}</md-table-cell>
+      <md-table-cell md-label="Status">
+        <template v-if="item.status === 1">
+          <md-progress-spinner :md-diameter="30" :md-stroke="2" md-mode="indeterminate" />
+        </template>
+        <template v-else-if="item.status === 2">
+          <div class="done">
+            <md-icon>done</md-icon>
+          </div>
+        </template>
+      </md-table-cell>
+      <md-table-cell md-label="Message">{{ item.text }}</md-table-cell>
+      <md-table-cell md-label="To">{{ item.to | Comma }}</md-table-cell>
+      <md-table-cell md-label="Ok">{{ item.ok | Comma }}</md-table-cell>
+      <md-table-cell md-label="Fail">{{ item.fail | Comma }}</md-table-cell>
+      <md-table-cell md-label="Percent">
+        <div class="md-layout percent">
+          <div class="md-layout-item">
+            <md-progress-bar md-mode="determinate" :md-value="item.percent" />
+          </div>
+          <div class="md-layout-item">{{ item.percent }}%</div>
+        </div>
+      </md-table-cell>
+      <md-table-cell md-label="Date">{{ item.createdAt | filterDate }}</md-table-cell>
+      <md-table-cell md-label="Action">
+        <md-button class="md-just-icon md-success md-round" @click="$emit('refresh')"><md-icon>refresh</md-icon></md-button>
+      </md-table-cell>
+      <!-- status, message, length, success, Fail, Percent, Refresh -->
+      <!-- <md-table-cell md-label="City">{{ item.city }}</md-table-cell>
       <md-table-cell md-label="Salary">{{ item.salary }}</md-table-cell>
       <md-table-cell md-label="Actions" :class="getAlignClasses(item)">
         <md-button
@@ -21,13 +43,26 @@
           class="md-just-icon"
           :class="getClass(item.icon3, item.id)"
         ><md-icon>{{ item.icon3 }}</md-icon></md-button>
-      </md-table-cell>
+      </md-table-cell> -->
     </md-table-row>
   </md-table>
 </template>
 
 <script>
+import Moment from 'moment';
+
 export default {
+  filters: {
+    filterDate(date) {
+      return Moment(date).startOf('hour').fromNow();
+    }
+  },
+  props: {
+    tasks: {
+      type: Array,
+      default: () => ([])
+    }
+  },
   data: () => ({
     tableData: [
       {
@@ -122,3 +157,25 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.done {
+  .md-icon {
+  color: #4caf50;
+  }
+}
+.percent {
+  align-items: center;
+  justify-content: center;
+  .md-layout-item {
+    &:first-child {
+      width: 100px;
+      margin-right: 5px;
+    }
+    padding: 0;
+    .md-progress-bar {
+      margin: 0;
+    }
+  }
+}
+</style>

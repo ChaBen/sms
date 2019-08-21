@@ -2,7 +2,9 @@ module.exports = function(app) {
   const mongooseClient = app.get('mongooseClient');
   const { Schema } = mongooseClient;
   const sendTasks = new Schema({
-    text: { type: String }
+    userId: { type: Schema.Types.ObjectId, required: true, ref: 'users' },
+    sendId: { type: Schema.Types.ObjectId, required: true },
+    sendRes: { type: Array }
   }, {
     timestamps: true
   });

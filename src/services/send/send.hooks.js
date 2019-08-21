@@ -1,11 +1,30 @@
 const { authenticate } = require('@feathersjs/authentication').hooks;
 
-async function beforeSend(context) {
-  const sendTasks = context.app.service('sendTasks');
-  const sendTasksRes = await sendTasks.create({
-    text: 'string'
-  });
-  console.log(sendTasksRes);
+async function afterFindSend(context) {
+  for (let index = 0; index < context.result.length; index++) {
+    const task = context.result[index];
+    const sendTasks = await context.app.service('sendTasks').find({ query: { sendId: task._id }});
+    let resArr = [];
+    for (let inx = 0; inx < sendTasks.length; inx++) {
+      const item = sendTasks[inx];
+      resArr = resArr.concat(item.sendRes);
+    }
+
+    const ok = resArr.filter(res => res.status === 'OK');
+    const fail = resArr.filter(res => res.status === 'Fail');
+    const { status, text, to, createdAt } = task;
+    const percent = Math.floor((resArr.length / to.length) * 100);
+
+    context.result[index] = {
+      ok: ok.length,
+      fail: fail.length,
+      to: to.length,
+      percent,
+      status,
+      text,
+      createdAt
+    };
+  }
 }
 
 module.exports = {
@@ -13,7 +32,7 @@ module.exports = {
     all: [authenticate('jwt')],
     find: [],
     get: [],
-    create: [beforeSend],
+    create: [],
     update: [],
     patch: [],
     remove: []
@@ -21,7 +40,7 @@ module.exports = {
 
   after: {
     all: [],
-    find: [],
+    find: [afterFindSend],
     get: [],
     create: [],
     update: [],

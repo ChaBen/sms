@@ -169,8 +169,9 @@ export default {
 
       const { email, password } = this;
       const credentials = { email, password, sendCount: 10, sendAllCount: 0, chargeAll: 0, level: 1 };
+
       try {
-        const create = await this.create(credentials);
+        await this.create(credentials);
         await this.authenticate({ ...credentials, strategy: 'local' });
         this.$router.push('/');
       } catch (error) {

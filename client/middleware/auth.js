@@ -1,10 +1,10 @@
 export default function(context) {
-  const { store, redirect, route } = context
-  const { auth } = store.state
-  // const routeName = route.name;
-  const routeName = route.name.split('lang-')[1];
+  const { store, redirect, route } = context;
+  const { auth } = store.state;
+  const routeName = route.name.includes('lang-') ? route.name.split('lang-')[1] : route.name;
 
-  if (!auth.publicPages.includes(routeName) && !auth.payload) {
-    return redirect('/login');
+  if ((!auth.publicPages.includes(routeName) && routeName !== 'lang') && !auth.payload) {
+    const path = route.params.hasOwnProperty('lang') ? `/${route.params.lang}/login` : '/login';
+    return redirect(path);
   }
 }
