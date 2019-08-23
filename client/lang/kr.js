@@ -118,7 +118,7 @@ export default {
   pricing: {
     title: '가장 적합한 플랜을 선택하십시오',
     desc: '각 패키지마다 무료 무제한 업데이트 및 프리미엄 지원이 있습니다.',
-    persms: 'SMS 당',
+    persms: '문자 한건당 약',
     deliveryRate: '배송 률',
     send: '건'
   },

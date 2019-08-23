@@ -96,39 +96,18 @@ export default {
     customPrice: null,
     pricings: [
       {
-        class: 'ml-auto',
-        bg: '',
-        btn: 'md-primary',
-        title: 'FREE',
-        price: 0
-      },
-      {
-        class: 'mr-auto',
-        bg: 'rose',
-        btn: 'md-white',
-        title: 'PINK',
-        price: 50
-      },
-      {
-        class: 'mr-auto',
-        bg: 'primary',
-        btn: 'md-white',
-        title: 'PURPLE',
-        price: 300
-      },
-      {
         class: 'mr-auto',
         bg: 'success',
         btn: 'md-white',
         title: 'GREEN',
-        price: 1000
+        price: 100
       },
       {
         class: 'mr-auto',
         bg: 'behance',
         btn: 'md-white',
         title: 'BLUE',
-        price: 3000
+        price: 1000
       },
       {
         class: 'mr-auto',
@@ -223,12 +202,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.wrapper {
-  .page-header {
-    height: auto;
-    padding: 100px 0;
-  }
-}
+// .wrapper {
+//   .page-header {
+//     height: auto;
+//     padding: 100px 0;
+//   }
+// }
 .white {
   &.md-field {
     margin: 0;
