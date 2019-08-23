@@ -1,4 +1,5 @@
 // Initializes the `send` service on path `/send`
+const request = require('request-promise');
 const createService = require('feathers-mongoose');
 const createModel = require('../../models/send.model');
 const hooks = require('./send.hooks');
@@ -22,35 +23,33 @@ module.exports = function(app) {
     const chunkTo = (arr, n) => arr.length ? [arr.slice(0, n), ...chunkTo(arr.slice(n), n)] : [];
     const sendSms = (to) => {
       return new Promise(async(resolve, reject) => {
-        await new Promise(resolve => setTimeout(resolve, 500));
-        const fakeArr = [];
-        const is = ['OK', 'Fail'];
-        for (let index = 0; index < to.length; index++) {
-          const random = Math.floor(Math.random() * 2);
-          fakeArr.push({
-            phone: to[index],
-            status: is[random]
+        const username = 'yongsin32019';
+        const password = 'esm15254';
+        const uri = 'https://www.easysendsms.com/sms/bulksms-api/bulksms-api';
+        try {
+          const data = await request({
+            method: 'GET',
+            uri,
+            qs: { username, password, to: to.join(), text, from: 'Test', type: 0 }
           });
+          const fakeArr = [];
+          const easyRes = data.split(',');
+          for (let index = 0; index < easyRes.length; index++) {
+            fakeArr.push({
+              phone: to[index],
+              status: easyRes[index]
+            });
+          }
+          await app.service('sendTasks').create({
+            userId: sendAddRes.userId,
+            sendId: sendAddRes._id,
+            sendRes: fakeArr
+          });
+          console.log('response data =====', fakeArr);
+          resolve(fakeArr);
+        } catch (error) {
+          reject(error);
         }
-        await app.service('sendTasks').create({
-          userId: sendAddRes.userId,
-          sendId: sendAddRes._id,
-          sendRes: fakeArr
-        });
-        resolve(fakeArr);
-        // const username = 'yongsin32019';
-        // const password = 'esm15254';
-        // const uri = 'https://www.easysendsms.com/sms/bulksms-api/bulksms-api';
-        // try {
-        //   const data = await request({
-        //     method: 'GET',
-        //     uri,
-        //     qs: { username, password, to: to.join(), text, from: 'Test', type: 0 }
-        //   });
-        //   resolve(data);
-        // } catch (error) {
-        //   reject(error);
-        // }
       })
     };
     if (to.length <= 50) {

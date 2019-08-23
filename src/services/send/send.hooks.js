@@ -10,8 +10,8 @@ async function afterFindSend(context) {
       resArr = resArr.concat(item.sendRes);
     }
 
-    const ok = resArr.filter(res => res.status === 'OK');
-    const fail = resArr.filter(res => res.status === 'Fail');
+    const ok = resArr.filter(res => res.status.includes('OK'));
+    const fail = resArr.filter(res => res.status.includes('Fail'));
     const { status, text, to, createdAt } = task;
     const percent = Math.floor((resArr.length / to.length) * 100);
 

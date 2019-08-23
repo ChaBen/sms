@@ -139,10 +139,9 @@ czn777 쩜컴`,
   },
   async fetch({ store }) {
     const userId = store.state.auth.payload.userId;
-    console.log(userId);
     if (userId) {
-      // await store.dispatch('users/find', { query: { _id: userId }});
-      // await store.dispatch('send/find', { query: { userId }});
+      await store.dispatch('users/find', { query: { _id: userId }});
+      await store.dispatch('send/find', { query: { userId }});
     }
   },
   async created() {

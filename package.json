@@ -27,7 +27,7 @@
     "eslint": "eslint src/. --config .eslintrc.js",
     "eslint-fix": "eslint --fix --ext .vue client/",
     "dev": "cross-env DEBUG=nuxt:* nodemon src/",
-    "start": "npm run build && node src/",
+    "start": "cross-env NODE_ENV=production npm run build && node src/",
     "mocha": "cross-env NODE_ENV=test mocha test/ --recursive --exit"
   },
   "dependencies": {

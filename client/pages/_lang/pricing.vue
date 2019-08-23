@@ -18,7 +18,7 @@
                 </h1>
                 <h1 v-else class="card-title">
                   <small>$</small>{{ customPrice || 0 }}
-                  <small>/ {{ price }}</small>
+                  <small>/ {{ cusPrice }}</small>
                 </h1>
                 <ul>
                   <template v-if="item.title === 'CUSTOM'">
@@ -50,13 +50,13 @@
                         </slide-y-down-transition>
                       </md-field>
                     </li>
-                    <li><b>97%</b> {{ $t('pricing.deliveryRate') }}</li>
-                    <li><b>{{ smsCount(customPrice, false) | Comma }}</b> / {{ $t('pricing.send') }}</li>
+                    <li>약 <b>{{ priceFilte(customPrice) | Comma }}</b> 원</li>
+                    <li><b>{{ perPrice(customPrice) | Comma }}</b> / {{ $t('pricing.send') }}</li>
                   </template>
                   <template v-else>
-                    <li><b>${{ price }}</b> {{ $t('pricing.persms') }}</li>
-                    <li><b>97%</b> {{ $t('pricing.deliveryRate') }}</li>
-                    <li><b>{{ smsCount(item.price, true) | Comma }}</b> / {{ $t('pricing.send') }}</li>
+                    <li>{{ $t('pricing.persms') }} <b>{{ per[item.rate][local] }}</b></li>
+                    <li>약 <b>{{ priceFilte(item.price) | Comma }}</b> 원</li>
+                    <li><b>{{ perPrice(item.price) | Comma }}</b> / {{ $t('pricing.send') }}</li>
                   </template>
                 </ul>
 
@@ -93,6 +93,19 @@ export default {
   data: () => ({
     image: require('@/assets/img/examples/city.jpg'),
     price: 0.02,
+    per: [{
+      price: 0.016666,
+      us: 0.016,
+      kr: '20원'
+    }, {
+      price: 0.013333,
+      us: 0.013,
+      kr: '16원'
+    }, {
+      price: 0.011755,
+      us: 0.011,
+      kr: '14원'
+    }],
     customPrice: null,
     pricings: [
       {
@@ -100,6 +113,7 @@ export default {
         bg: 'success',
         btn: 'md-white',
         title: 'GREEN',
+        rate: 0,
         price: 100
       },
       {
@@ -107,6 +121,7 @@ export default {
         bg: 'behance',
         btn: 'md-white',
         title: 'BLUE',
+        rate: 1,
         price: 1000
       },
       {
@@ -131,7 +146,22 @@ export default {
     ...mapState('auth', {
       isLogin: state => state.payload,
       userId: state => state.payload.userId
-    })
+    }),
+    local() {
+      const params = this.$route.params;
+      return params.hasOwnProperty('lang') ? params.lang : 'us';
+    },
+    cusPrice() {
+      const price = this.customPrice;
+      if (price < 1000) {
+        return this.per[0][this.local];
+      } else if (price < 3000) {
+        return this.per[1][this.local];
+      } else if (price >= 3000) {
+        return this.per[2][this.local];
+      }
+      return this.per[0][this.local];
+    }
   },
   watch: {
     customPrice() {
@@ -151,7 +181,29 @@ export default {
       }
     },
     smsCount(count, is) {
-      return is ? (count ? count / this.price : 10) : count / this.price;
+      return is !== undefined ? (count ? count / this.price : 10) : count / this.price;
+    },
+    priceFilte(price) {
+      const lang = this.local;
+      const krRate = 1200;
+      const cnRate = 170;
+      let rate = 1;
+      if (lang === 'kr') {
+        rate = krRate;
+      }
+      const money = lang === 'cn' ? (price * krRate) / cnRate : price * rate;
+      return Math.floor(money);
+    },
+    perPrice(price) {
+      let per = 0;
+      if (price < 1000) {
+        per = price / this.per[0].price;
+      } else if (price < 3000) {
+        per = price / this.per[1].price
+      } else if (price >= 3000) {
+        per = price / this.per[2].price;
+      }
+      return Math.floor(per);
     },
     async purchase(item) {
       this.$nuxt.$loading.start();

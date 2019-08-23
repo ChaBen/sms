@@ -155,6 +155,7 @@ export default {
     ...mapActions('auth', ['authenticate']),
     async signup() {
       const valid = await this.$validator.validateAll();
+      this.$nuxt.$loading.start();
       if (!valid) {
         this.$nuxt.$loading.finish();
         Swal.fire({

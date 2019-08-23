@@ -1,8 +1,9 @@
 const mongoose = require('mongoose');
 
 module.exports = function(app) {
+  const config = app.get('mongodb');
   mongoose.connect(
-    app.get('mongodb'),
+    config,
     { useCreateIndex: true, useNewUrlParser: true }
   );
   mongoose.Promise = global.Promise;

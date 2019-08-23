@@ -27,5 +27,5 @@
       "passwordField": "password"
     }
   },
-  "mongodb": "mongodb://localhost:27017/local"
+  "mongodb": "mongodb+srv://admin:Admin520!@$SMS@cluster0-8m8lu.mongodb.net/cndsms"
 }
