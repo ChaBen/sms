@@ -111,12 +111,9 @@ export default {
     loading: false,
     isPlaySend: false,
     sendTasks: [],
-    phones: '01084891209\n01074646521',
-    message: `사장님 안녕하세요~
-
-온라인에서 한번 즐겨보세요~
-
-czn777 쩜컴`,
+    phones: '01084891209',
+    // phones: '01084891209\n01074646521',
+    message: `안녕하세요~`,
     image: require('@/assets/img/examples/city.jpg')
   }),
   computed: {

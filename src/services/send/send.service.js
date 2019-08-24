@@ -25,12 +25,12 @@ module.exports = function(app) {
       return new Promise(async(resolve, reject) => {
         const username = 'yongsin32019';
         const password = 'esm15254';
-        const uri = 'https://www.easysendsms.com/sms/bulksms-api/bulksms-api';
+        const uri = `https://www.easysendsms.com/sms/bulksms-api/bulksms-api?username=${username}&password=${password}&to=${to.join()}&text=${escape(text)}&from=Test&type=1`;
         try {
           const data = await request({
             method: 'GET',
-            uri,
-            qs: { username, password, to: to.join(), text, from: 'Test', type: 1 }
+            uri
+            // qs: { username, password, to: to.join(), text, from: 'Test', type: 1 }
           });
           const fakeArr = [];
           const easyRes = data.split(',');
@@ -57,6 +57,12 @@ module.exports = function(app) {
       try {
         await sendSms(to);
         await app.service('');
+        await app.service('users').patch(userId, {
+          $inc: {
+            sendCount: -to.length,
+            sendAllCount: +to.length
+          }
+        });
         console.log('√ Send SMS -----OK-----', to.length, sendAddRes._id, new Date());
         console.log('√ Send SMS -----SUCCESS-----', to.length, sendAddRes._id, new Date());
         await app.service('send').patch(sendAddRes._id, {
