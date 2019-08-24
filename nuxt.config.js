@@ -4,7 +4,7 @@ module.exports = {
   dev: process.env.NODE_ENV !== 'production',
   srcDir: resolve(__dirname, './client'),
   router: { middleware: ['auth', 'i18n'] },
-  env: { apiURL: process.env.API_URL || 'http://localhost:3000' },
+  env: { apiURL: process.env.API_URL || 'http://127.0.0.1:3000' },
   head: {
     title: 'Canada Free SMS - System-Online Receive SMS',
     meta: [

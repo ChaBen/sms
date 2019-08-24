@@ -50,12 +50,12 @@
                         </slide-y-down-transition>
                       </md-field>
                     </li>
-                    <li>약 <b>{{ priceFilte(customPrice) | Comma }}</b> 원</li>
+                    <li><template v-if="local === 'kr'">약 </template><b>{{ priceFilte(customPrice) | Comma }}</b></li>
                     <li><b>{{ perPrice(customPrice) | Comma }}</b> / {{ $t('pricing.send') }}</li>
                   </template>
                   <template v-else>
                     <li>{{ $t('pricing.persms') }} <b>{{ per[item.rate][local] }}</b></li>
-                    <li>약 <b>{{ priceFilte(item.price) | Comma }}</b> 원</li>
+                    <li><template v-if="local === 'kr'">약 </template><b>{{ priceFilte(item.price) | Comma }}</b></li>
                     <li><b>{{ perPrice(item.price) | Comma }}</b> / {{ $t('pricing.send') }}</li>
                   </template>
                 </ul>
@@ -192,7 +192,8 @@ export default {
         rate = krRate;
       }
       const money = lang === 'cn' ? (price * krRate) / cnRate : price * rate;
-      return Math.floor(money);
+
+      return lang === 'kr' ? Math.floor(money) + '원' : Math.floor(money);
     },
     perPrice(price) {
       let per = 0;
