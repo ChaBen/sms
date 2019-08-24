@@ -19,7 +19,6 @@ export const mutations = {
 
 export const actions = {
   async nuxtClientInit({ commit, dispatch, state }) {
-    console.log('client ============');
     if (!state.auth.accessToken) return;
     await dispatch('auth/authenticate', { accessToken: state.auth.accessToken, strategy: 'jwt' })
   },

@@ -156,8 +156,7 @@ czn777 쩜컴`,
       sendAfterOrUpdate: 'send/addOrUpdate'
     }),
     async playSendSms() {
-      // this.loading = true;
-      // this.isPlaySend = true;
+      this.$nuxt.$loading.start();
       const to = _.compact(this.phones.split(/\r*\n/).map(item => {
         return item === '' ? false : (item.substr(0, 3) === '010' ? `82${item.substr(1)}`.trim() : `82${item}`.trim());
       }));
@@ -171,7 +170,9 @@ czn777 쩜컴`,
         await this.userFindAction({ query: { _id: this.userId }});
         await this.getSendResponse();
         this.phones = null;
+        this.$nuxt.$loading.finish();
       } catch (error) {
+        this.$nuxt.$loading.finish();
         Swal.fire({
           title: `Error: ${error.status}`,
           text: error.message,
@@ -182,9 +183,20 @@ czn777 쩜컴`,
       }
     },
     async getSendResponse() {
-      const { userId } = this;
-      const sends = await this.actSendFind({ query: { userId }});
-      this.sendTasks = sends.reverse();
+      try {
+        const { userId } = this;
+        const sends = await this.actSendFind({ query: { userId }});
+        this.sendTasks = sends.reverse();
+      } catch (error) {
+        Swal.fire({
+          title: `Error`,
+          text: error.message,
+          type: 'error',
+          confirmButtonClass: 'md-button',
+          buttonsStyling: false
+        })
+      }
+      // this.$nuxt.$loading.finish();
     }
   }
 };

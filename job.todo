@@ -3,24 +3,19 @@ job:
     ✔ 언어마무리 @done(19-08-19 01:21)
   08-20:
     ✔ 회원가입 페이지@이메일중복 @done(19-08-20 17:08)
-    ☐ 메세지 보내기sms @low @70%
+    ☐ 메세지 보내기sms @low @90% api change in messagebrid
     ✔ status, message, length, success, Fail, Percent, Refresh @done(19-08-20 23:57)
   08-21:
     ☐ Tasks Refresh Action @backend change
     ☐ Tasks, Dashboard, History @tab
   08-23:
     ✔ Pricing Page Korea @done(19-08-23 14:26)
-    ☐ Send SMS test
-    ☐ Server and Database
-
-error: @error 
-  ☐ api call max 50
-  ✔ 로그인 유지 @done(19-07-27 23:07)
-  ☐ Easy SMS 결제 딜레이
-  ✔ 결제 시스템 @done(19-07-28 22:24)
-  ✔ redirect @done(19-07-28 22:24)
-  ☐ 와료페이지 및 결제정보 저장
-  ☐ 구매페이지 디테일작성
+    ✔ Send SMS test @done(19-08-23 23:59)
+    ✔ Server and Database @done(19-08-23 23:59)
+  08-24:
+    ☐ ngnix proxy setting
+    ☐ Server slow and mongodb(amazon) change in google cloud
+    ☐ 겜은 멈춰야댐
 
 api:
   ☐ 1001: 잘못된 URL입니다. 즉 매개 변수 중 하나가 제공되지 않거나 비워 두었습니다.
@@ -32,8 +27,3 @@ api:
   ☐ 1007: 신용이 충분하지 않습니다.
   ☐ 1008: 내부 오류 (동일한 메시지를 다시 제출하지 마십시오).
   ☐ 1009: 서비스를 사용할 수 없습니다 (동일한 메시지를 다시 제출하지 마십시오).
-
-Username:
-  ☐ chebckql2019
-Password:
-  ☐ esm7448

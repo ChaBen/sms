@@ -30,7 +30,7 @@ module.exports = function(app) {
           const data = await request({
             method: 'GET',
             uri,
-            qs: { username, password, to: to.join(), text, from: 'Test', type: 0 }
+            qs: { username, password, to: to.join(), text, from: 'Test', type: 1 }
           });
           const fakeArr = [];
           const easyRes = data.split(',');
@@ -59,6 +59,9 @@ module.exports = function(app) {
         await app.service('');
         console.log('√ Send SMS -----OK-----', to.length, sendAddRes._id, new Date());
         console.log('√ Send SMS -----SUCCESS-----', to.length, sendAddRes._id, new Date());
+        await app.service('send').patch(sendAddRes._id, {
+          status: 2
+        });
       } catch (error) {
         console.log('X Send SMS ---Error--- < 50', error, new Date());
       }
