@@ -28,9 +28,19 @@ async function beforeCreate(context) {
   try {
     const paymentResponse = await paypalpayment;
     const total = parseInt(paymentResponse.transactions[0].amount.total);
+    const perPrice = [0.016666, 0.013333, 0.011755];
+    let per;
+    if (total < 1000) {
+      per = perPrice[0];
+    } else if (total < 3000) {
+      per = perPrice[1];
+    } else if (total >= 3000) {
+      per = perPrice[2];
+    }
+    const setPerPrice = Math.floor(total / per);
     await context.app.service('users').patch(context.data.userId, {
       $inc: {
-        sendCount: +total / 0.02,
+        sendCount: +setPerPrice,
         chargeAll: +total
       }
     });

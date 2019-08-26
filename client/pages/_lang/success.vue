@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <parallax class="page-header header-filter header-small" parallax-active="true" filter-color="success" :style="headerStyle" />
+    <parallax class="page-header section-image header-small" parallax-active="true" :style="headerStyle" />
     <div class="section">
       <div class="container">
         <div class="main main-raised">
@@ -13,7 +13,7 @@
               <md-card class="md-card-plain">
                 <md-card-content>
                   <h3 class="card-title">{{ $t('success.title1') }}</h3>
-                  <md-table v-model="payment" class="table-shopping">
+                  <md-table v-model="payment">
                     <md-table-row slot="md-table-row" slot-scope="{ item }">
                       <md-table-cell :md-label="$t('success.name')" class="td-name">
                         <a href="javascript:void(0)">{{ item.transactions[0].item_list.items[0].name }}</a>
@@ -24,7 +24,7 @@
                         {{ item.transactions[0].payee.email }}
                       </md-table-cell>
                       <md-table-cell :md-label="$t('success.count')">
-                        {{ item.transactions[0].item_list.items[0].price / 0.02 | Comma }}
+                        {{ setPerPrice(item.transactions[0].item_list.items[0].price) | Comma }}
                       </md-table-cell>
                       <md-table-cell :md-label="$t('success.price')" class="td-number">
                         <small>$</small>
@@ -35,7 +35,7 @@
                   <div class="table table-stats">
                     <div class="text-right">
                       <md-button class="md-rose md-round" @click="$router.push('/sms')">
-                        <md-icon>sms</md-icon>SEND SMS
+                        <i class="far fa-comment" />SEND SMS
                       </md-button>
                     </div>
                   </div>
@@ -58,7 +58,8 @@ export default {
   data: () => ({
     selectColor: 'rose',
     selectSize: 'small',
-    image: require('@/assets/img/examples/bg-product.jpg')
+    perPrice: [0.016666, 0.013333, 0.011755],
+    image: require('@/assets/img/examples/bg2.jpg')
   }),
   async asyncData({ store, query }) {
     const { paymentId, PayerID } = query;
@@ -72,6 +73,19 @@ export default {
       payment = data;
     }
     return { payment };
+  },
+  methods: {
+    setPerPrice(price) {
+      let per = 0;
+      if (price < 1000) {
+        per = price / this.perPrice[0];
+      } else if (price < 3000) {
+        per = price / this.perPrice[1];
+      } else if (price >= 3000) {
+        per = price / this.perPrice[2];
+      }
+      return Math.floor(per);
+    }
   }
 };
 </script>
