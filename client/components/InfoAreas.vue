@@ -9,7 +9,7 @@
     }"
   >
     <div class="icon" :class="infoColor">
-      <md-icon>{{ icon }}</md-icon>
+      <i class="fal" :class="`fa-${icon}`" />
     </div>
     <template v-if="!infoHorizontal">
       <slot name="title" />
@@ -43,4 +43,11 @@ export default {
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+.info {
+  .icon {
+    min-width: 40px;
+    text-align: center;
+  }
+}
+</style>

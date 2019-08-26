@@ -26,7 +26,7 @@
                   </div>
                   <div class="md-layout-item md-size-40 md-medium-size-50 md-small-size-100 mr-auto">
                     <div class="social-line text-center">
-                      <h4 class="mt-3">빠른 가입 이용해보세요.</h4>
+                      <h4 class="mt-3">{{ $t('signup.title1') }}</h4>
                     </div>
                     <form>
                       <md-field
@@ -114,7 +114,7 @@ export default {
   mixins: [Mixins.HeaderImage],
   bodyClass: 'signup-page',
   data: () => ({
-    image: require('@/assets/img/bg7.jpg'),
+    image: require('@/assets/img/register.jpg'),
     email: null,
     password: null,
     confirmPassword: null,
@@ -190,6 +190,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.button-container {
+  margin-top: 40px;
+}
 .md-field .success.md-icon,
 .md-field .error.md-icon {
   top: 16px;

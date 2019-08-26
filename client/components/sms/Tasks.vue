@@ -7,7 +7,7 @@
         </template>
         <template v-else-if="item.status === 2">
           <div class="done">
-            <md-icon>done</md-icon>
+            <i class="fal fa-check" />
           </div>
         </template>
       </md-table-cell>
@@ -25,7 +25,7 @@
       </md-table-cell>
       <md-table-cell md-label="Date">{{ item.createdAt | filterDate }}</md-table-cell>
       <md-table-cell md-label="Action">
-        <md-button class="md-just-icon md-success md-round" @click="$emit('refresh')"><md-icon>refresh</md-icon></md-button>
+        <md-button class="md-just-icon md-success md-round" @click="$emit('refresh', item.id)"><md-icon>refresh</md-icon></md-button>
       </md-table-cell>
       <!-- status, message, length, success, Fail, Percent, Refresh -->
       <!-- <md-table-cell md-label="City">{{ item.city }}</md-table-cell>
@@ -50,6 +50,7 @@
 
 <script>
 import Moment from 'moment';
+import 'moment/locale/ko';
 
 export default {
   filters: {
@@ -160,8 +161,9 @@ export default {
 
 <style lang="scss" scoped>
 .done {
-  .md-icon {
-  color: #4caf50;
+  .fal {
+    font-size: 1.24rem;
+    color: #4caf50;
   }
 }
 .percent {

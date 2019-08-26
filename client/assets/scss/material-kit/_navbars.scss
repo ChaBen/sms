@@ -48,7 +48,9 @@
 
   .md-list-item-content {
     .fab,
+    .fal,
     .fa {
+      vertical-align: middle;
       font-size: 1.25rem;
       max-width: 24px;
       width: 24px;
@@ -71,7 +73,6 @@
     border-radius: 10px;
     text-align: center;
     line-height: 19px;
-    vertical-align: middle;
     display: block;
   }
 
@@ -89,7 +90,7 @@
       &:hover,
       &:focus {
         color: inherit;
-        background-color: rgba(255, 255, 255, 0.1);
+        background-color: rgba(199,199,199, .2) !important;
       }
     }
     > .disabled > a {
@@ -264,12 +265,12 @@
     padding-top: 0;
     padding-bottom: 0;
     color: inherit !important;
-    background-color: transparent !important;
+    background-color: transparent;
 
     &:hover .md-list-item > a,
     &:focus .md-list-item > a,
     & > a:hover {
-      background-color: transparent !important;
+      background-color: transparent;
     }
 
     .md-list-item > a:not(:last-child){
@@ -318,6 +319,7 @@
 }
 
 .md-list-item{
+  margin: 0 .3125rem;
   list-style: none;
 
   .router-link-active .md-ripple{
@@ -341,10 +343,15 @@
     padding: 0;
     text-decoration: none;
 
-    &:hover,
-    &:focus {
+    &.sms {
+      background-color: transparent !important;
+    }
+
+    &.nuxt-link-active:not(.sms),
+    &:hover:not(.sms),
+    &:focus:not(.sms) {
       color: inherit;
-      background-color: transparent;
+      background-color: rgba(199,199,199, .2) !important;
     }
 
     .material-icons,
@@ -353,7 +360,7 @@
     .fa{
       font-size: 20px;
       margin-left: 0 !important;
-      margin-right: 0 !important;
+      margin-right: 3px !important;
       width: 24px;
       min-width: 24px;
       text-align: center;

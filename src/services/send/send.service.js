@@ -45,7 +45,6 @@ module.exports = function(app) {
             sendId: sendAddRes._id,
             sendRes: fakeArr
           });
-          console.log('response data =====', fakeArr);
           resolve(fakeArr);
         } catch (error) {
           reject(error);

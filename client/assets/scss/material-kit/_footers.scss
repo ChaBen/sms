@@ -89,7 +89,13 @@ footer{
     }
 }
 
-
+.full-page {
+  .footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+}
 
 .footer-white {
   background-color: $white-color;

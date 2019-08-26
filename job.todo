@@ -17,7 +17,20 @@ job:
   08-24:
     ✔ ngnix proxy setting @done(19-08-25 07:40)
     ☐ Server slow and mongodb(amazon) change in google cloud
-
+    ☐ Nginx Proxy Socket @error
+    ☐ Paypal Order Parice @error
+  08-25:
+    ☐ Navibar Language
+    ☐ 빠른 가입 이용해보세요.
+  
+  Order:
+    Price:
+      ☐ 1,000,000 sms --- 7,200,000원 --- 15,000,000(개당15원) --- 7,800,000(마진)
+      ☐ Paypal
+    Money:
+      ☐ Theme: 300,000
+      ☐ Server: 100,000
+      ☐ DB Server: 100,000 ~ 200,000
 Easy Api:
   ☐ 1001: 잘못된 URL입니다. 즉 매개 변수 중 하나가 제공되지 않거나 비워 두었습니다.
   ☐ 1002: 사용자 이름 또는 암호 매개 변수가 잘못되었습니다.

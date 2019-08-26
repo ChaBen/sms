@@ -17,6 +17,7 @@ module.exports = {
       { rel: 'stylesheet', href: 'https://use.fontawesome.com/releases/v5.0.8/css/all.css' }
     ],
     script: [
+      { src: 'https://kit.fontawesome.com/98db21528b.js' },
       { src: 'https://www.paypal.com/sdk/js?client-id=AeZgg-XoLfSbdrVeRnEz1aSGatzYfnYwGWGuWydxIp-ik2Wl4Y433qnUeE77hf92vR_x6bJyRbG02dPY' }
     ]
   },

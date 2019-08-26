@@ -1,5 +1,5 @@
 <template>
-  <div id="vue-material-kit-pro">
+  <div id="vue-material-kit-pro" :class="{ 'nav-open': NavbarStore.showNavbar }">
     <no-ssr>
       <MainNavbar :navbar-transparent="true" :color-on-scroll="66" />
     </no-ssr>

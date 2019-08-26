@@ -2,7 +2,7 @@ import Vue from 'vue';
 import VueMaterial from 'vue-material';
 import 'vue-material/dist/vue-material.min.css';
 import '@/assets/scss/material-kit.scss';
-import '@/assets/demo.css';
+import '@/assets/style.scss';
 import globalDirectives from './globalDirectives';
 import globalMixins from './globalMixins';
 // import basicMixins from "./basicMixins";

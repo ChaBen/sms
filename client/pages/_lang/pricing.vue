@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <parallax class="page-header header-filter" parallax-active="false" :style="headerStyle">
+    <div class="page-header header-filter" :style="headerStyle">
       <div class="container">
         <div class="md-layout">
           <div class="md-layout-item md-size-50 md-small-size-100 justify-content-center mx-auto text-center">
@@ -68,7 +68,8 @@
           </div>
         </div>
       </div>
-    </parallax>
+    </div>
+    <Footer />
   </div>
 </template>
 
@@ -78,11 +79,13 @@ import { SlideYDownTransition } from 'vue2-transitions';
 import { PricingCard } from '@/components';
 import Mixins from '@/plugins/basicMixins';
 import Swal from 'sweetalert2';
+import Footer from '@/components/layout/PageFooter';
 
 export default {
   components: {
     PricingCard,
-    SlideYDownTransition
+    SlideYDownTransition,
+    Footer
   },
   filters: {
     zero(price) {
@@ -91,7 +94,7 @@ export default {
   },
   mixins: [Mixins.HeaderImage],
   data: () => ({
-    image: require('@/assets/img/examples/city.jpg'),
+    image: require('@/assets/img/pricing.jpg'),
     price: 0.02,
     per: [{
       price: 0.016666,
@@ -209,7 +212,7 @@ export default {
     async purchase(item) {
       this.$nuxt.$loading.start();
       if (!this.isLogin) {
-        this.$router.push('/login');
+        this.$router.push(this.$i18n.path('login'));
         return;
       }
       const valid = await this.$validator.validateAll();
@@ -255,12 +258,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-// .wrapper {
-//   .page-header {
-//     height: auto;
-//     padding: 100px 0;
-//   }
-// }
+@media (max-width: 960px) {
+  .wrapper {
+    overflow: hidden;
+    .page-header {
+      height: auto;
+    }
+  }
+  .container {
+    padding: 50px 10px;
+  }
+}
 .white {
   &.md-field {
     margin: 0;

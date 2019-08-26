@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
     <!-- Contact Us 1 -->
-    <div class="page-header header-filter section section-contactus-1 section-image" parallax-active="false" :style="headerStyle">
+    <div class="page-header section section-contactus-1 section-image" parallax-active="false" :style="headerStyle">
       <div class="container">
         <div class="md-layout">
           <div class="md-layout-item md-size-40 md-small-size-100">
@@ -46,7 +46,7 @@
                   <md-progress-spinner v-if="loading" :md-diameter="30" :md-stroke="3" md-mode="indeterminate" />
                 </div>
                 <div class="md-layout-item">
-                  <md-button v-if="!isPlaySend" class="md-primary" @click="playSendSms"><i class="fas fa-play" />Send</md-button>
+                  <md-button v-if="!isPlaySend" class="md-primary" @click="playSendSms"><i class="fas fa-play" />{{ $t('sms.btn') }}</md-button>
                   <md-button v-else class="md-primary" @click="stopSendSms"><i class="fas fa-stop" />Stop</md-button>
                 </div>
                 <div class="md-layout-item" />
@@ -60,7 +60,17 @@
       <!-- Features 1 -->
       <div class="section section-features-1">
         <div class="container">
-          <tabs
+          <Tasks :tasks="sendTasks" @refresh="getSendResponse" />
+          <!-- <div class="pagination-box">
+            <pagination
+              v-model="pagination.currentPage"
+              no-arrows
+              class="pagination-no-border pagination-success"
+              :per-page="pagination.perPage"
+              :total="total"
+            />
+          </div> -->
+          <!-- <tabs
             :tab-active="1"
             :tab-name="['Tasks', 'Dashboard', 'History']"
             :tab-icon="['list', 'dashboard', 'schedule']"
@@ -69,7 +79,6 @@
             nav-pills-icons
             color-button="primary"
           >
-            <!-- here you can add your content for tab-content -->
             <template slot="tab-pane-1">
               <Tasks :tasks="sendTasks" @refresh="getSendResponse" />
             </template>
@@ -83,18 +92,20 @@
             <template slot="tab-pane-3">
               <History />
             </template>
-          </tabs>
+          </tabs> -->
         </div>
       </div>
     </div>
+    <Footer />
     <!-- end Contact Us 1 -->
   </div>
 </template>
 
 <script>
 import { mapState, mapGetters, mapActions } from 'vuex';
-import { PricingCard, Tabs } from '@/components';
-import { Tasks, History } from '@/components/sms'
+import { PricingCard } from '@/components';
+import { Tasks } from '@/components/sms';
+import Footer from '@/components/layout/InnerFooter';
 import Mixins from '@/plugins/basicMixins';
 import * as _ from 'lodash';
 import Swal from 'sweetalert2';
@@ -102,19 +113,26 @@ import Swal from 'sweetalert2';
 export default {
   components: {
     PricingCard,
-    Tabs,
+    // Tabs,
     Tasks,
-    History
+    // History,
+    // Pagination,
+    Footer
   },
   mixins: [Mixins.HeaderImage],
   data: () => ({
     loading: false,
     isPlaySend: false,
     sendTasks: [],
-    phones: '01084891209',
-    // phones: '01084891209\n01074646521',
+    file: null,
+    // phones: '01084891209',
+    phones: '01084891209\n01074646521',
     message: `안녕하세요~`,
-    image: require('@/assets/img/examples/city.jpg')
+    image: require('@/assets/img/bg5.jpg'),
+    pagination: {
+      perPage: 5,
+      currentPage: 1
+    }
   }),
   computed: {
     ...mapState('auth', {
@@ -132,6 +150,9 @@ export default {
     },
     phoneLen() {
       return this.phones ? this.phones.split(/\r*\n/).length : 0;
+    },
+    total() {
+      return this.sendTasks.length;
     }
   },
   async fetch({ store }) {
@@ -153,10 +174,16 @@ export default {
       sendAfterOrUpdate: 'send/addOrUpdate'
     }),
     async playSendSms() {
-      this.$nuxt.$loading.start();
       const to = _.compact(this.phones.split(/\r*\n/).map(item => {
-        return item === '' ? false : (item.substr(0, 3) === '010' ? `82${item.substr(1)}`.trim() : `82${item}`.trim());
+        const phone = item.replace(/-/gi, '');
+        return phone === '' ? false : (phone.substr(0, 3) === '010' ? `82${phone.substr(1)}`.trim() : `82${phone}`.trim());
       }));
+      const sendCount = this.getUser[0].sendCount;
+      if (to.length > sendCount) {
+        this.swalAlert('Error', '남아있는 SMS건수가 부족합니다.', 'error');
+        return;
+      }
+      this.$nuxt.$loading.start();
       try {
         await this.sendCreate({
           to,
@@ -179,11 +206,17 @@ export default {
         })
       }
     },
-    async getSendResponse() {
+    async getSendResponse(id) {
       try {
         const { userId } = this;
-        const sends = await this.actSendFind({ query: { userId }});
-        this.sendTasks = sends.reverse();
+        const query = id !== undefined ? { userId, _id: id } : { userId };
+        const sends = await this.actSendFind({ query });
+        if (id === undefined) {
+          this.sendTasks = sends.reverse();
+        } else {
+          const key = this.sendTasks.findIndex(item => item.id === sends[0].id);
+          this.sendTasks[key] = sends.reverse();
+        }
       } catch (error) {
         Swal.fire({
           title: `Error`,
@@ -194,6 +227,15 @@ export default {
         })
       }
       // this.$nuxt.$loading.finish();
+    },
+    swalAlert(title, msg, type) {
+      Swal.fire({
+        title,
+        text: msg,
+        type,
+        confirmButtonClass: 'md-button',
+        buttonsStyling: false
+      });
     }
   }
 };
@@ -201,10 +243,22 @@ export default {
 
 <style lang="scss" scoped>
 .wrapper .page-header {
-  min-height: 700px;
+  height: 700px;
+}
+@media (max-width: 960px) {
+  .wrapper {
+    overflow: hidden;
+    .page-header {
+      height: auto;
+    }
+  }
+  .container {
+    padding: 30px 0 50px 0;
+  }
 }
 .section {
   padding: 30px 0;
+  min-height: 500px;
 }
 .md-textarea {
   padding: 0 !important;
@@ -218,6 +272,11 @@ export default {
 }
 .card-title {
   margin-top: 0;
+}
+.pagination-box {
+  display: block;
+  justify-content: center;
+  align-items: center;
 }
 .justify-content-between {
   justify-content: space-between !important;

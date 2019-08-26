@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <div class="wrapper pull-page">
     <div class="section page-header header-filter" :style="headerStyle">
       <div class="container">
         <div class="md-layout">
@@ -29,6 +29,7 @@
         </div>
       </div>
     </div>
+    <Footer />
   </div>
 </template>
 
@@ -37,16 +38,18 @@ import { mapActions } from 'vuex';
 import { LoginCard } from '@/components';
 import Mixins from '@/plugins/basicMixins';
 import Swal from 'sweetalert2';
+import Footer from '@/components/layout/PageFooter';
 
 export default {
   middleware: 'noAuth',
   components: {
-    LoginCard
+    LoginCard,
+    Footer
   },
   mixins: [Mixins.HeaderImage],
   bodyClass: 'login-page',
   data: () => ({
-    image: require('@/assets/img/profile_city.jpg'),
+    image: require('@/assets/img/login.jpg'),
     email: 'ckqlss@gmail.com',
     password: 'admin520'
   }),
@@ -58,7 +61,7 @@ export default {
       const credentials = { email: this.email, password: this.password };
       try {
         await this.authenticate({ ...credentials, strategy: 'local' });
-        this.$router.push('/');
+        this.$router.push(this.$i18n.path(''));
       } catch (error) {
         Swal.fire({
           title: `Error: ${error.code}`,

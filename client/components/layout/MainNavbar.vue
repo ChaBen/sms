@@ -31,7 +31,52 @@
               <!-- Here you can add your items from the section-start of your toolbar -->
             </mobile-menu>
             <md-list>
-              <template v-for="(item, key) in $t('head.menu')">
+              <li v-if="!isAuthenticated" class="md-list-item">
+                <nuxt-link :to="$i18n.path('login')" class="md-list-item-link md-list-item-container md-button-clean">
+                  <div class="md-list-item-content">
+                    <div class="md-ripple">
+                      <i class="fal fa-fingerprint" />{{ $t('head.login') }}
+                    </div>
+                  </div>
+                </nuxt-link>
+              </li>
+              <li v-if="!isAuthenticated" class="md-list-item">
+                <nuxt-link :to="$i18n.path('signup')" class="md-list-item-link md-list-item-container md-button-clean">
+                  <div class="md-list-item-content">
+                    <div class="md-ripple">
+                      <i class="fal fa-user-plus" />{{ $t('head.register') }}
+                    </div>
+                  </div>
+                </nuxt-link>
+              </li>
+              <li class="md-list-item">
+                <nuxt-link :to="$i18n.path('pricing')" class="md-list-item-link md-list-item-container md-button-clean">
+                  <div class="md-list-item-content">
+                    <div class="md-ripple">
+                      <i class="fal fa-usd-circle" />{{ $t('head.pricing') }}
+                    </div>
+                  </div>
+                </nuxt-link>
+              </li>
+              <li v-if="isAuthenticated" class="md-list-item">
+                <a class="md-list-item-link md-list-item-container md-button-clean" @click.prevent="exit">
+                  <div class="md-list-item-content">
+                    <div class="md-ripple">
+                      <i class="fal fa-sign-out-alt" />{{ $t('head.logout') }}
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="md-list-item">
+                <nuxt-link :to="$i18n.path('sms')" class="sms md-list-item-router md-list-item-container md-button-clean">
+                  <div class="md-list-item-content">
+                    <md-button class="md-rose md-round">
+                      <i class="far fa-comment" />{{ $t('head.sms') }}
+                    </md-button>
+                  </div>
+                </nuxt-link>
+              </li>
+              <!-- <template v-for="(item, key) in $t('head.menu')">
                 <li v-if="item.auth === 1 && !isAuthenticated" :key="key" class="md-list-item">
                   <nuxt-link :to="$i18n.path(item.href)" class="md-list-item-router md-list-item-container md-button-clean dropdown">
                     <div class="md-list-item-content">
@@ -43,7 +88,7 @@
                   <nuxt-link v-if="item.href === 'sms'" :to="$i18n.path(item.href)" tag="a" class="md-list-item-router md-list-item-container md-button-clean">
                     <div class="md-list-item-content">
                       <md-button class="md-rose md-round">
-                        <md-icon>sms</md-icon>{{ item.li }}
+                        <i class="far fa-comment" />{{ item.li }}
                       </md-button>
                     </div>
                   </nuxt-link>
@@ -60,7 +105,7 @@
                     </div>
                   </a>
                 </li>
-              </template>
+              </template> -->
 
               <li class="md-list-item">
                 <a href="javascript:void(0)" class="md-list-item-router md-list-item-container md-button-clean dropdown">
@@ -84,7 +129,7 @@
                         <li v-if="$i18n.locale === 'us' || $i18n.locale === 'cn'">
                           <nuxt-link :to="linkPath('/kr')">
                             <small class="flag-icon"><country-flag country="kr" size="small" /></small>
-                            Korean{{ $i18n.locale }}
+                            Korean
                           </nuxt-link>
                         </li>
                         <li v-if="$i18n.locale === 'us' || $i18n.locale === 'kr'">
@@ -166,10 +211,6 @@ export default {
     }),
     isAuthenticated() {
       return !!this.accessToken;
-    },
-    showDownload() {
-      const excludedRoutes = ['index'];
-      return excludedRoutes.every(r => r !== this.$route.name);
     }
   },
   mounted() {
@@ -194,7 +235,7 @@ export default {
     },
     async exit() {
       await this.logout();
-      this.$router.push('/');
+      this.$router.push(this.$i18n.path(''));
     },
     bodyClick() {
       const bodyClick = document.getElementById('bodyClick');
