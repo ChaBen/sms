@@ -35,7 +35,7 @@
                   <div class="table table-stats">
                     <div class="text-right">
                       <md-button class="md-rose md-round" @click="$router.push('/sms')">
-                        <i class="far fa-comment" />SEND SMS
+                        <i class="far fa-comment" />{{ $t('head.sms') }}
                       </md-button>
                     </div>
                   </div>

@@ -115,7 +115,15 @@ export default {
     title: 'SMS 내용',
     phone: '보내기 전화번호',
     textarea: '메시지',
-    btn: '보내기'
+    btn: '보내기',
+    status: '상태',
+    message: '메세지',
+    to: '개수',
+    ok: '성공',
+    fail: '실패',
+    percent: '퍼센트',
+    date: '시간',
+    action: '새로고침'
   },
   success: {
     title: '구매해주셔서 감사합니다.',

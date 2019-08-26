@@ -114,7 +114,15 @@ export default {
     title: 'SMS Content',
     phone: 'Send Phone Number',
     textarea: 'Your Message',
-    btn: 'SEND'
+    btn: 'SEND',
+    status: 'Status',
+    message: 'Message',
+    to: 'To',
+    ok: 'Ok',
+    fail: 'Fail',
+    percent: 'Percent',
+    date: 'Date',
+    action: 'Action'
   },
   success: {
     title: 'Thank you for your purchase.',

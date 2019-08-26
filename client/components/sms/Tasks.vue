@@ -1,7 +1,7 @@
 <template>
   <md-table v-model="tasks">
     <md-table-row slot="md-table-row" slot-scope="{ item }">
-      <md-table-cell md-label="Status">
+      <md-table-cell :md-label="$t('sms.status')">
         <template v-if="item.status === 1">
           <md-progress-spinner :md-diameter="30" :md-stroke="2" md-mode="indeterminate" />
         </template>
@@ -11,11 +11,11 @@
           </div>
         </template>
       </md-table-cell>
-      <md-table-cell md-label="Message">{{ item.text }}</md-table-cell>
-      <md-table-cell md-label="To">{{ item.to | Comma }}</md-table-cell>
-      <md-table-cell md-label="Ok">{{ item.ok | Comma }}</md-table-cell>
-      <md-table-cell md-label="Fail">{{ item.fail | Comma }}</md-table-cell>
-      <md-table-cell md-label="Percent">
+      <md-table-cell :md-label="$t('sms.message')">{{ item.text }}</md-table-cell>
+      <md-table-cell :md-label="$t('sms.to')">{{ item.to | Comma }}</md-table-cell>
+      <md-table-cell :md-label="$t('sms.ok')">{{ item.ok | Comma }}</md-table-cell>
+      <md-table-cell :md-label="$t('sms.fail')">{{ item.fail | Comma }}</md-table-cell>
+      <md-table-cell :md-label="$t('sms.percent')">
         <div class="md-layout percent">
           <div class="md-layout-item">
             <md-progress-bar md-mode="determinate" :md-value="item.percent" />
@@ -23,8 +23,8 @@
           <div class="md-layout-item">{{ item.percent }}%</div>
         </div>
       </md-table-cell>
-      <md-table-cell md-label="Date">{{ item.createdAt | filterDate }}</md-table-cell>
-      <md-table-cell md-label="Action">
+      <md-table-cell :md-label="$t('sms.date')">{{ item.createdAt | filterDate }}</md-table-cell>
+      <md-table-cell :md-label="$t('sms.action')">
         <md-button class="md-just-icon md-success md-round" @click="$emit('refresh', item.id)"><md-icon>refresh</md-icon></md-button>
       </md-table-cell>
       <!-- status, message, length, success, Fail, Percent, Refresh -->

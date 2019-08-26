@@ -114,7 +114,15 @@ export default {
     title: '短信内容',
     phone: '发送电话号码',
     textarea: '发送内容',
-    btn: '发送'
+    btn: '发送',
+    status: '状态',
+    message: '内容',
+    to: '数量',
+    ok: '成功',
+    fail: '失败',
+    percent: '百分比',
+    date: '时间',
+    action: '刷新'
   },
   success: {
     title: '感谢您的购买。',
