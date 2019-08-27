@@ -30,10 +30,25 @@
                 <h4 class="card-title">{{ $t('sms.title') }}</h4>
               </md-card-header>
               <md-card-content>
-                <md-field>
+                <md-field
+                  :class="[
+                    { 'md-valid': !errors.has('phones') && touched.phones },
+                    { 'md-error': errors.has('phones') }
+                  ]"
+                >
                   <label>{{ $t('sms.phone') }}</label>
-                  <md-textarea v-model="phones" />
+                  <md-textarea
+                    v-model="phones"
+                    v-validate="modelValidations.phones"
+                    data-vv-name="phones"
+                  />
                   <span class="md-count">{{ phoneLen | Comma }}</span>
+                  <slide-y-down-transition>
+                    <md-icon v-show="errors.has('phones')" class="error">close</md-icon>
+                  </slide-y-down-transition>
+                  <slide-y-down-transition>
+                    <md-icon v-show="!errors.has('phones') && touched.phones" class="success">done</md-icon>
+                  </slide-y-down-transition>
                 </md-field>
 
                 <md-field>
@@ -41,15 +56,8 @@
                   <md-textarea v-model="message" maxlength="100" />
                 </md-field>
               </md-card-content>
-              <md-card-actions class="md-layout justify-content-between">
-                <div class="md-layout-item">
-                  <md-progress-spinner v-if="loading" :md-diameter="30" :md-stroke="3" md-mode="indeterminate" />
-                </div>
-                <div class="md-layout-item">
-                  <md-button v-if="!isPlaySend" class="md-primary" @click="playSendSms"><i class="fas fa-play" />{{ $t('sms.btn') }}</md-button>
-                  <md-button v-else class="md-primary" @click="stopSendSms"><i class="fas fa-stop" />Stop</md-button>
-                </div>
-                <div class="md-layout-item" />
+              <md-card-actions class="md-layout justify-content-center">
+                <md-button class="md-primary" @click="playSendSms"><i class="fas fa-play" />{{ $t('sms.btn') }}</md-button>
               </md-card-actions>
             </md-card>
           </div>
@@ -103,6 +111,7 @@
 
 <script>
 import { mapState, mapGetters, mapActions } from 'vuex';
+import { SlideYDownTransition } from 'vue2-transitions';
 import { PricingCard } from '@/components';
 import { Tasks } from '@/components/sms';
 import Footer from '@/components/layout/InnerFooter';
@@ -116,19 +125,30 @@ export default {
     // Tabs,
     Tasks,
     // History,
+    SlideYDownTransition,
     // Pagination,
     Footer
   },
   mixins: [Mixins.HeaderImage],
   data: () => ({
-    loading: false,
-    isPlaySend: false,
     sendTasks: [],
-    file: null,
     // phones: '01084891209',
     phones: '01084891209\n01074646521',
     message: `안녕하세요~`,
     image: require('@/assets/img/bg5.jpg'),
+    modelValidations: {
+      phones: {
+        required: true
+      },
+      message: {
+        required: true,
+        max: 100
+      }
+    },
+    touched: {
+      phones: false,
+      message: false
+    },
     pagination: {
       perPage: 5,
       currentPage: 1
@@ -155,6 +175,14 @@ export default {
       return this.sendTasks.length;
     }
   },
+  watch: {
+    phones() {
+      this.touched.phones = true;
+    },
+    message() {
+      this.touched.message = true;
+    }
+  },
   async fetch({ store }) {
     const userId = store.state.auth.payload.userId;
     if (userId) {
@@ -178,8 +206,15 @@ export default {
         const phone = item.replace(/-/gi, '');
         return phone === '' ? false : (phone.substr(0, 3) === '010' ? `82${phone.substr(1)}`.trim() : `82${phone}`.trim());
       }));
+      const valid = await this.$validator.validateAll();
       const sendCount = this.getUser[0].sendCount;
-      if (to.length > sendCount) {
+      if (!valid) {
+        this.swalAlert('Error', this.errors.items[0].msg, 'error');
+        return;
+      } else if (to.length > 100000) {
+        this.swalAlert('Error', '한번에 100,000개만이하로 해주세요.', 'error');
+        return;
+      } else if (to.length > sendCount) {
         this.swalAlert('Error', '남아있는 SMS건수가 부족합니다.', 'error');
         return;
       }
@@ -215,7 +250,7 @@ export default {
           this.sendTasks = sends.reverse();
         } else {
           const key = this.sendTasks.findIndex(item => item.id === sends[0].id);
-          this.sendTasks[key] = sends.reverse();
+          this.$set(this.sendTasks, key, sends[0]);
         }
       } catch (error) {
         Swal.fire({
@@ -264,6 +299,9 @@ export default {
   padding: 0 !important;
   resize: none !important;
 }
+.md-field.md-has-textarea:not(.md-autogrow)>.md-icon {
+  right: 15px;
+}
 .fas {
   margin-right: 5px;
 }
@@ -277,8 +315,5 @@ export default {
   display: block;
   justify-content: center;
   align-items: center;
-}
-.justify-content-between {
-  justify-content: space-between !important;
 }
 </style>

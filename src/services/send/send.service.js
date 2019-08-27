@@ -1,4 +1,5 @@
 // Initializes the `send` service on path `/send`
+const feathers = require('@feathersjs/feathers');
 const request = require('request-promise');
 const createService = require('feathers-mongoose');
 const createModel = require('../../models/send.model');
@@ -19,6 +20,7 @@ module.exports = function(app) {
   // Get our initialized service so that we can register hooks
   const service = app.service('send');
   service.on('created', async sendAddRes => {
+    // console.log('this is promise?', await feathers().service('send').find());
     const { to, text, userId } = sendAddRes;
     const chunkTo = (arr, n) => arr.length ? [arr.slice(0, n), ...chunkTo(arr.slice(n), n)] : [];
     const sendSms = (to) => {
