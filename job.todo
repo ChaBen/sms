@@ -36,6 +36,8 @@ job:
       ☐ Business Send
     Business Admin:
       ☐ Dashboard, Users, Orders, Sends
+  08-28:
+    ☐ Sms Page - custom text change in korea
   
   Order:
     Server:
