@@ -31,7 +31,7 @@
                           { 'md-error': errors.has('customPrice') }
                         ]"
                       >
-                        <label>Custom Price...</label>
+                        <label>{{ $t('pricing.custom') }}</label>
                         <md-input
                           v-model="customPrice"
                           v-validate="modelValidations.customPrice"
@@ -61,7 +61,7 @@
                 </ul>
 
                 <md-button v-if="item.title !== 'FREE'" href="javascript:void(0)" class="md-round" :class="item.btn" @click="purchase(item)">
-                  Get Started
+                  {{ $t('pricing.btn') }}
                 </md-button>
               </template>
             </pricing-card>
@@ -109,7 +109,7 @@ export default {
       us: 0.011,
       kr: '14원'
     }],
-    customPrice: null,
+    customPrice: 3000,
     pricings: [
       {
         class: 'mr-auto',
@@ -132,7 +132,7 @@ export default {
         bg: 'black',
         btn: 'md-white',
         title: 'CUSTOM',
-        price: 0
+        price: 3000
       }
     ],
     touched: false,

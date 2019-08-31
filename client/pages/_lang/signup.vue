@@ -8,7 +8,7 @@
               <md-card-content>
                 <h2 class="card-title text-center">{{ $t('signup.title') }}</h2>
                 <div class="md-layout">
-                  <div class="md-layout-item md-size-50 md-small-size-100 ml-auto">
+                  <div class="md-layout-item md-size-50 info-area ml-auto">
                     <template v-for="item in $t('signup.sec')">
                       <info-areas
                         :key="item.title"
@@ -84,7 +84,7 @@
                       </md-field>
                       <!-- <md-checkbox v-model="boolean">I agree to the<a>terms and conditions</a>.</md-checkbox> -->
                       <div class="button-container justify-content-center">
-                        <md-button class="md-success md-round mt-3" @click="signup">{{ $t('signup.title') }}</md-button>
+                        <md-button type="submit" class="md-success md-round mt-3" @click.prevent="signup">{{ $t('signup.title') }}</md-button>
                       </div>
                     </form>
                   </div>
@@ -168,14 +168,14 @@ export default {
         return;
       }
 
-      const { email, password } = this;
-      const credentials = { email, password, sendCount: 10, sendAllCount: 0, chargeAll: 0, level: 1 };
-
       try {
+        const { email, password } = this;
+        const credentials = { email, password };
         await this.create(credentials);
         await this.authenticate({ ...credentials, strategy: 'local' });
-        this.$router.push('/');
+        this.$router.push(this.$i18n.path(''));
       } catch (error) {
+        this.$nuxt.$loading.finish();
         Swal.fire({
           title: `Error: ${error.status}`,
           text: error.message,
@@ -190,6 +190,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@media all and (max-width: 960px) {
+  .info-area {
+    display: none;
+  }
+}
 .button-container {
   margin-top: 40px;
 }

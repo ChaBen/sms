@@ -14,14 +14,14 @@
               <md-field slot="inputs" class="md-form-group">
                 <md-icon>email</md-icon>
                 <label>{{ $t('login.email') }}</label>
-                <md-input v-model="email" type="email" />
+                <md-input v-model="email" type="email" autofocus />
               </md-field>
               <md-field slot="inputs" class="md-form-group" :md-toggle-password="false">
                 <md-icon>lock_outline</md-icon>
                 <label>{{ $t('login.password') }}</label>
                 <md-input v-model="password" type="password" @keydown.enter="login" />
               </md-field>
-              <md-button slot="footer" type="submit" class="md-button md-round md-success" @click="login">
+              <md-button slot="footer" type="submit" class="md-button md-round md-success" @click.prevent="login">
                 {{ $t('login.title') }}
               </md-button>
             </login-card>
@@ -50,8 +50,10 @@ export default {
   bodyClass: 'login-page',
   data: () => ({
     image: require('@/assets/img/login.jpg'),
-    email: 'ckqlss@gmail.com',
-    password: 'admin520'
+    // email: 'ckqlss@gmail.com',
+    email: null,
+    // password: 'admin520',
+    password: null
   }),
   methods: {
     ...mapActions({
@@ -60,9 +62,11 @@ export default {
     async login() {
       const credentials = { email: this.email, password: this.password };
       try {
+        this.$nuxt.$loading.start();
         await this.authenticate({ ...credentials, strategy: 'local' });
         this.$router.push(this.$i18n.path(''));
       } catch (error) {
+        this.$nuxt.$loading.finish();
         Swal.fire({
           title: `Error: ${error.code}`,
           text: error.message,

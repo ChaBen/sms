@@ -37,7 +37,10 @@ job:
     Business Admin:
       ☐ Dashboard, Users, Orders, Sends
   08-28:
-    ☐ Sms Page - custom text change in korea
+    ✔ Sms Page - custom text change in korea @done(19-08-29 15:23)
+    ☐ Login Page Validate
+    ☐ Sms Page - insert message length tip in text
+    ☐ Feathers Language
   
   Order:
     Server:

@@ -3,6 +3,8 @@ import feathersVuex, { initAuth } from 'feathers-vuex';
 
 const { service, auth } = feathersVuex(feathersClient, { idField: '_id' });
 
+// service('sendTasks')
+
 export const state = () => ({
   locales: ['us', 'kr', 'cn'],
   locale: 'kr'
@@ -20,7 +22,7 @@ export const mutations = {
 export const actions = {
   async nuxtClientInit({ commit, dispatch, state }) {
     if (!state.auth.accessToken) return;
-    await dispatch('auth/authenticate', { accessToken: state.auth.accessToken, strategy: 'jwt' })
+    // await dispatch('auth/authenticate', { accessToken: state.auth.accessToken, strategy: 'jwt' });
   },
   nuxtServerInit({ commit, dispatch, state }, { req }) {
     return initAuth({
@@ -29,11 +31,11 @@ export const actions = {
       req,
       moduleName: 'auth',
       cookieName: 'feathers-jwt'
-    })
-      .then(async response => {
-        if (!state.auth.accessToken) return response;
-        return await dispatch('auth/authenticate', { accessToken: state.auth.accessToken, strategy: 'jwt' }).catch(_ => {});
-      });
+    });
+    // .then(async response => {
+    //   if (!state.auth.accessToken) return response;
+    //   return await dispatch('auth/authenticate', { accessToken: state.auth.accessToken, strategy: 'jwt' }).catch(_ => {});
+    // });
   }
 };
 

@@ -105,7 +105,9 @@ export default {
     desc: '每个套餐都提供免费无限更新和高级支持。',
     persms: '每条短信',
     deliveryRate: '发送率',
-    send: '次'
+    send: '次',
+    custom: '直接输入...',
+    btn: '购买'
   },
   sms: {
     total: '短信剩余',

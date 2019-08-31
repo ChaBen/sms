@@ -3,6 +3,12 @@ const { authenticate } = require('@feathersjs/authentication').hooks;
 const {
   hashPassword, protect
 } = require('@feathersjs/authentication-local').hooks;
+function beforeCreate(context) {
+  context.data.sendCount = 5
+  context.data.sendAllCount = 0;
+  context.data.chargeAll = 0;
+  context.data.level = 1;
+}
 
 module.exports = {
   before: {
@@ -14,7 +20,7 @@ module.exports = {
         context.result = context.params.auth;
       }
     ],
-    create: [hashPassword()],
+    create: [beforeCreate, hashPassword()],
     update: [hashPassword(), authenticate('jwt')],
     patch: [hashPassword(), authenticate('jwt')],
     remove: [authenticate('jwt')]

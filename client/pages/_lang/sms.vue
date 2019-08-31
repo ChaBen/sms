@@ -6,19 +6,19 @@
         <div class="md-layout">
           <div class="md-layout-item md-size-40 md-small-size-100">
             <pricing-card>
-              <template slot="cardContent">
+              <template v-if="user" slot="cardContent">
                 <ul>
                   <li>
                     <h6 class="card-category text-success">{{ $t('sms.total') }}</h6>
-                    <h1 class="card-title">{{ getUser[0].sendCount | Comma }}</h1>
+                    <h1 class="card-title">{{ user.sendCount | Comma }}</h1>
                   </li>
                   <li>
                     <h6 class="card-category text-success">{{ $t('sms.send') }}</h6>
-                    <h1 class="card-title">{{ getUser[0].sendAllCount | Comma }}</h1>
+                    <h1 class="card-title">{{ user.sendAllCount | Comma }}</h1>
                   </li>
                   <li>
                     <h6 class="card-category text-success">{{ $t('sms.account') }}</h6>
-                    <h1 class="card-title"><small>$</small>{{ getUser[0].chargeAll | Comma }}</h1>
+                    <h1 class="card-title"><small>$</small>{{ user.chargeAll | Comma }}</h1>
                   </li>
                 </ul>
               </template>
@@ -51,9 +51,25 @@
                   </slide-y-down-transition>
                 </md-field>
 
-                <md-field>
+                <md-field
+                  :class="[
+                    { 'md-valid': !errors.has('message') && touched.message },
+                    { 'md-error': errors.has('message') }
+                  ]"
+                >
                   <label>{{ $t('sms.textarea') }}</label>
-                  <md-textarea v-model="message" maxlength="100" />
+                  <md-textarea
+                    v-model="message"
+                    v-validate="modelValidations.message"
+                    data-vv-name="message"
+                    maxlength="100"
+                  />
+                  <slide-y-down-transition>
+                    <md-icon v-show="errors.has('message')" class="error">close</md-icon>
+                  </slide-y-down-transition>
+                  <slide-y-down-transition>
+                    <md-icon v-show="!errors.has('message') && touched.message" class="success">done</md-icon>
+                  </slide-y-down-transition>
                 </md-field>
               </md-card-content>
               <md-card-actions class="md-layout justify-content-center">
@@ -68,20 +84,10 @@
       <!-- Features 1 -->
       <div class="section section-features-1">
         <div class="container">
-          <Tasks :tasks="sendTasks" @refresh="getSendResponse" />
-          <!-- <div class="pagination-box">
-            <pagination
-              v-model="pagination.currentPage"
-              no-arrows
-              class="pagination-no-border pagination-success"
-              :per-page="pagination.perPage"
-              :total="total"
-            />
-          </div> -->
-          <!-- <tabs
+          <tabs
             :tab-active="1"
-            :tab-name="['Tasks', 'Dashboard', 'History']"
-            :tab-icon="['list', 'dashboard', 'schedule']"
+            :tab-name="['Tasks', 'Dashboard']"
+            :tab-icon="['list', 'dashboard']"
             pills-align="center"
             plain
             nav-pills-icons
@@ -89,6 +95,15 @@
           >
             <template slot="tab-pane-1">
               <Tasks :tasks="sendTasks" @refresh="getSendResponse" />
+              <div class="pagination-box">
+                <pagination
+                  v-model="pagination.currentPage"
+                  no-arrows
+                  class="pagination-no-border pagination-success"
+                  :per-page="pagination.perPage"
+                  :total="total"
+                />
+              </div>
             </template>
             <template slot="tab-pane-2">
               Efficiently unleash cross-media information without cross-media
@@ -97,10 +112,7 @@
               Dramatically maintain clicks-and-mortar solutions without
               functional solutions.
             </template>
-            <template slot="tab-pane-3">
-              <History />
-            </template>
-          </tabs> -->
+          </tabs>
         </div>
       </div>
     </div>
@@ -112,7 +124,7 @@
 <script>
 import { mapState, mapGetters, mapActions } from 'vuex';
 import { SlideYDownTransition } from 'vue2-transitions';
-import { PricingCard } from '@/components';
+import { PricingCard, Tabs, Pagination } from '@/components';
 import { Tasks } from '@/components/sms';
 import Footer from '@/components/layout/InnerFooter';
 import Mixins from '@/plugins/basicMixins';
@@ -122,19 +134,18 @@ import Swal from 'sweetalert2';
 export default {
   components: {
     PricingCard,
-    // Tabs,
+    Tabs,
     Tasks,
-    // History,
     SlideYDownTransition,
-    // Pagination,
+    Pagination,
     Footer
   },
   mixins: [Mixins.HeaderImage],
   data: () => ({
     sendTasks: [],
-    // phones: '01084891209',
-    phones: '01084891209\n01074646521',
-    message: `안녕하세요~`,
+    phones: '',
+    // phones: '01084891209\n01074646521',
+    message: '',
     image: require('@/assets/img/bg5.jpg'),
     modelValidations: {
       phones: {
@@ -156,6 +167,7 @@ export default {
   }),
   computed: {
     ...mapState('auth', {
+      user: state => state.user,
       userId: state => state.payload.userId
     }),
     ...mapGetters({
@@ -181,13 +193,6 @@ export default {
     },
     message() {
       this.touched.message = true;
-    }
-  },
-  async fetch({ store }) {
-    const userId = store.state.auth.payload.userId;
-    if (userId) {
-      await store.dispatch('users/find', { query: { _id: userId }});
-      await store.dispatch('send/find', { query: { userId }});
     }
   },
   async created() {
@@ -223,26 +228,29 @@ export default {
         await this.sendCreate({
           to,
           text: this.message,
-          status: 1,
-          userId: this.userId
+          userId: this.userId,
+          status: 1
         });
-        await this.userFindAction({ query: { _id: this.userId }});
+        await this.authenticate();
         await this.getSendResponse();
-        this.phones = null;
+        this.swalAlert('성공', '', 'success');
+        this.smsReset();
         this.$nuxt.$loading.finish();
       } catch (error) {
         this.$nuxt.$loading.finish();
-        Swal.fire({
-          title: `Error: ${error.status}`,
-          text: error.message,
-          type: 'error',
-          confirmButtonClass: 'md-button',
-          buttonsStyling: false
-        })
+        this.swalAlert(`Error: ${error.status}`, error.message, 'error');
       }
+    },
+    smsReset() {
+      this.phones = '';
+      this.message = '';
+      this.touched.phones = false;
+      this.touched.message = false;
+      this.$validator.reset();
     },
     async getSendResponse(id) {
       try {
+        await this.authenticate();
         const { userId } = this;
         const query = id !== undefined ? { userId, _id: id } : { userId };
         const sends = await this.actSendFind({ query });
@@ -253,15 +261,8 @@ export default {
           this.$set(this.sendTasks, key, sends[0]);
         }
       } catch (error) {
-        Swal.fire({
-          title: `Error`,
-          text: error.message,
-          type: 'error',
-          confirmButtonClass: 'md-button',
-          buttonsStyling: false
-        })
+        this.swalAlert('Error', error.message, 'error');
       }
-      // this.$nuxt.$loading.finish();
     },
     swalAlert(title, msg, type) {
       Swal.fire({

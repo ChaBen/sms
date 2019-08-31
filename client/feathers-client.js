@@ -5,7 +5,7 @@ import io from 'socket.io-client';
 import { CookieStorage } from 'cookie-storage';
 
 const storage = new CookieStorage();
-const url = 'http://127.0.0.1/';
+const url = process.env.NODE_ENV === 'production' ? 'http://localhost/' : process.env.apiURL;
 const socket = io(url, { transports: ['websocket'] });
 const app = feathers()
   .configure(socketio(socket))

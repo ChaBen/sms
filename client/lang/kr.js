@@ -106,7 +106,9 @@ export default {
     persms: '문자 한건당 약',
     about: '약',
     price: '원',
-    send: '건'
+    send: '건',
+    custom: '직접입력...',
+    btn: '구매'
   },
   sms: {
     total: '남아있는 SMS',

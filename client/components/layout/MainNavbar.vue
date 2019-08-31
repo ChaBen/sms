@@ -76,37 +76,6 @@
                   </div>
                 </nuxt-link>
               </li>
-              <!-- <template v-for="(item, key) in $t('head.menu')">
-                <li v-if="item.auth === 1 && !isAuthenticated" :key="key" class="md-list-item">
-                  <nuxt-link :to="$i18n.path(item.href)" class="md-list-item-router md-list-item-container md-button-clean dropdown">
-                    <div class="md-list-item-content">
-                      <div class="md-ripple">{{ item.li }}</div>
-                    </div>
-                  </nuxt-link>
-                </li>
-                <li v-else-if="item.auth === 2" :key="key" class="md-list-item">
-                  <nuxt-link v-if="item.href === 'sms'" :to="$i18n.path(item.href)" tag="a" class="md-list-item-router md-list-item-container md-button-clean">
-                    <div class="md-list-item-content">
-                      <md-button class="md-rose md-round">
-                        <i class="far fa-comment" />{{ item.li }}
-                      </md-button>
-                    </div>
-                  </nuxt-link>
-                  <nuxt-link v-else :to="$i18n.path(item.href)" class="md-list-item-router md-list-item-container md-button-clean dropdown">
-                    <div class="md-list-item-content">
-                      <div class="md-ripple">{{ item.li }}</div>
-                    </div>
-                  </nuxt-link>
-                </li>
-                <li v-else-if="!item.href && isAuthenticated" :key="key" class="md-list-item">
-                  <a class="md-list-item-router md-list-item-container md-button-clean dropdown" @click.prevent="exit">
-                    <div class="md-list-item-content">
-                      <div class="md-ripple">{{ item.li }}</div>
-                    </div>
-                  </a>
-                </li>
-              </template> -->
-
               <li class="md-list-item">
                 <a href="javascript:void(0)" class="md-list-item-router md-list-item-container md-button-clean dropdown">
                   <div class="md-list-item-content">

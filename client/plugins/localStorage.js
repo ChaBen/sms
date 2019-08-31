@@ -7,8 +7,13 @@ export default ({ store, isHMR }) => {
   // vuex-persistedstate plugin
   if (isHMR) return
 
-  window.onNuxtReady((nuxt) => {
+  window.onNuxtReady(async(nuxt) => {
+    const { auth } = JSON.parse(localStorage.getItem('auth-storage'));
+    if (auth.accessToken) {
+      await store.dispatch('auth/authenticate', { accessToken: auth.accessToken, strategy: 'jwt' });
+    }
     createPersistedState({
+      key: 'auth-storage',
       paths: ['auth']
     })(store) // vuex plugins can be connected to store, even after creation
   })

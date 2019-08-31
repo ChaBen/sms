@@ -1,6 +1,7 @@
-export default function({ store, redirect }) {
+export default function({ store, redirect, route }) {
   // If the user is authenticated redirect to home page
   if (store.state.auth.accessToken) {
-    return redirect('/')
+    const path = route.params.hasOwnProperty('lang') ? `/${route.params.lang}/` : '/';
+    return redirect(path)
   }
 }

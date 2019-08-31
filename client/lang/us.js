@@ -105,7 +105,9 @@ export default {
     desc: 'You have Free Unlimited Updates and Premium Support on each package.',
     persms: 'Per SMS',
     deliveryRate: 'Delivery Rate',
-    send: 'SMS'
+    send: 'SMS',
+    custom: 'Cutom Price...',
+    btn: 'GET STARTED'
   },
   sms: {
     total: 'SMS Remaining',
