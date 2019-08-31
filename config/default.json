@@ -27,5 +27,5 @@
       "passwordField": "password"
     }
   },
-  "mongodb": "mongodb+srv://admin:Admin520!@cndsms-8m8lu.mongodb.net/cndsms"
+  "mongodb": "mongodb+srv://admin:admin:Admin520!@$SMS@cndsms-8m8lu.mongodb.net/cndsms"
 }
