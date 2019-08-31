@@ -9,16 +9,16 @@ job:
     ☐ 메세지 보내기sms @low @90% api change in messagebrid?
     ✔ status, message, length, success, Fail, Percent, Refresh @done(19-08-20 23:57)
   08-21:
-    ☐ Tasks Refresh Action @backend change
-    ☐ Tasks, Dashboard, History @tab
+    ✔ Tasks Refresh Action @backend change @done(19-08-31 21:21)
+    ☐ Tasks, Dashboard, History tab
   08-23:
     ✔ Pricing Page Korea @done(19-08-23 14:26)
     ✔ Send SMS test @done(19-08-23 23:59)
     ✔ Server and Database @done(19-08-23 23:59)
   08-24:
     ✔ ngnix proxy setting @done(19-08-25 07:40)
-    ☐ Server slow and mongodb(amazon) change in google cloud
-    ☐ Nginx Proxy Socket @error
+    ✔ Server slow and mongodb(amazon) change in google cloud @done(19-08-31 21:21)
+    ✔ Nginx Proxy Socket @error @done(19-08-31 21:22)
     ✔ Paypal Order price @error @done(19-08-27 05:45)
   08-25:
     ✔ Navibar Language @done(19-08-27 05:45)
@@ -26,8 +26,8 @@ job:
     ✔ 빠른 가입 이용해보세요. @done(19-08-27 05:45)
   08-26:
     Open Live Server:
-      ☐ Paypal Sandbox Url Change to Live Server
-      ☐ Callback Url
+      ✔ Paypal Sandbox Url Change to Live Server @done(19-08-31 21:22)
+      ✔ Callback Url @done(19-08-31 21:22)
   08-27:
     ☐ Sms Admin, User Admin
     Sms Admin:
@@ -42,6 +42,7 @@ job:
     ☐ Login Page Validate
     ☐ Sms Page - insert message length tip in text
     ☐ Feathers Language
+    ✔ Chatting Add @done(19-08-31 22:11)
   
   Order:
     Server:
