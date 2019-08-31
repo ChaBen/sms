@@ -5,7 +5,7 @@ import io from 'socket.io-client';
 import { CookieStorage } from 'cookie-storage';
 
 const storage = new CookieStorage();
-const socket = io(process.env.apiURL, { transports: ['websocket'] });
+const socket = io(process.env.apiURL);
 const app = feathers()
   .configure(socketio(socket))
   .configure(auth({ storage }));
