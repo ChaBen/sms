@@ -27,5 +27,6 @@
       "passwordField": "password"
     }
   },
-  "mongodb": "mongodb://localhost:27017/cndsms"
+  "mongodb": "mongodb+srv://admin:Admin520!@cndsms-8m8lu.mongodb.net/cndsms"
+  // "mongodb": "mongodb://localhost:27017/cndsms"
 }

@@ -1,5 +1,6 @@
 job:
   server:
+    ☐ "mongodb": "mongodb://localhost:27017/cndsms"
     ☐ ssh -i "cndsms.pem" ubuntu@ec2-54-183-236-122.us-west-1.compute.amazonaws.com
   08-19:
     ✔ 언어마무리 @done(19-08-19 01:21)
