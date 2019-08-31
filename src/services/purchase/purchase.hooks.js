@@ -8,8 +8,8 @@ function UserException(error) {
 async function beforePurchase(context) {
   paypal.configure({
     mode: 'live', // sandbox or live
-    'client_id': 'AeZgg-XoLfSbdrVeRnEz1aSGatzYfnYwGWGuWydxIp-ik2Wl4Y433qnUeE77hf92vR_x6bJyRbG02dPY',
-    'client_secret': 'EENYmBfM1pBpO3hBu3yTJH6mob4areRgbzV-InTa7y-B5k557z0uIC2Bq5snxXnwBbsDVd5U-9fnQ_uB'
+    'client_id': 'AdFHzJeizdOPqAbB88bGjjgEhsSjXABGxMVjBETgA_eWe9UrdVbEMBcgX6C8pW8aqpbx4TQC9g08tgUG',
+    'client_secret': 'ENxLgvJ4GyVErByX7UCSFIgn9-hpYvh_Gl0v1I10I4Dx30OmizLAeRiV0ogQn62MlBslg5wNi1VQYTMA'
   });
   const paypalGoods = new Promise((resolve, reject) => {
     const create_payment_json = {
