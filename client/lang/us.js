@@ -8,10 +8,10 @@ export default {
     lang: 'language'
   },
   index: {
-    title: 'EASY SEND SMS',
+    title: 'BULK SMS MESSAGING',
     desc: `Mobile users in the world today are more than before. Means if you are not already engaging your target customers with mobile marketing, you're missing out a great marketing tool that keeps you in contact with your customers, informed, and following your business..`,
     title1: 'WHAT IS BULK SMS MESSAGING?',
-    desc1: 'Bulk SMS is the technology that lets you send hundreds, even millions of sms messages at a time to phone numbers with 1 click of a button. When sending bulk SMS, the cost of one sent or delivered sms message gets significantly cheaper. You can even set your own sender name, which is the text the receiver’s mobile phone as the SMS sender.Easy Send SMS provides you with everything from a high-quality bulk SMS messaging service',
+    desc1: 'Bulk SMS is the technology that lets you send hundreds, even millions of sms messages at a time to phone numbers with 1 click of a button. When sending bulk SMS, the cost of one sent or delivered sms message gets significantly cheaper. You can even set your own sender name, which is the text the receiver’s mobile phone as the SMS sender.bulk SMS messaging provides you with everything from a high-quality bulk SMS messaging service',
     desc1Sec: [{
       title: 'SALES INCREASE',
       desc: 'Boost your sales up to 50% by sending sms text messages to your customers, letting them know about your new products or services, discounts, events, offers, reminders, etc.',
