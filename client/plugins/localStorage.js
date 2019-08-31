@@ -8,9 +8,10 @@ export default ({ store, isHMR }) => {
   if (isHMR) return
 
   window.onNuxtReady(async(nuxt) => {
-    const { auth } = JSON.parse(localStorage.getItem('auth-storage'));
-    if (auth.accessToken) {
-      await store.dispatch('auth/authenticate', { accessToken: auth.accessToken, strategy: 'jwt' });
+    const storage = JSON.parse(localStorage.getItem('auth-storage'));
+    const isStorage = storage ? storage.auth.accessToken : false;
+    if (isStorage) {
+      await store.dispatch('auth/authenticate', { accessToken: storage.auth.accessToken, strategy: 'jwt' });
     }
     createPersistedState({
       key: 'auth-storage',
