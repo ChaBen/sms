@@ -7,7 +7,7 @@ function UserException(error) {
 
 async function beforePurchase(context) {
   paypal.configure({
-    mode: 'sandbox', // sandbox or live
+    mode: 'live', // sandbox or live
     'client_id': 'AeZgg-XoLfSbdrVeRnEz1aSGatzYfnYwGWGuWydxIp-ik2Wl4Y433qnUeE77hf92vR_x6bJyRbG02dPY',
     'client_secret': 'EENYmBfM1pBpO3hBu3yTJH6mob4areRgbzV-InTa7y-B5k557z0uIC2Bq5snxXnwBbsDVd5U-9fnQ_uB'
   });
@@ -18,8 +18,8 @@ async function beforePurchase(context) {
         'payment_method': 'paypal'
       },
       redirect_urls: {
-        return_url: 'http://localhost:3000/success',
-        cancel_url: 'http://localhost:3000/cancel'
+        return_url: 'http://cndsms.com/success',
+        cancel_url: 'http://cndsms.com/cancel'
       },
       transactions: [{
         item_list: {
