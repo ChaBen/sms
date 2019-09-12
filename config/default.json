@@ -15,11 +15,11 @@
       "header": {
         "typ": "access"
       },
-      "audience": "http://cndsms.com",
+      "audience": "https://yourdomain.com",
       "subject": "anonymous",
       "issuer": "feathers",
       "algorithm": "HS256",
-      "expiresIn": "1y"
+      "expiresIn": "1d"
     },
     "local": {
       "entity": "user",

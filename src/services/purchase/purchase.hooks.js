@@ -19,7 +19,7 @@ async function beforePurchase(context) {
       },
       redirect_urls: {
         return_url: 'http://cndsms.com/success',
-        cancel_url: 'http://cndsms.com/cancel'
+        cancel_url: 'http://cndsms.com/pricing'
       },
       transactions: [{
         item_list: {

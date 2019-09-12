@@ -44,10 +44,11 @@ job:
     ☐ Feathers Language
     ✔ Chatting Add @done(19-08-31 22:11)
     ☐ https add
+    ☐ Sms page - pagenation to center and function(기능)
+    ☐ Socket.io emit send message @backend
+    ☐ Paypal return_url language
   
   Order:
-    Server:
-      ☐ 생각해보니까 서버 어디에 두던 상관이 없다.
     Price:
       ☐ [20, 16, 14] > [20, 18, 16]
       ☐ 1,000,000 sms --- 7,200,000원 --- 15,000,000(개당15원) --- 7,800,000(마진)
