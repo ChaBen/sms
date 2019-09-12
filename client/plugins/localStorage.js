@@ -11,7 +11,11 @@ export default ({ store, isHMR }) => {
     const storage = JSON.parse(localStorage.getItem('auth-storage'));
     const isStorage = storage ? storage.auth.accessToken : false;
     if (isStorage) {
-      await store.dispatch('auth/authenticate', { accessToken: storage.auth.accessToken, strategy: 'jwt' });
+      try {
+        await store.dispatch('auth/authenticate', { accessToken: storage.auth.accessToken, strategy: 'jwt' });
+      } catch (error) {
+        console.log('error: !', error);
+      }
     }
     createPersistedState({
       key: 'auth-storage',
