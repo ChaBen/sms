@@ -15,7 +15,6 @@ export default ({ store, isHMR }) => {
         await store.dispatch('auth/authenticate', { accessToken: storage.auth.accessToken, strategy: 'jwt' });
       } catch (error) {
         store.dispatch('auth/logout');
-        console.log('error: !', error);
       }
     }
     createPersistedState({

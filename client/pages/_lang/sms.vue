@@ -313,7 +313,7 @@ export default {
   margin-top: 0;
 }
 .pagination-box {
-  display: block;
+  display: flex;
   justify-content: center;
   align-items: center;
 }

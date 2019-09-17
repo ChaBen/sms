@@ -55,7 +55,7 @@ import 'moment/locale/ko';
 export default {
   filters: {
     filterDate(date) {
-      return Moment(date).startOf('hour').fromNow();
+      return Moment(date).startOf('minute').fromNow();
     }
   },
   props: {
