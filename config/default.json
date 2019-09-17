@@ -13,9 +13,9 @@
     "service": "users",
     "jwt": {
       "header": {
-        "typ": "access"
+        "type": "access"
       },
-      "audience": "https://yourdomain.com",
+      "audience": "http://cndsms.com",
       "subject": "anonymous",
       "issuer": "feathers",
       "algorithm": "HS256",
