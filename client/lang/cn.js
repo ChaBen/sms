@@ -124,7 +124,7 @@ export default {
     fail: '失败',
     percent: '百分比',
     date: '时间',
-    action: '刷新'
+    action: '删除'
   },
   success: {
     title: '感谢您的购买。',

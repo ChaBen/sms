@@ -10,6 +10,8 @@ module.exports = function(app) {
     // users: { type: Schema.Types.ObjectId, ref: 'users' },
     status: { type: Number, required: true },
     to: { type: Array, required: true },
+    count: { type: Number, required: true },
+    display: { type: Boolean, required: true, default: false },
     text: { type: String, required: true },
     type: { type: Number }
   }, {

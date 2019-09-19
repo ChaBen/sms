@@ -1,7 +1,7 @@
 <template>
   <md-table v-model="tasks">
     <md-table-row slot="md-table-row" slot-scope="{ item }">
-      <md-table-cell :md-label="$t('sms.status')">
+      <md-table-cell style="width: 10%" :md-label="$t('sms.status')">
         <template v-if="item.status === 1">
           <md-progress-spinner :md-diameter="30" :md-stroke="2" md-mode="indeterminate" />
         </template>
@@ -11,39 +11,22 @@
           </div>
         </template>
       </md-table-cell>
-      <md-table-cell :md-label="$t('sms.message')">{{ item.text }}</md-table-cell>
-      <md-table-cell :md-label="$t('sms.to')">{{ item.to | Comma }}</md-table-cell>
-      <md-table-cell :md-label="$t('sms.ok')">{{ item.ok | Comma }}</md-table-cell>
-      <md-table-cell :md-label="$t('sms.fail')">{{ item.fail | Comma }}</md-table-cell>
-      <md-table-cell :md-label="$t('sms.percent')">
+      <md-table-cell style="width: 50%;" :md-label="$t('sms.message')">{{ item.text }}</md-table-cell>
+      <md-table-cell :md-label="$t('sms.to')" md-numeric>{{ item.count | Comma }}</md-table-cell>
+      <!-- <md-table-cell :md-label="$t('sms.ok')">{{ item.ok | Comma }}</md-table-cell> -->
+      <!-- <md-table-cell :md-label="$t('sms.fail')">{{ item.fail | Comma }}</md-table-cell> -->
+      <!-- <md-table-cell :md-label="$t('sms.percent')">
         <div class="md-layout percent">
           <div class="md-layout-item">
             <md-progress-bar md-mode="determinate" :md-value="item.percent" />
           </div>
           <div class="md-layout-item">{{ item.percent }}%</div>
         </div>
-      </md-table-cell>
-      <md-table-cell :md-label="$t('sms.date')">{{ item.createdAt | filterDate }}</md-table-cell>
-      <md-table-cell :md-label="$t('sms.action')">
-        <md-button class="md-just-icon md-success md-round" @click="$emit('refresh', item.id)"><md-icon>refresh</md-icon></md-button>
-      </md-table-cell>
-      <!-- status, message, length, success, Fail, Percent, Refresh -->
-      <!-- <md-table-cell md-label="City">{{ item.city }}</md-table-cell>
-      <md-table-cell md-label="Salary">{{ item.salary }}</md-table-cell>
-      <md-table-cell md-label="Actions" :class="getAlignClasses(item)">
-        <md-button
-          class="md-just-icon"
-          :class="getClass(item.icon1, item.id)"
-        ><md-icon>{{ item.icon1 }}</md-icon></md-button>
-        <md-button
-          class="md-just-icon"
-          :class="getClass(item.icon2, item.id)"
-        ><md-icon>{{ item.icon2 }}</md-icon></md-button>
-        <md-button
-          class="md-just-icon"
-          :class="getClass(item.icon3, item.id)"
-        ><md-icon>{{ item.icon3 }}</md-icon></md-button>
       </md-table-cell> -->
+      <md-table-cell :md-label="$t('sms.date')" md-numeric>{{ item.createdAt | filterDate }}</md-table-cell>
+      <md-table-cell :md-label="$t('sms.action')">
+        <md-button class="md-just-icon md-rose md-round" @click="$emit('delete', item._id)"><i class="fal fa-times" /></md-button>
+      </md-table-cell>
     </md-table-row>
   </md-table>
 </template>
@@ -65,58 +48,6 @@ export default {
     }
   },
   data: () => ({
-    tableData: [
-      {
-        id: 1,
-        name: 'Dakota Rice',
-        salary: '$36.738',
-        country: 'Niger',
-        city: 'Oud-Turnhout',
-        icon1: 'person',
-        icon2: 'edit',
-        icon3: 'close'
-      },
-      {
-        id: 2,
-        name: 'Minerva Hooper',
-        salary: '$23,789',
-        country: 'Curaçao',
-        city: 'Sinaai-Waas',
-        icon1: 'person',
-        icon2: 'edit',
-        icon3: 'close'
-      },
-      {
-        id: 3,
-        name: 'Sage Rodriguez',
-        salary: '$56,142',
-        country: 'Netherlands',
-        city: 'Baileux',
-        icon1: 'person',
-        icon2: 'edit',
-        icon3: 'close'
-      },
-      {
-        id: 4,
-        name: 'Philip Chaney',
-        salary: '$38,735',
-        country: 'Korea, South',
-        city: 'Overland Park',
-        icon1: 'person',
-        icon2: 'edit',
-        icon3: 'close'
-      },
-      {
-        id: 5,
-        name: 'Doris Greene',
-        salary: '$63,542',
-        country: 'Malawi',
-        city: 'Feldkirchen in Kärnten',
-        icon1: 'person',
-        icon2: 'edit',
-        icon3: 'close'
-      }
-    ]
   }),
   methods: {
     getClass(item, id) {
@@ -160,6 +91,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.md-table {
+  flex-flow: column;
+  position: relative;
+}
 .done {
   .fal {
     font-size: 1.24rem;

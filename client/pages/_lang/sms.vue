@@ -5,8 +5,8 @@
       <div class="container">
         <div class="md-layout">
           <div class="md-layout-item md-size-40 md-small-size-100">
-            <pricing-card>
-              <template v-if="user" slot="cardContent">
+            <pricing-card v-if="user">
+              <template slot="cardContent">
                 <ul>
                   <li>
                     <h6 class="card-category text-success">{{ $t('sms.total') }}</h6>
@@ -94,16 +94,7 @@
             color-button="primary"
           >
             <template slot="tab-pane-1">
-              <Tasks :tasks="sendTasks" @refresh="getSendResponse" />
-              <div class="pagination-box">
-                <pagination
-                  v-model="pagination.currentPage"
-                  no-arrows
-                  class="pagination-no-border pagination-success"
-                  :per-page="pagination.perPage"
-                  :total="total"
-                />
-              </div>
+              <Tasks :tasks="sendTasks" @refresh="getSendResponse" @delete="deleteSendResponse" />
             </template>
             <template slot="tab-pane-2">
               Efficiently unleash cross-media information without cross-media
@@ -124,7 +115,7 @@
 <script>
 import { mapState, mapGetters, mapActions } from 'vuex';
 import { SlideYDownTransition } from 'vue2-transitions';
-import { PricingCard, Tabs, Pagination } from '@/components';
+import { PricingCard, Tabs } from '@/components';
 import { Tasks } from '@/components/sms';
 import Footer from '@/components/layout/InnerFooter';
 import Mixins from '@/plugins/basicMixins';
@@ -137,12 +128,10 @@ export default {
     Tabs,
     Tasks,
     SlideYDownTransition,
-    Pagination,
     Footer
   },
   mixins: [Mixins.HeaderImage],
   data: () => ({
-    sendTasks: [],
     phones: '',
     // phones: '01084891209\n01074646521',
     message: '',
@@ -159,32 +148,24 @@ export default {
     touched: {
       phones: false,
       message: false
-    },
-    pagination: {
-      perPage: 5,
-      currentPage: 1
     }
   }),
   computed: {
-    ...mapState('auth', {
-      user: state => state.user,
-      userId: state => state.payload.userId
+    ...mapState({
+      userId: state => state.auth.payload.user._id
     }),
     ...mapGetters({
-      userFind: 'users/find',
-      sendFind: 'send/find'
+      sendFind: 'send/find',
+      userFind: 'users/find'
     }),
-    getUser() {
-      return this.userFind({ query: { _id: this.userId }}).data;
+    sendTasks() {
+      return this.sendFind({ query: { userId: this.userId, display: false }}).data.reverse();
     },
-    getSend() {
-      return this.sendFind({ query: { userId: this.userId }}).data;
+    user() {
+      return this.userFind({ query: { _id: this.userId }}).data[0];
     },
     phoneLen() {
       return this.phones ? this.phones.split(/\r*\n/).length : 0;
-    },
-    total() {
-      return this.sendTasks.length;
     }
   },
   watch: {
@@ -195,8 +176,10 @@ export default {
       this.touched.message = true;
     }
   },
-  async created() {
-    await this.getSendResponse();
+  async mounted() {
+    await this.authenticate();
+    await this.actSendFind({ query: { userId: this.userId, display: false }});
+    await this.userFindAction({ query: { _id: this.userId }});
   },
   methods: {
     ...mapActions({
@@ -204,7 +187,8 @@ export default {
       userFindAction: 'users/find',
       actSendFind: 'send/find',
       sendCreate: 'send/create',
-      sendAfterOrUpdate: 'send/addOrUpdate'
+      actSendPatch: 'send/patch',
+      logout: 'auth/logout'
     }),
     async playSendSms() {
       const to = _.compact(this.phones.split(/\r*\n/).map(item => {
@@ -212,12 +196,12 @@ export default {
         return phone === '' ? false : (phone.substr(0, 3) === '010' ? `82${phone.substr(1)}`.trim() : `82${phone}`.trim());
       }));
       const valid = await this.$validator.validateAll();
-      const sendCount = this.getUser[0].sendCount;
+      const sendCount = this.user.sendCount;
       if (!valid) {
         this.swalAlert('Error', this.errors.items[0].msg, 'error');
         return;
       } else if (to.length > 100000) {
-        this.swalAlert('Error', '한번에 100,000개만이하로 해주세요.', 'error');
+        this.swalAlert('Error', '한번에 100,000개이하로 이용해주세요.', 'error');
         return;
       } else if (to.length > sendCount) {
         this.swalAlert('Error', '남아있는 SMS건수가 부족합니다.', 'error');
@@ -227,12 +211,11 @@ export default {
       try {
         await this.sendCreate({
           to,
+          count: to.length,
           text: this.message,
           userId: this.userId,
           status: 1
         });
-        await this.authenticate();
-        await this.getSendResponse();
         this.swalAlert('성공', '', 'success');
         this.smsReset();
         this.$nuxt.$loading.finish();
@@ -250,7 +233,6 @@ export default {
     },
     async getSendResponse(id) {
       try {
-        await this.authenticate();
         const { userId } = this;
         const query = id !== undefined ? { userId, _id: id } : { userId };
         const sends = await this.actSendFind({ query });
@@ -262,6 +244,30 @@ export default {
         }
       } catch (error) {
         this.swalAlert('Error', error.message, 'error');
+        this.logout();
+      }
+    },
+    async deleteSendResponse(id) {
+      const data = { _id: id, display: true };
+      const params = {}
+      const result = await Swal.fire({
+        title: 'Delete',
+        text: '삭제하시겠습니까?',
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonClass: 'md-button md-success',
+        cancelButtonClass: 'md-button md-danger',
+        buttonsStyling: false
+      });
+      if (result.value) {
+        await this.actSendPatch([id, data, params]);
+        Swal.fire({
+          title: 'Deleted!',
+          text: '성공',
+          type: 'success',
+          confirmButtonClass: 'md-button md-success',
+          buttonsStyling: false
+        })
       }
     },
     swalAlert(title, msg, type) {
@@ -269,7 +275,7 @@ export default {
         title,
         text: msg,
         type,
-        confirmButtonClass: 'md-button',
+        confirmButtonClass: 'md-button md-success',
         buttonsStyling: false
       });
     }

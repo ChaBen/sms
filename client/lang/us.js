@@ -124,7 +124,7 @@ export default {
     fail: 'Fail',
     percent: 'Percent',
     date: 'Date',
-    action: 'Action'
+    action: 'Delete'
   },
   success: {
     title: 'Thank you for your purchase.',

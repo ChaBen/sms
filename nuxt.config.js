@@ -24,8 +24,8 @@ module.exports = {
   loading: '~/components/Loading.vue',
   plugins: [
     '~plugins/material-kit',
-    '~plugins/i18n',
-    { src: '~plugins/localStorage.js', ssr: false }
+    '~plugins/i18n'
+    // { src: '~plugins/localStorage.js', ssr: false }
   ],
   modules: [
     'nuxt-client-init-module'

@@ -125,7 +125,7 @@ export default {
     fail: '실패',
     percent: '퍼센트',
     date: '시간',
-    action: '새로고침'
+    action: '삭제'
   },
   success: {
     title: '구매해주셔서 감사합니다.',

@@ -47,7 +47,9 @@ job:
     ☐ Sms page - pagenation to center and function(기능)
     ☐ Socket.io emit send message @backend
     ☐ Paypal return_url language
-  
+  9-18:
+    ☐ 채팅
+
   Order:
     Price:
       ☐ [20, 16, 14] > [20, 18, 16]
