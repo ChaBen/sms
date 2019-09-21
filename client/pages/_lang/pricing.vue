@@ -173,6 +173,7 @@ export default {
   },
   methods: {
     ...mapActions({
+      authenticate: 'auth/authenticate',
       purchaseCreate: 'purchase/create'
     }),
     isNumber(evt) {
@@ -211,6 +212,11 @@ export default {
     },
     async purchase(item) {
       this.$nuxt.$loading.start();
+      try {
+        await this.authenticate();
+      } catch (error) {
+        this.$router.push(this.$i18n.path('login'))
+      }
       if (!this.isLogin) {
         this.$router.push(this.$i18n.path('login'));
         return;

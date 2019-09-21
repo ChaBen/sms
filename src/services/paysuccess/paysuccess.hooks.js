@@ -27,9 +27,7 @@ async function beforeCreate(context) {
     });
   });
   try {
-    console.log('this .....');
     const paymentResponse = await paypalpayment;
-    console.log('this1.....');
     const total = parseInt(paymentResponse.transactions[0].amount.total);
     const perPrice = [0.016666, 0.013333, 0.011755];
     let per;
@@ -63,7 +61,7 @@ async function beforeCreate(context) {
 
 module.exports = {
   before: {
-    all: [],
+    all: [authenticate('jwt')],
     find: [],
     get: [],
     create: [beforeCreate],

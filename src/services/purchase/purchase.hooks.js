@@ -65,7 +65,7 @@ async function beforePurchase(context) {
 
 module.exports = {
   before: {
-    all: [],
+    all: [authenticate('jwt')],
     find: [],
     get: [],
     create: [beforePurchase],
