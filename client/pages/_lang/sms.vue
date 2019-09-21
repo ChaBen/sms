@@ -248,8 +248,6 @@ export default {
       }
     },
     async deleteSendResponse(id) {
-      const data = { _id: id, display: true };
-      const params = {}
       const result = await Swal.fire({
         title: 'Delete',
         text: '삭제하시겠습니까?',
@@ -260,6 +258,8 @@ export default {
         buttonsStyling: false
       });
       if (result.value) {
+        const data = { _id: id, display: true };
+        const params = {}
         await this.actSendPatch([id, data, params]);
         Swal.fire({
           title: 'Deleted!',

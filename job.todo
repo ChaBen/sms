@@ -47,8 +47,9 @@ job:
     ☐ Sms page - pagenation to center and function(기능)
     ☐ Socket.io emit send message @backend
     ☐ Paypal return_url language
-  9-18:
-    ☐ 채팅
+  9-21:
+    ☐ 중복가입 방지
+    ☐ 결제시 jwt체크 안하고있음 @error 
 
   Order:
     Price:

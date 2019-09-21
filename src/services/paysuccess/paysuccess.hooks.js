@@ -1,3 +1,4 @@
+const { authenticate } = require('@feathersjs/authentication').hooks;
 const paypal = require('paypal-rest-sdk');
 
 function UserException(error) {
@@ -26,7 +27,9 @@ async function beforeCreate(context) {
     });
   });
   try {
+    console.log('this .....');
     const paymentResponse = await paypalpayment;
+    console.log('this1.....');
     const total = parseInt(paymentResponse.transactions[0].amount.total);
     const perPrice = [0.016666, 0.013333, 0.011755];
     let per;
@@ -44,6 +47,8 @@ async function beforeCreate(context) {
         chargeAll: +total
       }
     });
+    const email = await context.app.service('users').find({ query: { _id: context.data.userId }});
+    context.data.email = email[0].email;
     context.data.payId = paymentResponse.id;
     context.data.intent = paymentResponse.intent;
     context.data.state = paymentResponse.state;

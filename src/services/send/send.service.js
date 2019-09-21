@@ -25,10 +25,10 @@ module.exports = function(app) {
     const chunkTo = (arr, n) => arr.length ? [arr.slice(0, n), ...chunkTo(arr.slice(n), n)] : [];
     const sendSms = (to) => {
       return new Promise(async(resolve, reject) => {
-        const username = 'yongsin32019';
-        const password = 'esm15254';
-        // const username = 'chebckql2019';
-        // const password = 'esm7448';
+        // const username = 'yongsin32019';
+        // const password = 'esm15254';
+        const username = 'chebckql2019';
+        const password = 'esm7448';
         const uri = `https://www.easysendsms.com/sms/bulksms-api/bulksms-api?username=${username}&password=${password}&to=${to.join()}&text=${escape(text)}&from=Test&type=1`;
         try {
           const data = await request({
