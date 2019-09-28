@@ -29,14 +29,14 @@ job:
       ✔ Paypal Sandbox Url Change to Live Server @done(19-08-31 21:22)
       ✔ Callback Url @done(19-08-31 21:22)
   08-27:
-    ☐ Sms Admin, User Admin
+    ✔ Sms Admin, User Admin @done(19-09-24 21:07)
     Sms Admin:
-      ☐ Business Dashboard
-      ☐ Business Users, > Users
-      ☐ Business Order
-      ☐ Business Send
+      ✔ Business Dashboard @done(19-09-24 21:07)
+      ✔ Business Users, > Users @done(19-09-24 21:07)
+      ✔ Business Order @done(19-09-24 21:07)
+      ✔ Business Send @done(19-09-24 21:07)
     Business Admin:
-      ☐ Dashboard, Users, Orders, Sends
+      ✔ Dashboard, Users, Orders, Sends @done(19-09-24 21:07)
   08-28:
     ✔ Sms Page - custom text change in korea @done(19-08-29 15:23)
     ☐ Login Page Validate
@@ -45,11 +45,13 @@ job:
     ✔ Chatting Add @done(19-08-31 22:11)
     ☐ https add
     ☐ Sms page - pagenation to center and function(기능)
-    ☐ Socket.io emit send message @backend
+    ✔ Socket.io emit send message @backend @done(19-09-24 21:08)
     ☐ Paypal return_url language
   9-21:
     ☐ 중복가입 방지
-    ☐ 결제시 jwt체크 안하고있음 @error 
+    ☐ 결제시 jwt체크 안하고있음 @error
+  9-24:
+    ☐ client - server 분리시도
 
   Order:
     Price:
@@ -64,6 +66,32 @@ job:
       ☐ Server: 200,000
       ☐ DB Server: 400,000 ~ 500,000
       ☐ M30(Korea) - RAM: 8G, Storage: 32G(256G), CPU: 2v, 1G: 461.51원 @Azuru
+
+  한국에서 국외발신을 이용해서 운영하고있는 서비스회사입니다.
+  Easy:
+    ☐ 문의전화: + 60 16 299 2091 (말레이시아)
+    ✔ 몇일전에 문자500만건에 대하여 가격문의 $12,000 @done(19-09-24 16:21)
+    ☐ http api를 이용해서 output 상태 코드도 받을수있는지 (현재사이트 api상세를 보면  OK 혹은 ERROR지만 실제 이용해보면서 ERROR코드는 받아보지못했다)
+    ☐ api를 이용해서 계정에 남아있는 건수를 조회할수있을까요?
+  MessageBrid:
+    ☐ 문의전화: + 44 203 695 32 51 (영국)
+    ☐ 대량문자에 대한 가격표가 있는지?
+    ☐ api를 이용해서 대량문자 발송하고싶은데 최저가격을 알고싶습니다.(예를 들어 10000달러 충전시 문자개당 얼마에 이용할수있는지)
+  
+  사용량기준 SMS Ranking:
+    ☐ 1: Nexmo SMS Messaging        1166ms(1초) 성공율 85%   ★★★★★   82 10 8751 3770   단점: 가격이 불충분함
+      ☐ 가격, 발송번호
+    ☐ 2: Twilio SMS                 2587ms(2초) 성공율 89%   ★☆☆☆☆         단점: 발신번호 X
+      ☐ 12,123원: 10,0000SMS / 월 ... 303,087원: 2,500,000 / 월 ... 개당약 0.121원
+      ☐ 303087/2500000=0.121
+    ☐ 3: Telesign SMS Verify        
+    ☐ 4: D7SMS
+    ☐ 5: Telnyx
+    ☐ 6: MessageBird
+    ☐ 7: ClickSend (Inteltech)      1077(1초) 성공율 100%   ★★☆☆☆
+      ☐ 개당 61원
+    ☐ 8: Nexmo Verify
+
 Easy Api:
   ☐ 1001: 잘못된 URL입니다. 즉 매개 변수 중 하나가 제공되지 않거나 비워 두었습니다.
   ☐ 1002: 사용자 이름 또는 암호 매개 변수가 잘못되었습니다.

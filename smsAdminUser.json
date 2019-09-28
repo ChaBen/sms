@@ -1,0 +1,7 @@
+{
+  "apps": {
+    "name": "smsAdminUser",
+    "script": "npm run start",
+    "watch": ["src"]
+  }
+}
