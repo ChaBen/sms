@@ -1,6 +1,6 @@
 {
   "apps": {
-    "name": "smsAdminUser",
+    "name": "cndsms",
     "script": "npm run start",
     "watch": ["src"]
   }
