@@ -1,7 +1,7 @@
-import History from './History'
+import Chart from './Chart'
 import Tasks from './Tasks'
 
 export {
-  History,
+  Chart,
   Tasks
 }

@@ -43,8 +43,8 @@ job:
     ☐ Sms Page - insert message length tip in text
     ☐ Feathers Language
     ✔ Chatting Add @done(19-08-31 22:11)
-    ☐ https add
     ☐ Sms page - pagenation to center and function(기능)
+    ☐ https add
     ✔ Socket.io emit send message @backend @done(19-09-24 21:08)
     ☐ Paypal return_url language
   9-21:
@@ -60,12 +60,13 @@ job:
       ☐ Paypal Fee - $500 수수료 2.96% 금액 $14.80(약:1만8천원), $3000 수수료 2.91% $87.30(약:10만6천) > 약 3%
       ☐ Paypal Send - Free
       ☐ 일주일 혹은 한달에 한번씩 결제: 총수익: 10%, 메세지당 10% > ?%
-    Money:
-      ☐ Icon: 100,000
-      ☐ Theme: 300,000
-      ☐ Server: 200,000
-      ☐ DB Server: 400,000 ~ 500,000
-      ☐ M30(Korea) - RAM: 8G, Storage: 32G(256G), CPU: 2v, 1G: 461.51원 @Azuru
+  Money:
+    ☐ Chating: 20,000
+    ☐ Icon: 100,000
+    ☐ Theme: 300,000
+    ☐ Server: 200,000
+    ☐ DB Server: 400,000 ~ 500,000
+    ☐ M30(Korea) - RAM: 8G, Storage: 32G(256G), CPU: 2v, 1G: 461.51원 @Azuru
 
   한국에서 국외발신을 이용해서 운영하고있는 서비스회사입니다.
   Easy:

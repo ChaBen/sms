@@ -7,10 +7,11 @@ module.exports = function(app) {
   const { Schema } = mongooseClient;
   const users = new Schema({
     email: { type: String, required: true, unique: true, lowercase: true },
+    computerId: { type: String, required: true, unique: true },
     password: { type: String, required: true },
-    sendCount: { type: Number, required: true, default: 5 }, // 메세지 보낼수 있는 회수
-    sendAllCount: { type: Number, required: true, default: 0 }, // 메세지 보낸 회수
-    chargeAll: { type: Number, required: true, default: 0 }, // 총충전금액
+    sendCount: { type: Number, required: true, default: 5 },
+    sendAllCount: { type: Number, required: true, default: 0 },
+    chargeAll: { type: Number, required: true, default: 0 },
     level: { type: Number, required: true, default: 1 }
   }, {
     timestamps: true

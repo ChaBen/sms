@@ -1,9 +1,15 @@
 const { authenticate } = require('@feathersjs/authentication').hooks;
 const { discard } = require('feathers-hooks-common');
+const { machineIdSync } = require('node-machine-id');
 
 function UserException(error) {
   this.message = error.error_description;
   this.status = error.httpStatusCode;
+}
+
+async function beforeFind(context) {
+  const id = await machineIdSync();
+  console.log(id);
 }
 
 async function beforeCreate(context) {
@@ -20,7 +26,7 @@ async function beforeCreate(context) {
 module.exports = {
   before: {
     all: [authenticate('jwt')],
-    find: [],
+    find: [beforeFind],
     get: [],
     create: [beforeCreate],
     update: [],

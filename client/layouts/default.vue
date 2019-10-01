@@ -1,8 +1,8 @@
 <template>
   <div id="vue-material-kit-pro" :class="{ 'nav-open': NavbarStore.showNavbar }">
-    <no-ssr>
+    <client-only>
       <MainNavbar :navbar-transparent="true" :color-on-scroll="66" />
-    </no-ssr>
+    </client-only>
 
     <Nuxt />
   </div>

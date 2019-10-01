@@ -84,9 +84,10 @@
       <!-- Features 1 -->
       <div class="section section-features-1">
         <div class="container">
-          <tabs
+          <Tasks :tasks="sendTasks" @refresh="getSendResponse" @delete="deleteSendResponse" />
+          <!-- <tabs
             :tab-active="1"
-            :tab-name="['Tasks', 'Dashboard']"
+            :tab-name="[$t('sms.tasks'), $t('sms.dashboard')]"
             :tab-icon="['list', 'dashboard']"
             pills-align="center"
             plain
@@ -97,13 +98,9 @@
               <Tasks :tasks="sendTasks" @refresh="getSendResponse" @delete="deleteSendResponse" />
             </template>
             <template slot="tab-pane-2">
-              Efficiently unleash cross-media information without cross-media
-              value. Quickly maximize timely deliverables for real-time schemas.
-              <br><br>
-              Dramatically maintain clicks-and-mortar solutions without
-              functional solutions.
+              <Chart />
             </template>
-          </tabs>
+          </tabs> -->
         </div>
       </div>
     </div>
@@ -115,7 +112,7 @@
 <script>
 import { mapState, mapGetters, mapActions } from 'vuex';
 import { SlideYDownTransition } from 'vue2-transitions';
-import { PricingCard, Tabs } from '@/components';
+import { PricingCard } from '@/components';
 import { Tasks } from '@/components/sms';
 import Footer from '@/components/layout/InnerFooter';
 import Mixins from '@/plugins/basicMixins';
@@ -125,8 +122,9 @@ import Swal from 'sweetalert2';
 export default {
   components: {
     PricingCard,
-    Tabs,
+    // Tabs,
     Tasks,
+    // Chart,
     SlideYDownTransition,
     Footer
   },
@@ -177,9 +175,15 @@ export default {
     }
   },
   async mounted() {
-    await this.authenticate();
-    await this.actSendFind({ query: { userId: this.userId, display: false }});
-    await this.userFindAction({ query: { _id: this.userId }});
+    try {
+      await this.authenticate();
+      await this.actSendFind({ query: { userId: this.userId, display: false }});
+      await this.userFindAction({ query: { _id: this.userId }});
+    } catch (error) {
+      console.log(error);
+      // await this.logout();
+      // this.$router.push('/login');
+    }
   },
   methods: {
     ...mapActions({
@@ -322,5 +326,8 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.section-features-1 .container {
+  padding: 50px 0;
 }
 </style>

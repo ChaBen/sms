@@ -1,9 +1,11 @@
 const { authenticate } = require('@feathersjs/authentication').hooks;
-
 const { hashPassword, protect } = require('@feathersjs/authentication-local').hooks;
+const { machineIdSync } = require('node-machine-id');
 
-function afterPatchUser(context) {
-  context.service.emit('patchedUser');
+async function beforeCreate(context) {
+  const computerId = await machineIdSync();
+  console.log(computerId);
+  context.data.computerId = computerId;
 }
 
 module.exports = {
@@ -16,7 +18,7 @@ module.exports = {
         context.result = context.params.auth;
       }
     ],
-    create: [hashPassword()],
+    create: [hashPassword(), beforeCreate],
     update: [hashPassword(), authenticate('jwt')],
     patch: [hashPassword(), authenticate('jwt')],
     remove: [authenticate('jwt')]
@@ -32,7 +34,7 @@ module.exports = {
     get: [],
     create: [],
     update: [],
-    patch: [afterPatchUser],
+    patch: [],
     remove: []
   },
 

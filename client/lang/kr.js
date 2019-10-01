@@ -118,6 +118,8 @@ export default {
     phone: '보내기 전화번호',
     textarea: '메시지',
     btn: '보내기',
+    tasks: '목록',
+    dashboard: '그래프',
     status: '상태',
     message: '메세지',
     to: '개수',
