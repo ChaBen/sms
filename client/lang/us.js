@@ -117,6 +117,8 @@ export default {
     phone: 'Send Phone Number',
     textarea: 'Your Message',
     btn: 'SEND',
+    result: 'SMS transmission result',
+    noresult: 'SMS No transmission results',
     tasks: 'tasks',
     dashboard: 'dashboard',
     status: 'Status',

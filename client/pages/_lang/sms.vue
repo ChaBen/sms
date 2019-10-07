@@ -84,7 +84,9 @@
       <!-- Features 1 -->
       <div class="section section-features-1">
         <div class="container">
-          <Tasks :tasks="sendTasks" @refresh="getSendResponse" @delete="deleteSendResponse" />
+          <h3 class="title text-center">{{ $t('sms.result') }}</h3>
+          <Tasks v-if="sendTasks" :tasks="sendTasks" @refresh="getSendResponse" @delete="deleteSendResponse" />
+          <p v-else>문자전송 결과가 없습니다.</p>
           <!-- <tabs
             :tab-active="1"
             :tab-name="[$t('sms.tasks'), $t('sms.dashboard')]"
@@ -326,8 +328,5 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.section-features-1 .container {
-  padding: 50px 0;
 }
 </style>

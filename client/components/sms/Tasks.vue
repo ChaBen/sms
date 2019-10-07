@@ -44,7 +44,7 @@ export default {
   props: {
     tasks: {
       type: Array,
-      default: () => ([])
+      default: () => []
     }
   },
   data: () => ({

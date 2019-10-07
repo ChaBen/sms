@@ -117,6 +117,8 @@ export default {
     phone: '发送电话号码',
     textarea: '发送内容',
     btn: '发送',
+    result: '短信发送结果',
+    noresult: '没有短信发送结果',
     tasks: '目录',
     dashboard: '图形',
     status: '状态',
