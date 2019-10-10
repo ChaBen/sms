@@ -8,7 +8,7 @@ function UserException(error) {
 }
 
 async function beforeFind(context) {
-  const id = await machineIdSync();
+  const id = await machineIdSync({ original: true });
   console.log(id);
 }
 

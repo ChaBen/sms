@@ -9,7 +9,7 @@ module.exports = {
     title: 'Canada Free SMS - System-Online Receive SMS',
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' }
+      { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' }
     ],
     link: [
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Noto+Sans|Roboto|Material+Icons' },

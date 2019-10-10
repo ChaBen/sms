@@ -81,8 +81,8 @@ module.exports = function(app) {
     };*/
 
     try {
-      if (to.length <= 50) {
-        // 50개 혹은 이하일경우
+      if (to.length <= 30) {
+        // 30개 혹은 이하일경우
         await sendSms(to);
         await app.service('users').patch(userId, {
           $inc: {
@@ -94,7 +94,7 @@ module.exports = function(app) {
         await app.service('send').patch(sendAddRes._id, { status: 2 });
       } else {
         //  if (to.length < 10000)
-        const chunk = chunkTo(to, 50);
+        const chunk = chunkTo(to, 30);
         for (let index = 0; index < chunk.length; index++) {
           const item = chunk[index];
           await sendSms(item);
