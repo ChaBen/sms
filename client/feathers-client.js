@@ -5,8 +5,8 @@ import io from 'socket.io-client';
 import { CookieStorage } from 'cookie-storage';
 
 const storage = new CookieStorage();
-const socket = io('http://34.97.135.208/', { transports: ['websocket'] });
-// const socket = io('http://localhost:3000/', { transports: ['websocket'] });
+// const socket = io('http://34.97.135.208/', { transports: ['websocket'] });
+const socket = io('http://localhost:5000/', { transports: ['websocket'] });
 const app = feathers()
   .configure(socketio(socket))
   .configure(auth({ storage }));

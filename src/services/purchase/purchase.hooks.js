@@ -21,10 +21,10 @@ async function beforePurchase(context) {
     return_url: 'http://cndsms.com/success',
     cancel_url: 'http://cndsms.com/pricing'
   }
-  const sandbox = {
-    return_url: 'http://localhost:3000/success',
-    cancel_url: 'http://localhost:3000/pricing'
-  }
+  // const sandbox = {
+  //   return_url: 'http://localhost:3000/success',
+  //   cancel_url: 'http://localhost:3000/pricing'
+  // }
   const paypalGoods = new Promise((resolve, reject) => {
     const create_payment_json = {
       intent: 'sale',
@@ -65,7 +65,7 @@ async function beforePurchase(context) {
 
 module.exports = {
   before: {
-    all: [authenticate('jwt')],
+    all: [],
     find: [],
     get: [],
     create: [beforePurchase],
